@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PEP
+{
+    public class Login
+    {
+        private SQLHandler sql;
+        public Login()
+        {
+            sql = new SQLHandler();
+            sql.SQLConnect();
+        }
+        ~Login()
+        {
+            sql.SQLDisconnect();
+        }
+        public bool identifyAuthentication(String u, String p)
+        {
+            bool result = sql.SQLQuery("users", "uname='" + u + "' and password='" + p + "'");
+            sql.SQLDisconnect();
+            return result;
+        }
+    }
+}
