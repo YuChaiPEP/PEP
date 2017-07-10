@@ -119,6 +119,7 @@ namespace PEP
                 this.comboLogTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
+            this.comboLogTask.SelectedIndex = 0;
         }
 
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
