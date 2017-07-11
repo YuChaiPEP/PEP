@@ -76,6 +76,7 @@ namespace PEP
             while (dr.Read())
             {
                 this.gridCheckLog.Rows.Add();
+                this.gridCheckLog.Rows[rowIdx].Cells["columnNumber"].Value = dr["lid"].ToString();
                 int uid = Convert.ToInt32(dr["uid"]);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnUser"].Value = this.user.searchUser(uid);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnTime"].Value = dr["timestamp"].ToString();
@@ -135,6 +136,21 @@ namespace PEP
         {
             this.pro.modifyTask(this.listIncludedTask);
             MessageBox.Show("子任务信息已修改。");
+        }
+
+        private void gridCheckLog_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int lid = Convert.ToInt32(this.gridCheckLog.SelectedRows[0].Cells["ColumnNumber"].Value);
+            MySqlDataReader dr = this.pro.getLogInfo(lid);
+            string logText = "";
+            if (dr.Read())
+            {
+                logText = dr["content"].ToString();
+            }
+            dr.Close();
+
+            FormLog formLog = new FormLog(logText);
+            formLog.Show();
         }
     }
 }

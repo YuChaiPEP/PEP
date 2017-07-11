@@ -56,8 +56,9 @@
             this.tabPagePerson = new System.Windows.Forms.TabPage();
             this.tabPageChecker = new System.Windows.Forms.TabPage();
             this.tabPageLog = new System.Windows.Forms.TabPage();
-            this.tabPageProcess = new System.Windows.Forms.TabPage();
             this.gridCheckLog = new CCWin.SkinControl.SkinDataGridView();
+            this.tabPageProcess = new System.Windows.Forms.TabPage();
+            this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -324,16 +325,6 @@
             this.tabPageLog.Text = "日志批阅";
             this.tabPageLog.UseVisualStyleBackColor = true;
             // 
-            // tabPageProcess
-            // 
-            this.tabPageProcess.Location = new System.Drawing.Point(4, 30);
-            this.tabPageProcess.Name = "tabPageProcess";
-            this.tabPageProcess.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProcess.Size = new System.Drawing.Size(488, 372);
-            this.tabPageProcess.TabIndex = 5;
-            this.tabPageProcess.Text = "项目进度";
-            this.tabPageProcess.UseVisualStyleBackColor = true;
-            // 
             // gridCheckLog
             // 
             this.gridCheckLog.AllowUserToAddRows = false;
@@ -354,6 +345,7 @@
             this.gridCheckLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCheckLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCheckLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnNumber,
             this.ColumnUser,
             this.ColumnTime,
             this.ColumnTask,
@@ -383,36 +375,55 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridCheckLog.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridCheckLog.RowTemplate.Height = 23;
+            this.gridCheckLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCheckLog.Size = new System.Drawing.Size(492, 376);
             this.gridCheckLog.TabIndex = 0;
             this.gridCheckLog.TitleBack = null;
             this.gridCheckLog.TitleBackColorBegin = System.Drawing.Color.White;
             this.gridCheckLog.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
+            this.gridCheckLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCheckLog_CellContentClick);
+            // 
+            // tabPageProcess
+            // 
+            this.tabPageProcess.Location = new System.Drawing.Point(4, 30);
+            this.tabPageProcess.Name = "tabPageProcess";
+            this.tabPageProcess.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProcess.Size = new System.Drawing.Size(488, 372);
+            this.tabPageProcess.TabIndex = 5;
+            this.tabPageProcess.Text = "项目进度";
+            this.tabPageProcess.UseVisualStyleBackColor = true;
+            // 
+            // ColumnNumber
+            // 
+            this.ColumnNumber.FillWeight = 74.69805F;
+            this.ColumnNumber.HeaderText = "编号";
+            this.ColumnNumber.Name = "ColumnNumber";
+            this.ColumnNumber.ReadOnly = true;
             // 
             // ColumnUser
             // 
-            this.ColumnUser.FillWeight = 85.95601F;
+            this.ColumnUser.FillWeight = 86.67075F;
             this.ColumnUser.HeaderText = "用户名";
             this.ColumnUser.Name = "ColumnUser";
             this.ColumnUser.ReadOnly = true;
             // 
             // ColumnTime
             // 
-            this.ColumnTime.FillWeight = 142.132F;
+            this.ColumnTime.FillWeight = 147.753F;
             this.ColumnTime.HeaderText = "创建时间";
             this.ColumnTime.Name = "ColumnTime";
             this.ColumnTime.ReadOnly = true;
             // 
             // ColumnTask
             // 
-            this.ColumnTask.FillWeight = 85.95601F;
+            this.ColumnTask.FillWeight = 89.35538F;
             this.ColumnTask.HeaderText = "任务名";
             this.ColumnTask.Name = "ColumnTask";
             this.ColumnTask.ReadOnly = true;
             // 
             // ColumnIsChecked
             // 
-            this.ColumnIsChecked.FillWeight = 85.95601F;
+            this.ColumnIsChecked.FillWeight = 101.5229F;
             this.ColumnIsChecked.HeaderText = "是否批阅";
             this.ColumnIsChecked.Name = "ColumnIsChecked";
             this.ColumnIsChecked.ReadOnly = true;
@@ -470,6 +481,7 @@
         private System.Windows.Forms.TabPage tabPageLog;
         private System.Windows.Forms.TabPage tabPageProcess;
         private CCWin.SkinControl.SkinDataGridView gridCheckLog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
