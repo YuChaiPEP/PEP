@@ -186,7 +186,7 @@ namespace PEP
 
         private void buttonManage_Click(object sender, EventArgs e)
         {
-            formManage formManage = new formManage(this.user, this.pro);
+            FormManage formManage = new FormManage(this.user, this.pro);
             formManage.Show();
         }
     }
