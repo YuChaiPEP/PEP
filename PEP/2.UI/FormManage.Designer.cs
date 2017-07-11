@@ -44,12 +44,15 @@
             this.labelPname = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.tabPageTask = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listAllTask = new System.Windows.Forms.ListBox();
-            this.listIncludedTask = new System.Windows.Forms.ListBox();
-            this.buttonRight = new System.Windows.Forms.Button();
-            this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonTaskSubmit = new System.Windows.Forms.Button();
+            this.buttonLeft = new System.Windows.Forms.Button();
+            this.buttonRight = new System.Windows.Forms.Button();
+            this.listIncludedTask = new System.Windows.Forms.ListBox();
+            this.listAllTask = new System.Windows.Forms.ListBox();
+            this.tabPagePerson = new System.Windows.Forms.TabPage();
+            this.tabPageChecker = new System.Windows.Forms.TabPage();
+            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.tabPageProcess = new System.Windows.Forms.TabPage();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -110,7 +113,10 @@
             // 
             this.tabControl.Controls.Add(this.tabPageInfo);
             this.tabControl.Controls.Add(this.tabPageTask);
-            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Controls.Add(this.tabPagePerson);
+            this.tabControl.Controls.Add(this.tabPageChecker);
+            this.tabControl.Controls.Add(this.tabPageLog);
+            this.tabControl.Controls.Add(this.tabPageProcess);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl.Location = new System.Drawing.Point(239, 86);
             this.tabControl.Name = "tabControl";
@@ -126,7 +132,7 @@
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageInfo.Size = new System.Drawing.Size(488, 372);
             this.tabPageInfo.TabIndex = 0;
-            this.tabPageInfo.Text = "项目信息修改";
+            this.tabPageInfo.Text = "信息修改";
             this.tabPageInfo.UseVisualStyleBackColor = true;
             // 
             // panelInfo
@@ -224,46 +230,15 @@
             this.tabPageTask.Text = "子任务调整";
             this.tabPageTask.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // buttonTaskSubmit
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 30);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(488, 372);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // listAllTask
-            // 
-            this.listAllTask.FormattingEnabled = true;
-            this.listAllTask.ItemHeight = 21;
-            this.listAllTask.Location = new System.Drawing.Point(49, 38);
-            this.listAllTask.Name = "listAllTask";
-            this.listAllTask.Size = new System.Drawing.Size(136, 298);
-            this.listAllTask.TabIndex = 0;
-            this.listAllTask.SelectedIndexChanged += new System.EventHandler(this.listAllTask_SelectedIndexChanged);
-            // 
-            // listIncludedTask
-            // 
-            this.listIncludedTask.FormattingEnabled = true;
-            this.listIncludedTask.ItemHeight = 21;
-            this.listIncludedTask.Location = new System.Drawing.Point(297, 38);
-            this.listIncludedTask.Name = "listIncludedTask";
-            this.listIncludedTask.Size = new System.Drawing.Size(136, 298);
-            this.listIncludedTask.TabIndex = 1;
-            this.listIncludedTask.SelectedIndexChanged += new System.EventHandler(this.listIncludedTask_SelectedIndexChanged);
-            // 
-            // buttonRight
-            // 
-            this.buttonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonRight.Location = new System.Drawing.Point(204, 146);
-            this.buttonRight.Name = "buttonRight";
-            this.buttonRight.Size = new System.Drawing.Size(75, 23);
-            this.buttonRight.TabIndex = 2;
-            this.buttonRight.Text = ">>";
-            this.buttonRight.UseVisualStyleBackColor = true;
-            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            this.buttonTaskSubmit.Location = new System.Drawing.Point(204, 276);
+            this.buttonTaskSubmit.Name = "buttonTaskSubmit";
+            this.buttonTaskSubmit.Size = new System.Drawing.Size(75, 36);
+            this.buttonTaskSubmit.TabIndex = 4;
+            this.buttonTaskSubmit.Text = "提交";
+            this.buttonTaskSubmit.UseVisualStyleBackColor = true;
+            this.buttonTaskSubmit.Click += new System.EventHandler(this.buttonTaskSubmit_Click);
             // 
             // buttonLeft
             // 
@@ -276,15 +251,76 @@
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
             // 
-            // buttonTaskSubmit
+            // buttonRight
             // 
-            this.buttonTaskSubmit.Location = new System.Drawing.Point(204, 276);
-            this.buttonTaskSubmit.Name = "buttonTaskSubmit";
-            this.buttonTaskSubmit.Size = new System.Drawing.Size(75, 36);
-            this.buttonTaskSubmit.TabIndex = 4;
-            this.buttonTaskSubmit.Text = "提交";
-            this.buttonTaskSubmit.UseVisualStyleBackColor = true;
-            this.buttonTaskSubmit.Click += new System.EventHandler(this.buttonTaskSubmit_Click);
+            this.buttonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonRight.Location = new System.Drawing.Point(204, 146);
+            this.buttonRight.Name = "buttonRight";
+            this.buttonRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonRight.TabIndex = 2;
+            this.buttonRight.Text = ">>";
+            this.buttonRight.UseVisualStyleBackColor = true;
+            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            // 
+            // listIncludedTask
+            // 
+            this.listIncludedTask.FormattingEnabled = true;
+            this.listIncludedTask.ItemHeight = 21;
+            this.listIncludedTask.Location = new System.Drawing.Point(297, 38);
+            this.listIncludedTask.Name = "listIncludedTask";
+            this.listIncludedTask.Size = new System.Drawing.Size(136, 298);
+            this.listIncludedTask.TabIndex = 1;
+            this.listIncludedTask.SelectedIndexChanged += new System.EventHandler(this.listIncludedTask_SelectedIndexChanged);
+            // 
+            // listAllTask
+            // 
+            this.listAllTask.FormattingEnabled = true;
+            this.listAllTask.ItemHeight = 21;
+            this.listAllTask.Location = new System.Drawing.Point(49, 38);
+            this.listAllTask.Name = "listAllTask";
+            this.listAllTask.Size = new System.Drawing.Size(136, 298);
+            this.listAllTask.TabIndex = 0;
+            this.listAllTask.SelectedIndexChanged += new System.EventHandler(this.listAllTask_SelectedIndexChanged);
+            // 
+            // tabPagePerson
+            // 
+            this.tabPagePerson.Location = new System.Drawing.Point(4, 30);
+            this.tabPagePerson.Name = "tabPagePerson";
+            this.tabPagePerson.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePerson.Size = new System.Drawing.Size(488, 372);
+            this.tabPagePerson.TabIndex = 2;
+            this.tabPagePerson.Text = "人员分配";
+            this.tabPagePerson.UseVisualStyleBackColor = true;
+            // 
+            // tabPageChecker
+            // 
+            this.tabPageChecker.Location = new System.Drawing.Point(4, 30);
+            this.tabPageChecker.Name = "tabPageChecker";
+            this.tabPageChecker.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageChecker.Size = new System.Drawing.Size(488, 372);
+            this.tabPageChecker.TabIndex = 3;
+            this.tabPageChecker.Text = "负责人委任";
+            this.tabPageChecker.UseVisualStyleBackColor = true;
+            // 
+            // tabPageLog
+            // 
+            this.tabPageLog.Location = new System.Drawing.Point(4, 30);
+            this.tabPageLog.Name = "tabPageLog";
+            this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLog.Size = new System.Drawing.Size(488, 372);
+            this.tabPageLog.TabIndex = 4;
+            this.tabPageLog.Text = "日志批阅";
+            this.tabPageLog.UseVisualStyleBackColor = true;
+            // 
+            // tabPageProcess
+            // 
+            this.tabPageProcess.Location = new System.Drawing.Point(4, 30);
+            this.tabPageProcess.Name = "tabPageProcess";
+            this.tabPageProcess.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProcess.Size = new System.Drawing.Size(488, 372);
+            this.tabPageProcess.TabIndex = 5;
+            this.tabPageProcess.Text = "项目进度";
+            this.tabPageProcess.UseVisualStyleBackColor = true;
             // 
             // FormManage
             // 
@@ -319,7 +355,7 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageInfo;
         private System.Windows.Forms.TabPage tabPageTask;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPagePerson;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.Label labelPname;
@@ -333,5 +369,8 @@
         private System.Windows.Forms.ListBox listAllTask;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonTaskSubmit;
+        private System.Windows.Forms.TabPage tabPageChecker;
+        private System.Windows.Forms.TabPage tabPageLog;
+        private System.Windows.Forms.TabPage tabPageProcess;
     }
 }

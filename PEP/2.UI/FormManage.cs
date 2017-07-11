@@ -15,10 +15,12 @@ namespace PEP
     {
         private UserInfo user;
         private ProjectInfo pro;
+        private TaskInfo task;
         public FormManage(UserInfo u, ProjectInfo p)
         {
             this.user = u;
             this.pro = p;
+            this.task = new TaskInfo();
             InitializeComponent();
             this.labelWelcome.Text = "欢迎" + user.getUname() + "进入管理者界面";
             freshManagedProjects();
@@ -58,7 +60,7 @@ namespace PEP
                 this.listIncludedTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
-            dr = this.pro.getAllTask();
+            dr = this.task.getAllTask();
             while (dr.Read())
             {
                 this.listAllTask.Items.Add(dr["tname"].ToString());

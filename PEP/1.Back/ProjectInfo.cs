@@ -39,11 +39,7 @@ namespace PEP
             MySqlDataReader dr = this.sql.SQLGet("tasks.tname,projects2tasks.*", "tasks,projects2tasks", "projects2tasks.pid=" + this.pid + " and tasks.tid = projects2tasks.tid order by ord");
             return dr;
         }
-        public MySqlDataReader getAllTask()
-        {
-            MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "1=1 order by tid");
-            return dr;
-        }
+        
         public void submitLog(int uid, String time, String tname, String content)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + tname + "'");

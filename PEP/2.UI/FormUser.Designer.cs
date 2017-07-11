@@ -47,11 +47,6 @@
             this.tabPageOverview = new System.Windows.Forms.TabPage();
             this.tabPageTask = new System.Windows.Forms.TabPage();
             this.gridProjectTask = new System.Windows.Forms.DataGridView();
-            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.panelLog = new System.Windows.Forms.Panel();
             this.buttonLogClear = new System.Windows.Forms.Button();
@@ -72,6 +67,10 @@
             this.buttonManage = new System.Windows.Forms.Button();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.panelProject = new System.Windows.Forms.Panel();
+            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -230,7 +229,6 @@
             this.c10,
             this.c11,
             this.c12,
-            this.c13,
             this.c14});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
@@ -246,31 +244,6 @@
             this.gridProjectTask.RowTemplate.Height = 23;
             this.gridProjectTask.Size = new System.Drawing.Size(531, 341);
             this.gridProjectTask.TabIndex = 0;
-            // 
-            // c10
-            // 
-            this.c10.HeaderText = "任务编号";
-            this.c10.Name = "c10";
-            // 
-            // c11
-            // 
-            this.c11.HeaderText = "任务名称";
-            this.c11.Name = "c11";
-            // 
-            // c12
-            // 
-            this.c12.HeaderText = "任务状态";
-            this.c12.Name = "c12";
-            // 
-            // c13
-            // 
-            this.c13.HeaderText = "审核人";
-            this.c13.Name = "c13";
-            // 
-            // c14
-            // 
-            this.c14.HeaderText = "审核成绩";
-            this.c14.Name = "c14";
             // 
             // tabPageLog
             // 
@@ -479,6 +452,26 @@
             this.panelProject.Size = new System.Drawing.Size(144, 330);
             this.panelProject.TabIndex = 10;
             // 
+            // c10
+            // 
+            this.c10.HeaderText = "任务编号";
+            this.c10.Name = "c10";
+            // 
+            // c11
+            // 
+            this.c11.HeaderText = "任务名称";
+            this.c11.Name = "c11";
+            // 
+            // c12
+            // 
+            this.c12.HeaderText = "任务状态";
+            this.c12.Name = "c12";
+            // 
+            // c14
+            // 
+            this.c14.HeaderText = "审核评价";
+            this.c14.Name = "c14";
+            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -524,11 +517,6 @@
         private System.Windows.Forms.DataGridView gridProjectTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn c00;
         private System.Windows.Forms.DataGridViewTextBoxColumn c01;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c14;
         private System.Windows.Forms.TabPage tabPageLog;
         private System.Windows.Forms.Label labelLogContent;
         private System.Windows.Forms.Label labelLogTask;
@@ -549,5 +537,9 @@
         private System.Windows.Forms.Button buttonManage;
         private System.Windows.Forms.Button buttonStatistics;
         private System.Windows.Forms.Panel panelProject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c14;
     }
 }

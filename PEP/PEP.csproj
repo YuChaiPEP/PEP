@@ -58,6 +58,7 @@
     <Compile Include="1.Back\Login.cs" />
     <Compile Include="1.Back\ProjectInfo.cs" />
     <Compile Include="1.Back\PushControl.cs" />
+    <Compile Include="1.Back\TaskInfo.cs" />
     <Compile Include="1.Back\UserInfo.cs" />
     <Compile Include="2.UI\FormLogin.cs">
       <SubType>Form</SubType>

@@ -22,7 +22,7 @@ namespace PEP
         private void buttonPushSubmit_Click(object sender, EventArgs e)
         {
             PushControl push = new PushControl();
-            push.pushSubmit(textPushEdit.Text, System.DateTime.Now.ToString(), this.uid);
+            push.pushSubmit(textPushEdit.Text, System.DateTime.Now.ToString("G"), this.uid);
             MessageBox.Show("推送成功！");
             this.Close();
         }
