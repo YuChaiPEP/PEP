@@ -173,7 +173,7 @@
             this.Name = "FormLogin";
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "";
+            this.Text = "用户登录";
             this.ResumeLayout(false);
             this.PerformLayout();
 
