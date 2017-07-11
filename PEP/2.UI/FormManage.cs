@@ -11,12 +11,12 @@ using MySql.Data.MySqlClient;
 
 namespace PEP
 {
-    public partial class formManage : Form
+    public partial class FormManage : Form
     {
         private UserInfo user;
         private ProjectInfo pro;
         private TaskInfo task;
-        public formManage(UserInfo u, ProjectInfo p)
+        public FormManage(UserInfo u, ProjectInfo p)
         {
             this.user = u;
             this.pro = p;
