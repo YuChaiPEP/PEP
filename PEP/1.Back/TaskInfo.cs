@@ -32,5 +32,13 @@ namespace PEP
             dr.Close();
             return tid;
         }
+        public String searchTask(int tid)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tid=" + tid);
+            dr.Read();
+            String uname = dr["tname"].ToString();
+            dr.Close();
+            return uname;
+        }
     }
 }
