@@ -112,7 +112,7 @@ namespace PEP
             {
                 this.gridChecker.Rows.Add();
                 this.gridChecker.Rows[index].Cells[0].Value = dr["tname"];
-                if (dr["checker"] != "")
+                if (dr["checker"].ToString() != "")
                     this.gridChecker.Rows[index++].Cells[1].Value = dr["checker"];
                 else
                     index++;
