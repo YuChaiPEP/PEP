@@ -79,7 +79,8 @@
             this.textUser.SkinTxt.TabIndex = 0;
             this.textUser.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textUser.SkinTxt.WaterText = "用户名";
-            this.textUser.TabIndex = 11;
+            this.textUser.TabIndex = 9;
+            this.textUser.TabStop = true;
             this.textUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textUser.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textUser.WaterText = "用户名";
@@ -118,6 +119,7 @@
             this.textPwd.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textPwd.SkinTxt.WaterText = "密码";
             this.textPwd.TabIndex = 10;
+            this.textPwd.TabStop = true;
             this.textPwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textPwd.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textPwd.WaterText = "密码";

@@ -24,5 +24,14 @@ namespace PEP
             MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "1=1 order by tid");
             return dr;
         }
+
+        public String searchTask(int tid)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tid=" + tid);
+            dr.Read();
+            String uname = dr["tname"].ToString();
+            dr.Close();
+            return uname;
+        }
     }
 }
