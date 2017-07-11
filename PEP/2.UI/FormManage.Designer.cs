@@ -36,20 +36,26 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageInfo = new System.Windows.Forms.TabPage();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.buttonInfoSubmit = new System.Windows.Forms.Button();
+            this.textTime = new System.Windows.Forms.TextBox();
             this.textPname = new System.Windows.Forms.TextBox();
             this.textNumber = new System.Windows.Forms.TextBox();
             this.labelTime = new System.Windows.Forms.Label();
             this.labelPname = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageTask = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textTime = new System.Windows.Forms.TextBox();
-            this.buttonInfoSubmit = new System.Windows.Forms.Button();
+            this.listAllTask = new System.Windows.Forms.ListBox();
+            this.listIncludedTask = new System.Windows.Forms.ListBox();
+            this.buttonRight = new System.Windows.Forms.Button();
+            this.buttonLeft = new System.Windows.Forms.Button();
+            this.buttonTaskSubmit = new System.Windows.Forms.Button();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
             this.panelInfo.SuspendLayout();
+            this.tabPageTask.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWelcome
@@ -103,7 +109,7 @@
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageInfo);
-            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPageTask);
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl.Location = new System.Drawing.Point(239, 86);
@@ -120,7 +126,7 @@
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageInfo.Size = new System.Drawing.Size(488, 372);
             this.tabPageInfo.TabIndex = 0;
-            this.tabPageInfo.Text = "修改项目信息";
+            this.tabPageInfo.Text = "项目信息修改";
             this.tabPageInfo.UseVisualStyleBackColor = true;
             // 
             // panelInfo
@@ -136,6 +142,27 @@
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(447, 203);
             this.panelInfo.TabIndex = 0;
+            // 
+            // buttonInfoSubmit
+            // 
+            this.buttonInfoSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonInfoSubmit.Location = new System.Drawing.Point(190, 160);
+            this.buttonInfoSubmit.Name = "buttonInfoSubmit";
+            this.buttonInfoSubmit.Size = new System.Drawing.Size(75, 23);
+            this.buttonInfoSubmit.TabIndex = 6;
+            this.buttonInfoSubmit.Text = "修改";
+            this.buttonInfoSubmit.UseVisualStyleBackColor = true;
+            this.buttonInfoSubmit.Click += new System.EventHandler(this.buttonInfoSubmit_Click);
+            // 
+            // textTime
+            // 
+            this.textTime.Enabled = false;
+            this.textTime.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.textTime.Location = new System.Drawing.Point(244, 104);
+            this.textTime.Name = "textTime";
+            this.textTime.ReadOnly = true;
+            this.textTime.Size = new System.Drawing.Size(123, 23);
+            this.textTime.TabIndex = 5;
             // 
             // textPname
             // 
@@ -182,15 +209,20 @@
             this.labelNumber.TabIndex = 0;
             this.labelNumber.Text = "项目编号";
             // 
-            // tabPage2
+            // tabPageTask
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(488, 372);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageTask.Controls.Add(this.buttonTaskSubmit);
+            this.tabPageTask.Controls.Add(this.buttonLeft);
+            this.tabPageTask.Controls.Add(this.buttonRight);
+            this.tabPageTask.Controls.Add(this.listIncludedTask);
+            this.tabPageTask.Controls.Add(this.listAllTask);
+            this.tabPageTask.Location = new System.Drawing.Point(4, 30);
+            this.tabPageTask.Name = "tabPageTask";
+            this.tabPageTask.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTask.Size = new System.Drawing.Size(488, 372);
+            this.tabPageTask.TabIndex = 1;
+            this.tabPageTask.Text = "子任务调整";
+            this.tabPageTask.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -202,26 +234,57 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textTime
+            // listAllTask
             // 
-            this.textTime.Enabled = false;
-            this.textTime.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.textTime.Location = new System.Drawing.Point(244, 104);
-            this.textTime.Name = "textTime";
-            this.textTime.ReadOnly = true;
-            this.textTime.Size = new System.Drawing.Size(123, 23);
-            this.textTime.TabIndex = 5;
+            this.listAllTask.FormattingEnabled = true;
+            this.listAllTask.ItemHeight = 21;
+            this.listAllTask.Location = new System.Drawing.Point(49, 38);
+            this.listAllTask.Name = "listAllTask";
+            this.listAllTask.Size = new System.Drawing.Size(136, 298);
+            this.listAllTask.TabIndex = 0;
+            this.listAllTask.SelectedIndexChanged += new System.EventHandler(this.listAllTask_SelectedIndexChanged);
             // 
-            // buttonInfoSubmit
+            // listIncludedTask
             // 
-            this.buttonInfoSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonInfoSubmit.Location = new System.Drawing.Point(190, 160);
-            this.buttonInfoSubmit.Name = "buttonInfoSubmit";
-            this.buttonInfoSubmit.Size = new System.Drawing.Size(75, 23);
-            this.buttonInfoSubmit.TabIndex = 6;
-            this.buttonInfoSubmit.Text = "修改";
-            this.buttonInfoSubmit.UseVisualStyleBackColor = true;
-            this.buttonInfoSubmit.Click += new System.EventHandler(this.buttonInfoSubmit_Click);
+            this.listIncludedTask.FormattingEnabled = true;
+            this.listIncludedTask.ItemHeight = 21;
+            this.listIncludedTask.Location = new System.Drawing.Point(297, 38);
+            this.listIncludedTask.Name = "listIncludedTask";
+            this.listIncludedTask.Size = new System.Drawing.Size(136, 298);
+            this.listIncludedTask.TabIndex = 1;
+            this.listIncludedTask.SelectedIndexChanged += new System.EventHandler(this.listIncludedTask_SelectedIndexChanged);
+            // 
+            // buttonRight
+            // 
+            this.buttonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonRight.Location = new System.Drawing.Point(204, 146);
+            this.buttonRight.Name = "buttonRight";
+            this.buttonRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonRight.TabIndex = 2;
+            this.buttonRight.Text = ">>";
+            this.buttonRight.UseVisualStyleBackColor = true;
+            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            // 
+            // buttonLeft
+            // 
+            this.buttonLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonLeft.Location = new System.Drawing.Point(204, 175);
+            this.buttonLeft.Name = "buttonLeft";
+            this.buttonLeft.Size = new System.Drawing.Size(75, 23);
+            this.buttonLeft.TabIndex = 3;
+            this.buttonLeft.Text = "<<";
+            this.buttonLeft.UseVisualStyleBackColor = true;
+            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
+            // 
+            // buttonTaskSubmit
+            // 
+            this.buttonTaskSubmit.Location = new System.Drawing.Point(204, 276);
+            this.buttonTaskSubmit.Name = "buttonTaskSubmit";
+            this.buttonTaskSubmit.Size = new System.Drawing.Size(75, 36);
+            this.buttonTaskSubmit.TabIndex = 4;
+            this.buttonTaskSubmit.Text = "提交";
+            this.buttonTaskSubmit.UseVisualStyleBackColor = true;
+            this.buttonTaskSubmit.Click += new System.EventHandler(this.buttonTaskSubmit_Click);
             // 
             // FormManage
             // 
@@ -241,6 +304,7 @@
             this.tabPageInfo.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            this.tabPageTask.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,7 +318,7 @@
         private System.Windows.Forms.Panel panelProject;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageInfo;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageTask;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelNumber;
@@ -264,5 +328,10 @@
         private System.Windows.Forms.TextBox textPname;
         private System.Windows.Forms.TextBox textTime;
         private System.Windows.Forms.Button buttonInfoSubmit;
+        private System.Windows.Forms.Button buttonRight;
+        private System.Windows.Forms.ListBox listIncludedTask;
+        private System.Windows.Forms.ListBox listAllTask;
+        private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonTaskSubmit;
     }
 }

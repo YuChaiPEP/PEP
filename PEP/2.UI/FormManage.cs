@@ -46,6 +46,26 @@ namespace PEP
             dr.Close();
         }
 
+        private void freshTask()
+        {
+            this.listAllTask.Items.Clear();
+            this.listIncludedTask.Items.Clear();
+            this.buttonLeft.Enabled = false;
+            this.buttonRight.Enabled = false;
+            MySqlDataReader dr = this.pro.getTaskInfo();
+            while (dr.Read())
+            {
+                this.listIncludedTask.Items.Add(dr["tname"].ToString());
+            }
+            dr.Close();
+            dr = this.pro.getAllTask();
+            while (dr.Read())
+            {
+                this.listAllTask.Items.Add(dr["tname"].ToString());
+            }
+            dr.Close();
+        }
+
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.listProject.SelectedItems.Count != 0)
@@ -53,6 +73,7 @@ namespace PEP
                 String pname = this.listProject.SelectedItems[0].ToString();
                 this.pro.identifyProject(pname);
                 freshInfo();
+                freshTask();
             }
         }
 
@@ -60,6 +81,39 @@ namespace PEP
         {
             this.pro.modifyDetail(this.textPname.Text);
             freshManagedProjects();
+            MessageBox.Show("项目基本信息已修改。");
+        }
+
+        private void listAllTask_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.listAllTask.SelectedItems.Count != 0)
+            {
+                this.buttonRight.Enabled = true;
+            }
+        }
+
+        private void listIncludedTask_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.listIncludedTask.SelectedItems.Count != 0)
+            {
+                this.buttonLeft.Enabled = true;
+            }
+        }
+
+        private void buttonRight_Click(object sender, EventArgs e)
+        {
+            this.listIncludedTask.Items.Add(this.listAllTask.SelectedItem);
+        }
+
+        private void buttonLeft_Click(object sender, EventArgs e)
+        {
+            this.listIncludedTask.Items.Remove(this.listIncludedTask.SelectedItem);
+        }
+
+        private void buttonTaskSubmit_Click(object sender, EventArgs e)
+        {
+            this.pro.modifyTask(this.listIncludedTask);
+            MessageBox.Show("子任务信息已修改。");
         }
     }
 }
