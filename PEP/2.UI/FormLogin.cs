@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin : CCSkinMain
     {
         SQLHandler sql;
         String username;
         public FormLogin()
         {
             InitializeComponent();
-            this.textPwd.PasswordChar = '*';
+            this.textPwd.SkinTxt.PasswordChar = '*';
         }
 
         public String getUsername()
