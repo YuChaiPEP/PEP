@@ -24,5 +24,13 @@ namespace PEP
             MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "1=1 order by tid");
             return dr;
         }
+        public int getTaskID(String tname)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + tname + "'");
+            dr.Read();
+            int tid = (int)dr["tid"];
+            dr.Close();
+            return tid;
+        }
     }
 }

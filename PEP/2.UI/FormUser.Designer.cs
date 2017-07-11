@@ -70,7 +70,7 @@
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -229,7 +229,7 @@
             this.c10,
             this.c11,
             this.c12,
-            this.c14});
+            this.c13});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -467,10 +467,10 @@
             this.c12.HeaderText = "任务状态";
             this.c12.Name = "c12";
             // 
-            // c14
+            // c13
             // 
-            this.c14.HeaderText = "审核评价";
-            this.c14.Name = "c14";
+            this.c13.HeaderText = "负责人";
+            this.c13.Name = "c13";
             // 
             // FormUser
             // 
@@ -540,6 +540,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn c10;
         private System.Windows.Forms.DataGridViewTextBoxColumn c11;
         private System.Windows.Forms.DataGridViewTextBoxColumn c12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c13;
     }
 }
