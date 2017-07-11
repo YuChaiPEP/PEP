@@ -49,12 +49,20 @@
             this.labelNumber = new System.Windows.Forms.Label();
             this.tabPageTask = new System.Windows.Forms.TabPage();
             this.buttonTaskSubmit = new System.Windows.Forms.Button();
-            this.buttonLeft = new System.Windows.Forms.Button();
-            this.buttonRight = new System.Windows.Forms.Button();
+            this.buttonTaskLeft = new System.Windows.Forms.Button();
+            this.buttonTaskRight = new System.Windows.Forms.Button();
             this.listIncludedTask = new System.Windows.Forms.ListBox();
             this.listAllTask = new System.Windows.Forms.ListBox();
             this.tabPagePerson = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonPersonLeft = new System.Windows.Forms.Button();
+            this.buttonPersonRight = new System.Windows.Forms.Button();
+            this.listIncludedPerson = new System.Windows.Forms.ListBox();
+            this.listAllPerson = new System.Windows.Forms.ListBox();
             this.tabPageChecker = new System.Windows.Forms.TabPage();
+            this.buttonCheckerSubmit = new System.Windows.Forms.Button();
+            this.gridChecker = new System.Windows.Forms.DataGridView();
+            this.c0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.gridCheckLog = new CCWin.SkinControl.SkinDataGridView();
             this.tabPageProcess = new System.Windows.Forms.TabPage();
@@ -69,6 +77,9 @@
             this.tabPageInfo.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.tabPageTask.SuspendLayout();
+            this.tabPagePerson.SuspendLayout();
+            this.tabPageChecker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridChecker)).BeginInit();
             this.tabPageLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).BeginInit();
             this.SuspendLayout();
@@ -230,8 +241,8 @@
             // tabPageTask
             // 
             this.tabPageTask.Controls.Add(this.buttonTaskSubmit);
-            this.tabPageTask.Controls.Add(this.buttonLeft);
-            this.tabPageTask.Controls.Add(this.buttonRight);
+            this.tabPageTask.Controls.Add(this.buttonTaskLeft);
+            this.tabPageTask.Controls.Add(this.buttonTaskRight);
             this.tabPageTask.Controls.Add(this.listIncludedTask);
             this.tabPageTask.Controls.Add(this.listAllTask);
             this.tabPageTask.Location = new System.Drawing.Point(4, 30);
@@ -244,6 +255,7 @@
             // 
             // buttonTaskSubmit
             // 
+            this.buttonTaskSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonTaskSubmit.Location = new System.Drawing.Point(204, 276);
             this.buttonTaskSubmit.Name = "buttonTaskSubmit";
             this.buttonTaskSubmit.Size = new System.Drawing.Size(75, 36);
@@ -252,27 +264,27 @@
             this.buttonTaskSubmit.UseVisualStyleBackColor = true;
             this.buttonTaskSubmit.Click += new System.EventHandler(this.buttonTaskSubmit_Click);
             // 
-            // buttonLeft
+            // buttonTaskLeft
             // 
-            this.buttonLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonLeft.Location = new System.Drawing.Point(204, 175);
-            this.buttonLeft.Name = "buttonLeft";
-            this.buttonLeft.Size = new System.Drawing.Size(75, 23);
-            this.buttonLeft.TabIndex = 3;
-            this.buttonLeft.Text = "<<";
-            this.buttonLeft.UseVisualStyleBackColor = true;
-            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
+            this.buttonTaskLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskLeft.Location = new System.Drawing.Point(204, 175);
+            this.buttonTaskLeft.Name = "buttonTaskLeft";
+            this.buttonTaskLeft.Size = new System.Drawing.Size(75, 23);
+            this.buttonTaskLeft.TabIndex = 3;
+            this.buttonTaskLeft.Text = "<<";
+            this.buttonTaskLeft.UseVisualStyleBackColor = true;
+            this.buttonTaskLeft.Click += new System.EventHandler(this.buttonTaskLeft_Click);
             // 
-            // buttonRight
+            // buttonTaskRight
             // 
-            this.buttonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonRight.Location = new System.Drawing.Point(204, 146);
-            this.buttonRight.Name = "buttonRight";
-            this.buttonRight.Size = new System.Drawing.Size(75, 23);
-            this.buttonRight.TabIndex = 2;
-            this.buttonRight.Text = ">>";
-            this.buttonRight.UseVisualStyleBackColor = true;
-            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            this.buttonTaskRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskRight.Location = new System.Drawing.Point(204, 146);
+            this.buttonTaskRight.Name = "buttonTaskRight";
+            this.buttonTaskRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonTaskRight.TabIndex = 2;
+            this.buttonTaskRight.Text = ">>";
+            this.buttonTaskRight.UseVisualStyleBackColor = true;
+            this.buttonTaskRight.Click += new System.EventHandler(this.buttonTaskRight_Click);
             // 
             // listIncludedTask
             // 
@@ -296,6 +308,11 @@
             // 
             // tabPagePerson
             // 
+            this.tabPagePerson.Controls.Add(this.button1);
+            this.tabPagePerson.Controls.Add(this.buttonPersonLeft);
+            this.tabPagePerson.Controls.Add(this.buttonPersonRight);
+            this.tabPagePerson.Controls.Add(this.listIncludedPerson);
+            this.tabPagePerson.Controls.Add(this.listAllPerson);
             this.tabPagePerson.Location = new System.Drawing.Point(4, 30);
             this.tabPagePerson.Name = "tabPagePerson";
             this.tabPagePerson.Padding = new System.Windows.Forms.Padding(3);
@@ -304,8 +321,63 @@
             this.tabPagePerson.Text = "人员分配";
             this.tabPagePerson.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(204, 276);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "提交";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonPersonLeft
+            // 
+            this.buttonPersonLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonPersonLeft.Location = new System.Drawing.Point(204, 175);
+            this.buttonPersonLeft.Name = "buttonPersonLeft";
+            this.buttonPersonLeft.Size = new System.Drawing.Size(75, 23);
+            this.buttonPersonLeft.TabIndex = 3;
+            this.buttonPersonLeft.Text = "<<";
+            this.buttonPersonLeft.UseVisualStyleBackColor = true;
+            this.buttonPersonLeft.Click += new System.EventHandler(this.buttonPersonLeft_Click);
+            // 
+            // buttonPersonRight
+            // 
+            this.buttonPersonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonPersonRight.Location = new System.Drawing.Point(204, 146);
+            this.buttonPersonRight.Name = "buttonPersonRight";
+            this.buttonPersonRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonPersonRight.TabIndex = 2;
+            this.buttonPersonRight.Text = ">>";
+            this.buttonPersonRight.UseVisualStyleBackColor = true;
+            this.buttonPersonRight.Click += new System.EventHandler(this.buttonPersonRight_Click);
+            // 
+            // listIncludedPerson
+            // 
+            this.listIncludedPerson.FormattingEnabled = true;
+            this.listIncludedPerson.ItemHeight = 21;
+            this.listIncludedPerson.Location = new System.Drawing.Point(297, 38);
+            this.listIncludedPerson.Name = "listIncludedPerson";
+            this.listIncludedPerson.Size = new System.Drawing.Size(136, 298);
+            this.listIncludedPerson.TabIndex = 1;
+            this.listIncludedPerson.SelectedIndexChanged += new System.EventHandler(this.listIncludedPerson_SelectedIndexChanged);
+            // 
+            // listAllPerson
+            // 
+            this.listAllPerson.FormattingEnabled = true;
+            this.listAllPerson.ItemHeight = 21;
+            this.listAllPerson.Location = new System.Drawing.Point(49, 38);
+            this.listAllPerson.Name = "listAllPerson";
+            this.listAllPerson.Size = new System.Drawing.Size(136, 298);
+            this.listAllPerson.TabIndex = 0;
+            this.listAllPerson.SelectedIndexChanged += new System.EventHandler(this.listAllPerson_SelectedIndexChanged);
+            // 
             // tabPageChecker
             // 
+            this.tabPageChecker.Controls.Add(this.buttonCheckerSubmit);
+            this.tabPageChecker.Controls.Add(this.gridChecker);
             this.tabPageChecker.Location = new System.Drawing.Point(4, 30);
             this.tabPageChecker.Name = "tabPageChecker";
             this.tabPageChecker.Padding = new System.Windows.Forms.Padding(3);
@@ -313,6 +385,50 @@
             this.tabPageChecker.TabIndex = 3;
             this.tabPageChecker.Text = "负责人委任";
             this.tabPageChecker.UseVisualStyleBackColor = true;
+            // 
+            // buttonCheckerSubmit
+            // 
+            this.buttonCheckerSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCheckerSubmit.Location = new System.Drawing.Point(209, 343);
+            this.buttonCheckerSubmit.Name = "buttonCheckerSubmit";
+            this.buttonCheckerSubmit.Size = new System.Drawing.Size(75, 23);
+            this.buttonCheckerSubmit.TabIndex = 1;
+            this.buttonCheckerSubmit.Text = "提交";
+            this.buttonCheckerSubmit.UseVisualStyleBackColor = true;
+            this.buttonCheckerSubmit.Click += new System.EventHandler(this.buttonCheckerSubmit_Click);
+            // 
+            // gridChecker
+            // 
+            this.gridChecker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridChecker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridChecker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridChecker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.c0});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridChecker.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gridChecker.Location = new System.Drawing.Point(0, 0);
+            this.gridChecker.Name = "gridChecker";
+            this.gridChecker.RowTemplate.Height = 23;
+            this.gridChecker.Size = new System.Drawing.Size(485, 336);
+            this.gridChecker.TabIndex = 0;
+            // 
+            // c0
+            // 
+            this.c0.HeaderText = "任务名称";
+            this.c0.Name = "c0";
             // 
             // tabPageLog
             // 
@@ -447,6 +563,9 @@
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.tabPageTask.ResumeLayout(false);
+            this.tabPagePerson.ResumeLayout(false);
+            this.tabPageChecker.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridChecker)).EndInit();
             this.tabPageLog.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).EndInit();
             this.ResumeLayout(false);
@@ -472,14 +591,22 @@
         private System.Windows.Forms.TextBox textPname;
         private System.Windows.Forms.TextBox textTime;
         private System.Windows.Forms.Button buttonInfoSubmit;
-        private System.Windows.Forms.Button buttonRight;
+        private System.Windows.Forms.Button buttonTaskRight;
         private System.Windows.Forms.ListBox listIncludedTask;
         private System.Windows.Forms.ListBox listAllTask;
-        private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonTaskLeft;
         private System.Windows.Forms.Button buttonTaskSubmit;
         private System.Windows.Forms.TabPage tabPageChecker;
         private System.Windows.Forms.TabPage tabPageLog;
         private System.Windows.Forms.TabPage tabPageProcess;
+        private System.Windows.Forms.ListBox listIncludedPerson;
+        private System.Windows.Forms.ListBox listAllPerson;
+        private System.Windows.Forms.Button buttonPersonLeft;
+        private System.Windows.Forms.Button buttonPersonRight;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView gridChecker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c0;
+        private System.Windows.Forms.Button buttonCheckerSubmit;
         private CCWin.SkinControl.SkinDataGridView gridCheckLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;

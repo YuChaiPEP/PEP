@@ -102,7 +102,7 @@ namespace PEP
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["tid"].ToString();
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["tname"].ToString();
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["task_state"].ToString();
-                this.gridProjectTask.Rows[row++].Cells[column++].Value = dr["grade"].ToString();
+                this.gridProjectTask.Rows[row++].Cells[column++].Value = dr["checker"].ToString();
             }
             dr.Close();
         }

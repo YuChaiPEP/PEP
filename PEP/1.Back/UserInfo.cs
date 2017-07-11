@@ -62,6 +62,11 @@ namespace PEP
             dr.Close();
             return uname;
         }
+        public MySqlDataReader getAllUser()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "users", "1=1 order by uid");
+            return dr;
+        }
         public String getAttendedProjectsCount()
         {
             MySqlDataReader dr = this.sql.SQLGet("count(projects.pid)", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid");

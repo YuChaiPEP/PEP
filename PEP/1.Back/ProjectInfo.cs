@@ -39,7 +39,11 @@ namespace PEP
             MySqlDataReader dr = this.sql.SQLGet("tasks.tname,projects2tasks.*", "tasks,projects2tasks", "projects2tasks.pid=" + this.pid + " and tasks.tid = projects2tasks.tid order by ord");
             return dr;
         }
-        
+        public MySqlDataReader getMember()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("users.* ", "users, users2projects", "users2projects.pid = " + this.pid + " and users.uid = users2projects.uid");
+            return dr;
+        }
         public void submitLog(int uid, String time, String tname, String content)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + tname + "'");
@@ -72,11 +76,35 @@ namespace PEP
             int i = 0;
             foreach (object obj in lb.Items)
             {
-                MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + obj.ToString() + "'");
-                dr.Read();
-                int tid = (int)dr["tid"];
-                dr.Close();
+                TaskInfo task = new TaskInfo();
+                int tid = task.getTaskID(obj.ToString());
                 this.sql.SQLInsertOneEntry("projects2tasks(pid,tid,task_state,ord)", "(" + this.pid + "," + tid + ",'未开始'," + ++i + ")");
+            }
+        }
+        public void modifyPerson(ListBox lb)
+        {
+            this.sql.SQLDelete("users2projects", "pid=" + this.pid);
+            int i = 0;
+            foreach (object obj in lb.Items)
+            {
+                UserInfo user = new UserInfo(obj.ToString());
+                int uid = user.getUID();
+                this.sql.SQLInsertOneEntry("users2projects(uid,pid)", "(" + uid + "," + this.pid + ")");
+            }
+        }
+        public void modifyChecker(String tname, bool empty, String uname)
+        {
+            if (empty)
+            {
+                TaskInfo task = new TaskInfo();
+                int tid = task.getTaskID(tname);
+                this.sql.SQLUpdate("projects2tasks", "checker=null", "pid=" + this.pid + " and tid=" + tid);
+            }
+            else
+            {
+                TaskInfo task = new TaskInfo();
+                int tid = task.getTaskID(tname);
+                this.sql.SQLUpdate("projects2tasks", "checker='"+uname+"'", "pid=" + this.pid + " and tid=" + tid);
             }
         }
     }
