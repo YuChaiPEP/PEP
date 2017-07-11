@@ -91,6 +91,7 @@
             this.buttonCheck.TabIndex = 1;
             this.buttonCheck.Text = "批  阅";
             this.buttonCheck.UseVisualStyleBackColor = false;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // buttonCancel
             // 
@@ -106,6 +107,7 @@
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "取  消";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormLog
             // 

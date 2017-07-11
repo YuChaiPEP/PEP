@@ -134,6 +134,7 @@ namespace PEP
                 this.gridCheckLog.Rows[rowIdx].Cells["columnTime"].Value = dr["timestamp"].ToString();
                 int tid = Convert.ToInt32(dr["pid"]);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnTask"].Value = this.task.searchTask(tid);
+                this.gridCheckLog.Rows[rowIdx].Cells["columnIsChecked"].Value = dr["checked"].ToString();
                 ++rowIdx;
             }
             dr.Close();
@@ -238,19 +239,12 @@ namespace PEP
             }
         }
 
-        private void gridCheckLog_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gridCheckLog_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int lid = Convert.ToInt32(this.gridCheckLog.SelectedRows[0].Cells["ColumnNumber"].Value);
-            MySqlDataReader dr = this.pro.getLogInfo(lid);
-            string logText = "";
-            if (dr.Read())
-            {
-                logText = dr["content"].ToString();
-            }
-            dr.Close();
-
-            FormLog formLog = new FormLog(logText);
-            formLog.Show();
+            int lid = Convert.ToInt32(this.gridCheckLog.SelectedRows[0].Cells["ColumnNumber"].Value);    
+            FormLog formLog = new FormLog(pro, lid);
+            formLog.ShowDialog();
+            freshLog();
         }
     }
 }

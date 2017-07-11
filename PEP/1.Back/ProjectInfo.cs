@@ -107,5 +107,10 @@ namespace PEP
                 this.sql.SQLUpdate("projects2tasks", "checker='"+uname+"'", "pid=" + this.pid + " and tid=" + tid);
             }
         }
+
+        public void modifyLogChecked(int lid, string check)
+        {
+            this.sql.SQLUpdate("logs", "checked='" + check + "'", "pid=" + this.pid + " and lid=" + lid);
+        }
     }
 }

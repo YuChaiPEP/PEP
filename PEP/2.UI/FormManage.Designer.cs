@@ -497,7 +497,7 @@
             this.gridCheckLog.TitleBack = null;
             this.gridCheckLog.TitleBackColorBegin = System.Drawing.Color.White;
             this.gridCheckLog.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
-            this.gridCheckLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCheckLog_CellContentClick);
+            this.gridCheckLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCheckLog_CellClick);
             // 
             // tabPageProcess
             // 
