@@ -1,6 +1,6 @@
 ﻿namespace PEP
 {
-    partial class bu
+    partial class formManage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelProject = new System.Windows.Forms.Label();
@@ -58,11 +58,11 @@
             this.listIncludedPerson = new System.Windows.Forms.ListBox();
             this.listAllPerson = new System.Windows.Forms.ListBox();
             this.tabPageChecker = new System.Windows.Forms.TabPage();
-            this.tabPageLog = new System.Windows.Forms.TabPage();
-            this.tabPageProcess = new System.Windows.Forms.TabPage();
+            this.buttonCheckerSubmit = new System.Windows.Forms.Button();
             this.gridChecker = new System.Windows.Forms.DataGridView();
             this.c0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonCheckerSubmit = new System.Windows.Forms.Button();
+            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.tabPageProcess = new System.Windows.Forms.TabPage();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -376,6 +376,50 @@
             this.tabPageChecker.Text = "负责人委任";
             this.tabPageChecker.UseVisualStyleBackColor = true;
             // 
+            // buttonCheckerSubmit
+            // 
+            this.buttonCheckerSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCheckerSubmit.Location = new System.Drawing.Point(209, 343);
+            this.buttonCheckerSubmit.Name = "buttonCheckerSubmit";
+            this.buttonCheckerSubmit.Size = new System.Drawing.Size(75, 23);
+            this.buttonCheckerSubmit.TabIndex = 1;
+            this.buttonCheckerSubmit.Text = "提交";
+            this.buttonCheckerSubmit.UseVisualStyleBackColor = true;
+            this.buttonCheckerSubmit.Click += new System.EventHandler(this.buttonCheckerSubmit_Click);
+            // 
+            // gridChecker
+            // 
+            this.gridChecker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridChecker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridChecker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridChecker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.c0});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridChecker.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridChecker.Location = new System.Drawing.Point(0, 0);
+            this.gridChecker.Name = "gridChecker";
+            this.gridChecker.RowTemplate.Height = 23;
+            this.gridChecker.Size = new System.Drawing.Size(485, 336);
+            this.gridChecker.TabIndex = 0;
+            // 
+            // c0
+            // 
+            this.c0.HeaderText = "任务名称";
+            this.c0.Name = "c0";
+            // 
             // tabPageLog
             // 
             this.tabPageLog.Location = new System.Drawing.Point(4, 30);
@@ -396,51 +440,7 @@
             this.tabPageProcess.Text = "项目进度";
             this.tabPageProcess.UseVisualStyleBackColor = true;
             // 
-            // gridChecker
-            // 
-            this.gridChecker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridChecker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridChecker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridChecker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.c0});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridChecker.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gridChecker.Location = new System.Drawing.Point(0, 0);
-            this.gridChecker.Name = "gridChecker";
-            this.gridChecker.RowTemplate.Height = 23;
-            this.gridChecker.Size = new System.Drawing.Size(485, 336);
-            this.gridChecker.TabIndex = 0;
-            // 
-            // c0
-            // 
-            this.c0.HeaderText = "任务名称";
-            this.c0.Name = "c0";
-            // 
-            // buttonCheckerSubmit
-            // 
-            this.buttonCheckerSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCheckerSubmit.Location = new System.Drawing.Point(209, 343);
-            this.buttonCheckerSubmit.Name = "buttonCheckerSubmit";
-            this.buttonCheckerSubmit.Size = new System.Drawing.Size(75, 23);
-            this.buttonCheckerSubmit.TabIndex = 1;
-            this.buttonCheckerSubmit.Text = "提交";
-            this.buttonCheckerSubmit.UseVisualStyleBackColor = true;
-            this.buttonCheckerSubmit.Click += new System.EventHandler(this.buttonCheckerSubmit_Click);
-            // 
-            // bu
+            // formManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -448,7 +448,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panelProject);
             this.Controls.Add(this.panelWelcome);
-            this.Name = "bu";
+            this.Name = "formManage";
             this.Text = "管理者界面";
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
