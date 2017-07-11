@@ -27,7 +27,7 @@ namespace PEP
             MySqlDataReader result = SQLExecute(cmd);
             result.Close();
         }
-        public void SQLDeleteOneEntry(String table, String condition)
+        public void SQLDelete(String table, String condition)
         {
             String cmd = "delete from " + table + " where " + condition;
             MySqlDataReader result = SQLExecute(cmd);

@@ -112,10 +112,8 @@ namespace PEP
             this.comboLogTask.Items.Clear();
             this.comboLogTask.ResetText();
             MySqlDataReader dr = this.pro.getTaskInfo();
-            int row = 0;
             while (dr.Read())
             {
-                int column = 0;
                 this.comboLogTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
