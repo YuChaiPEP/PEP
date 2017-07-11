@@ -28,110 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.textUser = new System.Windows.Forms.TextBox();
-            this.labelPwd = new System.Windows.Forms.Label();
-            this.textPwd = new System.Windows.Forms.TextBox();
-            this.panelInput = new System.Windows.Forms.Panel();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.panelInput.SuspendLayout();
+            this.textUser = new CCWin.SkinControl.SkinTextBox();
+            this.textPwd = new CCWin.SkinControl.SkinTextBox();
+            this.buttonLogin = new CCWin.SkinControl.SkinButton();
+            this.buttonCancel = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
+            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.Font = new System.Drawing.Font("华文楷体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelTitle.Location = new System.Drawing.Point(262, 63);
+            this.labelTitle.Location = new System.Drawing.Point(121, 44);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(204, 53);
             this.labelTitle.TabIndex = 6;
             this.labelTitle.Text = "PEP登录";
             // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.labelUser.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelUser.Location = new System.Drawing.Point(14, 23);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(58, 21);
-            this.labelUser.TabIndex = 7;
-            this.labelUser.Text = "用户名";
-            // 
             // textUser
             // 
-            this.textUser.Font = new System.Drawing.Font("宋体", 12F);
-            this.textUser.Location = new System.Drawing.Point(107, 23);
+            this.textUser.BackColor = System.Drawing.Color.Transparent;
+            this.textUser.DownBack = null;
+            this.textUser.Icon = null;
+            this.textUser.IconIsButton = false;
+            this.textUser.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textUser.IsPasswordChat = '\0';
+            this.textUser.IsSystemPasswordChar = false;
+            this.textUser.Lines = new string[0];
+            this.textUser.Location = new System.Drawing.Point(121, 122);
+            this.textUser.Margin = new System.Windows.Forms.Padding(0);
+            this.textUser.MaxLength = 32767;
+            this.textUser.MinimumSize = new System.Drawing.Size(28, 28);
+            this.textUser.MouseBack = null;
+            this.textUser.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textUser.Multiline = false;
             this.textUser.Name = "textUser";
-            this.textUser.Size = new System.Drawing.Size(115, 26);
-            this.textUser.TabIndex = 8;
+            this.textUser.NormlBack = null;
+            this.textUser.Padding = new System.Windows.Forms.Padding(5);
+            this.textUser.ReadOnly = false;
+            this.textUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textUser.Size = new System.Drawing.Size(204, 28);
             // 
-            // labelPwd
             // 
-            this.labelPwd.AutoSize = true;
-            this.labelPwd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPwd.Location = new System.Drawing.Point(18, 67);
-            this.labelPwd.Name = "labelPwd";
-            this.labelPwd.Size = new System.Drawing.Size(42, 21);
-            this.labelPwd.TabIndex = 9;
-            this.labelPwd.Text = "密码";
+            // 
+            this.textUser.SkinTxt.Font = new System.Drawing.Font("宋体", 12F);
+            this.textUser.SkinTxt.Location = new System.Drawing.Point(0, 0);
+            this.textUser.SkinTxt.Name = "BaseText";
+            this.textUser.SkinTxt.TabIndex = 0;
+            this.textUser.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textUser.SkinTxt.WaterText = "用户名";
+            this.textUser.TabIndex = 11;
+            this.textUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textUser.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textUser.WaterText = "用户名";
+            this.textUser.WordWrap = true;
             // 
             // textPwd
             // 
-            this.textPwd.Font = new System.Drawing.Font("宋体", 12F);
-            this.textPwd.Location = new System.Drawing.Point(107, 66);
+            this.textPwd.BackColor = System.Drawing.Color.Transparent;
+            this.textPwd.DownBack = null;
+            this.textPwd.Icon = null;
+            this.textPwd.IconIsButton = false;
+            this.textPwd.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textPwd.IsPasswordChat = '\0';
+            this.textPwd.IsSystemPasswordChar = false;
+            this.textPwd.Lines = new string[0];
+            this.textPwd.Location = new System.Drawing.Point(121, 180);
+            this.textPwd.Margin = new System.Windows.Forms.Padding(0);
+            this.textPwd.MaxLength = 32767;
+            this.textPwd.MinimumSize = new System.Drawing.Size(28, 28);
+            this.textPwd.MouseBack = null;
+            this.textPwd.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textPwd.Multiline = false;
             this.textPwd.Name = "textPwd";
-            this.textPwd.Size = new System.Drawing.Size(115, 26);
+            this.textPwd.NormlBack = null;
+            this.textPwd.Padding = new System.Windows.Forms.Padding(5);
+            this.textPwd.ReadOnly = false;
+            this.textPwd.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textPwd.Size = new System.Drawing.Size(204, 28);
+            // 
+            // 
+            // 
+            this.textPwd.SkinTxt.Font = new System.Drawing.Font("宋体", 12F);
+            this.textPwd.SkinTxt.Location = new System.Drawing.Point(0, 0);
+            this.textPwd.SkinTxt.Name = "BaseText";
+            this.textPwd.SkinTxt.TabIndex = 0;
+            this.textPwd.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textPwd.SkinTxt.WaterText = "密码";
             this.textPwd.TabIndex = 10;
-            // 
-            // panelInput
-            // 
-            this.panelInput.Controls.Add(this.textPwd);
-            this.panelInput.Controls.Add(this.labelUser);
-            this.panelInput.Controls.Add(this.labelPwd);
-            this.panelInput.Controls.Add(this.textUser);
-            this.panelInput.Location = new System.Drawing.Point(239, 147);
-            this.panelInput.Name = "panelInput";
-            this.panelInput.Size = new System.Drawing.Size(240, 121);
-            this.panelInput.TabIndex = 11;
+            this.textPwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPwd.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textPwd.WaterText = "密码";
+            this.textPwd.WordWrap = true;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonLogin.Location = new System.Drawing.Point(239, 296);
+            this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogin.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonLogin.DownBack = null;
+            this.buttonLogin.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonLogin.Location = new System.Drawing.Point(121, 234);
+            this.buttonLogin.MouseBack = null;
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(90, 23);
-            this.buttonLogin.TabIndex = 12;
-            this.buttonLogin.Text = "登录";
+            this.buttonLogin.NormlBack = null;
+            this.buttonLogin.Size = new System.Drawing.Size(90, 30);
+            this.buttonLogin.TabIndex = 7;
+            this.buttonLogin.Text = "登  录";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(393, 296);
+            this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCancel.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonCancel.DownBack = null;
+            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCancel.Location = new System.Drawing.Point(235, 234);
+            this.buttonCancel.MouseBack = null;
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(86, 23);
-            this.buttonCancel.TabIndex = 13;
-            this.buttonCancel.Text = "取消";
+            this.buttonCancel.NormlBack = null;
+            this.buttonCancel.Size = new System.Drawing.Size(90, 30);
+            this.buttonCancel.TabIndex = 8;
+            this.buttonCancel.Text = "取  消";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 442);
+            this.AcceptButton = this.buttonLogin;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::PEP.Properties.Resources.main_8;
+            this.CanResize = false;
+            this.ClientSize = new System.Drawing.Size(459, 330);
+            this.Controls.Add(this.textUser);
+            this.Controls.Add(this.textPwd);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.panelInput);
             this.Controls.Add(this.labelTitle);
+            this.MaximizeBox = false;
             this.Name = "FormLogin";
-            this.Text = "登录";
-            this.panelInput.ResumeLayout(false);
-            this.panelInput.PerformLayout();
+            this.ShowDrawIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,13 +179,10 @@
 
         #endregion
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.TextBox textUser;
-        private System.Windows.Forms.Label labelPwd;
-        private System.Windows.Forms.TextBox textPwd;
-        private System.Windows.Forms.Panel panelInput;
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button buttonCancel;
+        private CCWin.SkinControl.SkinTextBox textUser;
+        private CCWin.SkinControl.SkinTextBox textPwd;
+        private CCWin.SkinControl.SkinButton buttonLogin;
+        private CCWin.SkinControl.SkinButton buttonCancel;
     }
 }
 
