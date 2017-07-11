@@ -52,6 +52,13 @@ namespace PEP
             dr.Close();
             this.sql.SQLInsertOneEntry("logs(uid,timestamp,pid,tid,content)", "(" + uid + ",'" + time + "'," + this.pid + "," + tid + ",'" + content + "')");
         }
+
+        public MySqlDataReader getLogInfo()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid);
+            return dr;
+        }
+
         public void modifyDetail(String pname)
         {
             this.sql.SQLUpdate("projects", "pname='" + pname+"'", "pid=" + this.pid);

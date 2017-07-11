@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelWelcome = new System.Windows.Forms.Panel();
@@ -63,6 +65,11 @@
             this.c0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.tabPageProcess = new System.Windows.Forms.TabPage();
+            this.gridCheckLog = new CCWin.SkinControl.SkinDataGridView();
+            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIsChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -72,6 +79,8 @@
             this.tabPagePerson.SuspendLayout();
             this.tabPageChecker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridChecker)).BeginInit();
+            this.tabPageLog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).BeginInit();
             this.SuspendLayout();
             // 
             // panelWelcome
@@ -422,6 +431,7 @@
             // 
             // tabPageLog
             // 
+            this.tabPageLog.Controls.Add(this.gridCheckLog);
             this.tabPageLog.Location = new System.Drawing.Point(4, 30);
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
@@ -439,6 +449,89 @@
             this.tabPageProcess.TabIndex = 5;
             this.tabPageProcess.Text = "项目进度";
             this.tabPageProcess.UseVisualStyleBackColor = true;
+            // 
+            // gridCheckLog
+            // 
+            this.gridCheckLog.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.gridCheckLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridCheckLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridCheckLog.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridCheckLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridCheckLog.ColumnFont = null;
+            this.gridCheckLog.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCheckLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridCheckLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCheckLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnUser,
+            this.ColumnTime,
+            this.ColumnTask,
+            this.ColumnIsChecked});
+            this.gridCheckLog.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCheckLog.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridCheckLog.EnableHeadersVisualStyles = false;
+            this.gridCheckLog.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gridCheckLog.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridCheckLog.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridCheckLog.Location = new System.Drawing.Point(-4, 0);
+            this.gridCheckLog.Name = "gridCheckLog";
+            this.gridCheckLog.ReadOnly = true;
+            this.gridCheckLog.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridCheckLog.RowHeadersVisible = false;
+            this.gridCheckLog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridCheckLog.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridCheckLog.RowTemplate.Height = 23;
+            this.gridCheckLog.Size = new System.Drawing.Size(492, 376);
+            this.gridCheckLog.TabIndex = 0;
+            this.gridCheckLog.TitleBack = null;
+            this.gridCheckLog.TitleBackColorBegin = System.Drawing.Color.White;
+            this.gridCheckLog.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
+            // 
+            // ColumnUser
+            // 
+            this.ColumnUser.FillWeight = 85.95601F;
+            this.ColumnUser.HeaderText = "用户名";
+            this.ColumnUser.Name = "ColumnUser";
+            this.ColumnUser.ReadOnly = true;
+            // 
+            // ColumnTime
+            // 
+            this.ColumnTime.FillWeight = 142.132F;
+            this.ColumnTime.HeaderText = "创建时间";
+            this.ColumnTime.Name = "ColumnTime";
+            this.ColumnTime.ReadOnly = true;
+            // 
+            // ColumnTask
+            // 
+            this.ColumnTask.FillWeight = 85.95601F;
+            this.ColumnTask.HeaderText = "任务名";
+            this.ColumnTask.Name = "ColumnTask";
+            this.ColumnTask.ReadOnly = true;
+            // 
+            // ColumnIsChecked
+            // 
+            this.ColumnIsChecked.FillWeight = 85.95601F;
+            this.ColumnIsChecked.HeaderText = "是否批阅";
+            this.ColumnIsChecked.Name = "ColumnIsChecked";
+            this.ColumnIsChecked.ReadOnly = true;
             // 
             // FormManage
             // 
@@ -462,6 +555,8 @@
             this.tabPagePerson.ResumeLayout(false);
             this.tabPageChecker.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridChecker)).EndInit();
+            this.tabPageLog.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,5 +596,10 @@
         private System.Windows.Forms.DataGridView gridChecker;
         private System.Windows.Forms.DataGridViewTextBoxColumn c0;
         private System.Windows.Forms.Button buttonCheckerSubmit;
+        private CCWin.SkinControl.SkinDataGridView gridCheckLog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIsChecked;
     }
 }

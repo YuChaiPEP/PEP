@@ -120,6 +120,24 @@ namespace PEP
             dr.Close();
         }
 
+        private void freshLog()
+        {
+            this.gridCheckLog.Rows.Clear();
+            MySqlDataReader dr = this.pro.getLogInfo();
+            int rowIdx = 0;
+            while (dr.Read())
+            {
+                this.gridCheckLog.Rows.Add();
+                int uid = Convert.ToInt32(dr["uid"]);
+                this.gridCheckLog.Rows[rowIdx].Cells["columnUser"].Value = this.user.searchUser(uid);
+                this.gridCheckLog.Rows[rowIdx].Cells["columnTime"].Value = dr["timestamp"].ToString();
+                int tid = Convert.ToInt32(dr["pid"]);
+                this.gridCheckLog.Rows[rowIdx].Cells["columnTask"].Value = this.task.searchTask(tid);
+                ++rowIdx;
+            }
+            dr.Close();
+        }
+
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.listProject.SelectedItems.Count != 0)
@@ -130,6 +148,7 @@ namespace PEP
                 freshTask();
                 freshPerson();
                 freshChecker();
+                freshLog();
             }
         }
 
