@@ -47,6 +47,10 @@
             this.tabPageOverview = new System.Windows.Forms.TabPage();
             this.tabPageTask = new System.Windows.Forms.TabPage();
             this.gridProjectTask = new System.Windows.Forms.DataGridView();
+            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.panelLog = new System.Windows.Forms.Panel();
             this.buttonLogClear = new System.Windows.Forms.Button();
@@ -67,10 +71,6 @@
             this.buttonManage = new System.Windows.Forms.Button();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.panelProject = new System.Windows.Forms.Panel();
-            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -107,6 +107,7 @@
             this.listProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listProject.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listProject.FormattingEnabled = true;
+            this.listProject.HorizontalScrollbar = true;
             this.listProject.ItemHeight = 20;
             this.listProject.Location = new System.Drawing.Point(15, 44);
             this.listProject.Name = "listProject";
@@ -244,6 +245,26 @@
             this.gridProjectTask.RowTemplate.Height = 23;
             this.gridProjectTask.Size = new System.Drawing.Size(531, 341);
             this.gridProjectTask.TabIndex = 0;
+            // 
+            // c10
+            // 
+            this.c10.HeaderText = "任务编号";
+            this.c10.Name = "c10";
+            // 
+            // c11
+            // 
+            this.c11.HeaderText = "任务名称";
+            this.c11.Name = "c11";
+            // 
+            // c12
+            // 
+            this.c12.HeaderText = "任务状态";
+            this.c12.Name = "c12";
+            // 
+            // c13
+            // 
+            this.c13.HeaderText = "负责人";
+            this.c13.Name = "c13";
             // 
             // tabPageLog
             // 
@@ -451,26 +472,6 @@
             this.panelProject.Name = "panelProject";
             this.panelProject.Size = new System.Drawing.Size(144, 330);
             this.panelProject.TabIndex = 10;
-            // 
-            // c10
-            // 
-            this.c10.HeaderText = "任务编号";
-            this.c10.Name = "c10";
-            // 
-            // c11
-            // 
-            this.c11.HeaderText = "任务名称";
-            this.c11.Name = "c11";
-            // 
-            // c12
-            // 
-            this.c12.HeaderText = "任务状态";
-            this.c12.Name = "c12";
-            // 
-            // c13
-            // 
-            this.c13.HeaderText = "负责人";
-            this.c13.Name = "c13";
             // 
             // FormUser
             // 

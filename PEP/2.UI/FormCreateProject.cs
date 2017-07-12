@@ -102,6 +102,7 @@ namespace PEP
                         break;
                     }
                     pro.createProject(Convert.ToInt32(this.textNumber.Text), this.textPname.Text, this.textTime.Text, user.getUID(), this.listIncludedTask, this.listIncludedPerson);
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                     break;
                 default:

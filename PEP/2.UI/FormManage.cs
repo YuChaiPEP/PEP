@@ -282,7 +282,10 @@ namespace PEP
             int lid = Convert.ToInt32(this.gridCheckLog.SelectedRows[0].Cells["ColumnNumber"].Value);    
             FormLog formLog = new FormLog(pro, lid);
             formLog.ShowDialog();
-            freshLog();
+            if (formLog.DialogResult == DialogResult.OK)
+            {
+                freshLog();
+            }
         }
 
         private void buttonProcessSubmit_Click(object sender, EventArgs e)
@@ -298,7 +301,10 @@ namespace PEP
         {
             FormCreateProject formCreateProject = new FormCreateProject(user);
             formCreateProject.ShowDialog();
-            freshManagedProjects();
+            if (formCreateProject.DialogResult == DialogResult.OK)
+            {
+                freshManagedProjects();
+            }
         }
     }
 }
