@@ -246,5 +246,11 @@ namespace PEP
             formLog.ShowDialog();
             freshLog();
         }
+
+        private void buttonCreateProject_Click(object sender, EventArgs e)
+        {
+            FormCreateProject formCreateProject = new FormCreateProject();
+            formCreateProject.Show();
+        }
     }
 }
