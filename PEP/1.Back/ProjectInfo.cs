@@ -112,5 +112,12 @@ namespace PEP
         {
             this.sql.SQLUpdate("logs", "checked='" + check + "'", "pid=" + this.pid + " and lid=" + lid);
         }
+
+        public void modifyProcess(String tname, String p)
+        {
+            TaskInfo task = new TaskInfo();
+            int tid = task.getTaskID(tname);
+            this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "'", "pid=" + this.pid + " and tid=" + tid);
+        }
     }
 }
