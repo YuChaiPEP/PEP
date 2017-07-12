@@ -96,26 +96,24 @@ namespace PEP
         private void freshChecker()
         {
             this.gridChecker.Rows.Clear();
-            this.gridChecker.Columns.RemoveAt(1);
-            DataGridViewComboBoxColumn c1 = new DataGridViewComboBoxColumn();
-            c1.HeaderText = "负责人";
+            DataGridViewComboBoxColumn c1 = (DataGridViewComboBoxColumn)this.gridChecker.Columns[1];
             MySqlDataReader dr = this.pro.getMember();
+            c1.Items.Clear();
             while (dr.Read())
             {
                 c1.Items.Add(dr["uname"].ToString());
             }
             dr.Close();
-            this.gridChecker.Columns.Add(c1);
             dr = this.pro.getTaskInfo();
             int index = 0;
             while (dr.Read())
             {
                 this.gridChecker.Rows.Add();
                 this.gridChecker.Rows[index].Cells[0].Value = dr["tname"];
-                if (dr["checker"].ToString() != "")
+                if (dr["checker"].ToString() != "" && c1.Items.Contains(dr["checker"]))
                     this.gridChecker.Rows[index++].Cells[1].Value = dr["checker"];
                 else
-                    index++;
+                    this.gridChecker.Rows[index++].Cells[1].Value = null;
             }
             dr.Close();
         }
