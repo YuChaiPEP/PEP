@@ -22,6 +22,16 @@ namespace PEP
             tabCreateProject.SizeMode = TabSizeMode.Fixed;
             tabCreateProject.ItemSize = new Size(0, 1);
             this.buttonLast.Enabled = false;
+            this.Text = "新建项目-" + this.tabCreateProject.SelectedTab.Text;
+            freshInfo();
+        }
+
+        private void freshInfo()
+        {
+            ProjectInfo pro = new ProjectInfo();
+            int newPid = pro.getMaxPid() + 1;
+            this.textNumber.Text = newPid.ToString();
+            this.textTime.Text = System.DateTime.Now.ToString("G");
         }
 
         private void buttonLast_Click(object sender, EventArgs e)
@@ -31,12 +41,28 @@ namespace PEP
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            if (this.buttonNext.Text == "下一步")
+            switch(this.tabCreateProject.SelectedIndex)
             {
-                ++this.tabCreateProject.SelectedIndex;
-            } else
-            {
-                this.Close();
+                case 0:
+                    if (this.textPname.Text.Length == 0)
+                    {
+                        MessageBox.Show("项目名不能为空！");
+                        break;
+                    }
+                    ++this.tabCreateProject.SelectedIndex;
+                    break;
+                case 1:
+                    ++this.tabCreateProject.SelectedIndex;
+                    break;
+                case 2:
+                    ++this.tabCreateProject.SelectedIndex;
+                    break;
+                case 3:
+                    this.Close();
+                    break;
+                default:
+                    break;
+
             }
         }
 
@@ -57,6 +83,8 @@ namespace PEP
             {
                 this.buttonNext.Text = "下一步";
             }
+
+            this.Text = "新建项目-" + this.tabCreateProject.SelectedTab.Text;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
