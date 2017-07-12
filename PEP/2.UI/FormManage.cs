@@ -16,10 +16,10 @@ namespace PEP
         private UserInfo user;
         private ProjectInfo pro;
         private TaskInfo task;
-        public FormManage(UserInfo u, ProjectInfo p)
+        public FormManage(UserInfo u)
         {
             this.user = u;
-            this.pro = p;
+            this.pro = new ProjectInfo();
             this.task = new TaskInfo();
             InitializeComponent();
             this.labelWelcome.Text = "欢迎" + user.getUname() + "进入管理者界面";
