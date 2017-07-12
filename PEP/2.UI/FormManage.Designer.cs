@@ -80,7 +80,6 @@
             this.buttonProcessSubmit = new System.Windows.Forms.Button();
             this.gridProcess = new System.Windows.Forms.DataGridView();
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPageProcess = new System.Windows.Forms.TabPage();
             this.buttonCreateProject = new System.Windows.Forms.Button();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
@@ -421,25 +420,8 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridChecker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridChecker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.gridChecker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridChecker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.c0});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridChecker.DefaultCellStyle = dataGridViewCellStyle14;
             this.c00});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
@@ -519,7 +501,6 @@
             this.gridCheckLog.RowHeadersVisible = false;
             this.gridCheckLog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridCheckLog.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.gridCheckLog.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.gridCheckLog.RowTemplate.Height = 23;
             this.gridCheckLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCheckLog.Size = new System.Drawing.Size(492, 376);
@@ -619,16 +600,6 @@
             // 
             this.c10.HeaderText = "任务名称";
             this.c10.Name = "c10";
-            // 
-            // tabPageProcess
-            // 
-            this.tabPageProcess.Location = new System.Drawing.Point(4, 30);
-            this.tabPageProcess.Name = "tabPageProcess";
-            this.tabPageProcess.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProcess.Size = new System.Drawing.Size(488, 372);
-            this.tabPageProcess.TabIndex = 5;
-            this.tabPageProcess.Text = "项目进度";
-            this.tabPageProcess.UseVisualStyleBackColor = true;
             // 
             // buttonCreateProject
             // 
