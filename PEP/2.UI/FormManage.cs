@@ -26,9 +26,17 @@ namespace PEP
             freshManagedProjects();
             this.gridChecker.RowHeadersVisible = false;
             this.gridChecker.AllowUserToAddRows = false;
-            DataGridViewComboBoxColumn c1 = new DataGridViewComboBoxColumn();
-            c1.HeaderText = "负责人";
-            this.gridChecker.Columns.Add(c1);
+            DataGridViewComboBoxColumn c01 = new DataGridViewComboBoxColumn();
+            c01.HeaderText = "负责人";
+            this.gridChecker.Columns.Add(c01);
+            this.gridProcess.RowHeadersVisible = false;
+            this.gridProcess.AllowUserToAddRows = false;
+            DataGridViewComboBoxColumn c11 = new DataGridViewComboBoxColumn();
+            c11.HeaderText = "任务进度";
+            c11.Items.Add("未开始");
+            c11.Items.Add("进行中");
+            c11.Items.Add("已完成");
+            this.gridProcess.Columns.Add(c11);
         }
         private void freshManagedProjects()
         {
@@ -96,12 +104,12 @@ namespace PEP
         private void freshChecker()
         {
             this.gridChecker.Rows.Clear();
-            DataGridViewComboBoxColumn c1 = (DataGridViewComboBoxColumn)this.gridChecker.Columns[1];
+            DataGridViewComboBoxColumn c01 = (DataGridViewComboBoxColumn)this.gridChecker.Columns[1];
             MySqlDataReader dr = this.pro.getMember();
-            c1.Items.Clear();
+            c01.Items.Clear();
             while (dr.Read())
             {
-                c1.Items.Add(dr["uname"].ToString());
+                c01.Items.Add(dr["uname"].ToString());
             }
             dr.Close();
             dr = this.pro.getTaskInfo();
@@ -110,7 +118,7 @@ namespace PEP
             {
                 this.gridChecker.Rows.Add();
                 this.gridChecker.Rows[index].Cells[0].Value = dr["tname"];
-                if (dr["checker"].ToString() != "" && c1.Items.Contains(dr["checker"]))
+                if (dr["checker"].ToString() != "" && c01.Items.Contains(dr["checker"]))
                     this.gridChecker.Rows[index++].Cells[1].Value = dr["checker"];
                 else
                     this.gridChecker.Rows[index++].Cells[1].Value = null;
@@ -137,7 +145,22 @@ namespace PEP
             }
             dr.Close();
         }
-
+        private void freshProcess()
+        {
+            this.gridProcess.Rows.Clear();
+            MySqlDataReader dr = this.pro.getTaskInfo();
+            int index = 0;
+            while (dr.Read())
+            {
+                this.gridProcess.Rows.Add();
+                this.gridProcess.Rows[index].Cells[0].Value = dr["tname"];
+                if (dr["task_state"].ToString() != "")
+                    this.gridProcess.Rows[index++].Cells[1].Value = dr["task_state"];
+                else
+                    this.gridProcess.Rows[index++].Cells[1].Value = null;
+            }
+            dr.Close();
+        }
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.listProject.SelectedItems.Count != 0)
@@ -149,6 +172,7 @@ namespace PEP
                 freshPerson();
                 freshChecker();
                 freshLog();
+                freshProcess();
             }
         }
 
@@ -202,7 +226,7 @@ namespace PEP
             this.listIncludedPerson.Items.Remove(this.listIncludedPerson.SelectedItem);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonPersonSubmit_Click(object sender, EventArgs e)
         {
             this.pro.modifyPerson(this.listIncludedPerson);
             freshChecker();
@@ -227,7 +251,6 @@ namespace PEP
 
         private void buttonCheckerSubmit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("负责人已设置。");
             for (int i = 0; i < this.gridChecker.RowCount; i++)
             {
                 if (this.gridChecker.Rows[i].Cells[1].Value == null)
@@ -235,6 +258,7 @@ namespace PEP
                 else
                     this.pro.modifyChecker(this.gridChecker.Rows[i].Cells[0].Value.ToString(), false, this.gridChecker.Rows[i].Cells[1].Value.ToString());
             }
+            MessageBox.Show("负责人已设置。");
         }
 
         private void gridCheckLog_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -243,6 +267,15 @@ namespace PEP
             FormLog formLog = new FormLog(pro, lid);
             formLog.ShowDialog();
             freshLog();
+        }
+
+        private void buttonProcessSubmit_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.gridProcess.RowCount; i++)
+            {
+                this.pro.modifyProcess(this.gridProcess.Rows[i].Cells[0].Value.ToString(), this.gridProcess.Rows[i].Cells[1].Value.ToString());
+            }
+            MessageBox.Show("项目进度已更新。");
         }
     }
 }
