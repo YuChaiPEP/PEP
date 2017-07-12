@@ -65,6 +65,14 @@ namespace PEP
             }
             return dr;
         }
+        public int getMaxPid()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("max(pid)", "projects", "true");
+            dr.Read();
+            int x = Convert.ToInt32(dr["max(pid)"]);
+            dr.Close();
+            return x;
+        }
 
         public void modifyDetail(String pname)
         {
@@ -119,5 +127,6 @@ namespace PEP
             int tid = task.getTaskID(tname);
             this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "'", "pid=" + this.pid + " and tid=" + tid);
         }
+
     }
 }

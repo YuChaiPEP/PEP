@@ -277,5 +277,11 @@ namespace PEP
             }
             MessageBox.Show("项目进度已更新。");
         }
+
+        private void buttonCreateProject_Click(object sender, EventArgs e)
+        {
+            FormCreateProject formCreateProject = new FormCreateProject();
+            formCreateProject.Show();
+        }
     }
 }

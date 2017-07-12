@@ -34,6 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelProject = new System.Windows.Forms.Label();
@@ -76,6 +80,7 @@
             this.buttonProcessSubmit = new System.Windows.Forms.Button();
             this.gridProcess = new System.Windows.Forms.DataGridView();
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCreateProject = new System.Windows.Forms.Button();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -453,6 +458,8 @@
             this.gridCheckLog.AllowUserToAddRows = false;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
             this.gridCheckLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.gridCheckLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.gridCheckLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridCheckLog.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridCheckLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -466,6 +473,14 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridCheckLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCheckLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.gridCheckLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCheckLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNumber,
@@ -586,11 +601,23 @@
             this.c10.HeaderText = "任务名称";
             this.c10.Name = "c10";
             // 
+            // buttonCreateProject
+            // 
+            this.buttonCreateProject.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCreateProject.Location = new System.Drawing.Point(55, 455);
+            this.buttonCreateProject.Name = "buttonCreateProject";
+            this.buttonCreateProject.Size = new System.Drawing.Size(96, 37);
+            this.buttonCreateProject.TabIndex = 5;
+            this.buttonCreateProject.Text = "新建项目";
+            this.buttonCreateProject.UseVisualStyleBackColor = true;
+            this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
+            // 
             // FormManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 582);
+            this.Controls.Add(this.buttonCreateProject);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panelProject);
             this.Controls.Add(this.panelWelcome);
@@ -660,5 +687,6 @@
         private System.Windows.Forms.DataGridView gridProcess;
         private System.Windows.Forms.DataGridViewTextBoxColumn c10;
         private System.Windows.Forms.Button buttonProcessSubmit;
+        private System.Windows.Forms.Button buttonCreateProject;
     }
 }

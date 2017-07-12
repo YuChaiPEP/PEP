@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,12 @@
     <Compile Include="1.Back\PushControl.cs" />
     <Compile Include="1.Back\TaskInfo.cs" />
     <Compile Include="1.Back\UserInfo.cs" />
+    <Compile Include="2.UI\FormCreateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.UI\FormCreateProject.Designer.cs">
+      <DependentUpon>FormCreateProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="2.UI\FormLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +105,9 @@
       <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="2.UI\FormCreateProject.resx">
+      <DependentUpon>FormCreateProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2.UI\FormLog.resx">
       <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,5 +153,6 @@
     <Content Include="MySql.Data.dll" />
     <None Include="Resources\main_8.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
