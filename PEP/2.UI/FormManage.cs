@@ -189,6 +189,10 @@ namespace PEP
             {
                 this.buttonTaskRight.Enabled = true;
             }
+            else
+            {
+                this.buttonTaskRight.Enabled = false;
+            }
         }
 
         private void listIncludedTask_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,6 +200,10 @@ namespace PEP
             if (this.listIncludedTask.SelectedItems.Count != 0)
             {
                 this.buttonTaskLeft.Enabled = true;
+            }
+            else
+            {
+                this.buttonTaskLeft.Enabled = false;
             }
         }
 
@@ -239,6 +247,10 @@ namespace PEP
             {
                 this.buttonPersonRight.Enabled = true;
             }
+            else
+            {
+                this.buttonPersonRight.Enabled = false;
+            }
         }
 
         private void listIncludedPerson_SelectedIndexChanged(object sender, EventArgs e)
@@ -246,6 +258,10 @@ namespace PEP
             if (this.listIncludedPerson.SelectedItems.Count != 0)
             {
                 this.buttonPersonLeft.Enabled = true;
+            }
+            else
+            {
+                this.buttonPersonLeft.Enabled = false;
             }
         }
 
@@ -280,8 +296,9 @@ namespace PEP
 
         private void buttonCreateProject_Click(object sender, EventArgs e)
         {
-            FormCreateProject formCreateProject = new FormCreateProject();
-            formCreateProject.Show();
+            FormCreateProject formCreateProject = new FormCreateProject(user);
+            formCreateProject.ShowDialog();
+            freshManagedProjects();
         }
     }
 }

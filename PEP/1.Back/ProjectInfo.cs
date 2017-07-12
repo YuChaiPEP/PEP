@@ -128,5 +128,23 @@ namespace PEP
             this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "'", "pid=" + this.pid + " and tid=" + tid);
         }
 
+        public void createProject(int pid, string pname, string time, int manager_id, ListBox tasks, ListBox persons)
+        {
+            this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Items.Count + ",0," + manager_id + ")");
+            int ord = 1;
+            TaskInfo task = new TaskInfo();
+            foreach (string tname in tasks.Items)
+            {
+                int tid = task.getTaskID(tname);
+                this.sql.SQLInsertOneEntry("projects2tasks(pid, tid, task_state, ord)", "(" + pid + "," + tid + ",'未开始'," + ord + ")");
+                ++ord;
+            }
+            foreach (string uname in persons.Items)
+            {
+                UserInfo user = new UserInfo(uname);
+                int uid = user.getUID();
+                this.sql.SQLInsertOneEntry("users2projects", "(" + uid + "," + pid + ")");
+            }
+        }
     }
 }

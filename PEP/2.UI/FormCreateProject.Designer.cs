@@ -38,20 +38,23 @@
             this.labelPname = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.tabPageSetTasks = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonTaskLeft = new System.Windows.Forms.Button();
+            this.buttonTaskRight = new System.Windows.Forms.Button();
+            this.listIncludedTask = new System.Windows.Forms.ListBox();
+            this.listAllTask = new System.Windows.Forms.ListBox();
             this.tabPageSetUsers = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tabPageSetAllocation = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPersonLeft = new System.Windows.Forms.Button();
+            this.buttonPersonRight = new System.Windows.Forms.Button();
+            this.listIncludedPerson = new System.Windows.Forms.ListBox();
+            this.listAllPerson = new System.Windows.Forms.ListBox();
             this.tabCreateProject.SuspendLayout();
             this.tabPageSetName.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.tabPageSetTasks.SuspendLayout();
             this.tabPageSetUsers.SuspendLayout();
-            this.tabPageSetAllocation.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCreateProject
@@ -59,7 +62,6 @@
             this.tabCreateProject.Controls.Add(this.tabPageSetName);
             this.tabCreateProject.Controls.Add(this.tabPageSetTasks);
             this.tabCreateProject.Controls.Add(this.tabPageSetUsers);
-            this.tabCreateProject.Controls.Add(this.tabPageSetAllocation);
             this.tabCreateProject.Location = new System.Drawing.Point(0, -3);
             this.tabCreateProject.Name = "tabCreateProject";
             this.tabCreateProject.SelectedIndex = 0;
@@ -151,7 +153,10 @@
             // 
             // tabPageSetTasks
             // 
-            this.tabPageSetTasks.Controls.Add(this.button2);
+            this.tabPageSetTasks.Controls.Add(this.buttonTaskLeft);
+            this.tabPageSetTasks.Controls.Add(this.buttonTaskRight);
+            this.tabPageSetTasks.Controls.Add(this.listIncludedTask);
+            this.tabPageSetTasks.Controls.Add(this.listAllTask);
             this.tabPageSetTasks.Location = new System.Drawing.Point(4, 22);
             this.tabPageSetTasks.Name = "tabPageSetTasks";
             this.tabPageSetTasks.Padding = new System.Windows.Forms.Padding(3);
@@ -160,18 +165,54 @@
             this.tabPageSetTasks.Text = "子任务";
             this.tabPageSetTasks.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonTaskLeft
             // 
-            this.button2.Location = new System.Drawing.Point(193, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonTaskLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskLeft.Location = new System.Drawing.Point(216, 165);
+            this.buttonTaskLeft.Name = "buttonTaskLeft";
+            this.buttonTaskLeft.Size = new System.Drawing.Size(75, 23);
+            this.buttonTaskLeft.TabIndex = 8;
+            this.buttonTaskLeft.Text = "<<";
+            this.buttonTaskLeft.UseVisualStyleBackColor = true;
+            this.buttonTaskLeft.Click += new System.EventHandler(this.buttonTaskLeft_Click);
+            // 
+            // buttonTaskRight
+            // 
+            this.buttonTaskRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskRight.Location = new System.Drawing.Point(216, 136);
+            this.buttonTaskRight.Name = "buttonTaskRight";
+            this.buttonTaskRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonTaskRight.TabIndex = 7;
+            this.buttonTaskRight.Text = ">>";
+            this.buttonTaskRight.UseVisualStyleBackColor = true;
+            this.buttonTaskRight.Click += new System.EventHandler(this.buttonTaskRight_Click);
+            // 
+            // listIncludedTask
+            // 
+            this.listIncludedTask.FormattingEnabled = true;
+            this.listIncludedTask.ItemHeight = 12;
+            this.listIncludedTask.Location = new System.Drawing.Point(309, 28);
+            this.listIncludedTask.Name = "listIncludedTask";
+            this.listIncludedTask.Size = new System.Drawing.Size(136, 292);
+            this.listIncludedTask.TabIndex = 6;
+            this.listIncludedTask.SelectedIndexChanged += new System.EventHandler(this.listIncludedTask_SelectedIndexChanged);
+            // 
+            // listAllTask
+            // 
+            this.listAllTask.FormattingEnabled = true;
+            this.listAllTask.ItemHeight = 12;
+            this.listAllTask.Location = new System.Drawing.Point(61, 28);
+            this.listAllTask.Name = "listAllTask";
+            this.listAllTask.Size = new System.Drawing.Size(136, 292);
+            this.listAllTask.TabIndex = 5;
+            this.listAllTask.SelectedIndexChanged += new System.EventHandler(this.listAllTask_SelectedIndexChanged);
             // 
             // tabPageSetUsers
             // 
-            this.tabPageSetUsers.Controls.Add(this.button3);
+            this.tabPageSetUsers.Controls.Add(this.buttonPersonLeft);
+            this.tabPageSetUsers.Controls.Add(this.buttonPersonRight);
+            this.tabPageSetUsers.Controls.Add(this.listIncludedPerson);
+            this.tabPageSetUsers.Controls.Add(this.listAllPerson);
             this.tabPageSetUsers.Location = new System.Drawing.Point(4, 22);
             this.tabPageSetUsers.Name = "tabPageSetUsers";
             this.tabPageSetUsers.Padding = new System.Windows.Forms.Padding(3);
@@ -179,35 +220,6 @@
             this.tabPageSetUsers.TabIndex = 2;
             this.tabPageSetUsers.Text = "人员分配";
             this.tabPageSetUsers.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(245, 148);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSetAllocation
-            // 
-            this.tabPageSetAllocation.Controls.Add(this.button4);
-            this.tabPageSetAllocation.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSetAllocation.Name = "tabPageSetAllocation";
-            this.tabPageSetAllocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSetAllocation.Size = new System.Drawing.Size(506, 349);
-            this.tabPageSetAllocation.TabIndex = 3;
-            this.tabPageSetAllocation.Text = "负责人委任";
-            this.tabPageSetAllocation.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(217, 178);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // buttonLast
             // 
@@ -242,6 +254,48 @@
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
+            // buttonPersonLeft
+            // 
+            this.buttonPersonLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonPersonLeft.Location = new System.Drawing.Point(216, 165);
+            this.buttonPersonLeft.Name = "buttonPersonLeft";
+            this.buttonPersonLeft.Size = new System.Drawing.Size(75, 23);
+            this.buttonPersonLeft.TabIndex = 12;
+            this.buttonPersonLeft.Text = "<<";
+            this.buttonPersonLeft.UseVisualStyleBackColor = true;
+            this.buttonPersonLeft.Click += new System.EventHandler(this.buttonPersonLeft_Click);
+            // 
+            // buttonPersonRight
+            // 
+            this.buttonPersonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonPersonRight.Location = new System.Drawing.Point(216, 136);
+            this.buttonPersonRight.Name = "buttonPersonRight";
+            this.buttonPersonRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonPersonRight.TabIndex = 11;
+            this.buttonPersonRight.Text = ">>";
+            this.buttonPersonRight.UseVisualStyleBackColor = true;
+            this.buttonPersonRight.Click += new System.EventHandler(this.buttonPersonRight_Click);
+            // 
+            // listIncludedPerson
+            // 
+            this.listIncludedPerson.FormattingEnabled = true;
+            this.listIncludedPerson.ItemHeight = 12;
+            this.listIncludedPerson.Location = new System.Drawing.Point(309, 28);
+            this.listIncludedPerson.Name = "listIncludedPerson";
+            this.listIncludedPerson.Size = new System.Drawing.Size(136, 292);
+            this.listIncludedPerson.TabIndex = 10;
+            this.listIncludedPerson.SelectedIndexChanged += new System.EventHandler(this.listIncludedPerson_SelectedIndexChanged);
+            // 
+            // listAllPerson
+            // 
+            this.listAllPerson.FormattingEnabled = true;
+            this.listAllPerson.ItemHeight = 12;
+            this.listAllPerson.Location = new System.Drawing.Point(61, 28);
+            this.listAllPerson.Name = "listAllPerson";
+            this.listAllPerson.Size = new System.Drawing.Size(136, 292);
+            this.listAllPerson.TabIndex = 9;
+            this.listAllPerson.SelectedIndexChanged += new System.EventHandler(this.listAllPerson_SelectedIndexChanged);
+            // 
             // FormCreateProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -260,7 +314,6 @@
             this.panelInfo.PerformLayout();
             this.tabPageSetTasks.ResumeLayout(false);
             this.tabPageSetUsers.ResumeLayout(false);
-            this.tabPageSetAllocation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -274,10 +327,6 @@
         private System.Windows.Forms.Button buttonLast;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.TabPage tabPageSetAllocation;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.TextBox textTime;
         private System.Windows.Forms.TextBox textPname;
@@ -285,5 +334,13 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Label labelPname;
         private System.Windows.Forms.Label labelNumber;
+        private System.Windows.Forms.Button buttonTaskLeft;
+        private System.Windows.Forms.Button buttonTaskRight;
+        private System.Windows.Forms.ListBox listIncludedTask;
+        private System.Windows.Forms.ListBox listAllTask;
+        private System.Windows.Forms.Button buttonPersonLeft;
+        private System.Windows.Forms.Button buttonPersonRight;
+        private System.Windows.Forms.ListBox listIncludedPerson;
+        private System.Windows.Forms.ListBox listAllPerson;
     }
 }
