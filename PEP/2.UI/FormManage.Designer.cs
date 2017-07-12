@@ -490,7 +490,7 @@
             this.gridCheckLog.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCheckLog.RowTemplate.Height = 23;
             this.gridCheckLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCheckLog.Size = new System.Drawing.Size(492, 376);
+            this.gridCheckLog.Size = new System.Drawing.Size(500, 376);
             this.gridCheckLog.TabIndex = 0;
             this.gridCheckLog.TitleBack = null;
             this.gridCheckLog.TitleBackColorBegin = System.Drawing.Color.White;

@@ -55,7 +55,7 @@
             this.textBoxLog.NormlBack = null;
             this.textBoxLog.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxLog.ReadOnly = true;
-            this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxLog.Size = new System.Drawing.Size(291, 367);
             // 
             // 
@@ -67,6 +67,7 @@
             this.textBoxLog.SkinTxt.Multiline = true;
             this.textBoxLog.SkinTxt.Name = "BaseText";
             this.textBoxLog.SkinTxt.ReadOnly = true;
+            this.textBoxLog.SkinTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxLog.SkinTxt.Size = new System.Drawing.Size(281, 357);
             this.textBoxLog.SkinTxt.TabIndex = 0;
             this.textBoxLog.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
