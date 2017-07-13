@@ -159,6 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Back = global::PEP.Properties.Resources.main_8;
             this.BackgroundImage = global::PEP.Properties.Resources.main_8;
             this.ClientSize = new System.Drawing.Size(303, 241);
             this.Controls.Add(this.panelStatistics);
