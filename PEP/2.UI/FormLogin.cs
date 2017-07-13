@@ -32,9 +32,9 @@ namespace PEP
 
         private void saveInfo()
         {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             if (this.checkBoxSavePwd.Checked)
             {
-                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
                 string user = this.textUser.SkinTxt.Text;
                 string pwd = this.textPwd.SkinTxt.Text;
                 if (user.Length > 0 && pwd.Length > 0)
@@ -50,25 +50,38 @@ namespace PEP
                     }
                 }
             }
+            else
+            {
+                string content = "no\n.\n.";
+                FileHandler.fileSave(baseDir, SaveFileName, content, true);
+            }
         }
-
+        
         private void FormLogin_Load(object sender, EventArgs e)
         {
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string content = FileHandler.fileRead(baseDir, SaveFileName);
+            if (content == null)
+            {
+                return;
+            }
             string[] contentArray = content.Split('\n');
             if (contentArray.Length == 3)
-            { 
+            {
+                if (contentArray[0] == "yes")
+                {
+                    this.checkBoxSavePwd.Checked = true;
+                }
+                else
+                {
+                    return;
+                }
                 this.textUser.Text = contentArray[1];
                 bool success = true;
                 string pwd = CryptoHandler.DESDecrypt(contentArray[2], Key, ref success);
                 if (success)
                 {
                     this.textPwd.Text = pwd;
-                }
-                if (contentArray[0] == "yes")
-                {
-                    this.checkBoxSavePwd.Checked = true;
                 }
             }
         }
