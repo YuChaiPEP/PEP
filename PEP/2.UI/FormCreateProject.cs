@@ -145,7 +145,7 @@ namespace PEP
 
         private void buttonTaskRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Add((CCWin.SkinControl.SkinListBoxItem)this.listAllTask.SelectedItem);
+            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString()));
         }
 
         private void listIncludedTask_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,7 +179,7 @@ namespace PEP
 
         private void buttonPersonLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Remove((CCWin.SkinControl.SkinListBoxItem)this.listIncludedPerson.SelectedItem);
+            this.listIncludedPerson.Items.Remove(new CCWin.SkinControl.SkinListBoxItem(this.listIncludedPerson.SelectedItem.ToString()));
         }
 
         private void listAllPerson_SelectedIndexChanged(object sender, EventArgs e)
