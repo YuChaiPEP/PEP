@@ -14,7 +14,6 @@ namespace PEP
 {
     public partial class FormLogin : CCSkinMain
     {
-        SQLHandler sql;
         String username;
         private const string SaveFileName = @"login.ini";
         private const string Key = @"PEP12345";

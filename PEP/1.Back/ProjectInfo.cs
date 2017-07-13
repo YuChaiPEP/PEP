@@ -104,7 +104,6 @@ namespace PEP
         public void modifyPerson(ListBox lb)
         {
             this.sql.SQLDelete("users2projects", "pid=" + this.pid);
-            int i = 0;
             foreach (object obj in lb.Items)
             {
                 UserInfo user = new UserInfo(obj.ToString());
