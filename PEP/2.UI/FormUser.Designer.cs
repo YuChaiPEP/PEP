@@ -29,62 +29,68 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUser));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.listProject = new System.Windows.Forms.ListBox();
+            this.listProject = new CCWin.SkinControl.SkinListBox();
             this.labelProject = new System.Windows.Forms.Label();
-            this.gridProjectOverview = new System.Windows.Forms.DataGridView();
+            this.gridProjectOverview = new CCWin.SkinControl.SkinDataGridView();
             this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c01 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageOverview = new System.Windows.Forms.TabPage();
-            this.tabPageTask = new System.Windows.Forms.TabPage();
-            this.gridProjectTask = new System.Windows.Forms.DataGridView();
+            this.tabControl = new CCWin.SkinControl.SkinTabControl();
+            this.tabPageOverview = new CCWin.SkinControl.SkinTabPage();
+            this.tabPageTask = new CCWin.SkinControl.SkinTabPage();
+            this.gridProjectTask = new CCWin.SkinControl.SkinDataGridView();
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.tabPageLog = new CCWin.SkinControl.SkinTabPage();
             this.panelLog = new System.Windows.Forms.Panel();
-            this.buttonLogClear = new System.Windows.Forms.Button();
-            this.buttonLogSubmit = new System.Windows.Forms.Button();
-            this.textLogContent = new System.Windows.Forms.TextBox();
-            this.comboLogTask = new System.Windows.Forms.ComboBox();
+            this.buttonLogClear = new CCWin.SkinControl.SkinButton();
+            this.buttonLogSubmit = new CCWin.SkinControl.SkinButton();
+            this.textLogContent = new CCWin.SkinControl.SkinTextBox();
+            this.comboLogTask = new CCWin.SkinControl.SkinComboBox();
             this.labelLogPerson = new System.Windows.Forms.Label();
-            this.textLogTime = new System.Windows.Forms.TextBox();
+            this.textLogTime = new CCWin.SkinControl.SkinTextBox();
             this.labelLogTime = new System.Windows.Forms.Label();
-            this.textLogPerson = new System.Windows.Forms.TextBox();
+            this.textLogPerson = new CCWin.SkinControl.SkinTextBox();
             this.labelLogTask = new System.Windows.Forms.Label();
             this.labelLogContent = new System.Windows.Forms.Label();
-            this.tabPageReadLog = new System.Windows.Forms.TabPage();
-            this.gridReadLog = new System.Windows.Forms.DataGridView();
+            this.tabPageReadLog = new CCWin.SkinControl.SkinTabPage();
+            this.gridReadLog = new CCWin.SkinControl.SkinDataGridView();
             this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radioButtonTeammateLogs = new System.Windows.Forms.RadioButton();
-            this.radioButtonMyLogs = new System.Windows.Forms.RadioButton();
-            this.radioButtonAllLogs = new System.Windows.Forms.RadioButton();
+            this.radioButtonTeammateLogs = new CCWin.SkinControl.SkinRadioButton();
+            this.radioButtonMyLogs = new CCWin.SkinControl.SkinRadioButton();
+            this.radioButtonAllLogs = new CCWin.SkinControl.SkinRadioButton();
             this.panelPush = new System.Windows.Forms.Panel();
-            this.buttonPushLast = new System.Windows.Forms.Button();
-            this.buttonPushNext = new System.Windows.Forms.Button();
-            this.textPush = new System.Windows.Forms.TextBox();
-            this.buttonPush = new System.Windows.Forms.Button();
-            this.buttonManage = new System.Windows.Forms.Button();
-            this.buttonStatistics = new System.Windows.Forms.Button();
+            this.buttonPushLast = new CCWin.SkinControl.SkinButton();
+            this.buttonPushNext = new CCWin.SkinControl.SkinButton();
+            this.textPush = new CCWin.SkinControl.SkinTextBox();
+            this.buttonPush = new CCWin.SkinControl.SkinButton();
+            this.buttonManage = new CCWin.SkinControl.SkinButton();
+            this.buttonStatistics = new CCWin.SkinControl.SkinButton();
             this.panelProject = new System.Windows.Forms.Panel();
-            this.buttonPwdChange = new System.Windows.Forms.Button();
+            this.buttonPwdChange = new CCWin.SkinControl.SkinButton();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -112,6 +118,7 @@
             // 
             // panelWelcome
             // 
+            this.panelWelcome.BackColor = System.Drawing.Color.Transparent;
             this.panelWelcome.Controls.Add(this.labelWelcome);
             this.panelWelcome.Location = new System.Drawing.Point(180, 12);
             this.panelWelcome.Name = "panelWelcome";
@@ -143,125 +150,184 @@
             // 
             // gridProjectOverview
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.gridProjectOverview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridProjectOverview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProjectOverview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridProjectOverview.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridProjectOverview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridProjectOverview.ColumnFont = null;
+            this.gridProjectOverview.ColumnForeColor = System.Drawing.Color.Empty;
+            this.gridProjectOverview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProjectOverview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridProjectOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProjectOverview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c00,
             this.c01});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProjectOverview.DefaultCellStyle = dataGridViewCellStyle4;
-            this.gridProjectOverview.Location = new System.Drawing.Point(0, 0);
-            this.gridProjectOverview.Name = "gridProjectOverview";
+            this.gridProjectOverview.ColumnSelectBackColor = System.Drawing.Color.Empty;
+            this.gridProjectOverview.ColumnSelectForeColor = System.Drawing.Color.Empty;
+            this.gridProjectOverview.DefaultCellBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProjectOverview.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridProjectOverview.RowHeadersVisible = false;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridProjectOverview.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridProjectOverview.EnableHeadersVisualStyles = false;
+            this.gridProjectOverview.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gridProjectOverview.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridProjectOverview.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridProjectOverview.Location = new System.Drawing.Point(0, 0);
+            this.gridProjectOverview.Name = "gridProjectOverview";
+            this.gridProjectOverview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridProjectOverview.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProjectOverview.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridProjectOverview.RowHeadersVisible = false;
+            this.gridProjectOverview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridProjectOverview.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gridProjectOverview.RowTemplate.Height = 23;
             this.gridProjectOverview.Size = new System.Drawing.Size(531, 341);
             this.gridProjectOverview.TabIndex = 4;
+            this.gridProjectOverview.TitleBack = null;
+            this.gridProjectOverview.TitleBackColorBegin = System.Drawing.Color.White;
+            this.gridProjectOverview.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             // 
             // c00
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.c00.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.c00.DefaultCellStyle = dataGridViewCellStyle3;
             this.c00.HeaderText = "项";
             this.c00.Name = "c00";
             // 
             // c01
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.c01.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.c01.DefaultCellStyle = dataGridViewCellStyle4;
             this.c01.HeaderText = "相关信息";
             this.c01.Name = "c01";
             // 
             // tabControl
             // 
+            this.tabControl.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
+            this.tabControl.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.tabControl.Controls.Add(this.tabPageOverview);
             this.tabControl.Controls.Add(this.tabPageTask);
             this.tabControl.Controls.Add(this.tabPageLog);
             this.tabControl.Controls.Add(this.tabPageReadLog);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabControl.HeadBack = null;
+            this.tabControl.ImgTxtOffset = new System.Drawing.Point(0, 0);
+            this.tabControl.ItemSize = new System.Drawing.Size(70, 36);
             this.tabControl.Location = new System.Drawing.Point(222, 85);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.PageArrowDown = ((System.Drawing.Image)(resources.GetObject("tabControl.PageArrowDown")));
+            this.tabControl.PageArrowHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageArrowHover")));
+            this.tabControl.PageCloseHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageCloseHover")));
+            this.tabControl.PageCloseNormal = ((System.Drawing.Image)(resources.GetObject("tabControl.PageCloseNormal")));
+            this.tabControl.PageDown = ((System.Drawing.Image)(resources.GetObject("tabControl.PageDown")));
+            this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
+            this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
+            this.tabControl.PageNorml = null;
+            this.tabControl.SelectedIndex = 3;
             this.tabControl.Size = new System.Drawing.Size(539, 375);
+            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 5;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPageOverview
             // 
+            this.tabPageOverview.BackColor = System.Drawing.Color.White;
             this.tabPageOverview.Controls.Add(this.gridProjectOverview);
-            this.tabPageOverview.Location = new System.Drawing.Point(4, 30);
+            this.tabPageOverview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageOverview.Location = new System.Drawing.Point(0, 36);
             this.tabPageOverview.Name = "tabPageOverview";
             this.tabPageOverview.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOverview.Size = new System.Drawing.Size(531, 341);
+            this.tabPageOverview.Size = new System.Drawing.Size(539, 339);
             this.tabPageOverview.TabIndex = 0;
+            this.tabPageOverview.TabItemImage = null;
             this.tabPageOverview.Text = "项目概要";
-            this.tabPageOverview.UseVisualStyleBackColor = true;
             // 
             // tabPageTask
             // 
+            this.tabPageTask.BackColor = System.Drawing.Color.White;
             this.tabPageTask.Controls.Add(this.gridProjectTask);
-            this.tabPageTask.Location = new System.Drawing.Point(4, 30);
+            this.tabPageTask.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageTask.Location = new System.Drawing.Point(0, 36);
             this.tabPageTask.Name = "tabPageTask";
             this.tabPageTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTask.Size = new System.Drawing.Size(531, 341);
+            this.tabPageTask.Size = new System.Drawing.Size(539, 339);
             this.tabPageTask.TabIndex = 1;
+            this.tabPageTask.TabItemImage = null;
             this.tabPageTask.Text = "任务管理";
-            this.tabPageTask.UseVisualStyleBackColor = true;
             // 
             // gridProjectTask
             // 
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.gridProjectTask.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridProjectTask.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProjectTask.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridProjectTask.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridProjectTask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridProjectTask.ColumnFont = null;
+            this.gridProjectTask.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridProjectTask.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.gridProjectTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProjectTask.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c10,
             this.c11,
             this.c12,
             this.c13});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProjectTask.DefaultCellStyle = dataGridViewCellStyle8;
+            this.gridProjectTask.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridProjectTask.DefaultCellBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridProjectTask.DefaultCellStyle = dataGridViewCellStyle10;
+            this.gridProjectTask.EnableHeadersVisualStyles = false;
+            this.gridProjectTask.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gridProjectTask.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridProjectTask.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridProjectTask.Location = new System.Drawing.Point(0, 0);
             this.gridProjectTask.Name = "gridProjectTask";
+            this.gridProjectTask.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gridProjectTask.RowHeadersVisible = false;
+            this.gridProjectTask.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridProjectTask.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.gridProjectTask.RowTemplate.Height = 23;
             this.gridProjectTask.Size = new System.Drawing.Size(531, 341);
             this.gridProjectTask.TabIndex = 0;
+            this.gridProjectTask.TitleBack = null;
+            this.gridProjectTask.TitleBackColorBegin = System.Drawing.Color.White;
+            this.gridProjectTask.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             // 
             // c10
             // 
@@ -285,13 +351,15 @@
             // 
             // tabPageLog
             // 
+            this.tabPageLog.BackColor = System.Drawing.Color.White;
             this.tabPageLog.Controls.Add(this.panelLog);
-            this.tabPageLog.Location = new System.Drawing.Point(4, 30);
+            this.tabPageLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageLog.Name = "tabPageLog";
-            this.tabPageLog.Size = new System.Drawing.Size(531, 341);
+            this.tabPageLog.Size = new System.Drawing.Size(539, 339);
             this.tabPageLog.TabIndex = 2;
+            this.tabPageLog.TabItemImage = null;
             this.tabPageLog.Text = "日志提交";
-            this.tabPageLog.UseVisualStyleBackColor = true;
             // 
             // panelLog
             // 
@@ -409,30 +477,39 @@
             // 
             // tabPageReadLog
             // 
+            this.tabPageReadLog.BackColor = System.Drawing.Color.White;
             this.tabPageReadLog.Controls.Add(this.gridReadLog);
             this.tabPageReadLog.Controls.Add(this.radioButtonTeammateLogs);
             this.tabPageReadLog.Controls.Add(this.radioButtonMyLogs);
             this.tabPageReadLog.Controls.Add(this.radioButtonAllLogs);
-            this.tabPageReadLog.Location = new System.Drawing.Point(4, 30);
+            this.tabPageReadLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageReadLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageReadLog.Name = "tabPageReadLog";
             this.tabPageReadLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReadLog.Size = new System.Drawing.Size(531, 341);
+            this.tabPageReadLog.Size = new System.Drawing.Size(539, 339);
             this.tabPageReadLog.TabIndex = 3;
+            this.tabPageReadLog.TabItemImage = null;
             this.tabPageReadLog.Text = "日志查看";
-            this.tabPageReadLog.UseVisualStyleBackColor = true;
             // 
             // gridReadLog
             // 
             this.gridReadLog.AllowUserToAddRows = false;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.gridReadLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.gridReadLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridReadLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridReadLog.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridReadLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridReadLog.ColumnFont = null;
+            this.gridReadLog.ColumnForeColor = System.Drawing.Color.Empty;
+            this.gridReadLog.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReadLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.gridReadLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridReadLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNumber,
@@ -440,52 +517,76 @@
             this.ColumnTime,
             this.ColumnTask,
             this.ColumnChecked});
+            this.gridReadLog.ColumnSelectBackColor = System.Drawing.Color.Empty;
+            this.gridReadLog.ColumnSelectForeColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridReadLog.DefaultCellStyle = dataGridViewCellStyle14;
+            this.gridReadLog.EnableHeadersVisualStyles = false;
+            this.gridReadLog.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gridReadLog.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridReadLog.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridReadLog.Location = new System.Drawing.Point(0, 37);
             this.gridReadLog.Name = "gridReadLog";
             this.gridReadLog.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridReadLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.gridReadLog.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReadLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.gridReadLog.RowHeadersVisible = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridReadLog.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.gridReadLog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridReadLog.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.gridReadLog.RowTemplate.Height = 23;
             this.gridReadLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridReadLog.Size = new System.Drawing.Size(531, 308);
             this.gridReadLog.TabIndex = 3;
+            this.gridReadLog.TitleBack = null;
+            this.gridReadLog.TitleBackColorBegin = System.Drawing.Color.White;
+            this.gridReadLog.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             this.gridReadLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridReadLog_CellClick);
             // 
             // ColumnNumber
             // 
-            this.ColumnNumber.HeaderText = "编号";
+            this.ColumnNumber.FillWeight = 93.27411F;
+            this.ColumnNumber.HeaderText = "ID";
             this.ColumnNumber.Name = "ColumnNumber";
             this.ColumnNumber.ReadOnly = true;
             // 
             // ColumnUser
             // 
+            this.ColumnUser.FillWeight = 93.27411F;
             this.ColumnUser.HeaderText = "用户名";
             this.ColumnUser.Name = "ColumnUser";
             this.ColumnUser.ReadOnly = true;
             // 
             // ColumnTime
             // 
+            this.ColumnTime.FillWeight = 126.9036F;
             this.ColumnTime.HeaderText = "创建时间";
             this.ColumnTime.Name = "ColumnTime";
             this.ColumnTime.ReadOnly = true;
             // 
             // ColumnTask
             // 
+            this.ColumnTask.FillWeight = 93.27411F;
             this.ColumnTask.HeaderText = "任务名";
             this.ColumnTask.Name = "ColumnTask";
             this.ColumnTask.ReadOnly = true;
             // 
             // ColumnChecked
             // 
+            this.ColumnChecked.FillWeight = 93.27411F;
             this.ColumnChecked.HeaderText = "是否批阅";
             this.ColumnChecked.Name = "ColumnChecked";
             this.ColumnChecked.ReadOnly = true;
@@ -493,9 +594,18 @@
             // radioButtonTeammateLogs
             // 
             this.radioButtonTeammateLogs.AutoSize = true;
+            this.radioButtonTeammateLogs.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonTeammateLogs.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioButtonTeammateLogs.DownBack = null;
+            this.radioButtonTeammateLogs.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButtonTeammateLogs.Location = new System.Drawing.Point(201, 6);
+            this.radioButtonTeammateLogs.MouseBack = null;
             this.radioButtonTeammateLogs.Name = "radioButtonTeammateLogs";
-            this.radioButtonTeammateLogs.Size = new System.Drawing.Size(92, 25);
+            this.radioButtonTeammateLogs.NormlBack = null;
+            this.radioButtonTeammateLogs.SelectedDownBack = null;
+            this.radioButtonTeammateLogs.SelectedMouseBack = null;
+            this.radioButtonTeammateLogs.SelectedNormlBack = null;
+            this.radioButtonTeammateLogs.Size = new System.Drawing.Size(83, 24);
             this.radioButtonTeammateLogs.TabIndex = 2;
             this.radioButtonTeammateLogs.TabStop = true;
             this.radioButtonTeammateLogs.Text = "队友日志";
@@ -505,9 +615,18 @@
             // radioButtonMyLogs
             // 
             this.radioButtonMyLogs.AutoSize = true;
+            this.radioButtonMyLogs.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonMyLogs.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioButtonMyLogs.DownBack = null;
+            this.radioButtonMyLogs.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButtonMyLogs.Location = new System.Drawing.Point(103, 6);
+            this.radioButtonMyLogs.MouseBack = null;
             this.radioButtonMyLogs.Name = "radioButtonMyLogs";
-            this.radioButtonMyLogs.Size = new System.Drawing.Size(92, 25);
+            this.radioButtonMyLogs.NormlBack = null;
+            this.radioButtonMyLogs.SelectedDownBack = null;
+            this.radioButtonMyLogs.SelectedMouseBack = null;
+            this.radioButtonMyLogs.SelectedNormlBack = null;
+            this.radioButtonMyLogs.Size = new System.Drawing.Size(83, 24);
             this.radioButtonMyLogs.TabIndex = 1;
             this.radioButtonMyLogs.TabStop = true;
             this.radioButtonMyLogs.Text = "我的日志";
@@ -517,9 +636,18 @@
             // radioButtonAllLogs
             // 
             this.radioButtonAllLogs.AutoSize = true;
+            this.radioButtonAllLogs.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonAllLogs.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioButtonAllLogs.DownBack = null;
+            this.radioButtonAllLogs.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButtonAllLogs.Location = new System.Drawing.Point(6, 6);
+            this.radioButtonAllLogs.MouseBack = null;
             this.radioButtonAllLogs.Name = "radioButtonAllLogs";
-            this.radioButtonAllLogs.Size = new System.Drawing.Size(92, 25);
+            this.radioButtonAllLogs.NormlBack = null;
+            this.radioButtonAllLogs.SelectedDownBack = null;
+            this.radioButtonAllLogs.SelectedMouseBack = null;
+            this.radioButtonAllLogs.SelectedNormlBack = null;
+            this.radioButtonAllLogs.Size = new System.Drawing.Size(83, 24);
             this.radioButtonAllLogs.TabIndex = 0;
             this.radioButtonAllLogs.TabStop = true;
             this.radioButtonAllLogs.Text = "全部日志";
@@ -528,6 +656,7 @@
             // 
             // panelPush
             // 
+            this.panelPush.BackColor = System.Drawing.Color.Transparent;
             this.panelPush.Controls.Add(this.buttonPushLast);
             this.panelPush.Controls.Add(this.buttonPushNext);
             this.panelPush.Controls.Add(this.textPush);
@@ -602,6 +731,7 @@
             // 
             // panelProject
             // 
+            this.panelProject.BackColor = System.Drawing.Color.Transparent;
             this.panelProject.Controls.Add(this.labelProject);
             this.panelProject.Controls.Add(this.listProject);
             this.panelProject.Location = new System.Drawing.Point(31, 85);
@@ -619,43 +749,12 @@
             this.buttonPwdChange.Text = "修改密码";
             this.buttonPwdChange.UseVisualStyleBackColor = true;
             this.buttonPwdChange.Click += new System.EventHandler(this.buttonPwdChange_Click);
-            this.ColumnNumber.FillWeight = 93.27411F;
-            this.ColumnNumber.HeaderText = "ID";
-            this.ColumnNumber.Name = "ColumnNumber";
-            this.ColumnNumber.ReadOnly = true;
-            // 
-            // ColumnUser
-            // 
-            this.ColumnUser.FillWeight = 93.27411F;
-            this.ColumnUser.HeaderText = "用户名";
-            this.ColumnUser.Name = "ColumnUser";
-            this.ColumnUser.ReadOnly = true;
-            // 
-            // ColumnTime
-            // 
-            this.ColumnTime.FillWeight = 126.9036F;
-            this.ColumnTime.HeaderText = "创建时间";
-            this.ColumnTime.Name = "ColumnTime";
-            this.ColumnTime.ReadOnly = true;
-            // 
-            // ColumnTask
-            // 
-            this.ColumnTask.FillWeight = 93.27411F;
-            this.ColumnTask.HeaderText = "任务名";
-            this.ColumnTask.Name = "ColumnTask";
-            this.ColumnTask.ReadOnly = true;
-            // 
-            // ColumnChecked
-            // 
-            this.ColumnChecked.FillWeight = 93.27411F;
-            this.ColumnChecked.HeaderText = "是否批阅";
-            this.ColumnChecked.Name = "ColumnChecked";
-            this.ColumnChecked.ReadOnly = true;
             // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Back = global::PEP.Properties.Resources.main_8;
             this.ClientSize = new System.Drawing.Size(804, 582);
             this.Controls.Add(this.buttonPwdChange);
             this.Controls.Add(this.buttonStatistics);
@@ -692,49 +791,49 @@
 
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Panel panelWelcome;
-        private System.Windows.Forms.ListBox listProject;
+        private CCWin.SkinControl.SkinListBox listProject;
         private System.Windows.Forms.Label labelProject;
-        private System.Windows.Forms.DataGridView gridProjectOverview;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPageOverview;
-        private System.Windows.Forms.TabPage tabPageTask;
-        private System.Windows.Forms.DataGridView gridProjectTask;
+        private CCWin.SkinControl.SkinDataGridView gridProjectOverview;
+        private CCWin.SkinControl.SkinTabControl tabControl;
+        private CCWin.SkinControl.SkinTabPage tabPageOverview;
+        private CCWin.SkinControl.SkinTabPage tabPageTask;
+        private CCWin.SkinControl.SkinDataGridView gridProjectTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn c00;
         private System.Windows.Forms.DataGridViewTextBoxColumn c01;
-        private System.Windows.Forms.TabPage tabPageLog;
+        private CCWin.SkinControl.SkinTabPage tabPageLog;
         private System.Windows.Forms.Label labelLogContent;
         private System.Windows.Forms.Label labelLogTask;
         private System.Windows.Forms.Label labelLogTime;
         private System.Windows.Forms.Label labelLogPerson;
-        private System.Windows.Forms.TextBox textLogTime;
-        private System.Windows.Forms.TextBox textLogPerson;
-        private System.Windows.Forms.TextBox textLogContent;
-        private System.Windows.Forms.ComboBox comboLogTask;
+        private CCWin.SkinControl.SkinTextBox textLogTime;
+        private CCWin.SkinControl.SkinTextBox textLogPerson;
+        private CCWin.SkinControl.SkinTextBox textLogContent;
+        private CCWin.SkinControl.SkinComboBox comboLogTask;
         private System.Windows.Forms.Panel panelLog;
-        private System.Windows.Forms.Button buttonLogSubmit;
-        private System.Windows.Forms.Button buttonLogClear;
+        private CCWin.SkinControl.SkinButton buttonLogSubmit;
+        private CCWin.SkinControl.SkinButton buttonLogClear;
         private System.Windows.Forms.Panel panelPush;
-        private System.Windows.Forms.TextBox textPush;
-        private System.Windows.Forms.Button buttonPushLast;
-        private System.Windows.Forms.Button buttonPushNext;
-        private System.Windows.Forms.Button buttonPush;
-        private System.Windows.Forms.Button buttonManage;
-        private System.Windows.Forms.Button buttonStatistics;
+        private CCWin.SkinControl.SkinTextBox textPush;
+        private CCWin.SkinControl.SkinButton buttonPushLast;
+        private CCWin.SkinControl.SkinButton buttonPushNext;
+        private CCWin.SkinControl.SkinButton buttonPush;
+        private CCWin.SkinControl.SkinButton buttonManage;
+        private CCWin.SkinControl.SkinButton buttonStatistics;
         private System.Windows.Forms.Panel panelProject;
         private System.Windows.Forms.DataGridViewTextBoxColumn c10;
         private System.Windows.Forms.DataGridViewTextBoxColumn c11;
         private System.Windows.Forms.DataGridViewTextBoxColumn c12;
         private System.Windows.Forms.DataGridViewTextBoxColumn c13;
-        private System.Windows.Forms.TabPage tabPageReadLog;
-        private System.Windows.Forms.RadioButton radioButtonMyLogs;
-        private System.Windows.Forms.RadioButton radioButtonAllLogs;
-        private System.Windows.Forms.RadioButton radioButtonTeammateLogs;
-        private System.Windows.Forms.DataGridView gridReadLog;
+        private CCWin.SkinControl.SkinTabPage tabPageReadLog;
+        private CCWin.SkinControl.SkinRadioButton radioButtonMyLogs;
+        private CCWin.SkinControl.SkinRadioButton radioButtonAllLogs;
+        private CCWin.SkinControl.SkinRadioButton radioButtonTeammateLogs;
+        private CCWin.SkinControl.SkinDataGridView gridReadLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
-        private System.Windows.Forms.Button buttonPwdChange;
+        private CCWin.SkinControl.SkinButton buttonPwdChange;
     }
 }

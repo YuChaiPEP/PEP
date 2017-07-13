@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using MySql.Data.MySqlClient;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormUser : Form
+    public partial class FormUser : CCSkinMain
     {
         private UserInfo user;
         private ProjectInfo pro;
@@ -58,7 +58,7 @@ namespace PEP
             MySqlDataReader dr = this.user.getAttendedProjects();
             while (dr.Read())
             {
-                this.listProject.Items.Add(dr["pname"].ToString());
+                this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));
             }
             dr.Close();
         }
@@ -177,7 +177,7 @@ namespace PEP
 
         private void buttonLogClear_Click(object sender, EventArgs e)
         {
-            this.textLogContent.Clear();
+            this.textLogContent.SkinTxt.Clear();
         }
 
         private void buttonLogSubmit_Click(object sender, EventArgs e)
