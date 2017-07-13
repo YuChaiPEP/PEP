@@ -196,6 +196,7 @@
             // 
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Back = global::PEP.Properties.Resources.main_8;
             this.BackgroundImage = global::PEP.Properties.Resources.main_8;
             this.CanResize = false;
             this.ClientSize = new System.Drawing.Size(459, 318);

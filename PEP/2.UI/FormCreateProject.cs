@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormCreateProject : Form
+    public partial class FormCreateProject : CCSkinMain
     {
         private UserInfo user;
         private ProjectInfo pro;
@@ -51,7 +52,7 @@ namespace PEP
             MySqlDataReader dr = task.getAllTask();
             while (dr.Read())
             {
-                this.listAllTask.Items.Add(dr["tname"].ToString());
+                this.listAllTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["tname"].ToString()));
             }
             dr.Close();
         }
@@ -65,7 +66,7 @@ namespace PEP
             MySqlDataReader dr = user.getAllUser();
             while (dr.Read())
             {
-                this.listAllPerson.Items.Add(dr["uname"].ToString());
+                this.listAllPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["uname"].ToString()));
             }
             dr.Close();
         }
@@ -139,12 +140,12 @@ namespace PEP
 
         private void buttonTaskLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Remove(this.listIncludedTask.SelectedItem);
+            this.listIncludedTask.Items.Remove((CCWin.SkinControl.SkinListBoxItem)this.listIncludedTask.SelectedItem);
         }
 
         private void buttonTaskRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Add(this.listAllTask.SelectedItem);
+            this.listIncludedTask.Items.Add((CCWin.SkinControl.SkinListBoxItem)this.listAllTask.SelectedItem);
         }
 
         private void listIncludedTask_SelectedIndexChanged(object sender, EventArgs e)
@@ -173,12 +174,12 @@ namespace PEP
 
         private void buttonPersonRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Add(this.listAllPerson.SelectedItem);
+            this.listIncludedPerson.Items.Add((CCWin.SkinControl.SkinListBoxItem)this.listAllPerson.SelectedItem);
         }
 
         private void buttonPersonLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Remove(this.listIncludedPerson.SelectedItem);
+            this.listIncludedPerson.Items.Remove((CCWin.SkinControl.SkinListBoxItem)this.listIncludedPerson.SelectedItem);
         }
 
         private void listAllPerson_SelectedIndexChanged(object sender, EventArgs e)

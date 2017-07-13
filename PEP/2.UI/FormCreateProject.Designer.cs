@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabCreateProject = new System.Windows.Forms.TabControl();
-            this.tabPageSetName = new System.Windows.Forms.TabPage();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreateProject));
+            this.tabCreateProject = new CCWin.SkinControl.SkinTabControl();
+            this.tabPageSetName = new CCWin.SkinControl.SkinTabPage();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.textTime = new System.Windows.Forms.TextBox();
-            this.textPname = new System.Windows.Forms.TextBox();
-            this.textNumber = new System.Windows.Forms.TextBox();
+            this.textTime = new CCWin.SkinControl.SkinTextBox();
+            this.textPname = new CCWin.SkinControl.SkinTextBox();
+            this.textNumber = new CCWin.SkinControl.SkinTextBox();
             this.labelTime = new System.Windows.Forms.Label();
             this.labelPname = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
-            this.tabPageSetTasks = new System.Windows.Forms.TabPage();
-            this.buttonTaskLeft = new System.Windows.Forms.Button();
-            this.buttonTaskRight = new System.Windows.Forms.Button();
-            this.listIncludedTask = new System.Windows.Forms.ListBox();
-            this.listAllTask = new System.Windows.Forms.ListBox();
-            this.tabPageSetUsers = new System.Windows.Forms.TabPage();
-            this.buttonLast = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPersonLeft = new System.Windows.Forms.Button();
-            this.buttonPersonRight = new System.Windows.Forms.Button();
-            this.listIncludedPerson = new System.Windows.Forms.ListBox();
-            this.listAllPerson = new System.Windows.Forms.ListBox();
+            this.tabPageSetTasks = new CCWin.SkinControl.SkinTabPage();
+            this.buttonTaskLeft = new CCWin.SkinControl.SkinButton();
+            this.buttonTaskRight = new CCWin.SkinControl.SkinButton();
+            this.listIncludedTask = new CCWin.SkinControl.SkinListBox();
+            this.listAllTask = new CCWin.SkinControl.SkinListBox();
+            this.tabPageSetUsers = new CCWin.SkinControl.SkinTabPage();
+            this.buttonPersonLeft = new CCWin.SkinControl.SkinButton();
+            this.buttonPersonRight = new CCWin.SkinControl.SkinButton();
+            this.listIncludedPerson = new CCWin.SkinControl.SkinListBox();
+            this.listAllPerson = new CCWin.SkinControl.SkinListBox();
+            this.buttonLast = new CCWin.SkinControl.SkinButton();
+            this.buttonCancel = new CCWin.SkinControl.SkinButton();
+            this.buttonNext = new CCWin.SkinControl.SkinButton();
             this.tabCreateProject.SuspendLayout();
             this.tabPageSetName.SuspendLayout();
             this.panelInfo.SuspendLayout();
@@ -59,23 +60,37 @@
             // 
             // tabCreateProject
             // 
+            this.tabCreateProject.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
+            this.tabCreateProject.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.tabCreateProject.Controls.Add(this.tabPageSetName);
             this.tabCreateProject.Controls.Add(this.tabPageSetTasks);
             this.tabCreateProject.Controls.Add(this.tabPageSetUsers);
-            this.tabCreateProject.Location = new System.Drawing.Point(0, -3);
+            this.tabCreateProject.HeadBack = null;
+            this.tabCreateProject.ImgTxtOffset = new System.Drawing.Point(0, 0);
+            this.tabCreateProject.ItemSize = new System.Drawing.Size(70, 36);
+            this.tabCreateProject.Location = new System.Drawing.Point(10, 39);
             this.tabCreateProject.Name = "tabCreateProject";
+            this.tabCreateProject.PageArrowDown = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageArrowDown")));
+            this.tabCreateProject.PageArrowHover = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageArrowHover")));
+            this.tabCreateProject.PageCloseHover = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageCloseHover")));
+            this.tabCreateProject.PageCloseNormal = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageCloseNormal")));
+            this.tabCreateProject.PageDown = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageDown")));
+            this.tabCreateProject.PageHover = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageHover")));
+            this.tabCreateProject.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
+            this.tabCreateProject.PageNorml = null;
             this.tabCreateProject.SelectedIndex = 0;
             this.tabCreateProject.Size = new System.Drawing.Size(514, 375);
+            this.tabCreateProject.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCreateProject.TabIndex = 0;
             this.tabCreateProject.SelectedIndexChanged += new System.EventHandler(this.tabCreateProject_SelectedIndexChanged);
             // 
             // tabPageSetName
             // 
             this.tabPageSetName.Controls.Add(this.panelInfo);
-            this.tabPageSetName.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSetName.Location = new System.Drawing.Point(0, 36);
             this.tabPageSetName.Name = "tabPageSetName";
             this.tabPageSetName.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSetName.Size = new System.Drawing.Size(506, 349);
+            this.tabPageSetName.Size = new System.Drawing.Size(514, 339);
             this.tabPageSetName.TabIndex = 0;
             this.tabPageSetName.Text = "项目名";
             this.tabPageSetName.UseVisualStyleBackColor = true;
@@ -157,10 +172,10 @@
             this.tabPageSetTasks.Controls.Add(this.buttonTaskRight);
             this.tabPageSetTasks.Controls.Add(this.listIncludedTask);
             this.tabPageSetTasks.Controls.Add(this.listAllTask);
-            this.tabPageSetTasks.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSetTasks.Location = new System.Drawing.Point(0, 36);
             this.tabPageSetTasks.Name = "tabPageSetTasks";
             this.tabPageSetTasks.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSetTasks.Size = new System.Drawing.Size(506, 349);
+            this.tabPageSetTasks.Size = new System.Drawing.Size(514, 339);
             this.tabPageSetTasks.TabIndex = 1;
             this.tabPageSetTasks.Text = "子任务";
             this.tabPageSetTasks.UseVisualStyleBackColor = true;
@@ -213,46 +228,13 @@
             this.tabPageSetUsers.Controls.Add(this.buttonPersonRight);
             this.tabPageSetUsers.Controls.Add(this.listIncludedPerson);
             this.tabPageSetUsers.Controls.Add(this.listAllPerson);
-            this.tabPageSetUsers.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSetUsers.Location = new System.Drawing.Point(0, 36);
             this.tabPageSetUsers.Name = "tabPageSetUsers";
             this.tabPageSetUsers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSetUsers.Size = new System.Drawing.Size(506, 349);
+            this.tabPageSetUsers.Size = new System.Drawing.Size(514, 339);
             this.tabPageSetUsers.TabIndex = 2;
             this.tabPageSetUsers.Text = "人员分配";
             this.tabPageSetUsers.UseVisualStyleBackColor = true;
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonLast.Location = new System.Drawing.Point(262, 388);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(75, 30);
-            this.buttonLast.TabIndex = 10;
-            this.buttonLast.Text = "上一步";
-            this.buttonLast.UseVisualStyleBackColor = true;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(424, 388);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 30);
-            this.buttonCancel.TabIndex = 9;
-            this.buttonCancel.Text = "取消";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonNext.Location = new System.Drawing.Point(343, 388);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 30);
-            this.buttonNext.TabIndex = 8;
-            this.buttonNext.Text = "下一步";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPersonLeft
             // 
@@ -296,11 +278,45 @@
             this.listAllPerson.TabIndex = 9;
             this.listAllPerson.SelectedIndexChanged += new System.EventHandler(this.listAllPerson_SelectedIndexChanged);
             // 
+            // buttonLast
+            // 
+            this.buttonLast.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonLast.Location = new System.Drawing.Point(271, 420);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(75, 30);
+            this.buttonLast.TabIndex = 10;
+            this.buttonLast.Text = "上一步";
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCancel.Location = new System.Drawing.Point(433, 420);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 30);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "取消";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNext.Location = new System.Drawing.Point(352, 420);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(75, 30);
+            this.buttonNext.TabIndex = 8;
+            this.buttonNext.Text = "下一步";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
             // FormCreateProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 429);
+            this.Back = global::PEP.Properties.Resources.main_8;
+            this.ClientSize = new System.Drawing.Size(535, 466);
             this.Controls.Add(this.buttonLast);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonNext);
@@ -320,27 +336,27 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabCreateProject;
-        private System.Windows.Forms.TabPage tabPageSetName;
-        private System.Windows.Forms.TabPage tabPageSetTasks;
-        private System.Windows.Forms.TabPage tabPageSetUsers;
-        private System.Windows.Forms.Button buttonLast;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonNext;
+        private CCWin.SkinControl.SkinTabControl tabCreateProject;
+        private CCWin.SkinControl.SkinTabPage tabPageSetName;
+        private CCWin.SkinControl.SkinTabPage tabPageSetTasks;
+        private CCWin.SkinControl.SkinTabPage tabPageSetUsers;
+        private CCWin.SkinControl.SkinButton buttonLast;
+        private CCWin.SkinControl.SkinButton buttonCancel;
+        private CCWin.SkinControl.SkinButton buttonNext;
         private System.Windows.Forms.Panel panelInfo;
-        private System.Windows.Forms.TextBox textTime;
-        private System.Windows.Forms.TextBox textPname;
-        private System.Windows.Forms.TextBox textNumber;
+        private CCWin.SkinControl.SkinTextBox textTime;
+        private CCWin.SkinControl.SkinTextBox textPname;
+        private CCWin.SkinControl.SkinTextBox textNumber;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Label labelPname;
         private System.Windows.Forms.Label labelNumber;
-        private System.Windows.Forms.Button buttonTaskLeft;
-        private System.Windows.Forms.Button buttonTaskRight;
-        private System.Windows.Forms.ListBox listIncludedTask;
-        private System.Windows.Forms.ListBox listAllTask;
-        private System.Windows.Forms.Button buttonPersonLeft;
-        private System.Windows.Forms.Button buttonPersonRight;
-        private System.Windows.Forms.ListBox listIncludedPerson;
-        private System.Windows.Forms.ListBox listAllPerson;
+        private CCWin.SkinControl.SkinButton buttonTaskLeft;
+        private CCWin.SkinControl.SkinButton buttonTaskRight;
+        private CCWin.SkinControl.SkinListBox listIncludedTask;
+        private CCWin.SkinControl.SkinListBox listAllTask;
+        private CCWin.SkinControl.SkinButton buttonPersonLeft;
+        private CCWin.SkinControl.SkinButton buttonPersonRight;
+        private CCWin.SkinControl.SkinListBox listIncludedPerson;
+        private CCWin.SkinControl.SkinListBox listAllPerson;
     }
 }
