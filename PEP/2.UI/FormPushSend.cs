@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormPushSend : Form
+    public partial class FormPushSend : CCSkinMain
     {
         private int uid;
         public FormPushSend(int uid)
@@ -22,7 +23,7 @@ namespace PEP
         private void buttonPushSubmit_Click(object sender, EventArgs e)
         {
             PushControl push = new PushControl();
-            push.pushSubmit(textPushEdit.Text, System.DateTime.Now.ToString("G"), this.uid);
+            push.pushSubmit(textPushEdit.SkinTxt.Text, System.DateTime.Now.ToString("G"), this.uid);
             MessageBox.Show("推送成功！");
             this.Close();
         }

@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelStatistics = new System.Windows.Forms.Panel();
+            this.labelPushValue = new System.Windows.Forms.Label();
+            this.labelLogValue = new System.Windows.Forms.Label();
             this.labelProjectValue = new System.Windows.Forms.Label();
             this.labelUnameValue = new System.Windows.Forms.Label();
-            this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonClose = new CCWin.SkinControl.SkinButton();
             this.labelPushCount = new System.Windows.Forms.Label();
             this.labelLogCount = new System.Windows.Forms.Label();
             this.labelProjectCount = new System.Windows.Forms.Label();
             this.labelUname = new System.Windows.Forms.Label();
-            this.labelLogValue = new System.Windows.Forms.Label();
-            this.labelPushValue = new System.Windows.Forms.Label();
             this.panelStatistics.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelStatistics
             // 
+            this.panelStatistics.BackColor = System.Drawing.Color.Transparent;
             this.panelStatistics.Controls.Add(this.labelPushValue);
             this.panelStatistics.Controls.Add(this.labelLogValue);
             this.panelStatistics.Controls.Add(this.labelProjectValue);
@@ -52,10 +54,30 @@
             this.panelStatistics.Controls.Add(this.labelLogCount);
             this.panelStatistics.Controls.Add(this.labelProjectCount);
             this.panelStatistics.Controls.Add(this.labelUname);
-            this.panelStatistics.Location = new System.Drawing.Point(12, 12);
+            this.panelStatistics.Location = new System.Drawing.Point(22, 29);
             this.panelStatistics.Name = "panelStatistics";
             this.panelStatistics.Size = new System.Drawing.Size(260, 205);
             this.panelStatistics.TabIndex = 0;
+            // 
+            // labelPushValue
+            // 
+            this.labelPushValue.AutoSize = true;
+            this.labelPushValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPushValue.Location = new System.Drawing.Point(152, 116);
+            this.labelPushValue.Name = "labelPushValue";
+            this.labelPushValue.Size = new System.Drawing.Size(54, 21);
+            this.labelPushValue.TabIndex = 6;
+            this.labelPushValue.Text = "pushs";
+            // 
+            // labelLogValue
+            // 
+            this.labelLogValue.AutoSize = true;
+            this.labelLogValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelLogValue.Location = new System.Drawing.Point(152, 84);
+            this.labelLogValue.Name = "labelLogValue";
+            this.labelLogValue.Size = new System.Drawing.Size(41, 21);
+            this.labelLogValue.TabIndex = 1;
+            this.labelLogValue.Text = "logs";
             // 
             // labelProjectValue
             // 
@@ -79,9 +101,14 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonClose.DownBack = null;
             this.buttonClose.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonClose.Location = new System.Drawing.Point(95, 160);
+            this.buttonClose.MouseBack = null;
             this.buttonClose.Name = "buttonClose";
+            this.buttonClose.NormlBack = null;
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "关闭";
@@ -128,31 +155,12 @@
             this.labelUname.TabIndex = 0;
             this.labelUname.Text = "用户名";
             // 
-            // labelLogValue
-            // 
-            this.labelLogValue.AutoSize = true;
-            this.labelLogValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelLogValue.Location = new System.Drawing.Point(152, 84);
-            this.labelLogValue.Name = "labelLogValue";
-            this.labelLogValue.Size = new System.Drawing.Size(41, 21);
-            this.labelLogValue.TabIndex = 1;
-            this.labelLogValue.Text = "logs";
-            // 
-            // labelPushValue
-            // 
-            this.labelPushValue.AutoSize = true;
-            this.labelPushValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPushValue.Location = new System.Drawing.Point(152, 116);
-            this.labelPushValue.Name = "labelPushValue";
-            this.labelPushValue.Size = new System.Drawing.Size(54, 21);
-            this.labelPushValue.TabIndex = 6;
-            this.labelPushValue.Text = "pushs";
-            // 
             // FormStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 225);
+            this.BackgroundImage = global::PEP.Properties.Resources.main_8;
+            this.ClientSize = new System.Drawing.Size(303, 241);
             this.Controls.Add(this.panelStatistics);
             this.Name = "FormStatistics";
             this.Text = "个人统计";
@@ -166,7 +174,7 @@
 
         private System.Windows.Forms.Panel panelStatistics;
         private System.Windows.Forms.Label labelUname;
-        private System.Windows.Forms.Button buttonClose;
+        private CCWin.SkinControl.SkinButton buttonClose;
         private System.Windows.Forms.Label labelPushCount;
         private System.Windows.Forms.Label labelLogCount;
         private System.Windows.Forms.Label labelProjectCount;

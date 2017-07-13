@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormPwdChange : Form
+    public partial class FormPwdChange : CCSkinMain
     {
         UserInfo user;
         public FormPwdChange(UserInfo u)
@@ -18,9 +19,9 @@ namespace PEP
             this.user = u;
             InitializeComponent();
             this.textUname.Text = this.user.getUname();
-            this.textOldPwd.PasswordChar = '*';
-            this.textNewPwd.PasswordChar = '*';
-            this.textRepeatedPwd.PasswordChar = '*';
+            this.textOldPwd.SkinTxt.PasswordChar = '*';
+            this.textNewPwd.SkinTxt.PasswordChar = '*';
+            this.textRepeatedPwd.SkinTxt.PasswordChar = '*';
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

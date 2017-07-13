@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormStatistics : Form
+    public partial class FormStatistics : CCSkinMain
     {
         private UserInfo user;
         public FormStatistics(UserInfo u)
