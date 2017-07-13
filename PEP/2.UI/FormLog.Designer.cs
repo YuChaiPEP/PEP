@@ -73,7 +73,7 @@
             this.textBoxLog.SkinTxt.TabIndex = 0;
             this.textBoxLog.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxLog.SkinTxt.WaterText = "";
-            this.textBoxLog.TabIndex = 0;
+            this.textBoxLog.TabIndex = 3;
             this.textBoxLog.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxLog.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.textBoxLog.WaterText = "";
@@ -90,7 +90,7 @@
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.NormlBack = null;
             this.buttonCheck.Size = new System.Drawing.Size(91, 35);
-            this.buttonCheck.TabIndex = 1;
+            this.buttonCheck.TabIndex = 0;
             this.buttonCheck.Text = "批  阅";
             this.buttonCheck.UseVisualStyleBackColor = false;
             this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
@@ -106,7 +106,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.NormlBack = null;
             this.buttonCancel.Size = new System.Drawing.Size(91, 35);
-            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取  消";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -122,7 +122,7 @@
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.NormlBack = null;
             this.buttonConfirm.Size = new System.Drawing.Size(91, 35);
-            this.buttonConfirm.TabIndex = 3;
+            this.buttonConfirm.TabIndex = 2;
             this.buttonConfirm.Text = "确  认";
             this.buttonConfirm.UseVisualStyleBackColor = false;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);

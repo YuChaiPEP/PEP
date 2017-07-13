@@ -35,6 +35,8 @@ namespace PEP
             }
             dr.Close();
             this.textBoxLog.Text = logText;
+            this.textBoxLog.SkinTxt.SelectionStart = 0;
+            this.textBoxLog.SkinTxt.SelectionLength = 0;
             if (check)
             {
                 this.buttonConfirm.Visible = false;
