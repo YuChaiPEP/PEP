@@ -93,6 +93,12 @@
     <Compile Include="2.UI\FormPushSend.Designer.cs">
       <DependentUpon>FormPushSend.cs</DependentUpon>
     </Compile>
+    <Compile Include="2.UI\FormPwdChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.UI\FormPwdChange.Designer.cs">
+      <DependentUpon>FormPwdChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="2.UI\FormStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2.UI\FormPushSend.resx">
       <DependentUpon>FormPushSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.UI\FormPwdChange.resx">
+      <DependentUpon>FormPwdChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.UI\FormStatistics.resx">
       <DependentUpon>FormStatistics.cs</DependentUpon>

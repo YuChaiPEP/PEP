@@ -91,5 +91,16 @@ namespace PEP
             dr.Close();
             return count;
         }
+        public int modifyPwd(String oldpwd, String newpwd, String repeat)
+        {
+            if (newpwd == "" || repeat == "")
+                return 1;//password should not be empty
+            if (newpwd != repeat)
+                return 2;//password should be equal to repeated one
+            if (!this.sql.SQLQuery("users", "uid=" + this.uid + " and password='" + CryptoHandler.MD5Encrypt(oldpwd) + "'"))
+                return 3;//old password is wrong
+            this.sql.SQLUpdate("users", "password='" + CryptoHandler.MD5Encrypt(newpwd) + "'", "uid=" + this.uid);
+            return 0;//password modify successfully
+        }
     }
 }
