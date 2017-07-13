@@ -20,6 +20,7 @@ namespace PEP
         }
         public static string DESEncrypt(string input, string key, ref bool success)
         {
+            success = true;
             byte[] btKey = Encoding.UTF8.GetBytes(key);
             byte[] btIV = Encoding.UTF8.GetBytes(key);
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
@@ -43,8 +44,9 @@ namespace PEP
             }
         }
 
-        public static string DESDecrypt(String input, string key, ref bool success)
+        public static string DESDecrypt(string input, string key, ref bool success)
         {
+            success = true;
             byte[] btKey = Encoding.UTF8.GetBytes(key);
             byte[] btIV = Encoding.UTF8.GetBytes(key);
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();

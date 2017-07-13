@@ -34,6 +34,8 @@
             this.textPwd = new CCWin.SkinControl.SkinTextBox();
             this.buttonLogin = new CCWin.SkinControl.SkinButton();
             this.buttonCancel = new CCWin.SkinControl.SkinButton();
+            this.checkBoxSavePwd = new CCWin.SkinControl.SkinCheckBox();
+            this.checkBoxAutoLogin = new CCWin.SkinControl.SkinCheckBox();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -96,7 +98,7 @@
             this.textPwd.IsPasswordChat = '\0';
             this.textPwd.IsSystemPasswordChar = false;
             this.textPwd.Lines = new string[0];
-            this.textPwd.Location = new System.Drawing.Point(121, 180);
+            this.textPwd.Location = new System.Drawing.Point(121, 150);
             this.textPwd.Margin = new System.Windows.Forms.Padding(0);
             this.textPwd.MaxLength = 32767;
             this.textPwd.MinimumSize = new System.Drawing.Size(28, 28);
@@ -131,7 +133,7 @@
             this.buttonLogin.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonLogin.DownBack = null;
             this.buttonLogin.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonLogin.Location = new System.Drawing.Point(121, 234);
+            this.buttonLogin.Location = new System.Drawing.Point(121, 230);
             this.buttonLogin.MouseBack = null;
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.NormlBack = null;
@@ -147,7 +149,7 @@
             this.buttonCancel.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonCancel.DownBack = null;
             this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(235, 234);
+            this.buttonCancel.Location = new System.Drawing.Point(235, 230);
             this.buttonCancel.MouseBack = null;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.NormlBack = null;
@@ -157,13 +159,53 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // checkBoxSavePwd
+            // 
+            this.checkBoxSavePwd.AutoSize = true;
+            this.checkBoxSavePwd.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxSavePwd.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.checkBoxSavePwd.DownBack = null;
+            this.checkBoxSavePwd.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBoxSavePwd.Location = new System.Drawing.Point(121, 190);
+            this.checkBoxSavePwd.MouseBack = null;
+            this.checkBoxSavePwd.Name = "checkBoxSavePwd";
+            this.checkBoxSavePwd.NormlBack = null;
+            this.checkBoxSavePwd.SelectedDownBack = null;
+            this.checkBoxSavePwd.SelectedMouseBack = null;
+            this.checkBoxSavePwd.SelectedNormlBack = null;
+            this.checkBoxSavePwd.Size = new System.Drawing.Size(75, 21);
+            this.checkBoxSavePwd.TabIndex = 11;
+            this.checkBoxSavePwd.Text = "记住密码";
+            this.checkBoxSavePwd.UseVisualStyleBackColor = false;
+            // 
+            // checkBoxAutoLogin
+            // 
+            this.checkBoxAutoLogin.AutoSize = true;
+            this.checkBoxAutoLogin.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxAutoLogin.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.checkBoxAutoLogin.DownBack = null;
+            this.checkBoxAutoLogin.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBoxAutoLogin.Location = new System.Drawing.Point(250, 190);
+            this.checkBoxAutoLogin.MouseBack = null;
+            this.checkBoxAutoLogin.Name = "checkBoxAutoLogin";
+            this.checkBoxAutoLogin.NormlBack = null;
+            this.checkBoxAutoLogin.SelectedDownBack = null;
+            this.checkBoxAutoLogin.SelectedMouseBack = null;
+            this.checkBoxAutoLogin.SelectedNormlBack = null;
+            this.checkBoxAutoLogin.Size = new System.Drawing.Size(75, 21);
+            this.checkBoxAutoLogin.TabIndex = 12;
+            this.checkBoxAutoLogin.Text = "自动登录";
+            this.checkBoxAutoLogin.UseVisualStyleBackColor = false;
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::PEP.Properties.Resources.main_8;
             this.CanResize = false;
-            this.ClientSize = new System.Drawing.Size(459, 330);
+            this.ClientSize = new System.Drawing.Size(459, 318);
+            this.Controls.Add(this.checkBoxAutoLogin);
+            this.Controls.Add(this.checkBoxSavePwd);
             this.Controls.Add(this.textUser);
             this.Controls.Add(this.textPwd);
             this.Controls.Add(this.buttonCancel);
@@ -174,6 +216,7 @@
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户登录";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +228,8 @@
         private CCWin.SkinControl.SkinTextBox textPwd;
         private CCWin.SkinControl.SkinButton buttonLogin;
         private CCWin.SkinControl.SkinButton buttonCancel;
+        private CCWin.SkinControl.SkinCheckBox checkBoxSavePwd;
+        private CCWin.SkinControl.SkinCheckBox checkBoxAutoLogin;
     }
 }
 
