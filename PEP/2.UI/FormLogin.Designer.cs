@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelTitle = new CCWin.SkinControl.SkinLabel();
             this.textUser = new CCWin.SkinControl.SkinTextBox();
             this.textPwd = new CCWin.SkinControl.SkinTextBox();
             this.buttonLogin = new CCWin.SkinControl.SkinButton();
@@ -215,7 +215,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label labelTitle;
+        private CCWin.SkinControl.SkinLabel labelTitle;
         private CCWin.SkinControl.SkinTextBox textUser;
         private CCWin.SkinControl.SkinTextBox textPwd;
         private CCWin.SkinControl.SkinButton buttonLogin;

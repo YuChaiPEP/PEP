@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CCWin;
 
 namespace PEP
 {
-    public partial class FormManage : Form
+    public partial class FormManage : CCSkinMain
     {
         private UserInfo user;
         private ProjectInfo pro;
@@ -44,7 +45,7 @@ namespace PEP
             MySqlDataReader dr = this.user.getManagedProjects();
             while (dr.Read())
             {
-                this.listProject.Items.Add(dr["pname"].ToString());
+                this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));
             }
             dr.Close();
         }
@@ -70,13 +71,13 @@ namespace PEP
             MySqlDataReader dr = this.pro.getTaskInfo();
             while (dr.Read())
             {
-                this.listIncludedTask.Items.Add(dr["tname"].ToString());
+                this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["tname"].ToString()));
             }
             dr.Close();
             dr = this.task.getAllTask();
             while (dr.Read())
             {
-                this.listAllTask.Items.Add(dr["tname"].ToString());
+                this.listAllTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["tname"].ToString()));
             }
             dr.Close();
         }
@@ -90,13 +91,13 @@ namespace PEP
             MySqlDataReader dr = this.pro.getMember();
             while (dr.Read())
             {
-                this.listIncludedPerson.Items.Add(dr["uname"].ToString());
+                this.listIncludedPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["uname"].ToString()));
             }
             dr.Close();
             dr = this.user.getAllUser();
             while (dr.Read())
             {
-                this.listAllPerson.Items.Add(dr["uname"].ToString());
+                this.listAllPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["uname"].ToString()));
             }
             dr.Close();
         }
@@ -209,12 +210,12 @@ namespace PEP
 
         private void buttonTaskRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Add(this.listAllTask.SelectedItem);
+            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString()));
         }
 
         private void buttonTaskLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Remove(this.listIncludedTask.SelectedItem);
+            this.listIncludedTask.Items.Remove(this.listIncludedTask.SelectedItem as CCWin.SkinControl.SkinListBoxItem);
         }
 
         private void buttonTaskSubmit_Click(object sender, EventArgs e)
@@ -226,12 +227,12 @@ namespace PEP
 
         private void buttonPersonRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Add(this.listAllPerson.SelectedItem);
+            this.listIncludedPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllPerson.SelectedItem.ToString()));
         }
 
         private void buttonPersonLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Remove(this.listIncludedPerson.SelectedItem);
+            this.listIncludedPerson.Items.Remove(this.listIncludedPerson.SelectedItem as CCWin.SkinControl.SkinListBoxItem);
         }
 
         private void buttonPersonSubmit_Click(object sender, EventArgs e)
