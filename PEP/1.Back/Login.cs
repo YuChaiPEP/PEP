@@ -20,7 +20,7 @@ namespace PEP
         }
         public bool identifyAuthentication(String u, String p)
         {
-            bool result = sql.SQLQuery("users", "uname='" + u + "' and password='" + p + "'");
+            bool result = sql.SQLQuery("users", "uname='" + u + "' and password='" + CryptoHandler.MD5Encrypt(p) + "'");
             sql.SQLDisconnect();
             return result;
         }
