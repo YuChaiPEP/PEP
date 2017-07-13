@@ -40,14 +40,6 @@ namespace PEP
                 if (user.Length > 0 && pwd.Length > 0)
                 {
                     string content = "yes\n";
-                    if (this.checkBoxAutoLogin.Checked)
-                    {
-                        content += "yes\n";
-                    }
-                    else
-                    {
-                        content += "no\n";
-                    }
                     content += (user + "\n");
                     bool success = true;
                     string cryptoPwd = CryptoHandler.DESEncrypt(pwd, Key, ref success);
@@ -65,11 +57,11 @@ namespace PEP
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string content = FileHandler.fileRead(baseDir, SaveFileName);
             string[] contentArray = content.Split('\n');
-            if (contentArray.Length == 4)
+            if (contentArray.Length == 3)
             { 
-                this.textUser.Text = contentArray[2];
+                this.textUser.Text = contentArray[1];
                 bool success = true;
-                string pwd = CryptoHandler.DESDecrypt(contentArray[3], Key, ref success);
+                string pwd = CryptoHandler.DESDecrypt(contentArray[2], Key, ref success);
                 if (success)
                 {
                     this.textPwd.Text = pwd;
@@ -77,11 +69,6 @@ namespace PEP
                 if (contentArray[0] == "yes")
                 {
                     this.checkBoxSavePwd.Checked = true;
-                }
-                if (contentArray[1] == "yes")
-                {
-                    this.checkBoxAutoLogin.Checked = true;
-                    //this.buttonLogin.PerformClick();
                 }
             }
         }

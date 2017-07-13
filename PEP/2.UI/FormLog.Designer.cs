@@ -84,7 +84,7 @@
             this.buttonCheck.BackColor = System.Drawing.Color.Transparent;
             this.buttonCheck.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonCheck.DownBack = null;
-            this.buttonCheck.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCheck.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonCheck.Location = new System.Drawing.Point(334, 66);
             this.buttonCheck.MouseBack = null;
             this.buttonCheck.Name = "buttonCheck";
@@ -100,7 +100,7 @@
             this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
             this.buttonCancel.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonCancel.DownBack = null;
-            this.buttonCancel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCancel.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonCancel.Location = new System.Drawing.Point(334, 146);
             this.buttonCancel.MouseBack = null;
             this.buttonCancel.Name = "buttonCancel";
@@ -116,7 +116,7 @@
             this.buttonConfirm.BackColor = System.Drawing.Color.Transparent;
             this.buttonConfirm.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonConfirm.DownBack = null;
-            this.buttonConfirm.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonConfirm.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonConfirm.Location = new System.Drawing.Point(334, 66);
             this.buttonConfirm.MouseBack = null;
             this.buttonConfirm.Name = "buttonConfirm";
