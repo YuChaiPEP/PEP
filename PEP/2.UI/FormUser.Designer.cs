@@ -37,6 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.listProject = new System.Windows.Forms.ListBox();
@@ -64,6 +66,11 @@
             this.textLogPerson = new System.Windows.Forms.TextBox();
             this.labelLogTask = new System.Windows.Forms.Label();
             this.labelLogContent = new System.Windows.Forms.Label();
+            this.tabPageReadLog = new System.Windows.Forms.TabPage();
+            this.gridReadLog = new System.Windows.Forms.DataGridView();
+            this.radioButtonTeammateLogs = new System.Windows.Forms.RadioButton();
+            this.radioButtonMyLogs = new System.Windows.Forms.RadioButton();
+            this.radioButtonAllLogs = new System.Windows.Forms.RadioButton();
             this.panelPush = new System.Windows.Forms.Panel();
             this.buttonPushLast = new System.Windows.Forms.Button();
             this.buttonPushNext = new System.Windows.Forms.Button();
@@ -72,16 +79,11 @@
             this.buttonManage = new System.Windows.Forms.Button();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.panelProject = new System.Windows.Forms.Panel();
-            this.tabPageReadLog = new System.Windows.Forms.TabPage();
-            this.radioButtonAllLogs = new System.Windows.Forms.RadioButton();
-            this.radioButtonMyLogs = new System.Windows.Forms.RadioButton();
-            this.radioButtonTeammateLogs = new System.Windows.Forms.RadioButton();
-            this.gridReadLog = new System.Windows.Forms.DataGridView();
             this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -90,10 +92,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectTask)).BeginInit();
             this.tabPageLog.SuspendLayout();
             this.panelLog.SuspendLayout();
-            this.panelPush.SuspendLayout();
-            this.panelProject.SuspendLayout();
             this.tabPageReadLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).BeginInit();
+            this.panelPush.SuspendLayout();
+            this.panelProject.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelWelcome
@@ -404,6 +406,95 @@
             this.labelLogContent.TabIndex = 3;
             this.labelLogContent.Text = "日志内容";
             // 
+            // tabPageReadLog
+            // 
+            this.tabPageReadLog.Controls.Add(this.gridReadLog);
+            this.tabPageReadLog.Controls.Add(this.radioButtonTeammateLogs);
+            this.tabPageReadLog.Controls.Add(this.radioButtonMyLogs);
+            this.tabPageReadLog.Controls.Add(this.radioButtonAllLogs);
+            this.tabPageReadLog.Location = new System.Drawing.Point(4, 30);
+            this.tabPageReadLog.Name = "tabPageReadLog";
+            this.tabPageReadLog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageReadLog.Size = new System.Drawing.Size(531, 341);
+            this.tabPageReadLog.TabIndex = 3;
+            this.tabPageReadLog.Text = "日志查看";
+            this.tabPageReadLog.UseVisualStyleBackColor = true;
+            // 
+            // gridReadLog
+            // 
+            this.gridReadLog.AllowUserToAddRows = false;
+            this.gridReadLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReadLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridReadLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridReadLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnNumber,
+            this.ColumnUser,
+            this.ColumnTime,
+            this.ColumnTask,
+            this.ColumnChecked});
+            this.gridReadLog.Location = new System.Drawing.Point(0, 37);
+            this.gridReadLog.Name = "gridReadLog";
+            this.gridReadLog.ReadOnly = true;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReadLog.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.gridReadLog.RowHeadersVisible = false;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridReadLog.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.gridReadLog.RowTemplate.Height = 23;
+            this.gridReadLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridReadLog.Size = new System.Drawing.Size(531, 308);
+            this.gridReadLog.TabIndex = 3;
+            this.gridReadLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridReadLog_CellClick);
+            // 
+            // radioButtonTeammateLogs
+            // 
+            this.radioButtonTeammateLogs.AutoSize = true;
+            this.radioButtonTeammateLogs.Location = new System.Drawing.Point(201, 6);
+            this.radioButtonTeammateLogs.Name = "radioButtonTeammateLogs";
+            this.radioButtonTeammateLogs.Size = new System.Drawing.Size(92, 25);
+            this.radioButtonTeammateLogs.TabIndex = 2;
+            this.radioButtonTeammateLogs.TabStop = true;
+            this.radioButtonTeammateLogs.Text = "队友日志";
+            this.radioButtonTeammateLogs.UseVisualStyleBackColor = true;
+            this.radioButtonTeammateLogs.CheckedChanged += new System.EventHandler(this.radioButtonTeammateLogs_CheckedChanged);
+            // 
+            // radioButtonMyLogs
+            // 
+            this.radioButtonMyLogs.AutoSize = true;
+            this.radioButtonMyLogs.Location = new System.Drawing.Point(103, 6);
+            this.radioButtonMyLogs.Name = "radioButtonMyLogs";
+            this.radioButtonMyLogs.Size = new System.Drawing.Size(92, 25);
+            this.radioButtonMyLogs.TabIndex = 1;
+            this.radioButtonMyLogs.TabStop = true;
+            this.radioButtonMyLogs.Text = "我的日志";
+            this.radioButtonMyLogs.UseVisualStyleBackColor = true;
+            this.radioButtonMyLogs.CheckedChanged += new System.EventHandler(this.radioButtonMyLogs_CheckedChanged);
+            // 
+            // radioButtonAllLogs
+            // 
+            this.radioButtonAllLogs.AutoSize = true;
+            this.radioButtonAllLogs.Location = new System.Drawing.Point(6, 6);
+            this.radioButtonAllLogs.Name = "radioButtonAllLogs";
+            this.radioButtonAllLogs.Size = new System.Drawing.Size(92, 25);
+            this.radioButtonAllLogs.TabIndex = 0;
+            this.radioButtonAllLogs.TabStop = true;
+            this.radioButtonAllLogs.Text = "全部日志";
+            this.radioButtonAllLogs.UseVisualStyleBackColor = true;
+            this.radioButtonAllLogs.CheckedChanged += new System.EventHandler(this.radioButtonAllLogs_CheckedChanged);
+            // 
             // panelPush
             // 
             this.panelPush.Controls.Add(this.buttonPushLast);
@@ -487,98 +578,11 @@
             this.panelProject.Size = new System.Drawing.Size(144, 330);
             this.panelProject.TabIndex = 10;
             // 
-            // tabPageReadLog
-            // 
-            this.tabPageReadLog.Controls.Add(this.gridReadLog);
-            this.tabPageReadLog.Controls.Add(this.radioButtonTeammateLogs);
-            this.tabPageReadLog.Controls.Add(this.radioButtonMyLogs);
-            this.tabPageReadLog.Controls.Add(this.radioButtonAllLogs);
-            this.tabPageReadLog.Location = new System.Drawing.Point(4, 30);
-            this.tabPageReadLog.Name = "tabPageReadLog";
-            this.tabPageReadLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReadLog.Size = new System.Drawing.Size(531, 341);
-            this.tabPageReadLog.TabIndex = 3;
-            this.tabPageReadLog.Text = "日志查看";
-            this.tabPageReadLog.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAllLogs
-            // 
-            this.radioButtonAllLogs.AutoSize = true;
-            this.radioButtonAllLogs.Location = new System.Drawing.Point(6, 6);
-            this.radioButtonAllLogs.Name = "radioButtonAllLogs";
-            this.radioButtonAllLogs.Size = new System.Drawing.Size(92, 25);
-            this.radioButtonAllLogs.TabIndex = 0;
-            this.radioButtonAllLogs.TabStop = true;
-            this.radioButtonAllLogs.Text = "全部日志";
-            this.radioButtonAllLogs.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMyLogs
-            // 
-            this.radioButtonMyLogs.AutoSize = true;
-            this.radioButtonMyLogs.Location = new System.Drawing.Point(103, 6);
-            this.radioButtonMyLogs.Name = "radioButtonMyLogs";
-            this.radioButtonMyLogs.Size = new System.Drawing.Size(92, 25);
-            this.radioButtonMyLogs.TabIndex = 1;
-            this.radioButtonMyLogs.TabStop = true;
-            this.radioButtonMyLogs.Text = "我的日志";
-            this.radioButtonMyLogs.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTeammateLogs
-            // 
-            this.radioButtonTeammateLogs.AutoSize = true;
-            this.radioButtonTeammateLogs.Location = new System.Drawing.Point(201, 6);
-            this.radioButtonTeammateLogs.Name = "radioButtonTeammateLogs";
-            this.radioButtonTeammateLogs.Size = new System.Drawing.Size(92, 25);
-            this.radioButtonTeammateLogs.TabIndex = 2;
-            this.radioButtonTeammateLogs.TabStop = true;
-            this.radioButtonTeammateLogs.Text = "队友日志";
-            this.radioButtonTeammateLogs.UseVisualStyleBackColor = true;
-            // 
-            // gridReadLog
-            // 
-            this.gridReadLog.AllowUserToAddRows = false;
-            this.gridReadLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridReadLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.gridReadLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridReadLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnNumber,
-            this.ColumnTask,
-            this.ColumnChecked,
-            this.ColumnUser,
-            this.ColumnTime});
-            this.gridReadLog.Location = new System.Drawing.Point(0, 37);
-            this.gridReadLog.Name = "gridReadLog";
-            this.gridReadLog.ReadOnly = true;
-            this.gridReadLog.RowHeadersVisible = false;
-            this.gridReadLog.RowTemplate.Height = 23;
-            this.gridReadLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridReadLog.Size = new System.Drawing.Size(531, 308);
-            this.gridReadLog.TabIndex = 3;
-            // 
             // ColumnNumber
             // 
             this.ColumnNumber.HeaderText = "编号";
             this.ColumnNumber.Name = "ColumnNumber";
             this.ColumnNumber.ReadOnly = true;
-            // 
-            // ColumnTask
-            // 
-            this.ColumnTask.HeaderText = "任务名";
-            this.ColumnTask.Name = "ColumnTask";
-            this.ColumnTask.ReadOnly = true;
-            // 
-            // ColumnChecked
-            // 
-            this.ColumnChecked.HeaderText = "是否批阅";
-            this.ColumnChecked.Name = "ColumnChecked";
-            this.ColumnChecked.ReadOnly = true;
             // 
             // ColumnUser
             // 
@@ -591,6 +595,18 @@
             this.ColumnTime.HeaderText = "创建时间";
             this.ColumnTime.Name = "ColumnTime";
             this.ColumnTime.ReadOnly = true;
+            // 
+            // ColumnTask
+            // 
+            this.ColumnTask.HeaderText = "任务名";
+            this.ColumnTask.Name = "ColumnTask";
+            this.ColumnTask.ReadOnly = true;
+            // 
+            // ColumnChecked
+            // 
+            this.ColumnChecked.HeaderText = "是否批阅";
+            this.ColumnChecked.Name = "ColumnChecked";
+            this.ColumnChecked.ReadOnly = true;
             // 
             // FormUser
             // 
@@ -616,13 +632,13 @@
             this.tabPageLog.ResumeLayout(false);
             this.panelLog.ResumeLayout(false);
             this.panelLog.PerformLayout();
+            this.tabPageReadLog.ResumeLayout(false);
+            this.tabPageReadLog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).EndInit();
             this.panelPush.ResumeLayout(false);
             this.panelPush.PerformLayout();
             this.panelProject.ResumeLayout(false);
             this.panelProject.PerformLayout();
-            this.tabPageReadLog.ResumeLayout(false);
-            this.tabPageReadLog.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,9 +686,9 @@
         private System.Windows.Forms.RadioButton radioButtonTeammateLogs;
         private System.Windows.Forms.DataGridView gridReadLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
     }
 }

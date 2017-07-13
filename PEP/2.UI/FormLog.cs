@@ -16,11 +16,13 @@ namespace PEP
     {
         private ProjectInfo pro;
         private int lid;
-        public FormLog(ProjectInfo p, int id)
+        private bool check;
+        public FormLog(ProjectInfo p, int id, bool isCheck)
         {
             InitializeComponent();
             pro = p;
             lid = id;
+            check = isCheck;
         }
 
         private void FormLog_Load(object sender, EventArgs e)
@@ -33,6 +35,15 @@ namespace PEP
             }
             dr.Close();
             this.textBoxLog.Text = logText;
+            if (check)
+            {
+                this.buttonConfirm.Visible = false;
+            }
+            else
+            {
+                this.buttonCheck.Visible = false;
+                this.buttonCancel.Visible = false;
+            }
         }
 
         private void buttonCheck_Click(object sender, EventArgs e)
@@ -43,6 +54,11 @@ namespace PEP
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -138,7 +138,7 @@ namespace PEP
                 int uid = Convert.ToInt32(dr["uid"]);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnUser"].Value = this.user.searchUser(uid);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnTime"].Value = dr["timestamp"].ToString();
-                int tid = Convert.ToInt32(dr["pid"]);
+                int tid = Convert.ToInt32(dr["tid"]);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnTask"].Value = this.task.searchTask(tid);
                 this.gridCheckLog.Rows[rowIdx].Cells["columnIsChecked"].Value = dr["checked"].ToString();
                 ++rowIdx;
@@ -280,7 +280,7 @@ namespace PEP
         private void gridCheckLog_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int lid = Convert.ToInt32(this.gridCheckLog.SelectedRows[0].Cells["ColumnNumber"].Value);    
-            FormLog formLog = new FormLog(pro, lid);
+            FormLog formLog = new FormLog(pro, lid, true);
             formLog.ShowDialog();
             if (formLog.DialogResult == DialogResult.OK)
             {

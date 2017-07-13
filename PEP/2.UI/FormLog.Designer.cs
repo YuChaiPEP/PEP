@@ -32,6 +32,7 @@
             this.textBoxLog = new CCWin.SkinControl.SkinTextBox();
             this.buttonCheck = new CCWin.SkinControl.SkinButton();
             this.buttonCancel = new CCWin.SkinControl.SkinButton();
+            this.buttonConfirm = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
             // 
             // textBoxLog
@@ -110,6 +111,22 @@
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // buttonConfirm
+            // 
+            this.buttonConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.buttonConfirm.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonConfirm.DownBack = null;
+            this.buttonConfirm.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonConfirm.Location = new System.Drawing.Point(334, 66);
+            this.buttonConfirm.MouseBack = null;
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.NormlBack = null;
+            this.buttonConfirm.Size = new System.Drawing.Size(91, 35);
+            this.buttonConfirm.TabIndex = 3;
+            this.buttonConfirm.Text = "确  认";
+            this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
+            // 
             // FormLog
             // 
             this.AcceptButton = this.buttonCheck;
@@ -118,8 +135,9 @@
             this.Back = global::PEP.Properties.Resources.main_8;
             this.ClientSize = new System.Drawing.Size(446, 440);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.textBoxLog);
+            this.Controls.Add(this.buttonConfirm);
+            this.Controls.Add(this.buttonCheck);
             this.Name = "FormLog";
             this.ShowDrawIcon = false;
             this.Text = "批阅日志";
@@ -133,5 +151,6 @@
         private CCWin.SkinControl.SkinTextBox textBoxLog;
         private CCWin.SkinControl.SkinButton buttonCheck;
         private CCWin.SkinControl.SkinButton buttonCancel;
+        private CCWin.SkinControl.SkinButton buttonConfirm;
     }
 }

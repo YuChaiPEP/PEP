@@ -16,6 +16,7 @@ namespace PEP
     {
         private UserInfo user;
         private ProjectInfo pro;
+        private TaskInfo task;
         private PushControl push;
 
         private String generatePushFormat(MySqlDataReader dr)
@@ -26,6 +27,7 @@ namespace PEP
         {
             this.user = new UserInfo(uname);
             this.pro = new ProjectInfo();
+            this.task = new TaskInfo();
             this.push = new PushControl();
             InitializeComponent();
             this.labelWelcome.Text = "欢迎" + uname + "使用PEP系统";
@@ -37,6 +39,7 @@ namespace PEP
             this.gridProjectTask.AllowUserToAddRows = false;
             this.tabPageTask.Controls.Add(this.gridProjectTask);
             this.tabPageLog.Controls.Add(this.panelLog);
+            this.radioButtonAllLogs.Select();
             MySqlDataReader dr = this.push.getInitialText();
             if (dr.Read())
             {
@@ -119,6 +122,37 @@ namespace PEP
             this.comboLogTask.SelectedIndex = 0;
         }
 
+        private void freshReadLog()
+        {
+            this.gridReadLog.Rows.Clear();
+            MySqlDataReader dr = null;
+            if (this.radioButtonAllLogs.Checked)
+            {
+                dr = this.pro.getLogInfo();
+            }
+            else if (this.radioButtonMyLogs.Checked)
+            {
+                dr = this.pro.getLogInfo(uid: this.user.getUID(), flag: true);
+            }
+            else if (this.radioButtonTeammateLogs.Checked)
+            {
+                dr = this.pro.getLogInfo(uid: this.user.getUID(), flag: false);
+            }
+            int rowIdx = 0;
+            while (dr.Read())
+            {
+                this.gridReadLog.Rows.Add();
+                this.gridReadLog.Rows[rowIdx].Cells["columnNumber"].Value = dr["lid"].ToString();
+                int uid = Convert.ToInt32(dr["uid"]);
+                this.gridReadLog.Rows[rowIdx].Cells["columnUser"].Value = this.user.searchUser(uid);
+                this.gridReadLog.Rows[rowIdx].Cells["columnTime"].Value = dr["timestamp"].ToString();
+                int tid = Convert.ToInt32(dr["tid"]);
+                this.gridReadLog.Rows[rowIdx].Cells["columnTask"].Value = this.task.searchTask(tid);
+                this.gridReadLog.Rows[rowIdx].Cells["columnChecked"].Value = dr["checked"].ToString();
+                ++rowIdx;
+            }
+            dr.Close();
+        }
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.listProject.SelectedItems.Count != 0)
@@ -128,6 +162,7 @@ namespace PEP
                 freshProjectOverview();
                 freshProjectTask();
                 freshLogTask();
+                freshReadLog();
             }
         }
 
@@ -150,6 +185,7 @@ namespace PEP
             this.pro.submitLog(this.user.getUID(), this.textLogTime.Text, this.comboLogTask.Text, this.textLogContent.Text);
             MessageBox.Show("日志已提交。");
             freshLogTask();
+            freshReadLog();
         }
 
         private void buttonPushNext_Click(object sender, EventArgs e)
@@ -188,6 +224,28 @@ namespace PEP
         {
             FormManage formManage = new FormManage(this.user);
             formManage.Show();
+        }
+
+        private void radioButtonAllLogs_CheckedChanged(object sender, EventArgs e)
+        {
+            freshReadLog();
+        }
+
+        private void radioButtonMyLogs_CheckedChanged(object sender, EventArgs e)
+        {
+            freshReadLog();
+        }
+
+        private void radioButtonTeammateLogs_CheckedChanged(object sender, EventArgs e)
+        {
+            freshReadLog();
+        }
+
+        private void gridReadLog_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int lid = Convert.ToInt32(this.gridReadLog.SelectedRows[0].Cells["ColumnNumber"].Value);
+            FormLog formLog = new FormLog(pro, lid, false);
+            formLog.ShowDialog();
         }
     }
 }

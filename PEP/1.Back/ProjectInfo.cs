@@ -53,13 +53,25 @@ namespace PEP
             this.sql.SQLInsertOneEntry("logs(uid,timestamp,pid,tid,content)", "(" + uid + ",'" + time + "'," + this.pid + "," + tid + ",'" + content + "')");
         }
 
-        public MySqlDataReader getLogInfo(int lid = -1)
+        public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool flag = true)
         {
-            MySqlDataReader dr;
+            MySqlDataReader dr = null;
             if (lid == -1)
             {
-                dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid);
-            } else
+                if (uid == -1)
+                {
+                    dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid);
+                }
+                else if (flag)
+                {
+                    dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid + " and uid=" + uid);
+                }
+                else
+                {
+                    dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid + " and uid!=" + uid);
+                }
+            }
+            else
             {
                 dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid + " and lid=" + lid);
             }
