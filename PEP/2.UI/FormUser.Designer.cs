@@ -580,30 +580,35 @@
             // 
             // ColumnNumber
             // 
-            this.ColumnNumber.HeaderText = "编号";
+            this.ColumnNumber.FillWeight = 93.27411F;
+            this.ColumnNumber.HeaderText = "ID";
             this.ColumnNumber.Name = "ColumnNumber";
             this.ColumnNumber.ReadOnly = true;
             // 
             // ColumnUser
             // 
+            this.ColumnUser.FillWeight = 93.27411F;
             this.ColumnUser.HeaderText = "用户名";
             this.ColumnUser.Name = "ColumnUser";
             this.ColumnUser.ReadOnly = true;
             // 
             // ColumnTime
             // 
+            this.ColumnTime.FillWeight = 126.9036F;
             this.ColumnTime.HeaderText = "创建时间";
             this.ColumnTime.Name = "ColumnTime";
             this.ColumnTime.ReadOnly = true;
             // 
             // ColumnTask
             // 
+            this.ColumnTask.FillWeight = 93.27411F;
             this.ColumnTask.HeaderText = "任务名";
             this.ColumnTask.Name = "ColumnTask";
             this.ColumnTask.ReadOnly = true;
             // 
             // ColumnChecked
             // 
+            this.ColumnChecked.FillWeight = 93.27411F;
             this.ColumnChecked.HeaderText = "是否批阅";
             this.ColumnChecked.Name = "ColumnChecked";
             this.ColumnChecked.ReadOnly = true;

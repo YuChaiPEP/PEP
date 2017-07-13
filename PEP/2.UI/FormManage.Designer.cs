@@ -67,16 +67,16 @@
             this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.gridCheckLog = new CCWin.SkinControl.SkinDataGridView();
-            this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnIsChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageProcess = new System.Windows.Forms.TabPage();
             this.buttonProcessSubmit = new System.Windows.Forms.Button();
             this.gridProcess = new System.Windows.Forms.DataGridView();
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonCreateProject = new System.Windows.Forms.Button();
+            this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIsChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -497,41 +497,6 @@
             this.gridCheckLog.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             this.gridCheckLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCheckLog_CellClick);
             // 
-            // ColumnNumber
-            // 
-            this.ColumnNumber.FillWeight = 74.69805F;
-            this.ColumnNumber.HeaderText = "编号";
-            this.ColumnNumber.Name = "ColumnNumber";
-            this.ColumnNumber.ReadOnly = true;
-            // 
-            // ColumnUser
-            // 
-            this.ColumnUser.FillWeight = 86.67075F;
-            this.ColumnUser.HeaderText = "用户名";
-            this.ColumnUser.Name = "ColumnUser";
-            this.ColumnUser.ReadOnly = true;
-            // 
-            // ColumnTime
-            // 
-            this.ColumnTime.FillWeight = 147.753F;
-            this.ColumnTime.HeaderText = "创建时间";
-            this.ColumnTime.Name = "ColumnTime";
-            this.ColumnTime.ReadOnly = true;
-            // 
-            // ColumnTask
-            // 
-            this.ColumnTask.FillWeight = 89.35538F;
-            this.ColumnTask.HeaderText = "任务名";
-            this.ColumnTask.Name = "ColumnTask";
-            this.ColumnTask.ReadOnly = true;
-            // 
-            // ColumnIsChecked
-            // 
-            this.ColumnIsChecked.FillWeight = 101.5229F;
-            this.ColumnIsChecked.HeaderText = "是否批阅";
-            this.ColumnIsChecked.Name = "ColumnIsChecked";
-            this.ColumnIsChecked.ReadOnly = true;
-            // 
             // tabPageProcess
             // 
             this.tabPageProcess.Controls.Add(this.buttonProcessSubmit);
@@ -599,6 +564,41 @@
             this.buttonCreateProject.UseVisualStyleBackColor = true;
             this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
             // 
+            // ColumnNumber
+            // 
+            this.ColumnNumber.FillWeight = 76.14214F;
+            this.ColumnNumber.HeaderText = "ID";
+            this.ColumnNumber.Name = "ColumnNumber";
+            this.ColumnNumber.ReadOnly = true;
+            // 
+            // ColumnUser
+            // 
+            this.ColumnUser.FillWeight = 86.37647F;
+            this.ColumnUser.HeaderText = "用户名";
+            this.ColumnUser.Name = "ColumnUser";
+            this.ColumnUser.ReadOnly = true;
+            // 
+            // ColumnTime
+            // 
+            this.ColumnTime.FillWeight = 147.2513F;
+            this.ColumnTime.HeaderText = "创建时间";
+            this.ColumnTime.Name = "ColumnTime";
+            this.ColumnTime.ReadOnly = true;
+            // 
+            // ColumnTask
+            // 
+            this.ColumnTask.FillWeight = 89.05198F;
+            this.ColumnTask.HeaderText = "任务名";
+            this.ColumnTask.Name = "ColumnTask";
+            this.ColumnTask.ReadOnly = true;
+            // 
+            // ColumnIsChecked
+            // 
+            this.ColumnIsChecked.FillWeight = 101.1782F;
+            this.ColumnIsChecked.HeaderText = "是否批阅";
+            this.ColumnIsChecked.Name = "ColumnIsChecked";
+            this.ColumnIsChecked.ReadOnly = true;
+            // 
             // FormManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -665,15 +665,15 @@
         private System.Windows.Forms.DataGridView gridChecker;
         private System.Windows.Forms.Button buttonCheckerSubmit;
         private CCWin.SkinControl.SkinDataGridView gridCheckLog;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIsChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn c00;
         private System.Windows.Forms.DataGridView gridProcess;
         private System.Windows.Forms.DataGridViewTextBoxColumn c10;
         private System.Windows.Forms.Button buttonProcessSubmit;
         private System.Windows.Forms.Button buttonCreateProject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIsChecked;
     }
 }
