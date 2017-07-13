@@ -247,5 +247,11 @@ namespace PEP
             FormLog formLog = new FormLog(pro, lid, false);
             formLog.ShowDialog();
         }
+
+        private void buttonPwdChange_Click(object sender, EventArgs e)
+        {
+            FormPwdChange formPwdChange = new FormPwdChange(this.user);
+            formPwdChange.Show();
+        }
     }
 }

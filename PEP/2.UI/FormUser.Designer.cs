@@ -68,6 +68,11 @@
             this.labelLogContent = new System.Windows.Forms.Label();
             this.tabPageReadLog = new System.Windows.Forms.TabPage();
             this.gridReadLog = new System.Windows.Forms.DataGridView();
+            this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radioButtonTeammateLogs = new System.Windows.Forms.RadioButton();
             this.radioButtonMyLogs = new System.Windows.Forms.RadioButton();
             this.radioButtonAllLogs = new System.Windows.Forms.RadioButton();
@@ -79,11 +84,7 @@
             this.buttonManage = new System.Windows.Forms.Button();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.panelProject = new System.Windows.Forms.Panel();
-            this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonPwdChange = new System.Windows.Forms.Button();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -459,6 +460,36 @@
             this.gridReadLog.TabIndex = 3;
             this.gridReadLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridReadLog_CellClick);
             // 
+            // ColumnNumber
+            // 
+            this.ColumnNumber.HeaderText = "编号";
+            this.ColumnNumber.Name = "ColumnNumber";
+            this.ColumnNumber.ReadOnly = true;
+            // 
+            // ColumnUser
+            // 
+            this.ColumnUser.HeaderText = "用户名";
+            this.ColumnUser.Name = "ColumnUser";
+            this.ColumnUser.ReadOnly = true;
+            // 
+            // ColumnTime
+            // 
+            this.ColumnTime.HeaderText = "创建时间";
+            this.ColumnTime.Name = "ColumnTime";
+            this.ColumnTime.ReadOnly = true;
+            // 
+            // ColumnTask
+            // 
+            this.ColumnTask.HeaderText = "任务名";
+            this.ColumnTask.Name = "ColumnTask";
+            this.ColumnTask.ReadOnly = true;
+            // 
+            // ColumnChecked
+            // 
+            this.ColumnChecked.HeaderText = "是否批阅";
+            this.ColumnChecked.Name = "ColumnChecked";
+            this.ColumnChecked.ReadOnly = true;
+            // 
             // radioButtonTeammateLogs
             // 
             this.radioButtonTeammateLogs.AutoSize = true;
@@ -578,8 +609,16 @@
             this.panelProject.Size = new System.Drawing.Size(144, 330);
             this.panelProject.TabIndex = 10;
             // 
-            // ColumnNumber
+            // buttonPwdChange
             // 
+            this.buttonPwdChange.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonPwdChange.Location = new System.Drawing.Point(42, 431);
+            this.buttonPwdChange.Name = "buttonPwdChange";
+            this.buttonPwdChange.Size = new System.Drawing.Size(116, 25);
+            this.buttonPwdChange.TabIndex = 11;
+            this.buttonPwdChange.Text = "修改密码";
+            this.buttonPwdChange.UseVisualStyleBackColor = true;
+            this.buttonPwdChange.Click += new System.EventHandler(this.buttonPwdChange_Click);
             this.ColumnNumber.FillWeight = 93.27411F;
             this.ColumnNumber.HeaderText = "ID";
             this.ColumnNumber.Name = "ColumnNumber";
@@ -618,6 +657,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 582);
+            this.Controls.Add(this.buttonPwdChange);
             this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.buttonManage);
             this.Controls.Add(this.buttonPush);
@@ -695,5 +735,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
+        private System.Windows.Forms.Button buttonPwdChange;
     }
 }
