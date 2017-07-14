@@ -5,6 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
+/************************2017/7/14*****************************
+ * 
+ * Back.PushControl
+ * 功能：处理接口层与推送有关的操作
+ * 主要接口：next, last, push
+ * 注意事项：为推送的删除预留操作。实现next和last接口时，需要首先检查当前id的推送是否存在
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public class PushControl
@@ -20,7 +29,7 @@ namespace PEP
             this.isEmpty = false;
             this.sql = new SQLHandler();
             this.sql.SQLConnect();
-            MySqlDataReader dr1 = this.sql.SQLGet("fid", "pushs", "1=1 order by fid");
+            MySqlDataReader dr1 = this.sql.SQLGet("fid", "pushs", "1=1 order by fid"); //当判断条件不需要时可以使用永真语句true或者1=1
             if (!dr1.Read())
             {
                 this.isEmpty = true;
@@ -31,7 +40,7 @@ namespace PEP
             {
                 this.min = (int)dr1["fid"];
                 dr1.Close();
-                MySqlDataReader dr2 = this.sql.SQLGet("fid", "pushs", "1=1 order by fid desc");
+                MySqlDataReader dr2 = this.sql.SQLGet("fid", "pushs", "1=1 order by fid desc"); //降序排列
                 dr2.Read();
                 this.max = (int)dr2["fid"];
                 dr2.Close();
@@ -47,7 +56,7 @@ namespace PEP
             if (this.isEmpty)
                 getPushReader();
             moveForward();
-            while (!this.sql.SQLQuery("pushs", "fid="+this.current))
+            while (!this.sql.SQLQuery("pushs", "fid="+this.current)) //不存在时跳过
             {
                 moveForward();
             }
@@ -74,6 +83,7 @@ namespace PEP
         }
         private void moveForward()
         {
+            //循环递增
             if (this.current < this.max)
                 this.current++;
             else
@@ -81,6 +91,7 @@ namespace PEP
         }
         private void moveBackward()
         {
+            //循环递减
             if (this.current > this.min)
                 this.current--;
             else

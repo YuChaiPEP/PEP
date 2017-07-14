@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 
+/************************2017/7/14*****************************
+ * 
+ * Back.UserInfo
+ * 功能：处理接口层与用户有关的操作，包括当前用户的相关信息与所有用户的相关信息
+ * 主要接口：attended, managed, count, modify
+ * 注意事项：部分接口涉及mysql的多表查询，查询项为字符串时一定加单引号
+ *           users表的is_manager是枚举类型，只有'Y'和'N'值
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public class UserInfo
@@ -19,7 +29,7 @@ namespace PEP
             this.sql.SQLConnect();
             this.uid = -1;
             this.uname = u;
-            identifyUser(u);
+            identifyUser(u); //已登录用户不可切换
         }
         ~UserInfo()
         {
@@ -93,6 +103,7 @@ namespace PEP
         }
         public int modifyPwd(String oldpwd, String newpwd, String repeat)
         {
+            //调用者需要对返回值进行处理
             if (newpwd == "" || repeat == "")
                 return 1;//password should not be empty
             if (newpwd != repeat)

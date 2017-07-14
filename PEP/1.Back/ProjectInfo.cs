@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
+/************************2017/7/14*****************************
+ * 
+ * Back.ProjectInfo
+ * 功能：处理接口层与项目有关的操作，包括当前项目的相关信息与所有项目的相关信息
+ * 主要接口：identify, task, member, log, create, modify
+ * 注意事项：部分接口涉及mysql的多表查询，查询项为字符串时一定加单引号
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public class ProjectInfo
@@ -36,6 +45,7 @@ namespace PEP
         }
         public MySqlDataReader getTaskInfo()
         {
+            //多表查询，注意查询结果进行阅读时，注意列名（建议在数据库中输入查询语句观察列名）
             MySqlDataReader dr = this.sql.SQLGet("tasks.tname,projects2tasks.*", "tasks,projects2tasks", "projects2tasks.pid=" + this.pid + " and tasks.tid = projects2tasks.tid order by ord");
             return dr;
         }
@@ -113,6 +123,7 @@ namespace PEP
         }
         public void modifyChecker(String tname, bool empty, String uname)
         {
+            //checker可能为空，需单独处理，否则数据库中存入的不是null而是空字符串，可能引发bug
             if (empty)
             {
                 TaskInfo task = new TaskInfo();

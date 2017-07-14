@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
+/************************2017/7/14*****************************
+ * 
+ * Base.FileHandler
+ * 功能：处理底层与文件相关的读写操作
+ * 主要接口：save, read
+ * 注意事项：read时若读取失败，返回字符串为空
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     class FileHandler
     {
         public static void fileSave(String address, String filename, String content, bool hidden = false)
         {
+            //address末尾应以\结尾
             string path = address + filename;
             if (File.Exists(path))
             {
@@ -29,6 +39,7 @@ namespace PEP
 
         public static String fileRead(String address, String filename)
         {
+            //若路径或文件错误，返回值为空，调用者需判断
             string content = null;
             string path = address + filename;
             if (File.Exists(path))

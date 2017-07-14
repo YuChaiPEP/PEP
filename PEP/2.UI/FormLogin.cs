@@ -10,6 +10,15 @@ using System.Windows.Forms;
 using System.IO;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormLogin
+ * 功能：实现上层用户登录界面
+ * 主要接口：-
+ * 注意事项：
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormLogin : CCSkinMain
