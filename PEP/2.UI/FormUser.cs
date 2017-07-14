@@ -10,6 +10,15 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormUser
+ * 功能：实现上层用户个人主界面（员工视角）
+ * 主要接口：-
+ * 注意事项：对不同页面实现了不同的刷新函数
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormUser : CCSkinMain
@@ -82,7 +91,7 @@ namespace PEP
                 this.gridProjectOverview.Rows.Add();
                 this.gridProjectOverview.Rows[index].Cells[0].Value = "负责人";
                 int managerID = (int)dr["manager_id"];
-                this.gridProjectOverview.Rows[index++].Cells[1].Value = this.user.searchUser(managerID);
+                this.gridProjectOverview.Rows[index++].Cells[1].Value = this.user.searchUser(managerID); //若数据库中manager_id为空可能报错，需要生成条目时赋值形成闭环
                 this.gridProjectOverview.Rows.Add();
                 this.gridProjectOverview.Rows[index].Cells[0].Value = "子任务数目";
                 this.gridProjectOverview.Rows[index++].Cells[1].Value = dr["task"].ToString();

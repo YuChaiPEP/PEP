@@ -10,6 +10,16 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormCreateProject
+ * 功能：实现上层用户管理者的新建项目界面
+ * 主要接口：-
+ * 注意事项：对不同页面实现了不同的刷新函数
+ *           当有时间需要写入数据库的timestamp表列时，需要注意时间字符串的格式，采用"G"参数进行规范
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormCreateProject : CCSkinMain
@@ -40,7 +50,7 @@ namespace PEP
         {
             int newPid = pro.getMaxPid() + 1;
             this.textNumber.Text = newPid.ToString();
-            this.textTime.Text = System.DateTime.Now.ToString("G");
+            this.textTime.Text = System.DateTime.Now.ToString("G"); //规范时间格式
         }
 
         private void freshTask()
@@ -78,7 +88,7 @@ namespace PEP
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            switch(this.tabCreateProject.SelectedIndex)
+            switch(this.tabCreateProject.SelectedIndex) //逐步检查各阶段的信息填写
             {
                 case 0:
                     if (this.textPname.Text.Length == 0)
@@ -145,7 +155,7 @@ namespace PEP
 
         private void buttonTaskRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString()));
+            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString())); //增加item时new出新的对象
         }
 
         private void listIncludedTask_SelectedIndexChanged(object sender, EventArgs e)

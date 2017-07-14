@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormStatistics
+ * 功能：实现上层用户的个人数据查看界面，对其参与项目、推送、日志情况进行了统计
+ * 主要接口：-
+ * 注意事项：-
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormStatistics : CCSkinMain

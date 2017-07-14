@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormPwdChange
+ * 功能：实现上层用户的密码修改界面（可扩充为个人信息修改界面）
+ * 主要接口：-
+ * 注意事项：-
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormPwdChange : CCSkinMain
@@ -33,7 +42,7 @@ namespace PEP
         {
            int res =  this.user.modifyPwd(this.textOldPwd.Text, this.textNewPwd.Text, this.textRepeatedPwd.Text);
             bool change = false;
-           switch (res)
+           switch (res) //对不同异常返回值进行警告
             {
                 case 1:
                     MessageBox.Show("新密码不能为空！");

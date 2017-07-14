@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormPushSend
+ * 功能：实现上层用户的推送界面
+ * 主要接口：-
+ * 注意事项：注意时间戳的格式规范
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormPushSend : CCSkinMain

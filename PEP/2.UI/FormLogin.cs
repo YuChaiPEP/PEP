@@ -15,7 +15,7 @@ using CCWin;
  * UI.FormLogin
  * 功能：实现上层用户登录界面
  * 主要接口：-
- * 注意事项：
+ * 注意事项：-
  * 
  *************************************************************/
 
@@ -68,7 +68,7 @@ namespace PEP
             if (login.identifyAuthentication(user, pwd))
             {
                 MessageBox.Show("认证通过！");
-                this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK; //对dialog进行赋值，以便主函数判断是否打开用户界面
                 this.username = user;
                 login.saveInfo(AppDomain.CurrentDomain.BaseDirectory, this.checkBoxSavePwd.Checked, this.textUser.SkinTxt.Text, this.textPwd.SkinTxt.Text);
             }

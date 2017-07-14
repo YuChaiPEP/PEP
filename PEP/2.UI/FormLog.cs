@@ -10,6 +10,15 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormLog
+ * 功能：实现上层用户的日志查看和批阅界面
+ * 主要接口：-
+ * 注意事项：对不同权限的用户（员工、管理人员）进行了不同的功能赋予
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormLog : CCSkinMain
@@ -37,7 +46,7 @@ namespace PEP
             this.textBoxLog.Text = logText;
             this.textBoxLog.SkinTxt.SelectionStart = 0;
             this.textBoxLog.SkinTxt.SelectionLength = 0;
-            if (check)
+            if (check) //权限分流
             {
                 this.buttonConfirm.Visible = false;
             }

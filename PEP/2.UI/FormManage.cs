@@ -10,6 +10,17 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CCWin;
 
+/************************2017/7/14*****************************
+ * 
+ * UI.FormManage
+ * 功能：实现上层用户管理者主界面（管理人员视角）
+ * 主要接口：-
+ * 注意事项：对不同页面实现了不同的刷新函数
+ *           列表中新添item时，需要new一个新item，不能只对旧item进行拷贝
+ *           批阅日志后通过dialog返回值判断是否刷新页面
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormManage : CCSkinMain
@@ -27,7 +38,7 @@ namespace PEP
             freshManagedProjects();
             this.gridChecker.RowHeadersVisible = false;
             this.gridChecker.AllowUserToAddRows = false;
-            DataGridViewComboBoxColumn c01 = new DataGridViewComboBoxColumn();
+            DataGridViewComboBoxColumn c01 = new DataGridViewComboBoxColumn(); //实现在grid的某个单元格中增加下拉列功能
             c01.HeaderText = "负责人";
             this.gridChecker.Columns.Add(c01);
             this.gridProcess.RowHeadersVisible = false;
@@ -87,7 +98,7 @@ namespace PEP
             this.listAllPerson.Items.Clear();
             this.listIncludedPerson.Items.Clear();
             this.buttonPersonLeft.Enabled = false;
-            this.buttonPersonRight.Enabled = false;
+            this.buttonPersonRight.Enabled = false; //防止误操作
             MySqlDataReader dr = this.pro.getMember();
             while (dr.Read())
             {
@@ -119,7 +130,7 @@ namespace PEP
             {
                 this.gridChecker.Rows.Add();
                 this.gridChecker.Rows[index].Cells[0].Value = dr["tname"];
-                if (dr["checker"].ToString() != "" && c01.Items.Contains(dr["checker"]))
+                if (dr["checker"].ToString() != "" && c01.Items.Contains(dr["checker"])) //处理数据库中为null时的情况；处理项目人员被删除时无法找到合法选项的情况
                     this.gridChecker.Rows[index++].Cells[1].Value = dr["checker"];
                 else
                     this.gridChecker.Rows[index++].Cells[1].Value = null;
@@ -158,7 +169,7 @@ namespace PEP
                 if (dr["task_state"].ToString() != "")
                     this.gridProcess.Rows[index++].Cells[1].Value = dr["task_state"];
                 else
-                    this.gridProcess.Rows[index++].Cells[1].Value = null;
+                    this.gridProcess.Rows[index++].Cells[1].Value = null; //null不是空字符串
             }
             dr.Close();
         }
@@ -210,7 +221,7 @@ namespace PEP
 
         private void buttonTaskRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString()));
+            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString())); //new新的item以防错误
         }
 
         private void buttonTaskLeft_Click(object sender, EventArgs e)
@@ -283,7 +294,7 @@ namespace PEP
             int lid = Convert.ToInt32(this.gridCheckLog.SelectedRows[0].Cells["ColumnNumber"].Value);    
             FormLog formLog = new FormLog(pro, lid, true);
             formLog.ShowDialog();
-            if (formLog.DialogResult == DialogResult.OK)
+            if (formLog.DialogResult == DialogResult.OK) //已批阅时才进行刷新
             {
                 freshLog();
             }
