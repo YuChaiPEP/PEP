@@ -34,6 +34,7 @@ namespace PEP
             this.pro = new ProjectInfo();
             this.task = new TaskInfo();
             InitializeComponent();
+            this.tabControl.SelectedIndex = 0;
             this.labelWelcome.Text = "欢迎" + user.getUname() + "进入管理者界面";
             freshManagedProjects();
             this.gridChecker.RowHeadersVisible = false;

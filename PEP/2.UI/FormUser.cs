@@ -39,6 +39,7 @@ namespace PEP
             this.task = new TaskInfo();
             this.push = new PushControl();
             InitializeComponent();
+            this.tabControl.SelectedIndex = 0;
             this.labelWelcome.Text = "欢迎" + uname + "使用PEP系统";
             freshAttendedProjects();
             this.gridProjectOverview.RowHeadersVisible = false;
