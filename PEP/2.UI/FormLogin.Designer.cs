@@ -43,6 +43,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitle.BorderColor = System.Drawing.Color.White;
             this.labelTitle.Font = new System.Drawing.Font("华文楷体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelTitle.Location = new System.Drawing.Point(121, 44);
             this.labelTitle.Name = "labelTitle";

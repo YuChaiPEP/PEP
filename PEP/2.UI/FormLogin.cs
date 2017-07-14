@@ -15,8 +15,6 @@ namespace PEP
     public partial class FormLogin : CCSkinMain
     {
         String username;
-        private const string SaveFileName = @"login.ini";
-        private const string Key = @"PEP12345";
 
         public FormLogin()
         {
@@ -28,44 +26,12 @@ namespace PEP
         {
             return this.username;
         }
-
-        private void saveInfo()
-        {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            if (this.checkBoxSavePwd.Checked)
-            {
-                string user = this.textUser.SkinTxt.Text;
-                string pwd = this.textPwd.SkinTxt.Text;
-                if (user.Length > 0 && pwd.Length > 0)
-                {
-                    string content = "yes\n";
-                    content += (user + "\n");
-                    bool success = true;
-                    string cryptoPwd = CryptoHandler.DESEncrypt(pwd, Key, ref success);
-                    if (success)
-                    {
-                        content += cryptoPwd;
-                        FileHandler.fileSave(baseDir, SaveFileName, content, true);
-                    }
-                }
-            }
-            else
-            {
-                string content = "no\n.\n.";
-                FileHandler.fileSave(baseDir, SaveFileName, content, true);
-            }
-        }
         
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string content = FileHandler.fileRead(baseDir, SaveFileName);
-            if (content == null)
-            {
-                return;
-            }
-            string[] contentArray = content.Split('\n');
-            if (contentArray.Length == 3)
+            Login login = new Login();
+            string[] contentArray = login.readInfo(AppDomain.CurrentDomain.BaseDirectory);
+            if (contentArray != null)
             {
                 if (contentArray[0] == "yes")
                 {
@@ -76,12 +42,7 @@ namespace PEP
                     return;
                 }
                 this.textUser.Text = contentArray[1];
-                bool success = true;
-                string pwd = CryptoHandler.DESDecrypt(contentArray[2], Key, ref success);
-                if (success)
-                {
-                    this.textPwd.Text = pwd;
-                }
+                this.textPwd.Text = contentArray[2];
             }
         }
 
@@ -100,7 +61,7 @@ namespace PEP
                 MessageBox.Show("认证通过！");
                 this.DialogResult = DialogResult.OK;
                 this.username = user;
-                saveInfo();
+                login.saveInfo(AppDomain.CurrentDomain.BaseDirectory, this.checkBoxSavePwd.Checked, this.textUser.SkinTxt.Text, this.textPwd.SkinTxt.Text);
             }
             else
                 MessageBox.Show("认证失败！");
