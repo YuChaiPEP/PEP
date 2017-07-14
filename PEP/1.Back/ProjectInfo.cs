@@ -155,14 +155,16 @@ namespace PEP
             this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Items.Count + ",0," + manager_id + ")");
             int ord = 1;
             TaskInfo task = new TaskInfo();
-            foreach (string tname in tasks.Items)
+            foreach (CCWin.SkinControl.SkinListBoxItem item in tasks.Items)
             {
+                string tname = item.Text;
                 int tid = task.getTaskID(tname);
                 this.sql.SQLInsertOneEntry("projects2tasks(pid, tid, task_state, ord)", "(" + pid + "," + tid + ",'未开始'," + ord + ")");
                 ++ord;
             }
-            foreach (string uname in persons.Items)
+            foreach (CCWin.SkinControl.SkinListBoxItem item in persons.Items)
             {
+                string uname = item.Text;
                 UserInfo user = new UserInfo(uname);
                 int uid = user.getUID();
                 this.sql.SQLInsertOneEntry("users2projects", "(" + uid + "," + pid + ")");

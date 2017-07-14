@@ -30,6 +30,7 @@ namespace PEP
         public FormCreateProject(UserInfo u)
         {
             InitializeComponent();
+            this.tabCreateProject.SelectedIndex = 0;
             user = u;
             pro = new ProjectInfo();
             task = new TaskInfo();
@@ -113,6 +114,7 @@ namespace PEP
                         break;
                     }
                     pro.createProject(Convert.ToInt32(this.textNumber.Text), this.textPname.Text, this.textTime.Text, user.getUID(), this.listIncludedTask, this.listIncludedPerson);
+                    MessageBox.Show("项目创建完成。");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                     break;
@@ -184,12 +186,12 @@ namespace PEP
 
         private void buttonPersonRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Add((CCWin.SkinControl.SkinListBoxItem)this.listAllPerson.SelectedItem);
+            this.listIncludedPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllPerson.SelectedItem.ToString()));
         }
 
         private void buttonPersonLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Remove(new CCWin.SkinControl.SkinListBoxItem(this.listIncludedPerson.SelectedItem.ToString()));
+            this.listIncludedPerson.Items.Remove((CCWin.SkinControl.SkinListBoxItem)this.listIncludedPerson.SelectedItem);
         }
 
         private void listAllPerson_SelectedIndexChanged(object sender, EventArgs e)
