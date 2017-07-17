@@ -39,6 +39,7 @@ namespace PEP
             this.task = new TaskInfo();
             this.push = new PushControl();
             InitializeComponent();
+            this.tabControl.SelectedIndex = 0;
             this.labelWelcome.Text = "欢迎" + uname + "使用PEP系统";
             freshAttendedProjects();
             this.gridProjectOverview.RowHeadersVisible = false;
@@ -59,12 +60,14 @@ namespace PEP
                 this.buttonManage.Enabled = true;
             else
                 this.buttonManage.Enabled = false;
+            this.buttonLogSubmit.Enabled = false;
+            this.buttonLogClear.Enabled = false;
         }
 
         private void freshAttendedProjects()
         {
             this.listProject.Items.Clear();
-            MySqlDataReader dr = this.user.getAttendedProjects();
+            MySqlDataReader dr = this.user.getAttendedActiveProjects();
             while (dr.Read())
             {
                 this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));
@@ -120,8 +123,11 @@ namespace PEP
         }
         private void freshLogTask()
         {
+            this.buttonLogSubmit.Enabled = false;
+            this.buttonLogClear.Enabled = false;
             this.comboLogTask.Items.Clear();
             this.comboLogTask.ResetText();
+            this.textLogContent.ResetText();
             MySqlDataReader dr = this.pro.getTaskInfo();
             while (dr.Read())
             {
@@ -172,6 +178,8 @@ namespace PEP
                 freshProjectTask();
                 freshLogTask();
                 freshReadLog();
+                this.buttonLogSubmit.Enabled = true;
+                this.buttonLogClear.Enabled = true;
             }
         }
 
@@ -191,6 +199,16 @@ namespace PEP
 
         private void buttonLogSubmit_Click(object sender, EventArgs e)
         {
+            if (this.comboLogTask.Text == "")
+            {
+                MessageBox.Show("所属任务不能为空！");
+                return;
+            }
+            if (this.textLogContent.Text == "")
+            {
+                MessageBox.Show("日志内容不能为空！");
+                return;
+            }
             this.pro.submitLog(this.user.getUID(), this.textLogTime.Text, this.comboLogTask.Text, this.textLogContent.Text);
             MessageBox.Show("日志已提交。");
             freshLogTask();

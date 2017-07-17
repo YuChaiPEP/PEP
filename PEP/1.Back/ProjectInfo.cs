@@ -96,9 +96,14 @@ namespace PEP
             return x;
         }
 
-        public void modifyDetail(String pname)
+        public void modifyDetail(String pname, int stateNo)
         {
-            this.sql.SQLUpdate("projects", "pname='" + pname+"'", "pid=" + this.pid);
+            string state = "";
+            if (stateNo == 1)
+                state = "进行中";
+            if (stateNo == 2)
+                state = "暂停中";
+            this.sql.SQLUpdate("projects", "pname='" + pname+ "',project_state='" + state + "'", "pid=" + this.pid);
         }
         public void modifyTask(ListBox lb)
         {
@@ -152,7 +157,7 @@ namespace PEP
 
         public void createProject(int pid, string pname, string time, int manager_id, ListBox tasks, ListBox persons)
         {
-            this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Items.Count + ",0," + manager_id + ")");
+            this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Items.Count + ",0," + manager_id + ",'进行中')");
             int ord = 1;
             TaskInfo task = new TaskInfo();
             foreach (CCWin.SkinControl.SkinListBoxItem item in tasks.Items)
@@ -169,6 +174,21 @@ namespace PEP
                 int uid = user.getUID();
                 this.sql.SQLInsertOneEntry("users2projects", "(" + uid + "," + pid + ")");
             }
+        }
+
+        public void finishProject()
+        {
+            this.sql.SQLUpdate("projects", "project_state='已完成'", "pid=" + this.pid);
+            this.pid = -1;
+        }
+
+        public void abortProject()
+        {
+            this.sql.SQLDelete("projects", "pid="+this.pid);
+            this.sql.SQLDelete("users2projects", "pid=" + this.pid);
+            this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
+            this.sql.SQLDelete("logs", "pid=" + this.pid);
+            this.pid = -1;
         }
     }
 }
