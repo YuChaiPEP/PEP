@@ -13,6 +13,7 @@ using MySql.Data.MySqlClient;
  * 主要接口：attended, managed, count, modify
  * 注意事项：部分接口涉及mysql的多表查询，查询项为字符串时一定加单引号
  *           users表的is_manager是枚举类型，只有'Y'和'N'值
+ *           项目的状态分为进行中、暂停中和已完成，active特指进行中状态，live指代进行中和暂停中两个状态
  * 
  *************************************************************/
 
@@ -54,14 +55,14 @@ namespace PEP
             this.uid = (int)dr["uid"];
             dr.Close();
         }
-        public MySqlDataReader getAttendedProjects()
+        public MySqlDataReader getAttendedActiveProjects()
         {
-            MySqlDataReader dr = this.sql.SQLGet("projects.*", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid");
+            MySqlDataReader dr = this.sql.SQLGet("projects.*", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid and projects.project_state='进行中'");
             return dr;
         }
-        public MySqlDataReader getManagedProjects()
+        public MySqlDataReader getManagedLiveProjects()
         {
-            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "manager_id=" + this.uid);
+            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "manager_id=" + this.uid + " and project_state!='已完成'");
             return dr;
         }
         public String searchUser(int uid)

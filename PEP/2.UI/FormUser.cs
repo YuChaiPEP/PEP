@@ -65,7 +65,7 @@ namespace PEP
         private void freshAttendedProjects()
         {
             this.listProject.Items.Clear();
-            MySqlDataReader dr = this.user.getAttendedProjects();
+            MySqlDataReader dr = this.user.getAttendedActiveProjects();
             while (dr.Read())
             {
                 this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));

@@ -50,11 +50,16 @@ namespace PEP
             c11.Items.Add("进行中");
             c11.Items.Add("已完成");
             this.gridProcess.Columns.Add(c11);
+            this.buttonInfoSubmit.Enabled = false;
+            this.buttonTaskSubmit.Enabled = false;
+            this.buttonPersonSubmit.Enabled = false;
+            this.buttonCheckerSubmit.Enabled = false;
+            this.buttonProcessSubmit.Enabled = false;
         }
         private void freshManagedProjects()
         {
             this.listProject.Items.Clear();
-            MySqlDataReader dr = this.user.getManagedProjects();
+            MySqlDataReader dr = this.user.getManagedLiveProjects();
             while (dr.Read())
             {
                 this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));
@@ -70,6 +75,11 @@ namespace PEP
                 this.textNumber.Text = dr["pid"].ToString();
                 this.textPname.Text = dr["pname"].ToString();
                 this.textTime.Text = dr["timestamp"].ToString();
+                if (dr["project_state"].ToString() == "进行中")
+                    this.radioIng.Checked = true;
+                else
+                    this.radioPause.Checked = true;
+
             }
             dr.Close();
         }
@@ -180,6 +190,11 @@ namespace PEP
             {
                 String pname = this.listProject.SelectedItems[0].ToString();
                 this.pro.identifyProject(pname);
+                this.buttonInfoSubmit.Enabled = true;
+                this.buttonTaskSubmit.Enabled = true;
+                this.buttonPersonSubmit.Enabled = true;
+                this.buttonCheckerSubmit.Enabled = true;
+                this.buttonProcessSubmit.Enabled = true;
                 freshInfo();
                 freshTask();
                 freshPerson();
@@ -191,7 +206,12 @@ namespace PEP
 
         private void buttonInfoSubmit_Click(object sender, EventArgs e)
         {
-            this.pro.modifyDetail(this.textPname.Text);
+            int stateNo = 0;
+            if (this.radioIng.Checked)
+                stateNo = 1;
+            if (this.radioPause.Checked)
+                stateNo = 2;
+            this.pro.modifyDetail(this.textPname.Text, stateNo);
             freshManagedProjects();
             MessageBox.Show("项目基本信息已修改。");
         }
@@ -319,5 +339,6 @@ namespace PEP
                 freshManagedProjects();
             }
         }
+       
     }
 }
