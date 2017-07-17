@@ -48,7 +48,7 @@ namespace PEP
             c11.Items.Add("未开始");
             c11.Items.Add("进行中");
             c11.Items.Add("已完成");
-            this.gridProcess.Columns.Add(c11);
+            this.gridProcess.Columns.Add(c11);      
         }
         private void freshManagedProjects()
         {
