@@ -46,8 +46,9 @@
             this.listProject = new CCWin.SkinControl.SkinListBox();
             this.panelProject = new System.Windows.Forms.Panel();
             this.tabControl = new CCWin.SkinControl.SkinTabControl();
-            this.tabPageInfo = new System.Windows.Forms.TabPage();
+            this.tabPageInfo = new CCWin.SkinControl.SkinTabPage();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.labelState = new System.Windows.Forms.Label();
             this.buttonInfoSubmit = new CCWin.SkinControl.SkinButton();
             this.textTime = new CCWin.SkinControl.SkinTextBox();
             this.textPname = new CCWin.SkinControl.SkinTextBox();
@@ -55,43 +56,49 @@
             this.labelTime = new System.Windows.Forms.Label();
             this.labelPname = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
-            this.tabPageTask = new System.Windows.Forms.TabPage();
+            this.panelState = new System.Windows.Forms.Panel();
+            this.radioIng = new CCWin.SkinControl.SkinRadioButton();
+            this.radioPause = new CCWin.SkinControl.SkinRadioButton();
+            this.tabPageTask = new CCWin.SkinControl.SkinTabPage();
             this.buttonTaskSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonTaskLeft = new CCWin.SkinControl.SkinButton();
             this.buttonTaskRight = new CCWin.SkinControl.SkinButton();
             this.listIncludedTask = new CCWin.SkinControl.SkinListBox();
             this.listAllTask = new CCWin.SkinControl.SkinListBox();
-            this.tabPagePerson = new System.Windows.Forms.TabPage();
+            this.tabPagePerson = new CCWin.SkinControl.SkinTabPage();
             this.buttonPersonSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonPersonLeft = new CCWin.SkinControl.SkinButton();
             this.buttonPersonRight = new CCWin.SkinControl.SkinButton();
             this.listIncludedPerson = new CCWin.SkinControl.SkinListBox();
             this.listAllPerson = new CCWin.SkinControl.SkinListBox();
-            this.tabPageChecker = new System.Windows.Forms.TabPage();
+            this.tabPageChecker = new CCWin.SkinControl.SkinTabPage();
             this.buttonCheckerSubmit = new CCWin.SkinControl.SkinButton();
             this.gridChecker = new CCWin.SkinControl.SkinDataGridView();
             this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.tabPageLog = new CCWin.SkinControl.SkinTabPage();
             this.gridCheckLog = new CCWin.SkinControl.SkinDataGridView();
             this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnIsChecked = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPageProcess = new System.Windows.Forms.TabPage();
-            this.buttonProcessSubmit = new CCWin.SkinControl.SkinButton();
-            this.gridProcess = new CCWin.SkinControl.SkinDataGridView();
+            this.tabPageProcess = new CCWin.SkinControl.SkinTabPage();
+            this.groupBoxProject = new System.Windows.Forms.GroupBox();
+            this.buttonProjectProcessSubmit = new CCWin.SkinControl.SkinButton();
+            this.panelProcess = new System.Windows.Forms.Panel();
+            this.radioAbort = new CCWin.SkinControl.SkinRadioButton();
+            this.radioFinish = new CCWin.SkinControl.SkinRadioButton();
+            this.groupBoxTask = new System.Windows.Forms.GroupBox();
+            this.gridTaskProcess = new CCWin.SkinControl.SkinDataGridView();
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonTaskProcessSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonCreateProject = new CCWin.SkinControl.SkinButton();
-            this.labelState = new System.Windows.Forms.Label();
-            this.radioIng = new CCWin.SkinControl.SkinRadioButton();
-            this.radioPause = new CCWin.SkinControl.SkinRadioButton();
-            this.panelState = new System.Windows.Forms.Panel();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
             this.panelInfo.SuspendLayout();
+            this.panelState.SuspendLayout();
             this.tabPageTask.SuspendLayout();
             this.tabPagePerson.SuspendLayout();
             this.tabPageChecker.SuspendLayout();
@@ -99,8 +106,10 @@
             this.tabPageLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).BeginInit();
             this.tabPageProcess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridProcess)).BeginInit();
-            this.panelState.SuspendLayout();
+            this.groupBoxProject.SuspendLayout();
+            this.panelProcess.SuspendLayout();
+            this.groupBoxTask.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTaskProcess)).BeginInit();
             this.SuspendLayout();
             // 
             // panelWelcome
@@ -183,19 +192,22 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedIndex = 5;
             this.tabControl.Size = new System.Drawing.Size(496, 406);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 4;
             // 
             // tabPageInfo
             // 
+            this.tabPageInfo.BackColor = System.Drawing.Color.White;
             this.tabPageInfo.Controls.Add(this.panelInfo);
+            this.tabPageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageInfo.Location = new System.Drawing.Point(0, 36);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(496, 370);
+            this.tabPageInfo.Size = new System.Drawing.Size(496, 396);
             this.tabPageInfo.TabIndex = 0;
+            this.tabPageInfo.TabItemImage = null;
             this.tabPageInfo.Text = "信息修改";
             this.tabPageInfo.UseVisualStyleBackColor = true;
             // 
@@ -214,6 +226,15 @@
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(447, 243);
             this.panelInfo.TabIndex = 0;
+            // 
+            // labelState
+            // 
+            this.labelState.AutoSize = true;
+            this.labelState.Location = new System.Drawing.Point(112, 144);
+            this.labelState.Name = "labelState";
+            this.labelState.Size = new System.Drawing.Size(74, 21);
+            this.labelState.TabIndex = 7;
+            this.labelState.Text = "当前状态";
             // 
             // buttonInfoSubmit
             // 
@@ -376,18 +397,70 @@
             this.labelNumber.TabIndex = 0;
             this.labelNumber.Text = "项目编号";
             // 
+            // panelState
+            // 
+            this.panelState.Controls.Add(this.radioIng);
+            this.panelState.Controls.Add(this.radioPause);
+            this.panelState.Location = new System.Drawing.Point(230, 135);
+            this.panelState.Name = "panelState";
+            this.panelState.Size = new System.Drawing.Size(164, 48);
+            this.panelState.TabIndex = 9;
+            // 
+            // radioIng
+            // 
+            this.radioIng.AutoSize = true;
+            this.radioIng.BackColor = System.Drawing.Color.Transparent;
+            this.radioIng.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioIng.DownBack = null;
+            this.radioIng.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioIng.Location = new System.Drawing.Point(14, 11);
+            this.radioIng.MouseBack = null;
+            this.radioIng.Name = "radioIng";
+            this.radioIng.NormlBack = null;
+            this.radioIng.SelectedDownBack = null;
+            this.radioIng.SelectedMouseBack = null;
+            this.radioIng.SelectedNormlBack = null;
+            this.radioIng.Size = new System.Drawing.Size(69, 24);
+            this.radioIng.TabIndex = 8;
+            this.radioIng.TabStop = true;
+            this.radioIng.Text = "进行中";
+            this.radioIng.UseVisualStyleBackColor = false;
+            // 
+            // radioPause
+            // 
+            this.radioPause.AutoSize = true;
+            this.radioPause.BackColor = System.Drawing.Color.Transparent;
+            this.radioPause.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioPause.DownBack = null;
+            this.radioPause.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioPause.Location = new System.Drawing.Point(82, 11);
+            this.radioPause.MouseBack = null;
+            this.radioPause.Name = "radioPause";
+            this.radioPause.NormlBack = null;
+            this.radioPause.SelectedDownBack = null;
+            this.radioPause.SelectedMouseBack = null;
+            this.radioPause.SelectedNormlBack = null;
+            this.radioPause.Size = new System.Drawing.Size(69, 24);
+            this.radioPause.TabIndex = 10;
+            this.radioPause.TabStop = true;
+            this.radioPause.Text = "暂停中";
+            this.radioPause.UseVisualStyleBackColor = false;
+            // 
             // tabPageTask
             // 
+            this.tabPageTask.BackColor = System.Drawing.Color.White;
             this.tabPageTask.Controls.Add(this.buttonTaskSubmit);
             this.tabPageTask.Controls.Add(this.buttonTaskLeft);
             this.tabPageTask.Controls.Add(this.buttonTaskRight);
             this.tabPageTask.Controls.Add(this.listIncludedTask);
             this.tabPageTask.Controls.Add(this.listAllTask);
+            this.tabPageTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageTask.Location = new System.Drawing.Point(0, 36);
             this.tabPageTask.Name = "tabPageTask";
             this.tabPageTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTask.Size = new System.Drawing.Size(496, 370);
+            this.tabPageTask.Size = new System.Drawing.Size(496, 396);
             this.tabPageTask.TabIndex = 1;
+            this.tabPageTask.TabItemImage = null;
             this.tabPageTask.Text = "子任务调整";
             this.tabPageTask.UseVisualStyleBackColor = true;
             // 
@@ -471,16 +544,19 @@
             // 
             // tabPagePerson
             // 
+            this.tabPagePerson.BackColor = System.Drawing.Color.White;
             this.tabPagePerson.Controls.Add(this.buttonPersonSubmit);
             this.tabPagePerson.Controls.Add(this.buttonPersonLeft);
             this.tabPagePerson.Controls.Add(this.buttonPersonRight);
             this.tabPagePerson.Controls.Add(this.listIncludedPerson);
             this.tabPagePerson.Controls.Add(this.listAllPerson);
+            this.tabPagePerson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPagePerson.Location = new System.Drawing.Point(0, 36);
             this.tabPagePerson.Name = "tabPagePerson";
             this.tabPagePerson.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePerson.Size = new System.Drawing.Size(496, 370);
+            this.tabPagePerson.Size = new System.Drawing.Size(496, 396);
             this.tabPagePerson.TabIndex = 2;
+            this.tabPagePerson.TabItemImage = null;
             this.tabPagePerson.Text = "人员分配";
             this.tabPagePerson.UseVisualStyleBackColor = true;
             // 
@@ -564,13 +640,16 @@
             // 
             // tabPageChecker
             // 
+            this.tabPageChecker.BackColor = System.Drawing.Color.White;
             this.tabPageChecker.Controls.Add(this.buttonCheckerSubmit);
             this.tabPageChecker.Controls.Add(this.gridChecker);
+            this.tabPageChecker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageChecker.Location = new System.Drawing.Point(0, 36);
             this.tabPageChecker.Name = "tabPageChecker";
             this.tabPageChecker.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageChecker.Size = new System.Drawing.Size(496, 370);
+            this.tabPageChecker.Size = new System.Drawing.Size(496, 396);
             this.tabPageChecker.TabIndex = 3;
+            this.tabPageChecker.TabItemImage = null;
             this.tabPageChecker.Text = "负责人委任";
             this.tabPageChecker.UseVisualStyleBackColor = true;
             // 
@@ -636,7 +715,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridChecker.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridChecker.RowTemplate.Height = 23;
-            this.gridChecker.Size = new System.Drawing.Size(485, 336);
+            this.gridChecker.Size = new System.Drawing.Size(496, 336);
             this.gridChecker.TabIndex = 0;
             this.gridChecker.TitleBack = null;
             this.gridChecker.TitleBackColorBegin = System.Drawing.Color.White;
@@ -649,12 +728,15 @@
             // 
             // tabPageLog
             // 
+            this.tabPageLog.BackColor = System.Drawing.Color.White;
             this.tabPageLog.Controls.Add(this.gridCheckLog);
+            this.tabPageLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLog.Size = new System.Drawing.Size(496, 370);
+            this.tabPageLog.Size = new System.Drawing.Size(496, 396);
             this.tabPageLog.TabIndex = 4;
+            this.tabPageLog.TabItemImage = null;
             this.tabPageLog.Text = "日志批阅";
             this.tabPageLog.UseVisualStyleBackColor = true;
             // 
@@ -742,41 +824,115 @@
             // 
             // tabPageProcess
             // 
-            this.tabPageProcess.Controls.Add(this.buttonProcessSubmit);
-            this.tabPageProcess.Controls.Add(this.gridProcess);
+            this.tabPageProcess.BackColor = System.Drawing.Color.White;
+            this.tabPageProcess.Controls.Add(this.groupBoxProject);
+            this.tabPageProcess.Controls.Add(this.groupBoxTask);
+            this.tabPageProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageProcess.Location = new System.Drawing.Point(0, 36);
             this.tabPageProcess.Name = "tabPageProcess";
             this.tabPageProcess.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageProcess.Size = new System.Drawing.Size(496, 370);
             this.tabPageProcess.TabIndex = 5;
-            this.tabPageProcess.Text = "项目进度";
+            this.tabPageProcess.TabItemImage = null;
+            this.tabPageProcess.Text = "进度控制";
             this.tabPageProcess.UseVisualStyleBackColor = true;
             // 
-            // buttonProcessSubmit
+            // groupBoxProject
             // 
-            this.buttonProcessSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProcessSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonProcessSubmit.DownBack = null;
-            this.buttonProcessSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonProcessSubmit.Location = new System.Drawing.Point(209, 343);
-            this.buttonProcessSubmit.MouseBack = null;
-            this.buttonProcessSubmit.Name = "buttonProcessSubmit";
-            this.buttonProcessSubmit.NormlBack = null;
-            this.buttonProcessSubmit.Size = new System.Drawing.Size(75, 23);
-            this.buttonProcessSubmit.TabIndex = 1;
-            this.buttonProcessSubmit.Text = "提交";
-            this.buttonProcessSubmit.UseVisualStyleBackColor = true;
-            this.buttonProcessSubmit.Click += new System.EventHandler(this.buttonProcessSubmit_Click);
+            this.groupBoxProject.Controls.Add(this.buttonProjectProcessSubmit);
+            this.groupBoxProject.Controls.Add(this.panelProcess);
+            this.groupBoxProject.Location = new System.Drawing.Point(6, 277);
+            this.groupBoxProject.Name = "groupBoxProject";
+            this.groupBoxProject.Size = new System.Drawing.Size(484, 83);
+            this.groupBoxProject.TabIndex = 9;
+            this.groupBoxProject.TabStop = false;
+            this.groupBoxProject.Text = "项目进度";
             // 
-            // gridProcess
+            // buttonProjectProcessSubmit
+            // 
+            this.buttonProjectProcessSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProjectProcessSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonProjectProcessSubmit.DownBack = null;
+            this.buttonProjectProcessSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonProjectProcessSubmit.Location = new System.Drawing.Point(184, 56);
+            this.buttonProjectProcessSubmit.MouseBack = null;
+            this.buttonProjectProcessSubmit.Name = "buttonProjectProcessSubmit";
+            this.buttonProjectProcessSubmit.NormlBack = null;
+            this.buttonProjectProcessSubmit.Size = new System.Drawing.Size(127, 23);
+            this.buttonProjectProcessSubmit.TabIndex = 2;
+            this.buttonProjectProcessSubmit.Text = "修改项目进度";
+            this.buttonProjectProcessSubmit.UseVisualStyleBackColor = true;
+            this.buttonProjectProcessSubmit.Click += new System.EventHandler(this.buttonProjectProcessSubmit_Click);
+            // 
+            // panelProcess
+            // 
+            this.panelProcess.Controls.Add(this.radioAbort);
+            this.panelProcess.Controls.Add(this.radioFinish);
+            this.panelProcess.Location = new System.Drawing.Point(71, 20);
+            this.panelProcess.Name = "panelProcess";
+            this.panelProcess.Size = new System.Drawing.Size(353, 41);
+            this.panelProcess.TabIndex = 0;
+            // 
+            // radioAbort
+            // 
+            this.radioAbort.AutoSize = true;
+            this.radioAbort.BackColor = System.Drawing.Color.Transparent;
+            this.radioAbort.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioAbort.DownBack = null;
+            this.radioAbort.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioAbort.Location = new System.Drawing.Point(206, 8);
+            this.radioAbort.MouseBack = null;
+            this.radioAbort.Name = "radioAbort";
+            this.radioAbort.NormlBack = null;
+            this.radioAbort.SelectedDownBack = null;
+            this.radioAbort.SelectedMouseBack = null;
+            this.radioAbort.SelectedNormlBack = null;
+            this.radioAbort.Size = new System.Drawing.Size(83, 24);
+            this.radioAbort.TabIndex = 1;
+            this.radioAbort.TabStop = true;
+            this.radioAbort.Text = "项目终止";
+            this.radioAbort.UseVisualStyleBackColor = false;
+            // 
+            // radioFinish
+            // 
+            this.radioFinish.AutoSize = true;
+            this.radioFinish.BackColor = System.Drawing.Color.Transparent;
+            this.radioFinish.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.radioFinish.DownBack = null;
+            this.radioFinish.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioFinish.Location = new System.Drawing.Point(78, 8);
+            this.radioFinish.MouseBack = null;
+            this.radioFinish.Name = "radioFinish";
+            this.radioFinish.NormlBack = null;
+            this.radioFinish.SelectedDownBack = null;
+            this.radioFinish.SelectedMouseBack = null;
+            this.radioFinish.SelectedNormlBack = null;
+            this.radioFinish.Size = new System.Drawing.Size(83, 24);
+            this.radioFinish.TabIndex = 0;
+            this.radioFinish.TabStop = true;
+            this.radioFinish.Text = "项目完成";
+            this.radioFinish.UseVisualStyleBackColor = false;
+            // 
+            // groupBoxTask
+            // 
+            this.groupBoxTask.Controls.Add(this.gridTaskProcess);
+            this.groupBoxTask.Controls.Add(this.buttonTaskProcessSubmit);
+            this.groupBoxTask.Location = new System.Drawing.Point(6, 0);
+            this.groupBoxTask.Name = "groupBoxTask";
+            this.groupBoxTask.Size = new System.Drawing.Size(484, 271);
+            this.groupBoxTask.TabIndex = 8;
+            this.groupBoxTask.TabStop = false;
+            this.groupBoxTask.Text = "任务进度";
+            // 
+            // gridTaskProcess
             // 
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.gridProcess.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.gridProcess.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridProcess.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.gridProcess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridProcess.ColumnFont = null;
-            this.gridProcess.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.gridTaskProcess.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridTaskProcess.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridTaskProcess.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridTaskProcess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridTaskProcess.ColumnFont = null;
+            this.gridTaskProcess.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -784,12 +940,12 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridProcess.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.gridProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridProcess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridTaskProcess.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gridTaskProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTaskProcess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c10});
-            this.gridProcess.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gridProcess.DefaultCellBackColor = System.Drawing.SystemColors.Window;
+            this.gridTaskProcess.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridTaskProcess.DefaultCellBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -797,31 +953,47 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridProcess.DefaultCellStyle = dataGridViewCellStyle9;
-            this.gridProcess.EnableHeadersVisualStyles = false;
-            this.gridProcess.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.gridProcess.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gridProcess.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gridProcess.Location = new System.Drawing.Point(0, 0);
-            this.gridProcess.Name = "gridProcess";
-            this.gridProcess.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gridProcess.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridTaskProcess.DefaultCellStyle = dataGridViewCellStyle9;
+            this.gridTaskProcess.EnableHeadersVisualStyles = false;
+            this.gridTaskProcess.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gridTaskProcess.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridTaskProcess.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gridTaskProcess.Location = new System.Drawing.Point(6, 28);
+            this.gridTaskProcess.Name = "gridTaskProcess";
+            this.gridTaskProcess.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridTaskProcess.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gridProcess.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.gridProcess.RowTemplate.Height = 23;
-            this.gridProcess.Size = new System.Drawing.Size(488, 336);
-            this.gridProcess.TabIndex = 0;
-            this.gridProcess.TitleBack = null;
-            this.gridProcess.TitleBackColorBegin = System.Drawing.Color.White;
-            this.gridProcess.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
+            this.gridTaskProcess.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.gridTaskProcess.RowTemplate.Height = 23;
+            this.gridTaskProcess.Size = new System.Drawing.Size(472, 206);
+            this.gridTaskProcess.TabIndex = 0;
+            this.gridTaskProcess.TitleBack = null;
+            this.gridTaskProcess.TitleBackColorBegin = System.Drawing.Color.White;
+            this.gridTaskProcess.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             // 
             // c10
             // 
             this.c10.HeaderText = "任务名称";
             this.c10.Name = "c10";
+            // 
+            // buttonTaskProcessSubmit
+            // 
+            this.buttonTaskProcessSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTaskProcessSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonTaskProcessSubmit.DownBack = null;
+            this.buttonTaskProcessSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskProcessSubmit.Location = new System.Drawing.Point(184, 240);
+            this.buttonTaskProcessSubmit.MouseBack = null;
+            this.buttonTaskProcessSubmit.Name = "buttonTaskProcessSubmit";
+            this.buttonTaskProcessSubmit.NormlBack = null;
+            this.buttonTaskProcessSubmit.Size = new System.Drawing.Size(127, 23);
+            this.buttonTaskProcessSubmit.TabIndex = 1;
+            this.buttonTaskProcessSubmit.Text = "修改任务进度";
+            this.buttonTaskProcessSubmit.UseVisualStyleBackColor = true;
+            this.buttonTaskProcessSubmit.Click += new System.EventHandler(this.buttonTaskProcessSubmit_Click);
             // 
             // buttonCreateProject
             // 
@@ -838,64 +1010,6 @@
             this.buttonCreateProject.Text = "新建项目";
             this.buttonCreateProject.UseVisualStyleBackColor = true;
             this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
-            // 
-            // labelState
-            // 
-            this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(112, 144);
-            this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(74, 21);
-            this.labelState.TabIndex = 7;
-            this.labelState.Text = "当前状态";
-            // 
-            // radioIng
-            // 
-            this.radioIng.AutoSize = true;
-            this.radioIng.BackColor = System.Drawing.Color.Transparent;
-            this.radioIng.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.radioIng.DownBack = null;
-            this.radioIng.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioIng.Location = new System.Drawing.Point(14, 11);
-            this.radioIng.MouseBack = null;
-            this.radioIng.Name = "radioIng";
-            this.radioIng.NormlBack = null;
-            this.radioIng.SelectedDownBack = null;
-            this.radioIng.SelectedMouseBack = null;
-            this.radioIng.SelectedNormlBack = null;
-            this.radioIng.Size = new System.Drawing.Size(62, 21);
-            this.radioIng.TabIndex = 8;
-            this.radioIng.TabStop = true;
-            this.radioIng.Text = "进行中";
-            this.radioIng.UseVisualStyleBackColor = false;
-            // 
-            // radioPause
-            // 
-            this.radioPause.AutoSize = true;
-            this.radioPause.BackColor = System.Drawing.Color.Transparent;
-            this.radioPause.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.radioPause.DownBack = null;
-            this.radioPause.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioPause.Location = new System.Drawing.Point(82, 11);
-            this.radioPause.MouseBack = null;
-            this.radioPause.Name = "radioPause";
-            this.radioPause.NormlBack = null;
-            this.radioPause.SelectedDownBack = null;
-            this.radioPause.SelectedMouseBack = null;
-            this.radioPause.SelectedNormlBack = null;
-            this.radioPause.Size = new System.Drawing.Size(62, 21);
-            this.radioPause.TabIndex = 10;
-            this.radioPause.TabStop = true;
-            this.radioPause.Text = "暂停中";
-            this.radioPause.UseVisualStyleBackColor = false;
-            // 
-            // panelState
-            // 
-            this.panelState.Controls.Add(this.radioIng);
-            this.panelState.Controls.Add(this.radioPause);
-            this.panelState.Location = new System.Drawing.Point(230, 144);
-            this.panelState.Name = "panelState";
-            this.panelState.Size = new System.Drawing.Size(154, 48);
-            this.panelState.TabIndex = 9;
             // 
             // FormManage
             // 
@@ -917,6 +1031,8 @@
             this.tabPageInfo.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            this.panelState.ResumeLayout(false);
+            this.panelState.PerformLayout();
             this.tabPageTask.ResumeLayout(false);
             this.tabPagePerson.ResumeLayout(false);
             this.tabPageChecker.ResumeLayout(false);
@@ -924,9 +1040,11 @@
             this.tabPageLog.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).EndInit();
             this.tabPageProcess.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridProcess)).EndInit();
-            this.panelState.ResumeLayout(false);
-            this.panelState.PerformLayout();
+            this.groupBoxProject.ResumeLayout(false);
+            this.panelProcess.ResumeLayout(false);
+            this.panelProcess.PerformLayout();
+            this.groupBoxTask.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTaskProcess)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -939,9 +1057,9 @@
         private CCWin.SkinControl.SkinListBox listProject;
         private System.Windows.Forms.Panel panelProject;
         private CCWin.SkinControl.SkinTabControl tabControl;
-        private System.Windows.Forms.TabPage tabPageInfo;
-        private System.Windows.Forms.TabPage tabPageTask;
-        private System.Windows.Forms.TabPage tabPagePerson;
+        private CCWin.SkinControl.SkinTabPage tabPageInfo;
+        private CCWin.SkinControl.SkinTabPage tabPageTask;
+        private CCWin.SkinControl.SkinTabPage tabPagePerson;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label labelNumber;
         private System.Windows.Forms.Label labelPname;
@@ -955,9 +1073,9 @@
         private CCWin.SkinControl.SkinListBox listAllTask;
         private CCWin.SkinControl.SkinButton buttonTaskLeft;
         private CCWin.SkinControl.SkinButton buttonTaskSubmit;
-        private System.Windows.Forms.TabPage tabPageChecker;
-        private System.Windows.Forms.TabPage tabPageLog;
-        private System.Windows.Forms.TabPage tabPageProcess;
+        private CCWin.SkinControl.SkinTabPage tabPageChecker;
+        private CCWin.SkinControl.SkinTabPage tabPageLog;
+        private CCWin.SkinControl.SkinTabPage tabPageProcess;
         private CCWin.SkinControl.SkinListBox listIncludedPerson;
         private CCWin.SkinControl.SkinListBox listAllPerson;
         private CCWin.SkinControl.SkinButton buttonPersonLeft;
@@ -967,9 +1085,9 @@
         private CCWin.SkinControl.SkinButton buttonCheckerSubmit;
         private CCWin.SkinControl.SkinDataGridView gridCheckLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn c00;
-        private CCWin.SkinControl.SkinDataGridView gridProcess;
+        private CCWin.SkinControl.SkinDataGridView gridTaskProcess;
         private System.Windows.Forms.DataGridViewTextBoxColumn c10;
-        private CCWin.SkinControl.SkinButton buttonProcessSubmit;
+        private CCWin.SkinControl.SkinButton buttonTaskProcessSubmit;
         private CCWin.SkinControl.SkinButton buttonCreateProject;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
@@ -980,5 +1098,11 @@
         private CCWin.SkinControl.SkinRadioButton radioIng;
         private System.Windows.Forms.Panel panelState;
         private CCWin.SkinControl.SkinRadioButton radioPause;
+        private System.Windows.Forms.GroupBox groupBoxProject;
+        private System.Windows.Forms.GroupBox groupBoxTask;
+        private System.Windows.Forms.Panel panelProcess;
+        private CCWin.SkinControl.SkinRadioButton radioFinish;
+        private CCWin.SkinControl.SkinRadioButton radioAbort;
+        private CCWin.SkinControl.SkinButton buttonProjectProcessSubmit;
     }
 }

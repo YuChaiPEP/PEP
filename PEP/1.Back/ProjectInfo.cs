@@ -175,5 +175,20 @@ namespace PEP
                 this.sql.SQLInsertOneEntry("users2projects", "(" + uid + "," + pid + ")");
             }
         }
+
+        public void finishProject()
+        {
+            this.sql.SQLUpdate("projects", "project_state='已完成'", "pid=" + this.pid);
+            this.pid = -1;
+        }
+
+        public void abortProject()
+        {
+            this.sql.SQLDelete("projects", "pid="+this.pid);
+            this.sql.SQLDelete("users2projects", "pid=" + this.pid);
+            this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
+            this.sql.SQLDelete("logs", "pid=" + this.pid);
+            this.pid = -1;
+        }
     }
 }

@@ -42,19 +42,20 @@ namespace PEP
             DataGridViewComboBoxColumn c01 = new DataGridViewComboBoxColumn(); //实现在grid的某个单元格中增加下拉列功能
             c01.HeaderText = "负责人";
             this.gridChecker.Columns.Add(c01);
-            this.gridProcess.RowHeadersVisible = false;
-            this.gridProcess.AllowUserToAddRows = false;
+            this.gridTaskProcess.RowHeadersVisible = false;
+            this.gridTaskProcess.AllowUserToAddRows = false;
             DataGridViewComboBoxColumn c11 = new DataGridViewComboBoxColumn();
             c11.HeaderText = "任务进度";
             c11.Items.Add("未开始");
             c11.Items.Add("进行中");
             c11.Items.Add("已完成");
-            this.gridProcess.Columns.Add(c11);
+            this.gridTaskProcess.Columns.Add(c11);
             this.buttonInfoSubmit.Enabled = false;
             this.buttonTaskSubmit.Enabled = false;
             this.buttonPersonSubmit.Enabled = false;
             this.buttonCheckerSubmit.Enabled = false;
-            this.buttonProcessSubmit.Enabled = false;
+            this.buttonTaskProcessSubmit.Enabled = false;
+            this.buttonProjectProcessSubmit.Enabled = false;
         }
         private void freshManagedProjects()
         {
@@ -69,6 +70,12 @@ namespace PEP
 
         private void freshInfo()
         {
+            this.buttonInfoSubmit.Enabled = false;
+            this.textNumber.ResetText();
+            this.textPname.ResetText();
+            this.textTime.ResetText();
+            this.radioIng.Checked = false;
+            this.radioPause.Checked = false;
             MySqlDataReader dr = this.pro.getDetail();
             if (dr.Read())
             {
@@ -86,6 +93,7 @@ namespace PEP
 
         private void freshTask()
         {
+            this.buttonTaskSubmit.Enabled = false;
             this.listAllTask.Items.Clear();
             this.listIncludedTask.Items.Clear();
             this.buttonTaskLeft.Enabled = false;
@@ -106,6 +114,7 @@ namespace PEP
 
         private void freshPerson()
         {
+            this.buttonPersonSubmit.Enabled = false;
             this.listAllPerson.Items.Clear();
             this.listIncludedPerson.Items.Clear();
             this.buttonPersonLeft.Enabled = false;
@@ -126,6 +135,7 @@ namespace PEP
 
         private void freshChecker()
         {
+            this.buttonCheckerSubmit.Enabled = false;
             this.gridChecker.Rows.Clear();
             DataGridViewComboBoxColumn c01 = (DataGridViewComboBoxColumn)this.gridChecker.Columns[1];
             MySqlDataReader dr = this.pro.getMember();
@@ -170,17 +180,21 @@ namespace PEP
         }
         private void freshProcess()
         {
-            this.gridProcess.Rows.Clear();
+            this.buttonTaskProcessSubmit.Enabled = false;
+            this.buttonProjectProcessSubmit.Enabled = false;
+            this.gridTaskProcess.Rows.Clear();
+            this.radioFinish.Checked = false;
+            this.radioAbort.Checked = false;
             MySqlDataReader dr = this.pro.getTaskInfo();
             int index = 0;
             while (dr.Read())
             {
-                this.gridProcess.Rows.Add();
-                this.gridProcess.Rows[index].Cells[0].Value = dr["tname"];
+                this.gridTaskProcess.Rows.Add();
+                this.gridTaskProcess.Rows[index].Cells[0].Value = dr["tname"];
                 if (dr["task_state"].ToString() != "")
-                    this.gridProcess.Rows[index++].Cells[1].Value = dr["task_state"];
+                    this.gridTaskProcess.Rows[index++].Cells[1].Value = dr["task_state"];
                 else
-                    this.gridProcess.Rows[index++].Cells[1].Value = null; //null不是空字符串
+                    this.gridTaskProcess.Rows[index++].Cells[1].Value = null; //null不是空字符串
             }
             dr.Close();
         }
@@ -190,17 +204,18 @@ namespace PEP
             {
                 String pname = this.listProject.SelectedItems[0].ToString();
                 this.pro.identifyProject(pname);
-                this.buttonInfoSubmit.Enabled = true;
-                this.buttonTaskSubmit.Enabled = true;
-                this.buttonPersonSubmit.Enabled = true;
-                this.buttonCheckerSubmit.Enabled = true;
-                this.buttonProcessSubmit.Enabled = true;
                 freshInfo();
                 freshTask();
                 freshPerson();
                 freshChecker();
                 freshLog();
                 freshProcess();
+                this.buttonInfoSubmit.Enabled = true;
+                this.buttonTaskSubmit.Enabled = true;
+                this.buttonPersonSubmit.Enabled = true;
+                this.buttonCheckerSubmit.Enabled = true;
+                this.buttonTaskProcessSubmit.Enabled = true;
+                this.buttonProjectProcessSubmit.Enabled = true;
             }
         }
 
@@ -321,11 +336,11 @@ namespace PEP
             }
         }
 
-        private void buttonProcessSubmit_Click(object sender, EventArgs e)
+        private void buttonTaskProcessSubmit_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < this.gridProcess.RowCount; i++)
+            for (int i = 0; i < this.gridTaskProcess.RowCount; i++)
             {
-                this.pro.modifyProcess(this.gridProcess.Rows[i].Cells[0].Value.ToString(), this.gridProcess.Rows[i].Cells[1].Value.ToString());
+                this.pro.modifyProcess(this.gridTaskProcess.Rows[i].Cells[0].Value.ToString(), this.gridTaskProcess.Rows[i].Cells[1].Value.ToString());
             }
             MessageBox.Show("项目进度已更新。");
         }
@@ -339,6 +354,32 @@ namespace PEP
                 freshManagedProjects();
             }
         }
-       
+
+        private void buttonProjectProcessSubmit_Click(object sender, EventArgs e)
+        {
+            if (this.radioFinish.Checked)
+            {
+                MessageBox.Show("项目已完成。");
+                this.pro.finishProject();
+                this.freshInfo();
+                this.freshTask();
+                this.freshPerson();
+                this.freshChecker();
+                this.freshLog();
+                this.freshProcess();
+            }
+            if (this.radioAbort.Checked)
+            {
+                MessageBox.Show("项目已终止。");
+                this.pro.abortProject();
+                this.freshInfo();
+                this.freshTask();
+                this.freshPerson();
+                this.freshChecker();
+                this.freshLog();
+                this.freshProcess();
+            }
+            freshManagedProjects();
+        }
     }
 }
