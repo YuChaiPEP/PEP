@@ -63,6 +63,7 @@
             this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new CCWin.SkinControl.SkinTabPage();
             this.panelLog = new System.Windows.Forms.Panel();
+            this.buttonUpload = new CCWin.SkinControl.SkinButton();
             this.buttonLogClear = new CCWin.SkinControl.SkinButton();
             this.buttonLogSubmit = new CCWin.SkinControl.SkinButton();
             this.textLogContent = new CCWin.SkinControl.SkinTextBox();
@@ -249,7 +250,7 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedIndex = 2;
             this.tabControl.Size = new System.Drawing.Size(539, 375);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 5;
@@ -369,6 +370,7 @@
             // 
             // panelLog
             // 
+            this.panelLog.Controls.Add(this.buttonUpload);
             this.panelLog.Controls.Add(this.buttonLogClear);
             this.panelLog.Controls.Add(this.buttonLogSubmit);
             this.panelLog.Controls.Add(this.textLogContent);
@@ -383,6 +385,22 @@
             this.panelLog.Name = "panelLog";
             this.panelLog.Size = new System.Drawing.Size(499, 325);
             this.panelLog.TabIndex = 8;
+            // 
+            // buttonUpload
+            // 
+            this.buttonUpload.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUpload.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonUpload.DownBack = null;
+            this.buttonUpload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonUpload.Location = new System.Drawing.Point(40, 191);
+            this.buttonUpload.MouseBack = null;
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.NormlBack = null;
+            this.buttonUpload.Size = new System.Drawing.Size(90, 23);
+            this.buttonUpload.TabIndex = 10;
+            this.buttonUpload.Text = "上传文件";
+            this.buttonUpload.UseVisualStyleBackColor = false;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
             // buttonLogClear
             // 
@@ -1003,5 +1021,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
         private CCWin.SkinControl.SkinButton buttonPwdChange;
+        private CCWin.SkinControl.SkinButton buttonUpload;
     }
 }
