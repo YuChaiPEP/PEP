@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="0.Base\CryptoHandler.cs" />
     <Compile Include="0.Base\FileHandler.cs" />
+    <Compile Include="1.Back\Loader.cs" />
     <Compile Include="0.Base\FtpHandler.cs" />
     <Compile Include="0.Base\SQLHandler.cs" />
     <Compile Include="1.Back\FileManager.cs" />

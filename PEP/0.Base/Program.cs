@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text;
 
 /************************2017/7/14*****************************
  * 
@@ -23,6 +24,8 @@ namespace PEP
         [STAThread]
         static void Main()
         {
+            Loader load = new Loader();
+            load.loadUserProject("D:\\PEP\\PEP\\Resources\\", "用户统计.txt");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FormLogin formLogin = new FormLogin();
