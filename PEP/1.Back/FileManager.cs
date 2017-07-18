@@ -35,12 +35,12 @@ namespace PEP
             return ftp.download(sourceName, targetName);
         }
 
-        public void uploadTaskFile(string filename)
+        public void uploadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
 
         }
 
-        public void downloadTaskFile(string filename)
+        public void downloadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
 
         }
