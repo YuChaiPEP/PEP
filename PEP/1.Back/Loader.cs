@@ -15,7 +15,7 @@ using System.Windows.Forms;
  *           为导入数据方便，本文件处理的原excel每个单元格若存在换行符，需要手动清理掉\r\n
  *           ATTR11 \t ATTR12 \t ATTR13 \t ATTR14 \r\n
  *           ATTR21 \t ATTR22 \t ATTR23 \t ATTR24 \r\n
- *           加载正确顺序：推送、用户、项目、任务、项目任务、项目人员
+ *           加载正确顺序：用户、推送、项目、任务、项目任务、项目人员
  * 
  *************************************************************/
 
@@ -44,7 +44,9 @@ namespace PEP
                 for (int i = 1; i < array.Length; i++)
                 {
                     String[] subarray = array[i].Split('\t');
-                    this.sql.SQLInsertOneEntry("pushs(timestamp, push)", "('" + subarray[2] + "','" + subarray[3] + "')");
+                    UserInfo user = new UserInfo(subarray[1]);
+                    this.sql.SQLInsertOneEntry("pushs(uid, timestamp, push)", "("+ user.getUID() +",'" + subarray[2] + "','" + subarray[3] + "')");
+                    GC.Collect();
                 }
             }
             catch
@@ -145,6 +147,7 @@ namespace PEP
                     if (subarray[2] != last)
                     {
                         index = 1;
+                        last = subarray[2];
                     }
                     else
                     {
@@ -160,7 +163,7 @@ namespace PEP
             {
                 return false;
             }
-            return true;
+            return true; 
         }
 
         public bool loadUserProject(String address, String file)
@@ -170,7 +173,6 @@ namespace PEP
                 String content = FileHandler.fileRead(address, file);
                 String[] array = content.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
                 String last = "";
-                int index = 1;
                 for (int i = 1; i < array.Length; i++)
                 {
                     String[] subarray = array[i].Split('\t');
