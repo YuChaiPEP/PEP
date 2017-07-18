@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 
-//复制源码：https://www.codeproject.com/Tips/443588/Simple-Csharp-FTP-Class
+/************************2017/7/18*****************************
+ * 
+ * Base.FtpHandler
+ * 功能：处理ftp协议的文件传输及修改请求
+ * 主要接口：download, upload, delete, rename, create directory, directory list
+ * 注意事项：源码地址为 https://www.codeproject.com/Tips/443588/Simple-Csharp-FTP-Class
+ * 
+ *************************************************************/
 
 namespace PEP
 {
