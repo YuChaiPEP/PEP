@@ -192,7 +192,7 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 5;
+            this.tabControl.SelectedIndex = 4;
             this.tabControl.Size = new System.Drawing.Size(496, 406);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 4;
@@ -205,7 +205,7 @@
             this.tabPageInfo.Location = new System.Drawing.Point(0, 36);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(496, 396);
+            this.tabPageInfo.Size = new System.Drawing.Size(496, 370);
             this.tabPageInfo.TabIndex = 0;
             this.tabPageInfo.TabItemImage = null;
             this.tabPageInfo.Text = "信息修改";
@@ -458,7 +458,7 @@
             this.tabPageTask.Location = new System.Drawing.Point(0, 36);
             this.tabPageTask.Name = "tabPageTask";
             this.tabPageTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTask.Size = new System.Drawing.Size(496, 396);
+            this.tabPageTask.Size = new System.Drawing.Size(496, 370);
             this.tabPageTask.TabIndex = 1;
             this.tabPageTask.TabItemImage = null;
             this.tabPageTask.Text = "子任务调整";
@@ -554,7 +554,7 @@
             this.tabPagePerson.Location = new System.Drawing.Point(0, 36);
             this.tabPagePerson.Name = "tabPagePerson";
             this.tabPagePerson.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePerson.Size = new System.Drawing.Size(496, 396);
+            this.tabPagePerson.Size = new System.Drawing.Size(496, 370);
             this.tabPagePerson.TabIndex = 2;
             this.tabPagePerson.TabItemImage = null;
             this.tabPagePerson.Text = "人员分配";
@@ -647,7 +647,7 @@
             this.tabPageChecker.Location = new System.Drawing.Point(0, 36);
             this.tabPageChecker.Name = "tabPageChecker";
             this.tabPageChecker.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageChecker.Size = new System.Drawing.Size(496, 396);
+            this.tabPageChecker.Size = new System.Drawing.Size(496, 370);
             this.tabPageChecker.TabIndex = 3;
             this.tabPageChecker.TabItemImage = null;
             this.tabPageChecker.Text = "负责人委任";
@@ -734,7 +734,7 @@
             this.tabPageLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLog.Size = new System.Drawing.Size(496, 396);
+            this.tabPageLog.Size = new System.Drawing.Size(496, 370);
             this.tabPageLog.TabIndex = 4;
             this.tabPageLog.TabItemImage = null;
             this.tabPageLog.Text = "日志批阅";

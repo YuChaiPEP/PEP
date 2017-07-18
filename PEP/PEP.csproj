@@ -57,7 +57,9 @@
     <Compile Include="0.Base\CryptoHandler.cs" />
     <Compile Include="0.Base\FileHandler.cs" />
     <Compile Include="1.Back\Loader.cs" />
+    <Compile Include="0.Base\FtpHandler.cs" />
     <Compile Include="0.Base\SQLHandler.cs" />
+    <Compile Include="1.Back\FileManager.cs" />
     <Compile Include="1.Back\Login.cs" />
     <Compile Include="1.Back\ProjectInfo.cs" />
     <Compile Include="1.Back\PushControl.cs" />
