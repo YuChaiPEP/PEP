@@ -33,6 +33,7 @@
             this.buttonCheck = new CCWin.SkinControl.SkinButton();
             this.buttonCancel = new CCWin.SkinControl.SkinButton();
             this.buttonConfirm = new CCWin.SkinControl.SkinButton();
+            this.buttonDownload = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
             // 
             // textBoxLog
@@ -85,7 +86,7 @@
             this.buttonCheck.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonCheck.DownBack = null;
             this.buttonCheck.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCheck.Location = new System.Drawing.Point(334, 66);
+            this.buttonCheck.Location = new System.Drawing.Point(334, 147);
             this.buttonCheck.MouseBack = null;
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.NormlBack = null;
@@ -101,7 +102,7 @@
             this.buttonCancel.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonCancel.DownBack = null;
             this.buttonCancel.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(334, 146);
+            this.buttonCancel.Location = new System.Drawing.Point(334, 220);
             this.buttonCancel.MouseBack = null;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.NormlBack = null;
@@ -117,7 +118,7 @@
             this.buttonConfirm.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonConfirm.DownBack = null;
             this.buttonConfirm.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonConfirm.Location = new System.Drawing.Point(334, 66);
+            this.buttonConfirm.Location = new System.Drawing.Point(334, 147);
             this.buttonConfirm.MouseBack = null;
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.NormlBack = null;
@@ -127,6 +128,22 @@
             this.buttonConfirm.UseVisualStyleBackColor = false;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
+            // buttonDownload
+            // 
+            this.buttonDownload.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDownload.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonDownload.DownBack = null;
+            this.buttonDownload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonDownload.Location = new System.Drawing.Point(334, 70);
+            this.buttonDownload.MouseBack = null;
+            this.buttonDownload.Name = "buttonDownload";
+            this.buttonDownload.NormlBack = null;
+            this.buttonDownload.Size = new System.Drawing.Size(91, 35);
+            this.buttonDownload.TabIndex = 4;
+            this.buttonDownload.Text = "下载文件";
+            this.buttonDownload.UseVisualStyleBackColor = false;
+            this.buttonDownload.Click += new System.EventHandler(this.buttonDownload_Click);
+            // 
             // FormLog
             // 
             this.AcceptButton = this.buttonCheck;
@@ -134,6 +151,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Back = global::PEP.Properties.Resources.main_8;
             this.ClientSize = new System.Drawing.Size(446, 440);
+            this.Controls.Add(this.buttonDownload);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.textBoxLog);
             this.Controls.Add(this.buttonConfirm);
@@ -152,5 +170,6 @@
         private CCWin.SkinControl.SkinButton buttonCheck;
         private CCWin.SkinControl.SkinButton buttonCancel;
         private CCWin.SkinControl.SkinButton buttonConfirm;
+        private CCWin.SkinControl.SkinButton buttonDownload;
     }
 }

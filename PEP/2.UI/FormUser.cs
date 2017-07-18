@@ -280,5 +280,11 @@ namespace PEP
             FormPwdChange formPwdChange = new FormPwdChange(this.user);
             formPwdChange.Show();
         }
+
+        private void buttonUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+        }
     }
 }
