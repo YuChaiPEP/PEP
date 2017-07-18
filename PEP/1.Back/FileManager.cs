@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PEP
 {
     class FileManager
     {
-        private FtpHandler ftp;
-        private string IP = "192.168.158.117";
-        private string username = "";
-        private string password = "";
+        private static string IP = @"ftp://192.168.158.117/";
+        private static string username = "";
+        private static string password = "";
 
-        public FileManager()
+        public static bool uploadLogFile(string sourceName, string targetName)
         {
-            ftp = new FtpHandler(IP, username, password);
+            FtpHandler ftp = new FtpHandler(IP, username, password);
+            targetName = @"log_file/" + targetName;
+            return ftp.upload(targetName, sourceName);
         }
-
-        public void uploadLogFile(string filename)
+        
+        public static bool downloadLogFile(string sourceName, string targetName)
         {
-
-        }
-
-        public void downloadLogFile(string filename)
-        {
-
+            FtpHandler ftp = new FtpHandler(IP, username, password);
+            sourceName = @"log_file/" + sourceName;
+            return ftp.download(sourceName, targetName);
         }
 
         public void uploadTaskFile(string filename)

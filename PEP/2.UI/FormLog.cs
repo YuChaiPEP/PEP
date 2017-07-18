@@ -26,6 +26,7 @@ namespace PEP
         private ProjectInfo pro;
         private int lid;
         private bool check;
+        private string filename;
         public FormLog(ProjectInfo p, int id, bool isCheck)
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace PEP
             if (dr.Read())
             {
                 logText = dr["content"].ToString();
+                this.filename = dr["filename"].ToString();
             }
             dr.Close();
             this.textBoxLog.Text = logText;
@@ -76,8 +78,27 @@ namespace PEP
 
         private void buttonDownload_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.ShowDialog();
+            if (this.filename.Length == 0)
+            {
+                MessageBox.Show("文件不存在！");
+            }
+            else
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = this.filename;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string targetName = saveFileDialog.FileName;
+                    if (FileManager.downloadLogFile(this.filename, targetName))
+                    {
+                        MessageBox.Show("文件下载成功！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("文件下载失败！");
+                    }
+                }
+            }
         }
     }
 }

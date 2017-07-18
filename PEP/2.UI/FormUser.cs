@@ -27,6 +27,7 @@ namespace PEP
         private ProjectInfo pro;
         private TaskInfo task;
         private PushControl push;
+        private string safeFileName;
 
         private String generatePushFormat(MySqlDataReader dr)
         {
@@ -128,6 +129,7 @@ namespace PEP
             this.comboLogTask.Items.Clear();
             this.comboLogTask.ResetText();
             this.textLogContent.ResetText();
+            this.textFileName.ResetText();
             MySqlDataReader dr = this.pro.getTaskInfo();
             while (dr.Read())
             {
@@ -209,7 +211,23 @@ namespace PEP
                 MessageBox.Show("日志内容不能为空！");
                 return;
             }
-            this.pro.submitLog(this.user.getUID(), this.textLogTime.Text, this.comboLogTask.Text, this.textLogContent.Text);
+            string filename = null;
+            if (this.textFileName.Text.Length > 0)
+            {
+                string sourceName = this.textFileName.Text;
+                string timeString = this.textLogTime.Text.Replace('/', '_').Replace(' ', '_').Replace(':', '_');
+                string targetName = this.user.getUname() + "-" + timeString + "-" + this.listProject.SelectedItem.ToString() + "-" + this.comboLogTask.Text + "-" + safeFileName;;
+                if (FileManager.uploadLogFile(sourceName, targetName))
+                {
+                    filename = targetName;
+                }
+                else
+                {
+                    MessageBox.Show("文件上传失败！");
+                    return;
+                }
+            }
+            this.pro.submitLog(this.user.getUID(), this.textLogTime.Text, this.comboLogTask.Text, this.textLogContent.Text, filename);
             MessageBox.Show("日志已提交。");
             freshLogTask();
             freshReadLog();
@@ -284,7 +302,11 @@ namespace PEP
         private void buttonUpload_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.ShowDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.textFileName.Text = openFileDialog.FileName;
+                this.safeFileName = openFileDialog.SafeFileName;
+            }
         }
     }
 }

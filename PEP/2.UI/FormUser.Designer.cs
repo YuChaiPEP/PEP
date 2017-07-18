@@ -93,6 +93,7 @@
             this.buttonStatistics = new CCWin.SkinControl.SkinButton();
             this.panelProject = new System.Windows.Forms.Panel();
             this.buttonPwdChange = new CCWin.SkinControl.SkinButton();
+            this.textFileName = new CCWin.SkinControl.SkinTextBox();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -370,6 +371,7 @@
             // 
             // panelLog
             // 
+            this.panelLog.Controls.Add(this.textFileName);
             this.panelLog.Controls.Add(this.buttonUpload);
             this.panelLog.Controls.Add(this.buttonLogClear);
             this.panelLog.Controls.Add(this.buttonLogSubmit);
@@ -937,6 +939,47 @@
             this.buttonPwdChange.UseVisualStyleBackColor = true;
             this.buttonPwdChange.Click += new System.EventHandler(this.buttonPwdChange_Click);
             // 
+            // textFileName
+            // 
+            this.textFileName.BackColor = System.Drawing.Color.Transparent;
+            this.textFileName.DownBack = null;
+            this.textFileName.Icon = null;
+            this.textFileName.IconIsButton = false;
+            this.textFileName.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFileName.IsPasswordChat = '\0';
+            this.textFileName.IsSystemPasswordChar = false;
+            this.textFileName.Lines = new string[0];
+            this.textFileName.Location = new System.Drawing.Point(40, 226);
+            this.textFileName.Margin = new System.Windows.Forms.Padding(0);
+            this.textFileName.MaxLength = 32767;
+            this.textFileName.MinimumSize = new System.Drawing.Size(28, 28);
+            this.textFileName.MouseBack = null;
+            this.textFileName.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFileName.Multiline = false;
+            this.textFileName.Name = "textFileName";
+            this.textFileName.NormlBack = null;
+            this.textFileName.Padding = new System.Windows.Forms.Padding(5);
+            this.textFileName.ReadOnly = false;
+            this.textFileName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textFileName.Size = new System.Drawing.Size(123, 28);
+            // 
+            // 
+            // 
+            this.textFileName.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textFileName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textFileName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.textFileName.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.textFileName.SkinTxt.Name = "BaseText";
+            this.textFileName.SkinTxt.Size = new System.Drawing.Size(113, 18);
+            this.textFileName.SkinTxt.TabIndex = 0;
+            this.textFileName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFileName.SkinTxt.WaterText = "";
+            this.textFileName.TabIndex = 11;
+            this.textFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textFileName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFileName.WaterText = "";
+            this.textFileName.WordWrap = true;
+            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1022,5 +1065,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
         private CCWin.SkinControl.SkinButton buttonPwdChange;
         private CCWin.SkinControl.SkinButton buttonUpload;
+        private CCWin.SkinControl.SkinTextBox textFileName;
     }
 }

@@ -60,13 +60,20 @@ namespace PEP
             MySqlDataReader dr = this.sql.SQLGet("users.* ", "users, users2projects", "users2projects.pid = " + this.pid + " and users.uid = users2projects.uid");
             return dr;
         }
-        public void submitLog(int uid, String time, String tname, String content)
+        public void submitLog(int uid, String time, String tname, String content, String filename)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + tname + "'");
             dr.Read();
             int tid = (int)dr["tid"];
             dr.Close();
-            this.sql.SQLInsertOneEntry("logs(uid,timestamp,pid,tid,content)", "(" + uid + ",'" + time + "'," + this.pid + "," + tid + ",'" + content + "')");
+            if (filename == null)
+            {
+                this.sql.SQLInsertOneEntry("logs(uid,timestamp,pid,tid,content)", "(" + uid + ",'" + time + "'," + this.pid + "," + tid + ",'" + content + "')");
+            }
+            else
+            {
+                this.sql.SQLInsertOneEntry("logs(uid,timestamp,pid,tid,content,filename)", "(" + uid + ",'" + time + "'," + this.pid + "," + tid + ",'" + content + "','" + filename + "')");
+            }
         }
 
         public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool flag = true)

@@ -31,8 +31,9 @@ namespace PEP
         public FtpHandler(string hostIP, string userName, string password) { host = hostIP; user = userName; pass = password; }
 
         /* Download File */
-        public void download(string remoteFile, string localFile)
+        public bool download(string remoteFile, string localFile)
         {
+            bool success = false;
             try
             {
                 /* Create an FTP Request */
@@ -62,6 +63,7 @@ namespace PEP
                         localFileStream.Write(byteBuffer, 0, bytesRead);
                         bytesRead = ftpStream.Read(byteBuffer, 0, bufferSize);
                     }
+                    success = true;
                 }
                 catch (Exception ex) { Console.WriteLine(ex.ToString()); }
                 /* Resource Cleanup */
@@ -71,12 +73,13 @@ namespace PEP
                 ftpRequest = null;
             }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-            return;
+            return success;
         }
 
         /* Upload File */
-        public void upload(string remoteFile, string localFile)
+        public bool upload(string remoteFile, string localFile)
         {
+            bool success = false;
             try
             {
                 /* Create an FTP Request */
@@ -104,6 +107,7 @@ namespace PEP
                         ftpStream.Write(byteBuffer, 0, bytesSent);
                         bytesSent = localFileStream.Read(byteBuffer, 0, bufferSize);
                     }
+                    success = true;
                 }
                 catch (Exception ex) { Console.WriteLine(ex.ToString()); }
                 /* Resource Cleanup */
@@ -112,7 +116,7 @@ namespace PEP
                 ftpRequest = null;
             }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-            return;
+            return success;
         }
 
         /* Delete File */
