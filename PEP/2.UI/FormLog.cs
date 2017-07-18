@@ -27,6 +27,8 @@ namespace PEP
         private int lid;
         private bool check;
         private string filename;
+        private int tid;
+
         public FormLog(ProjectInfo p, int id, bool isCheck)
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace PEP
             {
                 logText = dr["content"].ToString();
                 this.filename = dr["filename"].ToString();
+                this.tid = Convert.ToInt32(dr["tid"]);
             }
             dr.Close();
             this.textBoxLog.Text = logText;
@@ -89,7 +92,9 @@ namespace PEP
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string targetName = saveFileDialog.FileName;
-                    if (FileManager.downloadLogFile(this.filename, targetName))
+                    string tname = new TaskInfo().searchTask(this.tid);
+                    string pname = pro.searchProject(pro.getPid());
+                    if (FileManager.downloadLogFile(this.filename, targetName, pname, tname))
                     {
                         MessageBox.Show("文件下载成功！");
                     }

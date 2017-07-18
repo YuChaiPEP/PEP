@@ -40,6 +40,16 @@ namespace PEP
                 this.pid = -1;
             dr.Close();
         }
+
+        public String searchProject(int pid)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pid=" + pid);
+            dr.Read();
+            String uname = dr["pname"].ToString();
+            dr.Close();
+            return uname;
+        }
+
         public int getPid()
         {
             return this.pid;

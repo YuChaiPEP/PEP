@@ -354,5 +354,18 @@ namespace PEP
             return new string[] { "" };
         }
 
+        /* Whether file in directory exists */
+        public bool exists(string directory, string filename)
+        {
+            string[] directoryList = directoryListSimple(directory);
+            foreach (string name in directoryList)
+            {
+                if (name == filename)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
