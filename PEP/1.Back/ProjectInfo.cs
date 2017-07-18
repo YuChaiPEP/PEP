@@ -34,9 +34,15 @@ namespace PEP
         public void identifyProject(String p)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pname='" + p + "'");
-            dr.Read();
-            this.pid = (int)dr["pid"];
+            if (dr.Read())
+                this.pid = (int)dr["pid"];
+            else
+                this.pid = -1;
             dr.Close();
+        }
+        public int getPid()
+        {
+            return this.pid;
         }
         public MySqlDataReader getDetail()
         {

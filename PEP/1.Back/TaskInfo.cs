@@ -36,8 +36,11 @@ namespace PEP
         public int getTaskID(String tname)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + tname + "'"); //单引号
-            dr.Read();
-            int tid = (int)dr["tid"];
+            int tid;
+            if (dr.Read())
+                tid = (int)dr["tid"];
+            else
+                tid = -1;
             dr.Close();
             return tid;
         }
