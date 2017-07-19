@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CCWin;
 
-/************************2017/7/14*****************************
+/************************2017/7/19*****************************
  * 
  * UI.FormManage
  * 功能：实现上层用户管理者主界面（管理人员视角）
  * 主要接口：-
  * 注意事项：对不同页面实现了不同的刷新函数
- *           列表中新添item时，需要new一个新item，不能只对旧item进行拷贝
  *           批阅日志后通过dialog返回值判断是否刷新页面
+ *           涉及到listBox时，没有使用CSkin提供的UI类，因为当每个item字符串过长时，该类不能实现水平滚动
  * 
  *************************************************************/
 
@@ -63,7 +63,7 @@ namespace PEP
             MySqlDataReader dr = this.user.getManagedLiveProjects();
             while (dr.Read())
             {
-                this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));
+                this.listProject.Items.Add(dr["pname"].ToString());
             }
             dr.Close();
         }
@@ -101,13 +101,13 @@ namespace PEP
             MySqlDataReader dr = this.pro.getTaskInfo();
             while (dr.Read())
             {
-                this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["tname"].ToString()));
+                this.listIncludedTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
             dr = this.task.getAllTask();
             while (dr.Read())
             {
-                this.listAllTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["tname"].ToString()));
+                this.listAllTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
         }
@@ -122,13 +122,13 @@ namespace PEP
             MySqlDataReader dr = this.pro.getMember();
             while (dr.Read())
             {
-                this.listIncludedPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["uname"].ToString()));
+                this.listIncludedPerson.Items.Add(dr["uname"].ToString());
             }
             dr.Close();
             dr = this.user.getAllUser();
             while (dr.Read())
             {
-                this.listAllPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["uname"].ToString()));
+                this.listAllPerson.Items.Add(dr["uname"].ToString());
             }
             dr.Close();
         }
@@ -257,29 +257,33 @@ namespace PEP
 
         private void buttonTaskRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllTask.SelectedItem.ToString())); //new新的item以防错误
+            this.listIncludedTask.Items.Add(this.listAllTask.SelectedItem.ToString());
         }
 
         private void buttonTaskLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedTask.Items.Remove(this.listIncludedTask.SelectedItem as CCWin.SkinControl.SkinListBoxItem);
+            this.listIncludedTask.Items.RemoveAt(this.listIncludedTask.SelectedIndex);
         }
 
         private void buttonTaskSubmit_Click(object sender, EventArgs e)
         {
             this.pro.modifyTask(this.listIncludedTask);
             freshChecker();
+            freshProcess();
             MessageBox.Show("子任务信息已修改。");
         }
 
         private void buttonPersonRight_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Add(new CCWin.SkinControl.SkinListBoxItem(this.listAllPerson.SelectedItem.ToString()));
+            if (this.listIncludedPerson.Items.Contains(this.listAllPerson.SelectedItem.ToString()))
+                MessageBox.Show("该人员已经在项目组中！");
+            else
+                this.listIncludedPerson.Items.Add(this.listAllPerson.SelectedItem.ToString());
         }
 
         private void buttonPersonLeft_Click(object sender, EventArgs e)
         {
-            this.listIncludedPerson.Items.Remove(this.listIncludedPerson.SelectedItem as CCWin.SkinControl.SkinListBoxItem);
+            this.listIncludedPerson.Items.RemoveAt(this.listIncludedPerson.SelectedIndex);
         }
 
         private void buttonPersonSubmit_Click(object sender, EventArgs e)

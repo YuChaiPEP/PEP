@@ -42,13 +42,13 @@
             this.tabPageSetTasks = new CCWin.SkinControl.SkinTabPage();
             this.buttonTaskLeft = new CCWin.SkinControl.SkinButton();
             this.buttonTaskRight = new CCWin.SkinControl.SkinButton();
-            this.listIncludedTask = new CCWin.SkinControl.SkinListBox();
-            this.listAllTask = new CCWin.SkinControl.SkinListBox();
+            this.listIncludedTask = new System.Windows.Forms.ListBox();
+            this.listAllTask = new System.Windows.Forms.ListBox();
             this.tabPageSetUsers = new CCWin.SkinControl.SkinTabPage();
             this.buttonPersonLeft = new CCWin.SkinControl.SkinButton();
             this.buttonPersonRight = new CCWin.SkinControl.SkinButton();
-            this.listIncludedPerson = new CCWin.SkinControl.SkinListBox();
-            this.listAllPerson = new CCWin.SkinControl.SkinListBox();
+            this.listIncludedPerson = new System.Windows.Forms.ListBox();
+            this.listAllPerson = new System.Windows.Forms.ListBox();
             this.buttonLast = new CCWin.SkinControl.SkinButton();
             this.buttonCancel = new CCWin.SkinControl.SkinButton();
             this.buttonNext = new CCWin.SkinControl.SkinButton();
@@ -311,32 +311,22 @@
             // 
             // listIncludedTask
             // 
-            this.listIncludedTask.Back = null;
-            this.listIncludedTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listIncludedTask.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listIncludedTask.FormattingEnabled = true;
             this.listIncludedTask.ItemHeight = 20;
             this.listIncludedTask.Location = new System.Drawing.Point(309, 28);
-            this.listIncludedTask.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listIncludedTask.Name = "listIncludedTask";
-            this.listIncludedTask.RowBackColor2 = System.Drawing.Color.White;
-            this.listIncludedTask.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listIncludedTask.Size = new System.Drawing.Size(136, 284);
             this.listIncludedTask.TabIndex = 6;
             this.listIncludedTask.SelectedIndexChanged += new System.EventHandler(this.listIncludedTask_SelectedIndexChanged);
             // 
             // listAllTask
             // 
-            this.listAllTask.Back = null;
-            this.listAllTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listAllTask.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listAllTask.FormattingEnabled = true;
             this.listAllTask.ItemHeight = 20;
             this.listAllTask.Location = new System.Drawing.Point(61, 28);
-            this.listAllTask.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listAllTask.Name = "listAllTask";
-            this.listAllTask.RowBackColor2 = System.Drawing.Color.White;
-            this.listAllTask.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listAllTask.Size = new System.Drawing.Size(136, 284);
             this.listAllTask.TabIndex = 5;
             this.listAllTask.SelectedIndexChanged += new System.EventHandler(this.listAllTask_SelectedIndexChanged);
@@ -392,32 +382,22 @@
             // 
             // listIncludedPerson
             // 
-            this.listIncludedPerson.Back = null;
-            this.listIncludedPerson.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listIncludedPerson.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listIncludedPerson.FormattingEnabled = true;
             this.listIncludedPerson.ItemHeight = 20;
             this.listIncludedPerson.Location = new System.Drawing.Point(309, 28);
-            this.listIncludedPerson.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listIncludedPerson.Name = "listIncludedPerson";
-            this.listIncludedPerson.RowBackColor2 = System.Drawing.Color.White;
-            this.listIncludedPerson.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listIncludedPerson.Size = new System.Drawing.Size(136, 284);
             this.listIncludedPerson.TabIndex = 10;
             this.listIncludedPerson.SelectedIndexChanged += new System.EventHandler(this.listIncludedPerson_SelectedIndexChanged);
             // 
             // listAllPerson
             // 
-            this.listAllPerson.Back = null;
-            this.listAllPerson.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listAllPerson.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listAllPerson.FormattingEnabled = true;
             this.listAllPerson.ItemHeight = 20;
             this.listAllPerson.Location = new System.Drawing.Point(61, 28);
-            this.listAllPerson.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listAllPerson.Name = "listAllPerson";
-            this.listAllPerson.RowBackColor2 = System.Drawing.Color.White;
-            this.listAllPerson.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listAllPerson.Size = new System.Drawing.Size(136, 284);
             this.listAllPerson.TabIndex = 9;
             this.listAllPerson.SelectedIndexChanged += new System.EventHandler(this.listAllPerson_SelectedIndexChanged);
@@ -511,11 +491,11 @@
         private System.Windows.Forms.Label labelNumber;
         private CCWin.SkinControl.SkinButton buttonTaskLeft;
         private CCWin.SkinControl.SkinButton buttonTaskRight;
-        private CCWin.SkinControl.SkinListBox listIncludedTask;
-        private CCWin.SkinControl.SkinListBox listAllTask;
+        private System.Windows.Forms.ListBox listIncludedTask;
+        private System.Windows.Forms.ListBox listAllTask;
         private CCWin.SkinControl.SkinButton buttonPersonLeft;
         private CCWin.SkinControl.SkinButton buttonPersonRight;
-        private CCWin.SkinControl.SkinListBox listIncludedPerson;
-        private CCWin.SkinControl.SkinListBox listAllPerson;
+        private System.Windows.Forms.ListBox listIncludedPerson;
+        private System.Windows.Forms.ListBox listAllPerson;
     }
 }
