@@ -28,9 +28,12 @@ namespace PEP
             this.user = u;
             InitializeComponent();
             this.labelUnameValue.Text = this.user.getUname();
-            this.labelProjectValue.Text = this.user.getAttendedProjectsCount();
+            this.labelProjectValue.Text = this.user.getAttendedLiveProjectsCount();
+            this.labelProjectEDValue.Text = this.user.getAttendedFinishedProjectsCount();
             this.labelLogValue.Text = this.user.getLogCount();
+            this.labelLogMonthValue.Text = this.user.getLogMonthCount();
             this.labelPushValue.Text = this.user.getPushCount();
+            this.labelPushMonthValue.Text = this.user.getPushMonthCount();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
