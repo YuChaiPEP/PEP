@@ -51,9 +51,6 @@
     <ManifestCertificateThumbprint>08CCC9601131CADFC45FD3FB999F7DCC727D9713</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>PEP_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
