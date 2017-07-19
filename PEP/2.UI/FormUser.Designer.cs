@@ -370,6 +370,7 @@
             this.buttonDownload.TabIndex = 15;
             this.buttonDownload.Text = "下载";
             this.buttonDownload.UseVisualStyleBackColor = false;
+            this.buttonDownload.Click += new System.EventHandler(this.buttonDownload_Click);
             // 
             // comboTaskFile
             // 
@@ -403,6 +404,7 @@
             this.comboTask.Size = new System.Drawing.Size(223, 24);
             this.comboTask.TabIndex = 12;
             this.comboTask.WaterText = "";
+            this.comboTask.SelectedIndexChanged += new System.EventHandler(this.comboTask_SelectedIndexChanged);
             // 
             // labelTask
             // 

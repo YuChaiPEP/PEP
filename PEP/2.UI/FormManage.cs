@@ -172,6 +172,7 @@ namespace PEP
 
         private void freshFile()
         {
+            this.comboTaskFile.Items.Clear();
             if (this.comboTask.SelectedItem != null)
             {
                 MySqlDataReader dr = this.pro.getFileInfo(this.comboTask.SelectedItem.ToString());

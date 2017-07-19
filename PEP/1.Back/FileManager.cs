@@ -52,9 +52,11 @@ namespace PEP
             return ftp.upload(targetName, sourceName);
         }
 
-        public void downloadTaskFile(string sourceName, string targetName, string pname, string tname)
+        public static bool downloadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
-
+            FtpHandler ftp = new FtpHandler(IP, username, password);
+            sourceName = taskFilePath + "/" + pname + "/" + tname + "/" + sourceName;
+            return ftp.download(sourceName, targetName);
         }
     }
 }
