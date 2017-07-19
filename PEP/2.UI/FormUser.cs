@@ -190,7 +190,7 @@ namespace PEP
             if (tabControl.SelectedTab.Name == "tabPageLog")
             {
                 this.textLogPerson.Text = this.user.getUname();
-                this.textLogTime.Text = System.DateTime.Now.ToString();
+                this.textLogTime.Text = System.DateTime.Now.ToString("G");
             }
         }
 

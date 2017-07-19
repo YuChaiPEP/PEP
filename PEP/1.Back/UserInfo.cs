@@ -78,9 +78,17 @@ namespace PEP
             MySqlDataReader dr = this.sql.SQLGet("*", "users", "1=1 order by uid");
             return dr;
         }
-        public String getAttendedProjectsCount()
+        public String getAttendedLiveProjectsCount()
         {
-            MySqlDataReader dr = this.sql.SQLGet("count(projects.pid)", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid");
+            MySqlDataReader dr = this.sql.SQLGet("count(projects.pid)", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid and projects.project_state!='已完成'");
+            dr.Read();
+            String count = dr["count(projects.pid)"].ToString();
+            dr.Close();
+            return count;
+        }
+        public String getAttendedFinishedProjectsCount()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("count(projects.pid)", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid and projects.project_state='已完成'");
             dr.Read();
             String count = dr["count(projects.pid)"].ToString();
             dr.Close();
@@ -94,9 +102,27 @@ namespace PEP
             dr.Close();
             return count;
         }
+        public String getLogMonthCount()
+        {
+            String start = System.DateTime.Now.AddMonths(-1).ToString("G");
+            MySqlDataReader dr = this.sql.SQLGet("count(lid)", "logs", "uid=" + this.uid + " and timestamp>'" + start + "'");
+            dr.Read();
+            String count = dr["count(lid)"].ToString();
+            dr.Close();
+            return count;
+        }
         public String getPushCount()
         {
             MySqlDataReader dr = this.sql.SQLGet("count(fid)", "pushs", "uid=" + this.uid);
+            dr.Read();
+            String count = dr["count(fid)"].ToString();
+            dr.Close();
+            return count;
+        }
+        public String getPushMonthCount()
+        {
+            String start = System.DateTime.Now.AddMonths(-1).ToString("G");
+            MySqlDataReader dr = this.sql.SQLGet("count(fid)", "pushs", "uid=" + this.uid + " and timestamp>'" + start + "'");
             dr.Read();
             String count = dr["count(fid)"].ToString();
             dr.Close();

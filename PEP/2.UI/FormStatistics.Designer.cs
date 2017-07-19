@@ -39,12 +39,24 @@
             this.labelLogCount = new System.Windows.Forms.Label();
             this.labelProjectCount = new System.Windows.Forms.Label();
             this.labelUname = new System.Windows.Forms.Label();
+            this.labelProjectEDCount = new System.Windows.Forms.Label();
+            this.labelProjectEDValue = new System.Windows.Forms.Label();
+            this.labelLogMonthCount = new System.Windows.Forms.Label();
+            this.labelLogMonthValue = new System.Windows.Forms.Label();
+            this.labelPushMonthCount = new System.Windows.Forms.Label();
+            this.labelPushMonthValue = new System.Windows.Forms.Label();
             this.panelStatistics.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelStatistics
             // 
             this.panelStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.panelStatistics.Controls.Add(this.labelPushMonthValue);
+            this.panelStatistics.Controls.Add(this.labelPushMonthCount);
+            this.panelStatistics.Controls.Add(this.labelLogMonthValue);
+            this.panelStatistics.Controls.Add(this.labelLogMonthCount);
+            this.panelStatistics.Controls.Add(this.labelProjectEDValue);
+            this.panelStatistics.Controls.Add(this.labelProjectEDCount);
             this.panelStatistics.Controls.Add(this.labelPushValue);
             this.panelStatistics.Controls.Add(this.labelLogValue);
             this.panelStatistics.Controls.Add(this.labelProjectValue);
@@ -56,28 +68,28 @@
             this.panelStatistics.Controls.Add(this.labelUname);
             this.panelStatistics.Location = new System.Drawing.Point(22, 29);
             this.panelStatistics.Name = "panelStatistics";
-            this.panelStatistics.Size = new System.Drawing.Size(260, 205);
+            this.panelStatistics.Size = new System.Drawing.Size(260, 285);
             this.panelStatistics.TabIndex = 0;
             // 
             // labelPushValue
             // 
             this.labelPushValue.AutoSize = true;
             this.labelPushValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPushValue.Location = new System.Drawing.Point(152, 116);
+            this.labelPushValue.Location = new System.Drawing.Point(153, 174);
             this.labelPushValue.Name = "labelPushValue";
-            this.labelPushValue.Size = new System.Drawing.Size(54, 21);
+            this.labelPushValue.Size = new System.Drawing.Size(111, 21);
             this.labelPushValue.TabIndex = 6;
-            this.labelPushValue.Text = "pushs";
+            this.labelPushValue.Text = "pushs-TOTAL";
             // 
             // labelLogValue
             // 
             this.labelLogValue.AutoSize = true;
             this.labelLogValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelLogValue.Location = new System.Drawing.Point(152, 84);
+            this.labelLogValue.Location = new System.Drawing.Point(153, 114);
             this.labelLogValue.Name = "labelLogValue";
-            this.labelLogValue.Size = new System.Drawing.Size(41, 21);
+            this.labelLogValue.Size = new System.Drawing.Size(98, 21);
             this.labelLogValue.TabIndex = 1;
-            this.labelLogValue.Text = "logs";
+            this.labelLogValue.Text = "logs-TOTAL";
             // 
             // labelProjectValue
             // 
@@ -85,9 +97,9 @@
             this.labelProjectValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelProjectValue.Location = new System.Drawing.Point(152, 54);
             this.labelProjectValue.Name = "labelProjectValue";
-            this.labelProjectValue.Size = new System.Drawing.Size(70, 21);
+            this.labelProjectValue.Size = new System.Drawing.Size(107, 21);
             this.labelProjectValue.TabIndex = 5;
-            this.labelProjectValue.Text = "projects";
+            this.labelProjectValue.Text = "projects-ING";
             // 
             // labelUnameValue
             // 
@@ -105,7 +117,7 @@
             this.buttonClose.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonClose.DownBack = null;
             this.buttonClose.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonClose.Location = new System.Drawing.Point(95, 160);
+            this.buttonClose.Location = new System.Drawing.Point(96, 244);
             this.buttonClose.MouseBack = null;
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.NormlBack = null;
@@ -119,21 +131,21 @@
             // 
             this.labelPushCount.AutoSize = true;
             this.labelPushCount.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPushCount.Location = new System.Drawing.Point(14, 116);
+            this.labelPushCount.Location = new System.Drawing.Point(15, 174);
             this.labelPushCount.Name = "labelPushCount";
-            this.labelPushCount.Size = new System.Drawing.Size(58, 21);
+            this.labelPushCount.Size = new System.Drawing.Size(74, 21);
             this.labelPushCount.TabIndex = 2;
-            this.labelPushCount.Text = "推送数";
+            this.labelPushCount.Text = "总推送数";
             // 
             // labelLogCount
             // 
             this.labelLogCount.AutoSize = true;
             this.labelLogCount.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelLogCount.Location = new System.Drawing.Point(14, 84);
+            this.labelLogCount.Location = new System.Drawing.Point(15, 114);
             this.labelLogCount.Name = "labelLogCount";
-            this.labelLogCount.Size = new System.Drawing.Size(90, 21);
+            this.labelLogCount.Size = new System.Drawing.Size(74, 21);
             this.labelLogCount.TabIndex = 1;
-            this.labelLogCount.Text = "提交日志数";
+            this.labelLogCount.Text = "总日志数";
             // 
             // labelProjectCount
             // 
@@ -155,13 +167,73 @@
             this.labelUname.TabIndex = 0;
             this.labelUname.Text = "用户名";
             // 
+            // labelProjectEDCount
+            // 
+            this.labelProjectEDCount.AutoSize = true;
+            this.labelProjectEDCount.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelProjectEDCount.Location = new System.Drawing.Point(14, 84);
+            this.labelProjectEDCount.Name = "labelProjectEDCount";
+            this.labelProjectEDCount.Size = new System.Drawing.Size(106, 21);
+            this.labelProjectEDCount.TabIndex = 7;
+            this.labelProjectEDCount.Text = "已完成项目数";
+            // 
+            // labelProjectEDValue
+            // 
+            this.labelProjectEDValue.AutoSize = true;
+            this.labelProjectEDValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelProjectEDValue.Location = new System.Drawing.Point(153, 84);
+            this.labelProjectEDValue.Name = "labelProjectEDValue";
+            this.labelProjectEDValue.Size = new System.Drawing.Size(98, 21);
+            this.labelProjectEDValue.TabIndex = 8;
+            this.labelProjectEDValue.Text = "projects-ED";
+            // 
+            // labelLogMonthCount
+            // 
+            this.labelLogMonthCount.AutoSize = true;
+            this.labelLogMonthCount.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelLogMonthCount.Location = new System.Drawing.Point(14, 144);
+            this.labelLogMonthCount.Name = "labelLogMonthCount";
+            this.labelLogMonthCount.Size = new System.Drawing.Size(90, 21);
+            this.labelLogMonthCount.TabIndex = 9;
+            this.labelLogMonthCount.Text = "月内日志数";
+            // 
+            // labelLogMonthValue
+            // 
+            this.labelLogMonthValue.AutoSize = true;
+            this.labelLogMonthValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelLogMonthValue.Location = new System.Drawing.Point(152, 144);
+            this.labelLogMonthValue.Name = "labelLogMonthValue";
+            this.labelLogMonthValue.Size = new System.Drawing.Size(111, 21);
+            this.labelLogMonthValue.TabIndex = 10;
+            this.labelLogMonthValue.Text = "logs-MONTH";
+            // 
+            // labelPushMonthCount
+            // 
+            this.labelPushMonthCount.AutoSize = true;
+            this.labelPushMonthCount.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPushMonthCount.Location = new System.Drawing.Point(15, 204);
+            this.labelPushMonthCount.Name = "labelPushMonthCount";
+            this.labelPushMonthCount.Size = new System.Drawing.Size(90, 21);
+            this.labelPushMonthCount.TabIndex = 11;
+            this.labelPushMonthCount.Text = "月内推送数";
+            // 
+            // labelPushMonthValue
+            // 
+            this.labelPushMonthValue.AutoSize = true;
+            this.labelPushMonthValue.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPushMonthValue.Location = new System.Drawing.Point(153, 204);
+            this.labelPushMonthValue.Name = "labelPushMonthValue";
+            this.labelPushMonthValue.Size = new System.Drawing.Size(124, 21);
+            this.labelPushMonthValue.TabIndex = 12;
+            this.labelPushMonthValue.Text = "pushs-MONTH";
+            // 
             // FormStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Back = global::PEP.Properties.Resources.main_8;
             this.BackgroundImage = global::PEP.Properties.Resources.main_8;
-            this.ClientSize = new System.Drawing.Size(303, 241);
+            this.ClientSize = new System.Drawing.Size(303, 330);
             this.Controls.Add(this.panelStatistics);
             this.Name = "FormStatistics";
             this.Text = "个人统计";
@@ -183,5 +255,11 @@
         private System.Windows.Forms.Label labelProjectValue;
         private System.Windows.Forms.Label labelLogValue;
         private System.Windows.Forms.Label labelPushValue;
+        private System.Windows.Forms.Label labelProjectEDValue;
+        private System.Windows.Forms.Label labelProjectEDCount;
+        private System.Windows.Forms.Label labelLogMonthCount;
+        private System.Windows.Forms.Label labelLogMonthValue;
+        private System.Windows.Forms.Label labelPushMonthCount;
+        private System.Windows.Forms.Label labelPushMonthValue;
     }
 }
