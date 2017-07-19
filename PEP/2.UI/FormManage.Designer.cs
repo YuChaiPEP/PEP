@@ -93,6 +93,15 @@
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTaskProcessSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonCreateProject = new CCWin.SkinControl.SkinButton();
+            this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
+            this.comboTask = new CCWin.SkinControl.SkinComboBox();
+            this.labelTask = new System.Windows.Forms.Label();
+            this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
+            this.labelTaskFile = new System.Windows.Forms.Label();
+            this.buttonChooseFile = new CCWin.SkinControl.SkinButton();
+            this.labelUploadFile = new System.Windows.Forms.Label();
+            this.textFilename = new CCWin.SkinControl.SkinTextBox();
+            this.buttonUpload = new CCWin.SkinControl.SkinButton();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -110,22 +119,23 @@
             this.panelProcess.SuspendLayout();
             this.groupBoxTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTaskProcess)).BeginInit();
+            this.tabPageFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWelcome
             // 
             this.panelWelcome.BackColor = System.Drawing.Color.Transparent;
             this.panelWelcome.Controls.Add(this.labelWelcome);
-            this.panelWelcome.Location = new System.Drawing.Point(180, 12);
+            this.panelWelcome.Location = new System.Drawing.Point(336, 22);
             this.panelWelcome.Name = "panelWelcome";
-            this.panelWelcome.Size = new System.Drawing.Size(462, 55);
+            this.panelWelcome.Size = new System.Drawing.Size(299, 46);
             this.panelWelcome.TabIndex = 0;
             // 
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelWelcome.Location = new System.Drawing.Point(139, 18);
+            this.labelWelcome.Location = new System.Drawing.Point(3, 15);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(208, 21);
             this.labelWelcome.TabIndex = 0;
@@ -176,6 +186,7 @@
             this.tabControl.Controls.Add(this.tabPageTask);
             this.tabControl.Controls.Add(this.tabPagePerson);
             this.tabControl.Controls.Add(this.tabPageChecker);
+            this.tabControl.Controls.Add(this.tabPageFile);
             this.tabControl.Controls.Add(this.tabPageLog);
             this.tabControl.Controls.Add(this.tabPageProcess);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -193,7 +204,7 @@
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
             this.tabControl.SelectedIndex = 4;
-            this.tabControl.Size = new System.Drawing.Size(496, 406);
+            this.tabControl.Size = new System.Drawing.Size(594, 406);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 4;
             // 
@@ -205,7 +216,7 @@
             this.tabPageInfo.Location = new System.Drawing.Point(0, 36);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(496, 370);
+            this.tabPageInfo.Size = new System.Drawing.Size(594, 370);
             this.tabPageInfo.TabIndex = 0;
             this.tabPageInfo.TabItemImage = null;
             this.tabPageInfo.Text = "信息修改";
@@ -222,9 +233,9 @@
             this.panelInfo.Controls.Add(this.labelPname);
             this.panelInfo.Controls.Add(this.labelNumber);
             this.panelInfo.Controls.Add(this.panelState);
-            this.panelInfo.Location = new System.Drawing.Point(19, 14);
+            this.panelInfo.Location = new System.Drawing.Point(60, 43);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(447, 243);
+            this.panelInfo.Size = new System.Drawing.Size(447, 271);
             this.panelInfo.TabIndex = 0;
             // 
             // labelState
@@ -242,7 +253,7 @@
             this.buttonInfoSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonInfoSubmit.DownBack = null;
             this.buttonInfoSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonInfoSubmit.Location = new System.Drawing.Point(194, 193);
+            this.buttonInfoSubmit.Location = new System.Drawing.Point(191, 217);
             this.buttonInfoSubmit.MouseBack = null;
             this.buttonInfoSubmit.Name = "buttonInfoSubmit";
             this.buttonInfoSubmit.NormlBack = null;
@@ -458,7 +469,7 @@
             this.tabPageTask.Location = new System.Drawing.Point(0, 36);
             this.tabPageTask.Name = "tabPageTask";
             this.tabPageTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTask.Size = new System.Drawing.Size(496, 370);
+            this.tabPageTask.Size = new System.Drawing.Size(594, 370);
             this.tabPageTask.TabIndex = 1;
             this.tabPageTask.TabItemImage = null;
             this.tabPageTask.Text = "子任务调整";
@@ -470,7 +481,7 @@
             this.buttonTaskSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonTaskSubmit.DownBack = null;
             this.buttonTaskSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonTaskSubmit.Location = new System.Drawing.Point(204, 276);
+            this.buttonTaskSubmit.Location = new System.Drawing.Point(265, 275);
             this.buttonTaskSubmit.MouseBack = null;
             this.buttonTaskSubmit.Name = "buttonTaskSubmit";
             this.buttonTaskSubmit.NormlBack = null;
@@ -486,7 +497,7 @@
             this.buttonTaskLeft.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonTaskLeft.DownBack = null;
             this.buttonTaskLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonTaskLeft.Location = new System.Drawing.Point(204, 175);
+            this.buttonTaskLeft.Location = new System.Drawing.Point(265, 169);
             this.buttonTaskLeft.MouseBack = null;
             this.buttonTaskLeft.Name = "buttonTaskLeft";
             this.buttonTaskLeft.NormlBack = null;
@@ -502,7 +513,7 @@
             this.buttonTaskRight.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonTaskRight.DownBack = null;
             this.buttonTaskRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonTaskRight.Location = new System.Drawing.Point(204, 146);
+            this.buttonTaskRight.Location = new System.Drawing.Point(265, 140);
             this.buttonTaskRight.MouseBack = null;
             this.buttonTaskRight.Name = "buttonTaskRight";
             this.buttonTaskRight.NormlBack = null;
@@ -518,12 +529,12 @@
             this.listIncludedTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listIncludedTask.FormattingEnabled = true;
             this.listIncludedTask.ItemHeight = 21;
-            this.listIncludedTask.Location = new System.Drawing.Point(297, 38);
+            this.listIncludedTask.Location = new System.Drawing.Point(370, 38);
             this.listIncludedTask.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listIncludedTask.Name = "listIncludedTask";
             this.listIncludedTask.RowBackColor2 = System.Drawing.Color.White;
             this.listIncludedTask.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listIncludedTask.Size = new System.Drawing.Size(136, 298);
+            this.listIncludedTask.Size = new System.Drawing.Size(182, 298);
             this.listIncludedTask.TabIndex = 1;
             this.listIncludedTask.SelectedIndexChanged += new System.EventHandler(this.listIncludedTask_SelectedIndexChanged);
             // 
@@ -538,7 +549,7 @@
             this.listAllTask.Name = "listAllTask";
             this.listAllTask.RowBackColor2 = System.Drawing.Color.White;
             this.listAllTask.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listAllTask.Size = new System.Drawing.Size(136, 298);
+            this.listAllTask.Size = new System.Drawing.Size(182, 298);
             this.listAllTask.TabIndex = 0;
             this.listAllTask.SelectedIndexChanged += new System.EventHandler(this.listAllTask_SelectedIndexChanged);
             // 
@@ -554,7 +565,7 @@
             this.tabPagePerson.Location = new System.Drawing.Point(0, 36);
             this.tabPagePerson.Name = "tabPagePerson";
             this.tabPagePerson.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePerson.Size = new System.Drawing.Size(496, 370);
+            this.tabPagePerson.Size = new System.Drawing.Size(594, 370);
             this.tabPagePerson.TabIndex = 2;
             this.tabPagePerson.TabItemImage = null;
             this.tabPagePerson.Text = "人员分配";
@@ -566,7 +577,7 @@
             this.buttonPersonSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonPersonSubmit.DownBack = null;
             this.buttonPersonSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonPersonSubmit.Location = new System.Drawing.Point(204, 276);
+            this.buttonPersonSubmit.Location = new System.Drawing.Point(265, 275);
             this.buttonPersonSubmit.MouseBack = null;
             this.buttonPersonSubmit.Name = "buttonPersonSubmit";
             this.buttonPersonSubmit.NormlBack = null;
@@ -582,7 +593,7 @@
             this.buttonPersonLeft.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonPersonLeft.DownBack = null;
             this.buttonPersonLeft.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonPersonLeft.Location = new System.Drawing.Point(204, 175);
+            this.buttonPersonLeft.Location = new System.Drawing.Point(265, 169);
             this.buttonPersonLeft.MouseBack = null;
             this.buttonPersonLeft.Name = "buttonPersonLeft";
             this.buttonPersonLeft.NormlBack = null;
@@ -598,7 +609,7 @@
             this.buttonPersonRight.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonPersonRight.DownBack = null;
             this.buttonPersonRight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonPersonRight.Location = new System.Drawing.Point(204, 146);
+            this.buttonPersonRight.Location = new System.Drawing.Point(265, 140);
             this.buttonPersonRight.MouseBack = null;
             this.buttonPersonRight.Name = "buttonPersonRight";
             this.buttonPersonRight.NormlBack = null;
@@ -614,12 +625,12 @@
             this.listIncludedPerson.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.listIncludedPerson.FormattingEnabled = true;
             this.listIncludedPerson.ItemHeight = 21;
-            this.listIncludedPerson.Location = new System.Drawing.Point(297, 38);
+            this.listIncludedPerson.Location = new System.Drawing.Point(370, 38);
             this.listIncludedPerson.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listIncludedPerson.Name = "listIncludedPerson";
             this.listIncludedPerson.RowBackColor2 = System.Drawing.Color.White;
             this.listIncludedPerson.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listIncludedPerson.Size = new System.Drawing.Size(136, 298);
+            this.listIncludedPerson.Size = new System.Drawing.Size(182, 298);
             this.listIncludedPerson.TabIndex = 1;
             this.listIncludedPerson.SelectedIndexChanged += new System.EventHandler(this.listIncludedPerson_SelectedIndexChanged);
             // 
@@ -634,7 +645,7 @@
             this.listAllPerson.Name = "listAllPerson";
             this.listAllPerson.RowBackColor2 = System.Drawing.Color.White;
             this.listAllPerson.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listAllPerson.Size = new System.Drawing.Size(136, 298);
+            this.listAllPerson.Size = new System.Drawing.Size(182, 298);
             this.listAllPerson.TabIndex = 0;
             this.listAllPerson.SelectedIndexChanged += new System.EventHandler(this.listAllPerson_SelectedIndexChanged);
             // 
@@ -647,7 +658,7 @@
             this.tabPageChecker.Location = new System.Drawing.Point(0, 36);
             this.tabPageChecker.Name = "tabPageChecker";
             this.tabPageChecker.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageChecker.Size = new System.Drawing.Size(496, 370);
+            this.tabPageChecker.Size = new System.Drawing.Size(594, 370);
             this.tabPageChecker.TabIndex = 3;
             this.tabPageChecker.TabItemImage = null;
             this.tabPageChecker.Text = "负责人委任";
@@ -659,7 +670,7 @@
             this.buttonCheckerSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonCheckerSubmit.DownBack = null;
             this.buttonCheckerSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCheckerSubmit.Location = new System.Drawing.Point(209, 343);
+            this.buttonCheckerSubmit.Location = new System.Drawing.Point(251, 341);
             this.buttonCheckerSubmit.MouseBack = null;
             this.buttonCheckerSubmit.Name = "buttonCheckerSubmit";
             this.buttonCheckerSubmit.NormlBack = null;
@@ -715,7 +726,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridChecker.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridChecker.RowTemplate.Height = 23;
-            this.gridChecker.Size = new System.Drawing.Size(496, 336);
+            this.gridChecker.Size = new System.Drawing.Size(594, 336);
             this.gridChecker.TabIndex = 0;
             this.gridChecker.TitleBack = null;
             this.gridChecker.TitleBackColorBegin = System.Drawing.Color.White;
@@ -734,7 +745,7 @@
             this.tabPageLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLog.Size = new System.Drawing.Size(496, 370);
+            this.tabPageLog.Size = new System.Drawing.Size(594, 370);
             this.tabPageLog.TabIndex = 4;
             this.tabPageLog.TabItemImage = null;
             this.tabPageLog.Text = "日志批阅";
@@ -780,7 +791,7 @@
             this.gridCheckLog.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridCheckLog.RowTemplate.Height = 23;
             this.gridCheckLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCheckLog.Size = new System.Drawing.Size(500, 376);
+            this.gridCheckLog.Size = new System.Drawing.Size(598, 376);
             this.gridCheckLog.TabIndex = 0;
             this.gridCheckLog.TitleBack = null;
             this.gridCheckLog.TitleBackColorBegin = System.Drawing.Color.White;
@@ -831,7 +842,7 @@
             this.tabPageProcess.Location = new System.Drawing.Point(0, 36);
             this.tabPageProcess.Name = "tabPageProcess";
             this.tabPageProcess.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProcess.Size = new System.Drawing.Size(496, 370);
+            this.tabPageProcess.Size = new System.Drawing.Size(594, 370);
             this.tabPageProcess.TabIndex = 5;
             this.tabPageProcess.TabItemImage = null;
             this.tabPageProcess.Text = "进度控制";
@@ -843,7 +854,7 @@
             this.groupBoxProject.Controls.Add(this.panelProcess);
             this.groupBoxProject.Location = new System.Drawing.Point(6, 277);
             this.groupBoxProject.Name = "groupBoxProject";
-            this.groupBoxProject.Size = new System.Drawing.Size(484, 83);
+            this.groupBoxProject.Size = new System.Drawing.Size(582, 83);
             this.groupBoxProject.TabIndex = 9;
             this.groupBoxProject.TabStop = false;
             this.groupBoxProject.Text = "项目进度";
@@ -854,7 +865,7 @@
             this.buttonProjectProcessSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonProjectProcessSubmit.DownBack = null;
             this.buttonProjectProcessSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonProjectProcessSubmit.Location = new System.Drawing.Point(184, 56);
+            this.buttonProjectProcessSubmit.Location = new System.Drawing.Point(233, 58);
             this.buttonProjectProcessSubmit.MouseBack = null;
             this.buttonProjectProcessSubmit.Name = "buttonProjectProcessSubmit";
             this.buttonProjectProcessSubmit.NormlBack = null;
@@ -868,7 +879,7 @@
             // 
             this.panelProcess.Controls.Add(this.radioAbort);
             this.panelProcess.Controls.Add(this.radioFinish);
-            this.panelProcess.Location = new System.Drawing.Point(71, 20);
+            this.panelProcess.Location = new System.Drawing.Point(123, 11);
             this.panelProcess.Name = "panelProcess";
             this.panelProcess.Size = new System.Drawing.Size(353, 41);
             this.panelProcess.TabIndex = 0;
@@ -919,7 +930,7 @@
             this.groupBoxTask.Controls.Add(this.buttonTaskProcessSubmit);
             this.groupBoxTask.Location = new System.Drawing.Point(6, 0);
             this.groupBoxTask.Name = "groupBoxTask";
-            this.groupBoxTask.Size = new System.Drawing.Size(484, 271);
+            this.groupBoxTask.Size = new System.Drawing.Size(582, 271);
             this.groupBoxTask.TabIndex = 8;
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "任务进度";
@@ -968,7 +979,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridTaskProcess.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.gridTaskProcess.RowTemplate.Height = 23;
-            this.gridTaskProcess.Size = new System.Drawing.Size(472, 206);
+            this.gridTaskProcess.Size = new System.Drawing.Size(570, 206);
             this.gridTaskProcess.TabIndex = 0;
             this.gridTaskProcess.TitleBack = null;
             this.gridTaskProcess.TitleBackColorBegin = System.Drawing.Color.White;
@@ -985,7 +996,7 @@
             this.buttonTaskProcessSubmit.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonTaskProcessSubmit.DownBack = null;
             this.buttonTaskProcessSubmit.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonTaskProcessSubmit.Location = new System.Drawing.Point(184, 240);
+            this.buttonTaskProcessSubmit.Location = new System.Drawing.Point(233, 240);
             this.buttonTaskProcessSubmit.MouseBack = null;
             this.buttonTaskProcessSubmit.Name = "buttonTaskProcessSubmit";
             this.buttonTaskProcessSubmit.NormlBack = null;
@@ -1011,12 +1022,153 @@
             this.buttonCreateProject.UseVisualStyleBackColor = true;
             this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
             // 
+            // tabPageFile
+            // 
+            this.tabPageFile.BackColor = System.Drawing.Color.White;
+            this.tabPageFile.Controls.Add(this.buttonUpload);
+            this.tabPageFile.Controls.Add(this.textFilename);
+            this.tabPageFile.Controls.Add(this.labelUploadFile);
+            this.tabPageFile.Controls.Add(this.buttonChooseFile);
+            this.tabPageFile.Controls.Add(this.comboTaskFile);
+            this.tabPageFile.Controls.Add(this.labelTaskFile);
+            this.tabPageFile.Controls.Add(this.comboTask);
+            this.tabPageFile.Controls.Add(this.labelTask);
+            this.tabPageFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageFile.Location = new System.Drawing.Point(0, 36);
+            this.tabPageFile.Name = "tabPageFile";
+            this.tabPageFile.Size = new System.Drawing.Size(594, 370);
+            this.tabPageFile.TabIndex = 6;
+            this.tabPageFile.TabItemImage = null;
+            this.tabPageFile.Text = "文件管理";
+            // 
+            // comboTask
+            // 
+            this.comboTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTask.FormattingEnabled = true;
+            this.comboTask.Location = new System.Drawing.Point(242, 50);
+            this.comboTask.Name = "comboTask";
+            this.comboTask.Size = new System.Drawing.Size(223, 24);
+            this.comboTask.TabIndex = 8;
+            this.comboTask.WaterText = "";
+            // 
+            // labelTask
+            // 
+            this.labelTask.AutoSize = true;
+            this.labelTask.Location = new System.Drawing.Point(93, 49);
+            this.labelTask.Name = "labelTask";
+            this.labelTask.Size = new System.Drawing.Size(74, 21);
+            this.labelTask.TabIndex = 7;
+            this.labelTask.Text = "所属任务";
+            // 
+            // comboTaskFile
+            // 
+            this.comboTaskFile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTaskFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTaskFile.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTaskFile.FormattingEnabled = true;
+            this.comboTaskFile.Location = new System.Drawing.Point(242, 108);
+            this.comboTaskFile.Name = "comboTaskFile";
+            this.comboTaskFile.Size = new System.Drawing.Size(223, 24);
+            this.comboTaskFile.TabIndex = 10;
+            this.comboTaskFile.WaterText = "";
+            // 
+            // labelTaskFile
+            // 
+            this.labelTaskFile.AutoSize = true;
+            this.labelTaskFile.Location = new System.Drawing.Point(93, 107);
+            this.labelTaskFile.Name = "labelTaskFile";
+            this.labelTaskFile.Size = new System.Drawing.Size(74, 21);
+            this.labelTaskFile.TabIndex = 9;
+            this.labelTaskFile.Text = "任务文件";
+            // 
+            // buttonChooseFile
+            // 
+            this.buttonChooseFile.BackColor = System.Drawing.Color.Transparent;
+            this.buttonChooseFile.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonChooseFile.DownBack = null;
+            this.buttonChooseFile.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonChooseFile.Location = new System.Drawing.Point(416, 164);
+            this.buttonChooseFile.MouseBack = null;
+            this.buttonChooseFile.Name = "buttonChooseFile";
+            this.buttonChooseFile.NormlBack = null;
+            this.buttonChooseFile.Size = new System.Drawing.Size(49, 29);
+            this.buttonChooseFile.TabIndex = 11;
+            this.buttonChooseFile.Text = "浏览";
+            this.buttonChooseFile.UseVisualStyleBackColor = false;
+            // 
+            // labelUploadFile
+            // 
+            this.labelUploadFile.AutoSize = true;
+            this.labelUploadFile.Location = new System.Drawing.Point(93, 165);
+            this.labelUploadFile.Name = "labelUploadFile";
+            this.labelUploadFile.Size = new System.Drawing.Size(74, 21);
+            this.labelUploadFile.TabIndex = 12;
+            this.labelUploadFile.Text = "上传文件";
+            // 
+            // textFilename
+            // 
+            this.textFilename.BackColor = System.Drawing.Color.Transparent;
+            this.textFilename.DownBack = null;
+            this.textFilename.Icon = null;
+            this.textFilename.IconIsButton = false;
+            this.textFilename.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFilename.IsPasswordChat = '\0';
+            this.textFilename.IsSystemPasswordChar = false;
+            this.textFilename.Lines = new string[0];
+            this.textFilename.Location = new System.Drawing.Point(242, 165);
+            this.textFilename.Margin = new System.Windows.Forms.Padding(0);
+            this.textFilename.MaxLength = 32767;
+            this.textFilename.MinimumSize = new System.Drawing.Size(28, 28);
+            this.textFilename.MouseBack = null;
+            this.textFilename.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFilename.Multiline = false;
+            this.textFilename.Name = "textFilename";
+            this.textFilename.NormlBack = null;
+            this.textFilename.Padding = new System.Windows.Forms.Padding(5);
+            this.textFilename.ReadOnly = false;
+            this.textFilename.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textFilename.Size = new System.Drawing.Size(166, 28);
+            // 
+            // 
+            // 
+            this.textFilename.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textFilename.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textFilename.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.textFilename.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.textFilename.SkinTxt.Name = "BaseText";
+            this.textFilename.SkinTxt.Size = new System.Drawing.Size(156, 18);
+            this.textFilename.SkinTxt.TabIndex = 0;
+            this.textFilename.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFilename.SkinTxt.WaterText = "";
+            this.textFilename.TabIndex = 13;
+            this.textFilename.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textFilename.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFilename.WaterText = "";
+            this.textFilename.WordWrap = true;
+            // 
+            // buttonUpload
+            // 
+            this.buttonUpload.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUpload.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonUpload.DownBack = null;
+            this.buttonUpload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonUpload.Location = new System.Drawing.Point(230, 248);
+            this.buttonUpload.MouseBack = null;
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.NormlBack = null;
+            this.buttonUpload.Size = new System.Drawing.Size(102, 34);
+            this.buttonUpload.TabIndex = 14;
+            this.buttonUpload.Text = "上传";
+            this.buttonUpload.UseVisualStyleBackColor = false;
+            // 
             // FormManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Back = global::PEP.Properties.Resources.main_8;
-            this.ClientSize = new System.Drawing.Size(804, 582);
+            this.ClientSize = new System.Drawing.Size(886, 582);
             this.Controls.Add(this.buttonCreateProject);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panelProject);
@@ -1045,6 +1197,8 @@
             this.panelProcess.PerformLayout();
             this.groupBoxTask.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTaskProcess)).EndInit();
+            this.tabPageFile.ResumeLayout(false);
+            this.tabPageFile.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1104,5 +1258,14 @@
         private CCWin.SkinControl.SkinRadioButton radioFinish;
         private CCWin.SkinControl.SkinRadioButton radioAbort;
         private CCWin.SkinControl.SkinButton buttonProjectProcessSubmit;
+        private CCWin.SkinControl.SkinTabPage tabPageFile;
+        private CCWin.SkinControl.SkinComboBox comboTask;
+        private System.Windows.Forms.Label labelTask;
+        private CCWin.SkinControl.SkinComboBox comboTaskFile;
+        private System.Windows.Forms.Label labelTaskFile;
+        private CCWin.SkinControl.SkinButton buttonChooseFile;
+        private System.Windows.Forms.Label labelUploadFile;
+        private CCWin.SkinControl.SkinTextBox textFilename;
+        private CCWin.SkinControl.SkinButton buttonUpload;
     }
 }

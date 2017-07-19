@@ -46,8 +46,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.labelWelcome = new System.Windows.Forms.Label();
-            this.panelWelcome = new System.Windows.Forms.Panel();
             this.listProject = new CCWin.SkinControl.SkinListBox();
             this.labelProject = new System.Windows.Forms.Label();
             this.gridProjectOverview = new CCWin.SkinControl.SkinDataGridView();
@@ -63,6 +61,7 @@
             this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLog = new CCWin.SkinControl.SkinTabPage();
             this.panelLog = new System.Windows.Forms.Panel();
+            this.textFileName = new CCWin.SkinControl.SkinTextBox();
             this.buttonUpload = new CCWin.SkinControl.SkinButton();
             this.buttonLogClear = new CCWin.SkinControl.SkinButton();
             this.buttonLogSubmit = new CCWin.SkinControl.SkinButton();
@@ -84,6 +83,7 @@
             this.radioButtonTeammateLogs = new CCWin.SkinControl.SkinRadioButton();
             this.radioButtonMyLogs = new CCWin.SkinControl.SkinRadioButton();
             this.radioButtonAllLogs = new CCWin.SkinControl.SkinRadioButton();
+            this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
             this.panelPush = new System.Windows.Forms.Panel();
             this.buttonPushLast = new CCWin.SkinControl.SkinButton();
             this.buttonPushNext = new CCWin.SkinControl.SkinButton();
@@ -93,8 +93,13 @@
             this.buttonStatistics = new CCWin.SkinControl.SkinButton();
             this.panelProject = new System.Windows.Forms.Panel();
             this.buttonPwdChange = new CCWin.SkinControl.SkinButton();
-            this.textFileName = new CCWin.SkinControl.SkinTextBox();
-            this.panelWelcome.SuspendLayout();
+            this.labelWelcome = new System.Windows.Forms.Label();
+            this.panelWelcome = new System.Windows.Forms.Panel();
+            this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
+            this.labelTaskFile = new System.Windows.Forms.Label();
+            this.comboTask = new CCWin.SkinControl.SkinComboBox();
+            this.labelTask = new System.Windows.Forms.Label();
+            this.buttonDownload = new CCWin.SkinControl.SkinButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageOverview.SuspendLayout();
@@ -104,29 +109,11 @@
             this.panelLog.SuspendLayout();
             this.tabPageReadLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).BeginInit();
+            this.tabPageFile.SuspendLayout();
             this.panelPush.SuspendLayout();
             this.panelProject.SuspendLayout();
+            this.panelWelcome.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelWelcome
-            // 
-            this.labelWelcome.AutoSize = true;
-            this.labelWelcome.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelWelcome.Location = new System.Drawing.Point(145, 18);
-            this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(175, 21);
-            this.labelWelcome.TabIndex = 0;
-            this.labelWelcome.Text = "欢迎使用PEP系统";
-            this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelWelcome
-            // 
-            this.panelWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.panelWelcome.Controls.Add(this.labelWelcome);
-            this.panelWelcome.Location = new System.Drawing.Point(180, 12);
-            this.panelWelcome.Name = "panelWelcome";
-            this.panelWelcome.Size = new System.Drawing.Size(446, 55);
-            this.panelWelcome.TabIndex = 1;
             // 
             // listProject
             // 
@@ -209,7 +196,7 @@
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gridProjectOverview.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gridProjectOverview.RowTemplate.Height = 23;
-            this.gridProjectOverview.Size = new System.Drawing.Size(539, 341);
+            this.gridProjectOverview.Size = new System.Drawing.Size(594, 341);
             this.gridProjectOverview.TabIndex = 4;
             this.gridProjectOverview.TitleBack = null;
             this.gridProjectOverview.TitleBackColorBegin = System.Drawing.Color.White;
@@ -235,6 +222,7 @@
             this.tabControl.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.tabControl.Controls.Add(this.tabPageOverview);
             this.tabControl.Controls.Add(this.tabPageTask);
+            this.tabControl.Controls.Add(this.tabPageFile);
             this.tabControl.Controls.Add(this.tabPageLog);
             this.tabControl.Controls.Add(this.tabPageReadLog);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -252,7 +240,7 @@
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
             this.tabControl.SelectedIndex = 2;
-            this.tabControl.Size = new System.Drawing.Size(539, 375);
+            this.tabControl.Size = new System.Drawing.Size(594, 375);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 5;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
@@ -265,7 +253,7 @@
             this.tabPageOverview.Location = new System.Drawing.Point(0, 36);
             this.tabPageOverview.Name = "tabPageOverview";
             this.tabPageOverview.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOverview.Size = new System.Drawing.Size(539, 339);
+            this.tabPageOverview.Size = new System.Drawing.Size(594, 339);
             this.tabPageOverview.TabIndex = 0;
             this.tabPageOverview.TabItemImage = null;
             this.tabPageOverview.Text = "项目概要";
@@ -278,10 +266,10 @@
             this.tabPageTask.Location = new System.Drawing.Point(0, 36);
             this.tabPageTask.Name = "tabPageTask";
             this.tabPageTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTask.Size = new System.Drawing.Size(539, 339);
+            this.tabPageTask.Size = new System.Drawing.Size(594, 339);
             this.tabPageTask.TabIndex = 1;
             this.tabPageTask.TabItemImage = null;
-            this.tabPageTask.Text = "任务管理";
+            this.tabPageTask.Text = "任务信息";
             // 
             // gridProjectTask
             // 
@@ -331,7 +319,7 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridProjectTask.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.gridProjectTask.RowTemplate.Height = 23;
-            this.gridProjectTask.Size = new System.Drawing.Size(539, 341);
+            this.gridProjectTask.Size = new System.Drawing.Size(594, 341);
             this.gridProjectTask.TabIndex = 0;
             this.gridProjectTask.TitleBack = null;
             this.gridProjectTask.TitleBackColorBegin = System.Drawing.Color.White;
@@ -364,7 +352,7 @@
             this.tabPageLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageLog.Name = "tabPageLog";
-            this.tabPageLog.Size = new System.Drawing.Size(539, 339);
+            this.tabPageLog.Size = new System.Drawing.Size(594, 339);
             this.tabPageLog.TabIndex = 2;
             this.tabPageLog.TabItemImage = null;
             this.tabPageLog.Text = "日志提交";
@@ -385,8 +373,49 @@
             this.panelLog.Controls.Add(this.labelLogContent);
             this.panelLog.Location = new System.Drawing.Point(15, 5);
             this.panelLog.Name = "panelLog";
-            this.panelLog.Size = new System.Drawing.Size(499, 325);
+            this.panelLog.Size = new System.Drawing.Size(564, 325);
             this.panelLog.TabIndex = 8;
+            // 
+            // textFileName
+            // 
+            this.textFileName.BackColor = System.Drawing.Color.Transparent;
+            this.textFileName.DownBack = null;
+            this.textFileName.Icon = null;
+            this.textFileName.IconIsButton = false;
+            this.textFileName.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFileName.IsPasswordChat = '\0';
+            this.textFileName.IsSystemPasswordChar = false;
+            this.textFileName.Lines = new string[0];
+            this.textFileName.Location = new System.Drawing.Point(40, 226);
+            this.textFileName.Margin = new System.Windows.Forms.Padding(0);
+            this.textFileName.MaxLength = 32767;
+            this.textFileName.MinimumSize = new System.Drawing.Size(28, 28);
+            this.textFileName.MouseBack = null;
+            this.textFileName.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFileName.Multiline = false;
+            this.textFileName.Name = "textFileName";
+            this.textFileName.NormlBack = null;
+            this.textFileName.Padding = new System.Windows.Forms.Padding(5);
+            this.textFileName.ReadOnly = false;
+            this.textFileName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textFileName.Size = new System.Drawing.Size(137, 28);
+            // 
+            // 
+            // 
+            this.textFileName.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textFileName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textFileName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.textFileName.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.textFileName.SkinTxt.Name = "BaseText";
+            this.textFileName.SkinTxt.Size = new System.Drawing.Size(127, 18);
+            this.textFileName.SkinTxt.TabIndex = 0;
+            this.textFileName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFileName.SkinTxt.WaterText = "";
+            this.textFileName.TabIndex = 11;
+            this.textFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textFileName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFileName.WaterText = "";
+            this.textFileName.WordWrap = true;
             // 
             // buttonUpload
             // 
@@ -446,7 +475,7 @@
             this.textLogContent.IsPasswordChat = '\0';
             this.textLogContent.IsSystemPasswordChar = false;
             this.textLogContent.Lines = new string[0];
-            this.textLogContent.Location = new System.Drawing.Point(169, 130);
+            this.textLogContent.Location = new System.Drawing.Point(201, 126);
             this.textLogContent.Margin = new System.Windows.Forms.Padding(0);
             this.textLogContent.MaxLength = 32767;
             this.textLogContent.MinimumSize = new System.Drawing.Size(28, 28);
@@ -482,7 +511,7 @@
             this.comboLogTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLogTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboLogTask.FormattingEnabled = true;
-            this.comboLogTask.Location = new System.Drawing.Point(169, 91);
+            this.comboLogTask.Location = new System.Drawing.Point(201, 90);
             this.comboLogTask.Name = "comboLogTask";
             this.comboLogTask.Size = new System.Drawing.Size(203, 24);
             this.comboLogTask.TabIndex = 6;
@@ -508,7 +537,7 @@
             this.textLogTime.IsPasswordChat = '\0';
             this.textLogTime.IsSystemPasswordChar = false;
             this.textLogTime.Lines = new string[0];
-            this.textLogTime.Location = new System.Drawing.Point(169, 54);
+            this.textLogTime.Location = new System.Drawing.Point(201, 53);
             this.textLogTime.Margin = new System.Windows.Forms.Padding(0);
             this.textLogTime.MaxLength = 32767;
             this.textLogTime.MinimumSize = new System.Drawing.Size(28, 28);
@@ -557,7 +586,7 @@
             this.textLogPerson.IsPasswordChat = '\0';
             this.textLogPerson.IsSystemPasswordChar = false;
             this.textLogPerson.Lines = new string[0];
-            this.textLogPerson.Location = new System.Drawing.Point(169, 15);
+            this.textLogPerson.Location = new System.Drawing.Point(201, 17);
             this.textLogPerson.Margin = new System.Windows.Forms.Padding(0);
             this.textLogPerson.MaxLength = 32767;
             this.textLogPerson.MinimumSize = new System.Drawing.Size(28, 28);
@@ -615,7 +644,7 @@
             this.tabPageReadLog.Location = new System.Drawing.Point(0, 36);
             this.tabPageReadLog.Name = "tabPageReadLog";
             this.tabPageReadLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReadLog.Size = new System.Drawing.Size(539, 339);
+            this.tabPageReadLog.Size = new System.Drawing.Size(594, 339);
             this.tabPageReadLog.TabIndex = 3;
             this.tabPageReadLog.TabItemImage = null;
             this.tabPageReadLog.Text = "日志查看";
@@ -678,7 +707,7 @@
             this.gridReadLog.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.gridReadLog.RowTemplate.Height = 23;
             this.gridReadLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridReadLog.Size = new System.Drawing.Size(539, 308);
+            this.gridReadLog.Size = new System.Drawing.Size(594, 302);
             this.gridReadLog.TabIndex = 3;
             this.gridReadLog.TitleBack = null;
             this.gridReadLog.TitleBackColorBegin = System.Drawing.Color.White;
@@ -782,6 +811,22 @@
             this.radioButtonAllLogs.Text = "全部日志";
             this.radioButtonAllLogs.UseVisualStyleBackColor = true;
             this.radioButtonAllLogs.CheckedChanged += new System.EventHandler(this.radioButtonAllLogs_CheckedChanged);
+            // 
+            // tabPageFile
+            // 
+            this.tabPageFile.BackColor = System.Drawing.Color.White;
+            this.tabPageFile.Controls.Add(this.buttonDownload);
+            this.tabPageFile.Controls.Add(this.comboTaskFile);
+            this.tabPageFile.Controls.Add(this.labelTaskFile);
+            this.tabPageFile.Controls.Add(this.comboTask);
+            this.tabPageFile.Controls.Add(this.labelTask);
+            this.tabPageFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageFile.Location = new System.Drawing.Point(0, 36);
+            this.tabPageFile.Name = "tabPageFile";
+            this.tabPageFile.Size = new System.Drawing.Size(594, 339);
+            this.tabPageFile.TabIndex = 4;
+            this.tabPageFile.TabItemImage = null;
+            this.tabPageFile.Text = "文件查看";
             // 
             // panelPush
             // 
@@ -939,53 +984,89 @@
             this.buttonPwdChange.UseVisualStyleBackColor = true;
             this.buttonPwdChange.Click += new System.EventHandler(this.buttonPwdChange_Click);
             // 
-            // textFileName
+            // labelWelcome
             // 
-            this.textFileName.BackColor = System.Drawing.Color.Transparent;
-            this.textFileName.DownBack = null;
-            this.textFileName.Icon = null;
-            this.textFileName.IconIsButton = false;
-            this.textFileName.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.textFileName.IsPasswordChat = '\0';
-            this.textFileName.IsSystemPasswordChar = false;
-            this.textFileName.Lines = new string[0];
-            this.textFileName.Location = new System.Drawing.Point(40, 226);
-            this.textFileName.Margin = new System.Windows.Forms.Padding(0);
-            this.textFileName.MaxLength = 32767;
-            this.textFileName.MinimumSize = new System.Drawing.Size(28, 28);
-            this.textFileName.MouseBack = null;
-            this.textFileName.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.textFileName.Multiline = false;
-            this.textFileName.Name = "textFileName";
-            this.textFileName.NormlBack = null;
-            this.textFileName.Padding = new System.Windows.Forms.Padding(5);
-            this.textFileName.ReadOnly = false;
-            this.textFileName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textFileName.Size = new System.Drawing.Size(123, 28);
+            this.labelWelcome.AutoSize = true;
+            this.labelWelcome.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelWelcome.Location = new System.Drawing.Point(3, 18);
+            this.labelWelcome.Name = "labelWelcome";
+            this.labelWelcome.Size = new System.Drawing.Size(175, 21);
+            this.labelWelcome.TabIndex = 0;
+            this.labelWelcome.Text = "欢迎使用PEP系统";
+            this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelWelcome
             // 
+            this.panelWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.panelWelcome.Controls.Add(this.labelWelcome);
+            this.panelWelcome.Location = new System.Drawing.Point(355, 20);
+            this.panelWelcome.Name = "panelWelcome";
+            this.panelWelcome.Size = new System.Drawing.Size(248, 42);
+            this.panelWelcome.TabIndex = 1;
             // 
-            this.textFileName.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textFileName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textFileName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.textFileName.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.textFileName.SkinTxt.Name = "BaseText";
-            this.textFileName.SkinTxt.Size = new System.Drawing.Size(113, 18);
-            this.textFileName.SkinTxt.TabIndex = 0;
-            this.textFileName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textFileName.SkinTxt.WaterText = "";
-            this.textFileName.TabIndex = 11;
-            this.textFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textFileName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textFileName.WaterText = "";
-            this.textFileName.WordWrap = true;
+            // comboTaskFile
+            // 
+            this.comboTaskFile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTaskFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTaskFile.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTaskFile.FormattingEnabled = true;
+            this.comboTaskFile.Location = new System.Drawing.Point(261, 107);
+            this.comboTaskFile.Name = "comboTaskFile";
+            this.comboTaskFile.Size = new System.Drawing.Size(223, 24);
+            this.comboTaskFile.TabIndex = 14;
+            this.comboTaskFile.WaterText = "";
+            // 
+            // labelTaskFile
+            // 
+            this.labelTaskFile.AutoSize = true;
+            this.labelTaskFile.Location = new System.Drawing.Point(112, 106);
+            this.labelTaskFile.Name = "labelTaskFile";
+            this.labelTaskFile.Size = new System.Drawing.Size(74, 21);
+            this.labelTaskFile.TabIndex = 13;
+            this.labelTaskFile.Text = "任务文件";
+            // 
+            // comboTask
+            // 
+            this.comboTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTask.FormattingEnabled = true;
+            this.comboTask.Location = new System.Drawing.Point(261, 49);
+            this.comboTask.Name = "comboTask";
+            this.comboTask.Size = new System.Drawing.Size(223, 24);
+            this.comboTask.TabIndex = 12;
+            this.comboTask.WaterText = "";
+            // 
+            // labelTask
+            // 
+            this.labelTask.AutoSize = true;
+            this.labelTask.Location = new System.Drawing.Point(112, 48);
+            this.labelTask.Name = "labelTask";
+            this.labelTask.Size = new System.Drawing.Size(74, 21);
+            this.labelTask.TabIndex = 11;
+            this.labelTask.Text = "所属任务";
+            // 
+            // buttonDownload
+            // 
+            this.buttonDownload.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDownload.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonDownload.DownBack = null;
+            this.buttonDownload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonDownload.Location = new System.Drawing.Point(234, 229);
+            this.buttonDownload.MouseBack = null;
+            this.buttonDownload.Name = "buttonDownload";
+            this.buttonDownload.NormlBack = null;
+            this.buttonDownload.Size = new System.Drawing.Size(102, 34);
+            this.buttonDownload.TabIndex = 15;
+            this.buttonDownload.Text = "下载";
+            this.buttonDownload.UseVisualStyleBackColor = false;
             // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Back = global::PEP.Properties.Resources.main_8;
-            this.ClientSize = new System.Drawing.Size(804, 582);
+            this.ClientSize = new System.Drawing.Size(886, 582);
             this.Controls.Add(this.buttonPwdChange);
             this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.buttonManage);
@@ -996,8 +1077,6 @@
             this.Controls.Add(this.panelProject);
             this.Name = "FormUser";
             this.Text = "PEP";
-            this.panelWelcome.ResumeLayout(false);
-            this.panelWelcome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPageOverview.ResumeLayout(false);
@@ -1009,17 +1088,18 @@
             this.tabPageReadLog.ResumeLayout(false);
             this.tabPageReadLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).EndInit();
+            this.tabPageFile.ResumeLayout(false);
+            this.tabPageFile.PerformLayout();
             this.panelPush.ResumeLayout(false);
             this.panelProject.ResumeLayout(false);
             this.panelProject.PerformLayout();
+            this.panelWelcome.ResumeLayout(false);
+            this.panelWelcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelWelcome;
-        private System.Windows.Forms.Panel panelWelcome;
         private CCWin.SkinControl.SkinListBox listProject;
         private System.Windows.Forms.Label labelProject;
         private CCWin.SkinControl.SkinDataGridView gridProjectOverview;
@@ -1053,18 +1133,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn c11;
         private System.Windows.Forms.DataGridViewTextBoxColumn c12;
         private System.Windows.Forms.DataGridViewTextBoxColumn c13;
+        private CCWin.SkinControl.SkinButton buttonPwdChange;
+        private CCWin.SkinControl.SkinButton buttonUpload;
+        private CCWin.SkinControl.SkinTextBox textFileName;
+        private System.Windows.Forms.Label labelWelcome;
+        private System.Windows.Forms.Panel panelWelcome;
         private CCWin.SkinControl.SkinTabPage tabPageReadLog;
-        private CCWin.SkinControl.SkinRadioButton radioButtonMyLogs;
-        private CCWin.SkinControl.SkinRadioButton radioButtonAllLogs;
-        private CCWin.SkinControl.SkinRadioButton radioButtonTeammateLogs;
         private CCWin.SkinControl.SkinDataGridView gridReadLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTask;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnChecked;
-        private CCWin.SkinControl.SkinButton buttonPwdChange;
-        private CCWin.SkinControl.SkinButton buttonUpload;
-        private CCWin.SkinControl.SkinTextBox textFileName;
+        private CCWin.SkinControl.SkinRadioButton radioButtonTeammateLogs;
+        private CCWin.SkinControl.SkinRadioButton radioButtonMyLogs;
+        private CCWin.SkinControl.SkinRadioButton radioButtonAllLogs;
+        private CCWin.SkinControl.SkinTabPage tabPageFile;
+        private CCWin.SkinControl.SkinComboBox comboTaskFile;
+        private System.Windows.Forms.Label labelTaskFile;
+        private CCWin.SkinControl.SkinComboBox comboTask;
+        private System.Windows.Forms.Label labelTask;
+        private CCWin.SkinControl.SkinButton buttonDownload;
     }
 }
