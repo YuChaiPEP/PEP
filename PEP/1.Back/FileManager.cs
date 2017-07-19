@@ -9,15 +9,12 @@ namespace PEP
 {
     class FileManager
     {
-        private static string IP = @"ftp://192.168.158.117/";
-        private static string username = "";
-        private static string password = "";
         private static string logFilePath = @"log_file";
         private static string taskFilePath = @"task_file";
 
         public static bool uploadLogFile(string sourceName, string targetName, string pname, string tname)
         {
-            FtpHandler ftp = new FtpHandler(IP, username, password);
+            FtpHandler ftp = new FtpHandler();
             if (!ftp.exists(logFilePath, pname))
             {
                 ftp.createDirectory(logFilePath + "/" + pname);
@@ -32,14 +29,14 @@ namespace PEP
         
         public static bool downloadLogFile(string sourceName, string targetName, string pname, string tname)
         {
-            FtpHandler ftp = new FtpHandler(IP, username, password);
+            FtpHandler ftp = new FtpHandler();
             sourceName = logFilePath + "/" + pname + "/" + tname + "/" + sourceName;
             return ftp.download(sourceName, targetName);
         }
 
         public static bool uploadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
-            FtpHandler ftp = new FtpHandler(IP, username, password);
+            FtpHandler ftp = new FtpHandler();
             if (!ftp.exists(taskFilePath, pname))
             {
                 ftp.createDirectory(taskFilePath + "/" + pname);
@@ -54,7 +51,7 @@ namespace PEP
 
         public static bool downloadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
-            FtpHandler ftp = new FtpHandler(IP, username, password);
+            FtpHandler ftp = new FtpHandler();
             sourceName = taskFilePath + "/" + pname + "/" + tname + "/" + sourceName;
             return ftp.download(sourceName, targetName);
         }

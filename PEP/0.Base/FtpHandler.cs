@@ -28,7 +28,7 @@ namespace PEP
         private int bufferSize = 2048;
 
         /* Construct Object */
-        public FtpHandler(string hostIP, string userName, string password) { host = hostIP; user = userName; pass = password; }
+        public FtpHandler() {host = "ftp://192.168.158.117/"; user = ""; pass = ""; }//FTP配置，若FTP服务器变化，需要修改该配置内容
 
         /* Download File */
         public bool download(string remoteFile, string localFile)

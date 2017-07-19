@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-/************************2017/7/14*****************************
+/************************2017/7/19*****************************
  * 
  * Base.SQLHandler
  * 功能：处理底层与mysql相关的增删改查操作
  * 主要接口：connect, insert, delete, update, get
  * 注意事项：新建类后需要执行connect操作，释放类前需要执行disconnect操作，get到reader后读取完需要立即close
- *           若查询条件中出现字符串，需要前后加单引号
- * 
+ *           若查询条件中出现字符串，需要前后加单引号* 
  *************************************************************/
 
 namespace PEP
