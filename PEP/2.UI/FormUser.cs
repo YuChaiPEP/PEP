@@ -16,6 +16,7 @@ using CCWin;
  * 功能：实现上层用户个人主界面（员工视角）
  * 主要接口：-
  * 注意事项：对不同页面实现了不同的刷新函数
+ *           涉及到listBox时，没有使用CSkin提供的UI类，因为当每个item字符串过长时，该类不能实现水平滚动
  * 
  *************************************************************/
 
@@ -71,7 +72,7 @@ namespace PEP
             MySqlDataReader dr = this.user.getAttendedActiveProjects();
             while (dr.Read())
             {
-                this.listProject.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["pname"].ToString()));
+                this.listProject.Items.Add(dr["pname"].ToString());
             }
             dr.Close();
         }

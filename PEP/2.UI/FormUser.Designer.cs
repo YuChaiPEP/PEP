@@ -46,7 +46,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.listProject = new CCWin.SkinControl.SkinListBox();
+            this.listProject = new System.Windows.Forms.ListBox();
             this.labelProject = new System.Windows.Forms.Label();
             this.gridProjectOverview = new CCWin.SkinControl.SkinDataGridView();
             this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +59,12 @@
             this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
+            this.buttonDownload = new CCWin.SkinControl.SkinButton();
+            this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
+            this.labelTaskFile = new System.Windows.Forms.Label();
+            this.comboTask = new CCWin.SkinControl.SkinComboBox();
+            this.labelTask = new System.Windows.Forms.Label();
             this.tabPageLog = new CCWin.SkinControl.SkinTabPage();
             this.panelLog = new System.Windows.Forms.Panel();
             this.textFileName = new CCWin.SkinControl.SkinTextBox();
@@ -83,7 +89,6 @@
             this.radioButtonTeammateLogs = new CCWin.SkinControl.SkinRadioButton();
             this.radioButtonMyLogs = new CCWin.SkinControl.SkinRadioButton();
             this.radioButtonAllLogs = new CCWin.SkinControl.SkinRadioButton();
-            this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
             this.panelPush = new System.Windows.Forms.Panel();
             this.buttonPushLast = new CCWin.SkinControl.SkinButton();
             this.buttonPushNext = new CCWin.SkinControl.SkinButton();
@@ -95,21 +100,16 @@
             this.buttonPwdChange = new CCWin.SkinControl.SkinButton();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
-            this.labelTaskFile = new System.Windows.Forms.Label();
-            this.comboTask = new CCWin.SkinControl.SkinComboBox();
-            this.labelTask = new System.Windows.Forms.Label();
-            this.buttonDownload = new CCWin.SkinControl.SkinButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageOverview.SuspendLayout();
             this.tabPageTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectTask)).BeginInit();
+            this.tabPageFile.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             this.panelLog.SuspendLayout();
             this.tabPageReadLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).BeginInit();
-            this.tabPageFile.SuspendLayout();
             this.panelPush.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.panelWelcome.SuspendLayout();
@@ -117,19 +117,14 @@
             // 
             // listProject
             // 
-            this.listProject.Back = null;
-            this.listProject.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listProject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listProject.Cursor = System.Windows.Forms.Cursors.Default;
             this.listProject.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listProject.FormattingEnabled = true;
             this.listProject.HorizontalScrollbar = true;
             this.listProject.ItemHeight = 20;
             this.listProject.Location = new System.Drawing.Point(15, 44);
-            this.listProject.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.listProject.Name = "listProject";
-            this.listProject.RowBackColor2 = System.Drawing.Color.White;
-            this.listProject.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.listProject.Size = new System.Drawing.Size(142, 264);
+            this.listProject.Size = new System.Drawing.Size(144, 264);
             this.listProject.TabIndex = 2;
             this.listProject.SelectedIndexChanged += new System.EventHandler(this.listProject_SelectedIndexChanged);
             // 
@@ -344,6 +339,79 @@
             // 
             this.c13.HeaderText = "负责人";
             this.c13.Name = "c13";
+            // 
+            // tabPageFile
+            // 
+            this.tabPageFile.BackColor = System.Drawing.Color.White;
+            this.tabPageFile.Controls.Add(this.buttonDownload);
+            this.tabPageFile.Controls.Add(this.comboTaskFile);
+            this.tabPageFile.Controls.Add(this.labelTaskFile);
+            this.tabPageFile.Controls.Add(this.comboTask);
+            this.tabPageFile.Controls.Add(this.labelTask);
+            this.tabPageFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageFile.Location = new System.Drawing.Point(0, 36);
+            this.tabPageFile.Name = "tabPageFile";
+            this.tabPageFile.Size = new System.Drawing.Size(594, 339);
+            this.tabPageFile.TabIndex = 4;
+            this.tabPageFile.TabItemImage = null;
+            this.tabPageFile.Text = "文件查看";
+            // 
+            // buttonDownload
+            // 
+            this.buttonDownload.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDownload.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonDownload.DownBack = null;
+            this.buttonDownload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonDownload.Location = new System.Drawing.Point(234, 229);
+            this.buttonDownload.MouseBack = null;
+            this.buttonDownload.Name = "buttonDownload";
+            this.buttonDownload.NormlBack = null;
+            this.buttonDownload.Size = new System.Drawing.Size(102, 34);
+            this.buttonDownload.TabIndex = 15;
+            this.buttonDownload.Text = "下载";
+            this.buttonDownload.UseVisualStyleBackColor = false;
+            // 
+            // comboTaskFile
+            // 
+            this.comboTaskFile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTaskFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTaskFile.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTaskFile.FormattingEnabled = true;
+            this.comboTaskFile.Location = new System.Drawing.Point(261, 107);
+            this.comboTaskFile.Name = "comboTaskFile";
+            this.comboTaskFile.Size = new System.Drawing.Size(223, 24);
+            this.comboTaskFile.TabIndex = 14;
+            this.comboTaskFile.WaterText = "";
+            // 
+            // labelTaskFile
+            // 
+            this.labelTaskFile.AutoSize = true;
+            this.labelTaskFile.Location = new System.Drawing.Point(112, 106);
+            this.labelTaskFile.Name = "labelTaskFile";
+            this.labelTaskFile.Size = new System.Drawing.Size(74, 21);
+            this.labelTaskFile.TabIndex = 13;
+            this.labelTaskFile.Text = "任务文件";
+            // 
+            // comboTask
+            // 
+            this.comboTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTask.FormattingEnabled = true;
+            this.comboTask.Location = new System.Drawing.Point(261, 49);
+            this.comboTask.Name = "comboTask";
+            this.comboTask.Size = new System.Drawing.Size(223, 24);
+            this.comboTask.TabIndex = 12;
+            this.comboTask.WaterText = "";
+            // 
+            // labelTask
+            // 
+            this.labelTask.AutoSize = true;
+            this.labelTask.Location = new System.Drawing.Point(112, 48);
+            this.labelTask.Name = "labelTask";
+            this.labelTask.Size = new System.Drawing.Size(74, 21);
+            this.labelTask.TabIndex = 11;
+            this.labelTask.Text = "所属任务";
             // 
             // tabPageLog
             // 
@@ -812,22 +880,6 @@
             this.radioButtonAllLogs.UseVisualStyleBackColor = true;
             this.radioButtonAllLogs.CheckedChanged += new System.EventHandler(this.radioButtonAllLogs_CheckedChanged);
             // 
-            // tabPageFile
-            // 
-            this.tabPageFile.BackColor = System.Drawing.Color.White;
-            this.tabPageFile.Controls.Add(this.buttonDownload);
-            this.tabPageFile.Controls.Add(this.comboTaskFile);
-            this.tabPageFile.Controls.Add(this.labelTaskFile);
-            this.tabPageFile.Controls.Add(this.comboTask);
-            this.tabPageFile.Controls.Add(this.labelTask);
-            this.tabPageFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPageFile.Location = new System.Drawing.Point(0, 36);
-            this.tabPageFile.Name = "tabPageFile";
-            this.tabPageFile.Size = new System.Drawing.Size(594, 339);
-            this.tabPageFile.TabIndex = 4;
-            this.tabPageFile.TabItemImage = null;
-            this.tabPageFile.Text = "文件查看";
-            // 
             // panelPush
             // 
             this.panelPush.BackColor = System.Drawing.Color.Transparent;
@@ -1004,63 +1056,6 @@
             this.panelWelcome.Size = new System.Drawing.Size(248, 42);
             this.panelWelcome.TabIndex = 1;
             // 
-            // comboTaskFile
-            // 
-            this.comboTaskFile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboTaskFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTaskFile.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboTaskFile.FormattingEnabled = true;
-            this.comboTaskFile.Location = new System.Drawing.Point(261, 107);
-            this.comboTaskFile.Name = "comboTaskFile";
-            this.comboTaskFile.Size = new System.Drawing.Size(223, 24);
-            this.comboTaskFile.TabIndex = 14;
-            this.comboTaskFile.WaterText = "";
-            // 
-            // labelTaskFile
-            // 
-            this.labelTaskFile.AutoSize = true;
-            this.labelTaskFile.Location = new System.Drawing.Point(112, 106);
-            this.labelTaskFile.Name = "labelTaskFile";
-            this.labelTaskFile.Size = new System.Drawing.Size(74, 21);
-            this.labelTaskFile.TabIndex = 13;
-            this.labelTaskFile.Text = "任务文件";
-            // 
-            // comboTask
-            // 
-            this.comboTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboTask.FormattingEnabled = true;
-            this.comboTask.Location = new System.Drawing.Point(261, 49);
-            this.comboTask.Name = "comboTask";
-            this.comboTask.Size = new System.Drawing.Size(223, 24);
-            this.comboTask.TabIndex = 12;
-            this.comboTask.WaterText = "";
-            // 
-            // labelTask
-            // 
-            this.labelTask.AutoSize = true;
-            this.labelTask.Location = new System.Drawing.Point(112, 48);
-            this.labelTask.Name = "labelTask";
-            this.labelTask.Size = new System.Drawing.Size(74, 21);
-            this.labelTask.TabIndex = 11;
-            this.labelTask.Text = "所属任务";
-            // 
-            // buttonDownload
-            // 
-            this.buttonDownload.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDownload.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonDownload.DownBack = null;
-            this.buttonDownload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonDownload.Location = new System.Drawing.Point(234, 229);
-            this.buttonDownload.MouseBack = null;
-            this.buttonDownload.Name = "buttonDownload";
-            this.buttonDownload.NormlBack = null;
-            this.buttonDownload.Size = new System.Drawing.Size(102, 34);
-            this.buttonDownload.TabIndex = 15;
-            this.buttonDownload.Text = "下载";
-            this.buttonDownload.UseVisualStyleBackColor = false;
-            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1082,14 +1077,14 @@
             this.tabPageOverview.ResumeLayout(false);
             this.tabPageTask.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectTask)).EndInit();
+            this.tabPageFile.ResumeLayout(false);
+            this.tabPageFile.PerformLayout();
             this.tabPageLog.ResumeLayout(false);
             this.panelLog.ResumeLayout(false);
             this.panelLog.PerformLayout();
             this.tabPageReadLog.ResumeLayout(false);
             this.tabPageReadLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReadLog)).EndInit();
-            this.tabPageFile.ResumeLayout(false);
-            this.tabPageFile.PerformLayout();
             this.panelPush.ResumeLayout(false);
             this.panelProject.ResumeLayout(false);
             this.panelProject.PerformLayout();
@@ -1100,7 +1095,7 @@
         }
 
         #endregion
-        private CCWin.SkinControl.SkinListBox listProject;
+        private System.Windows.Forms.ListBox listProject;
         private System.Windows.Forms.Label labelProject;
         private CCWin.SkinControl.SkinDataGridView gridProjectOverview;
         private CCWin.SkinControl.SkinTabControl tabControl;
