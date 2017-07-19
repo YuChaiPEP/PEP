@@ -5,6 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/************************2017/7/19*****************************
+ * 
+ * Back.FileManager
+ * 功能：对项目的任务和日志文件进行管理
+ * 主要接口：download, upload
+ * 注意事项：日志文件和项目文件分别在ftp的log_file和task_file文件夹中
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     class FileManager
