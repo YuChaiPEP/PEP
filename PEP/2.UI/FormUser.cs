@@ -65,6 +65,7 @@ namespace PEP
             this.buttonLogSubmit.Enabled = false;
             this.buttonLogClear.Enabled = false;
             this.buttonDownload.Enabled = false;
+            this.buttonUpload.Enabled = false;
         }
 
         private void freshAttendedProjects()
@@ -130,6 +131,7 @@ namespace PEP
 
         private void freshFile()
         {
+            this.buttonDownload.Enabled = false;
             this.comboTaskFile.Items.Clear();
             if (this.comboTask.SelectedItem != null)
             {
@@ -140,12 +142,15 @@ namespace PEP
                 }
                 dr.Close();
             }
+            if (this.listProject.SelectedItems.Count != 0)
+                this.buttonDownload.Enabled = true;
         }
 
         private void freshLogTask()
         {
             this.buttonLogSubmit.Enabled = false;
             this.buttonLogClear.Enabled = false;
+            this.buttonUpload.Enabled = false;
             this.comboLogTask.Items.Clear();
             this.comboLogTask.ResetText();
             this.textLogContent.ResetText();
@@ -157,6 +162,12 @@ namespace PEP
             }
             dr.Close();
             this.comboLogTask.SelectedIndex = 0;
+            if (this.listProject.SelectedItems.Count != 0)
+            {
+                this.buttonLogSubmit.Enabled = true;
+                this.buttonLogClear.Enabled = true;
+                this.buttonUpload.Enabled = true;
+            }
         }
 
         private void freshReadLog()
@@ -200,9 +211,6 @@ namespace PEP
                 freshProjectTask();
                 freshLogTask();
                 freshReadLog();
-                this.buttonLogSubmit.Enabled = true;
-                this.buttonLogClear.Enabled = true;
-                this.buttonDownload.Enabled = true;
             }
         }
 

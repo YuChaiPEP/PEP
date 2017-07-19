@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 /************************2017/7/17*****************************
@@ -147,10 +147,6 @@ namespace PEP
                     int pid = pro.getPid();
                     if (subarray[2] != last)
                     {
-                        if (last != "")
-                        {
-                            this.sql.SQLUpdate("projects", "task=" + index, "pid="+pid);
-                        }
                         index = 1;
                         last = subarray[2];
                     }
@@ -163,7 +159,26 @@ namespace PEP
                     this.sql.SQLInsertOneEntry("projects2tasks(pid,tid,task_state,ord)", "(" + pid + "," + tid + ",'未开始'," + index + ")");
                     GC.Collect();
                 }
-                this.sql.SQLUpdate("projects", "task=" + index, "pname='" + last + "'"); //计算最后一个项目的子任务数目
+                MySqlDataReader dr = this.sql.SQLGet("pid", "projects", "1=1 order by pid desc");
+                int maxPID = -1;
+                if (dr.Read())
+                    maxPID = (int)dr["pid"];
+                dr.Close();
+                if (maxPID != -1)
+                {
+                    for (int j = 1; j <= maxPID; j ++) //计算项目的子任务数量
+                    {
+                        dr = this.sql.SQLGet("count(*)", "projects2tasks", "pid=" + j);
+                        int count = -1;
+                        if (dr.Read())
+                        {
+                            count = Convert.ToInt32(dr["count(*)"]);
+                        }
+                        dr.Close();
+                        this.sql.SQLUpdate("projects", "task=" + count, "pid=" + j);
+                    }
+                }
+
             }
             catch
             {

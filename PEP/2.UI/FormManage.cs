@@ -93,6 +93,8 @@ namespace PEP
 
             }
             dr.Close();
+            if (this.listProject.SelectedItems.Count != 0)
+                this.buttonInfoSubmit.Enabled = true;
         }
 
         private void freshTask()
@@ -121,6 +123,10 @@ namespace PEP
                 this.listAllTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
+            if (this.listProject.SelectedItems.Count != 0)
+            {
+                this.buttonTaskSubmit.Enabled = true;
+            }
         }
 
         private void freshPerson()
@@ -142,6 +148,8 @@ namespace PEP
                 this.listAllPerson.Items.Add(dr["uname"].ToString());
             }
             dr.Close();
+            if (this.listProject.SelectedItems.Count != 0)
+                this.buttonPersonSubmit.Enabled = true;
         }
 
         private void freshChecker()
@@ -168,10 +176,14 @@ namespace PEP
                     this.gridChecker.Rows[index++].Cells[1].Value = null;
             }
             dr.Close();
+            if (this.listProject.SelectedItems.Count != 0)
+                this.buttonCheckerSubmit.Enabled = true;
         }
 
         private void freshFile()
         {
+            this.buttonUpload.Enabled = false;
+            this.buttonChooseFile.Enabled = false;
             this.comboTaskFile.Items.Clear();
             if (this.comboTask.SelectedItem != null)
             {
@@ -181,6 +193,11 @@ namespace PEP
                     this.comboTaskFile.Items.Add(dr["filename"].ToString());
                 }
                 dr.Close();
+            }
+            if (this.listProject.SelectedItems.Count != 0)
+            {
+                this.buttonUpload.Enabled = true;
+                this.buttonChooseFile.Enabled = true;
             }
         }
 
@@ -222,6 +239,11 @@ namespace PEP
                     this.gridTaskProcess.Rows[index++].Cells[1].Value = null; //null不是空字符串
             }
             dr.Close();
+            if (this.listProject.SelectedItems.Count != 0)
+            {
+                this.buttonTaskProcessSubmit.Enabled = true;
+                this.buttonProjectProcessSubmit.Enabled = true;
+            }
         }
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -236,14 +258,6 @@ namespace PEP
                 freshFile();
                 freshLog();
                 freshProcess();
-                this.buttonInfoSubmit.Enabled = true;
-                this.buttonTaskSubmit.Enabled = true;
-                this.buttonPersonSubmit.Enabled = true;
-                this.buttonCheckerSubmit.Enabled = true;
-                this.buttonTaskProcessSubmit.Enabled = true;
-                this.buttonProjectProcessSubmit.Enabled = true;
-                this.buttonChooseFile.Enabled = true;
-                this.buttonUpload.Enabled = true;
             }
         }
 
@@ -383,6 +397,7 @@ namespace PEP
             formCreateProject.ShowDialog();
             if (formCreateProject.DialogResult == DialogResult.OK)
             {
+                this.pro.identifyProject("");
                 this.freshManagedProjects();
                 this.freshInfo();
                 this.freshTask();
@@ -399,6 +414,7 @@ namespace PEP
             {
                 MessageBox.Show("项目已完成。");
                 this.pro.finishProject();
+                this.freshManagedProjects();
                 this.freshInfo();
                 this.freshTask();
                 this.freshPerson();
@@ -410,6 +426,7 @@ namespace PEP
             {
                 MessageBox.Show("项目已终止。");
                 this.pro.abortProject();
+                this.freshManagedProjects();
                 this.freshInfo();
                 this.freshTask();
                 this.freshPerson();
@@ -417,7 +434,6 @@ namespace PEP
                 this.freshLog();
                 this.freshProcess();
             }
-            freshManagedProjects();
         }
 
         private void buttonChooseFile_Click(object sender, EventArgs e)
