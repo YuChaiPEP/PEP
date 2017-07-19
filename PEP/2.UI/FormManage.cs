@@ -112,6 +112,7 @@ namespace PEP
             while (dr.Read())
             {
                 this.listIncludedTask.Items.Add(dr["tname"].ToString());
+                this.comboTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
             dr = this.task.getAllTask();

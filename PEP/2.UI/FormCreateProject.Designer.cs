@@ -79,7 +79,7 @@
             this.tabCreateProject.PageHover = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageHover")));
             this.tabCreateProject.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabCreateProject.PageNorml = null;
-            this.tabCreateProject.SelectedIndex = 0;
+            this.tabCreateProject.SelectedIndex = 2;
             this.tabCreateProject.Size = new System.Drawing.Size(514, 375);
             this.tabCreateProject.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCreateProject.TabIndex = 0;
@@ -313,6 +313,7 @@
             // 
             this.listIncludedTask.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listIncludedTask.FormattingEnabled = true;
+            this.listIncludedTask.HorizontalScrollbar = true;
             this.listIncludedTask.ItemHeight = 20;
             this.listIncludedTask.Location = new System.Drawing.Point(309, 28);
             this.listIncludedTask.Name = "listIncludedTask";
@@ -324,6 +325,7 @@
             // 
             this.listAllTask.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listAllTask.FormattingEnabled = true;
+            this.listAllTask.HorizontalScrollbar = true;
             this.listAllTask.ItemHeight = 20;
             this.listAllTask.Location = new System.Drawing.Point(61, 28);
             this.listAllTask.Name = "listAllTask";
@@ -384,6 +386,7 @@
             // 
             this.listIncludedPerson.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listIncludedPerson.FormattingEnabled = true;
+            this.listIncludedPerson.HorizontalScrollbar = true;
             this.listIncludedPerson.ItemHeight = 20;
             this.listIncludedPerson.Location = new System.Drawing.Point(309, 28);
             this.listIncludedPerson.Name = "listIncludedPerson";
@@ -395,6 +398,7 @@
             // 
             this.listAllPerson.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listAllPerson.FormattingEnabled = true;
+            this.listAllPerson.HorizontalScrollbar = true;
             this.listAllPerson.ItemHeight = 20;
             this.listAllPerson.Location = new System.Drawing.Point(61, 28);
             this.listAllPerson.Name = "listAllPerson";
