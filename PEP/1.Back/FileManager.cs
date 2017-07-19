@@ -13,26 +13,34 @@ namespace PEP
         private static string username = "";
         private static string password = "";
 
-        public static bool uploadLogFile(string sourceName, string targetName)
+        public static bool uploadLogFile(string sourceName, string targetName, string pname, string tname)
         {
             FtpHandler ftp = new FtpHandler(IP, username, password);
-            targetName = @"log_file/" + targetName;
+            if (!ftp.exists(@"log_file", pname))
+            {
+                ftp.createDirectory(@"log_file/" + pname);
+            }
+            if (!ftp.exists(@"log_file/" + pname, tname))
+            {
+                ftp.createDirectory(@"log_file/" + pname + "/" + tname);
+            }
+            targetName = @"log_file/" + pname + "/" + tname + "/" + targetName;
             return ftp.upload(targetName, sourceName);
         }
         
-        public static bool downloadLogFile(string sourceName, string targetName)
+        public static bool downloadLogFile(string sourceName, string targetName, string pname, string tname)
         {
             FtpHandler ftp = new FtpHandler(IP, username, password);
-            sourceName = @"log_file/" + sourceName;
+            sourceName = @"log_file/" + pname + "/" + tname + "/" + sourceName;
             return ftp.download(sourceName, targetName);
         }
 
-        public void uploadTaskFile(string filename)
+        public void uploadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
 
         }
 
-        public void downloadTaskFile(string filename)
+        public void downloadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
 
         }

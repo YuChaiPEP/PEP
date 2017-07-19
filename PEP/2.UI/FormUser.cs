@@ -216,8 +216,8 @@ namespace PEP
             {
                 string sourceName = this.textFileName.Text;
                 string timeString = this.textLogTime.Text.Replace('/', '_').Replace(' ', '_').Replace(':', '_');
-                string targetName = this.user.getUname() + "-" + timeString + "-" + this.listProject.SelectedItem.ToString() + "-" + this.comboLogTask.Text + "-" + safeFileName;;
-                if (FileManager.uploadLogFile(sourceName, targetName))
+                string targetName = this.user.getUname() + "-" + timeString + "-" + safeFileName;;
+                if (FileManager.uploadLogFile(sourceName, targetName, this.listProject.SelectedItem.ToString(), this.comboLogTask.Text))
                 {
                     filename = targetName;
                 }
