@@ -57,7 +57,7 @@
             this.textBoxLog.NormlBack = null;
             this.textBoxLog.Padding = new System.Windows.Forms.Padding(5);
             this.textBoxLog.ReadOnly = true;
-            this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxLog.Size = new System.Drawing.Size(291, 367);
             // 
             // 
