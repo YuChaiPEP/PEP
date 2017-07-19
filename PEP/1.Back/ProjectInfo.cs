@@ -154,6 +154,7 @@ namespace PEP
                 int tid = task.getTaskID(obj.ToString());
                 this.sql.SQLInsertOneEntry("projects2tasks(pid,tid,task_state,ord)", "(" + this.pid + "," + tid + ",'未开始'," + ++i + ")");
             }
+            this.sql.SQLUpdate("projects", "task=" + lb.Items.Count, "pid=" + this.pid);
         }
         public void modifyPerson(ListBox lb)
         {

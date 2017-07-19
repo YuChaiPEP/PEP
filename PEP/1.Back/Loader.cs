@@ -16,6 +16,7 @@ using System.Windows.Forms;
  *           ATTR11 \t ATTR12 \t ATTR13 \t ATTR14 \r\n
  *           ATTR21 \t ATTR22 \t ATTR23 \t ATTR24 \r\n
  *           加载正确顺序：用户、推送、项目、任务、项目任务、项目人员
+ *           项目名不得为空
  * 
  *************************************************************/
 
@@ -146,6 +147,10 @@ namespace PEP
                     int pid = pro.getPid();
                     if (subarray[2] != last)
                     {
+                        if (last != "")
+                        {
+                            this.sql.SQLUpdate("projects", "task=" + index, "pid="+pid);
+                        }
                         index = 1;
                         last = subarray[2];
                     }
@@ -158,6 +163,7 @@ namespace PEP
                     this.sql.SQLInsertOneEntry("projects2tasks(pid,tid,task_state,ord)", "(" + pid + "," + tid + ",'未开始'," + index + ")");
                     GC.Collect();
                 }
+                this.sql.SQLUpdate("projects", "task=" + index, "pname='" + last + "'"); //计算最后一个项目的子任务数目
             }
             catch
             {

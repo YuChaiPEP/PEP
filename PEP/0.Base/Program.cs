@@ -40,12 +40,12 @@ namespace PEP
         {
             Loader load = new Loader();
             String addr = "D:\\PEP\\PEP\\Resources\\";
-            load.loadUser("D:\\PEP\\PEP\\Resources\\", "用户统计.txt");
-            load.loadPush("D:\\PEP\\PEP\\Resources\\", "PEP推送.txt");
-            load.loadProject("D:\\PEP\\PEP\\Resources\\", "PEP项目信息.txt");
-            load.loadTask("D:\\PEP\\PEP\\Resources\\", "PEP项目流程.txt");
-            load.loadProjectTask("D:\\PEP\\PEP\\Resources\\", "PEP项目流程.txt");
-            load.loadUserProject("D:\\PEP\\PEP\\Resources\\", "用户统计.txt");
+            //load.loadUser("D:\\PEP\\PEP\\Resources\\", "用户统计.txt");
+            //load.loadPush("D:\\PEP\\PEP\\Resources\\", "PEP推送.txt");
+            //load.loadProject("D:\\PEP\\PEP\\Resources\\", "PEP项目信息.txt");
+            //load.loadTask("D:\\PEP\\PEP\\Resources\\", "PEP项目流程.txt");
+            //load.loadProjectTask("D:\\PEP\\PEP\\Resources\\", "PEP项目流程.txt");
+            //load.loadUserProject("D:\\PEP\\PEP\\Resources\\", "用户统计.txt");
         }
     }
 }
