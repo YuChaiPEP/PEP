@@ -64,6 +64,7 @@ namespace PEP
                 this.buttonManage.Enabled = false;
             this.buttonLogSubmit.Enabled = false;
             this.buttonLogClear.Enabled = false;
+            this.buttonDownload.Enabled = false;
         }
 
         private void freshAttendedProjects()
@@ -110,6 +111,8 @@ namespace PEP
         private void freshProjectTask()
         {
             this.gridProjectTask.Rows.Clear();
+            this.comboTask.Items.Clear();
+            this.comboTaskFile.Items.Clear();
             MySqlDataReader dr = this.pro.getTaskInfo();
             int row = 0;
             while (dr.Read())
@@ -120,9 +123,25 @@ namespace PEP
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["tname"].ToString();
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["task_state"].ToString();
                 this.gridProjectTask.Rows[row++].Cells[column++].Value = dr["checker"].ToString();
+                this.comboTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
         }
+
+        private void freshFile()
+        {
+            this.comboTaskFile.Items.Clear();
+            if (this.comboTask.SelectedItem != null)
+            {
+                MySqlDataReader dr = this.pro.getFileInfo(this.comboTask.SelectedItem.ToString());
+                while (dr.Read())
+                {
+                    this.comboTaskFile.Items.Add(dr["filename"].ToString());
+                }
+                dr.Close();
+            }
+        }
+
         private void freshLogTask()
         {
             this.buttonLogSubmit.Enabled = false;
@@ -183,6 +202,7 @@ namespace PEP
                 freshReadLog();
                 this.buttonLogSubmit.Enabled = true;
                 this.buttonLogClear.Enabled = true;
+                this.buttonDownload.Enabled = true;
             }
         }
 
@@ -307,6 +327,42 @@ namespace PEP
             {
                 this.textFileName.Text = openFileDialog.FileName;
                 this.safeFileName = openFileDialog.SafeFileName;
+            }
+        }
+
+        private void comboTask_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            freshFile();
+        }
+
+        private void buttonDownload_Click(object sender, EventArgs e)
+        {
+            if (this.comboTask.SelectedItem == null)
+            {
+                MessageBox.Show("请选择任务名！");
+                return;
+            }
+            if (this.comboTaskFile.SelectedItem == null)
+            {
+                MessageBox.Show("请选择文件名！");
+                return;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            string filename = this.comboTaskFile.SelectedItem.ToString();
+            saveFileDialog.FileName = filename;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string targetName = saveFileDialog.FileName;
+                string tname = this.comboTask.SelectedItem.ToString();
+                string pname = this.listProject.SelectedItem.ToString();
+                if (FileManager.downloadTaskFile(filename, targetName, pname, tname))
+                {
+                    MessageBox.Show("文件下载成功！");
+                }
+                else
+                {
+                    MessageBox.Show("文件下载失败！");
+                }
             }
         }
     }

@@ -86,6 +86,15 @@ namespace PEP
             }
         }
 
+        public void submitFile(String tname, String filename)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "tasks", "tname='" + tname + "'");
+            dr.Read();
+            int tid = (int)dr["tid"];
+            dr.Close();
+            this.sql.SQLInsertOneEntry("projects2files(pid,tid,filename)", "(" + this.pid + "," + tid + ",'" + filename + "')");
+        }
+
         public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool flag = true)
         {
             MySqlDataReader dr = null;
@@ -110,6 +119,13 @@ namespace PEP
             }
             return dr;
         }
+
+        public MySqlDataReader getFileInfo(String tname)
+        {
+            int tid = new TaskInfo().getTaskID(tname);
+            return this.sql.SQLGet("*", "projects2files", "pid=" + this.pid + " and tid=" + tid);
+        }
+
         public int getMaxPid()
         {
             MySqlDataReader dr = this.sql.SQLGet("max(pid)", "projects", "true");

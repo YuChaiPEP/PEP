@@ -747,6 +747,7 @@
             this.buttonUpload.TabIndex = 14;
             this.buttonUpload.Text = "上传";
             this.buttonUpload.UseVisualStyleBackColor = false;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
             // textFilename
             // 
@@ -812,6 +813,7 @@
             this.buttonChooseFile.TabIndex = 11;
             this.buttonChooseFile.Text = "浏览";
             this.buttonChooseFile.UseVisualStyleBackColor = false;
+            this.buttonChooseFile.Click += new System.EventHandler(this.buttonChooseFile_Click);
             // 
             // comboTaskFile
             // 
@@ -845,6 +847,7 @@
             this.comboTask.Size = new System.Drawing.Size(223, 24);
             this.comboTask.TabIndex = 8;
             this.comboTask.WaterText = "";
+            this.comboTask.SelectedIndexChanged += new System.EventHandler(this.comboTask_SelectedIndexChanged);
             // 
             // labelTask
             // 
