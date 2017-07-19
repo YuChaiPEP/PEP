@@ -117,6 +117,10 @@ namespace PEP
                 this.comboTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
+            if (this.comboTask.Items.Count > 0)
+            {
+                this.comboTask.SelectedIndex = 0;
+            }
             dr = this.task.getAllTask();
             while (dr.Read())
             {
@@ -193,6 +197,10 @@ namespace PEP
                     this.comboTaskFile.Items.Add(dr["filename"].ToString());
                 }
                 dr.Close();
+                if (this.comboTaskFile.Items.Count > 0)
+                {
+                    this.comboTaskFile.SelectedIndex = 0;
+                }
             }
             if (this.listProject.SelectedItems.Count != 0)
             {

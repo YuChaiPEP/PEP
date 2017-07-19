@@ -198,7 +198,7 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 1;
+            this.tabControl.SelectedIndex = 4;
             this.tabControl.Size = new System.Drawing.Size(594, 406);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 4;
@@ -739,7 +739,7 @@
             this.buttonUpload.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.buttonUpload.DownBack = null;
             this.buttonUpload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonUpload.Location = new System.Drawing.Point(230, 248);
+            this.buttonUpload.Location = new System.Drawing.Point(242, 249);
             this.buttonUpload.MouseBack = null;
             this.buttonUpload.Name = "buttonUpload";
             this.buttonUpload.NormlBack = null;

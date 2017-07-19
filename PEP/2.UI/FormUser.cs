@@ -114,6 +114,7 @@ namespace PEP
             this.gridProjectTask.Rows.Clear();
             this.comboTask.Items.Clear();
             this.comboTaskFile.Items.Clear();
+
             MySqlDataReader dr = this.pro.getTaskInfo();
             int row = 0;
             while (dr.Read())
@@ -127,6 +128,11 @@ namespace PEP
                 this.comboTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
+
+            if (this.comboTask.Items.Count > 0)
+            {
+                this.comboTask.SelectedIndex = 0;
+            }
         }
 
         private void freshFile()
@@ -141,6 +147,10 @@ namespace PEP
                     this.comboTaskFile.Items.Add(dr["filename"].ToString());
                 }
                 dr.Close();
+                if (this.comboTaskFile.Items.Count > 0)
+                {
+                    this.comboTaskFile.SelectedIndex = 0;
+                }
             }
             if (this.listProject.SelectedItems.Count != 0)
                 this.buttonDownload.Enabled = true;
