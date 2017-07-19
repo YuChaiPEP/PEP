@@ -75,6 +75,15 @@
             this.buttonCheckerSubmit = new CCWin.SkinControl.SkinButton();
             this.gridChecker = new CCWin.SkinControl.SkinDataGridView();
             this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
+            this.buttonUpload = new CCWin.SkinControl.SkinButton();
+            this.textFilename = new CCWin.SkinControl.SkinTextBox();
+            this.labelUploadFile = new System.Windows.Forms.Label();
+            this.buttonChooseFile = new CCWin.SkinControl.SkinButton();
+            this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
+            this.labelTaskFile = new System.Windows.Forms.Label();
+            this.comboTask = new CCWin.SkinControl.SkinComboBox();
+            this.labelTask = new System.Windows.Forms.Label();
             this.tabPageLog = new CCWin.SkinControl.SkinTabPage();
             this.gridCheckLog = new CCWin.SkinControl.SkinDataGridView();
             this.ColumnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,15 +102,6 @@
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTaskProcessSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonCreateProject = new CCWin.SkinControl.SkinButton();
-            this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
-            this.comboTask = new CCWin.SkinControl.SkinComboBox();
-            this.labelTask = new System.Windows.Forms.Label();
-            this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
-            this.labelTaskFile = new System.Windows.Forms.Label();
-            this.buttonChooseFile = new CCWin.SkinControl.SkinButton();
-            this.labelUploadFile = new System.Windows.Forms.Label();
-            this.textFilename = new CCWin.SkinControl.SkinTextBox();
-            this.buttonUpload = new CCWin.SkinControl.SkinButton();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -112,6 +112,7 @@
             this.tabPagePerson.SuspendLayout();
             this.tabPageChecker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridChecker)).BeginInit();
+            this.tabPageFile.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).BeginInit();
             this.tabPageProcess.SuspendLayout();
@@ -119,7 +120,6 @@
             this.panelProcess.SuspendLayout();
             this.groupBoxTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTaskProcess)).BeginInit();
-            this.tabPageFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelWelcome
@@ -737,6 +737,150 @@
             this.c00.HeaderText = "任务名称";
             this.c00.Name = "c00";
             // 
+            // tabPageFile
+            // 
+            this.tabPageFile.BackColor = System.Drawing.Color.White;
+            this.tabPageFile.Controls.Add(this.buttonUpload);
+            this.tabPageFile.Controls.Add(this.textFilename);
+            this.tabPageFile.Controls.Add(this.labelUploadFile);
+            this.tabPageFile.Controls.Add(this.buttonChooseFile);
+            this.tabPageFile.Controls.Add(this.comboTaskFile);
+            this.tabPageFile.Controls.Add(this.labelTaskFile);
+            this.tabPageFile.Controls.Add(this.comboTask);
+            this.tabPageFile.Controls.Add(this.labelTask);
+            this.tabPageFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPageFile.Location = new System.Drawing.Point(0, 36);
+            this.tabPageFile.Name = "tabPageFile";
+            this.tabPageFile.Size = new System.Drawing.Size(594, 370);
+            this.tabPageFile.TabIndex = 6;
+            this.tabPageFile.TabItemImage = null;
+            this.tabPageFile.Text = "文件管理";
+            // 
+            // buttonUpload
+            // 
+            this.buttonUpload.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUpload.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonUpload.DownBack = null;
+            this.buttonUpload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonUpload.Location = new System.Drawing.Point(230, 248);
+            this.buttonUpload.MouseBack = null;
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.NormlBack = null;
+            this.buttonUpload.Size = new System.Drawing.Size(102, 34);
+            this.buttonUpload.TabIndex = 14;
+            this.buttonUpload.Text = "上传";
+            this.buttonUpload.UseVisualStyleBackColor = false;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
+            // 
+            // textFilename
+            // 
+            this.textFilename.BackColor = System.Drawing.Color.Transparent;
+            this.textFilename.DownBack = null;
+            this.textFilename.Icon = null;
+            this.textFilename.IconIsButton = false;
+            this.textFilename.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFilename.IsPasswordChat = '\0';
+            this.textFilename.IsSystemPasswordChar = false;
+            this.textFilename.Lines = new string[0];
+            this.textFilename.Location = new System.Drawing.Point(242, 165);
+            this.textFilename.Margin = new System.Windows.Forms.Padding(0);
+            this.textFilename.MaxLength = 32767;
+            this.textFilename.MinimumSize = new System.Drawing.Size(28, 28);
+            this.textFilename.MouseBack = null;
+            this.textFilename.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.textFilename.Multiline = false;
+            this.textFilename.Name = "textFilename";
+            this.textFilename.NormlBack = null;
+            this.textFilename.Padding = new System.Windows.Forms.Padding(5);
+            this.textFilename.ReadOnly = false;
+            this.textFilename.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textFilename.Size = new System.Drawing.Size(166, 28);
+            // 
+            // 
+            // 
+            this.textFilename.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textFilename.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textFilename.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.textFilename.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.textFilename.SkinTxt.Name = "BaseText";
+            this.textFilename.SkinTxt.Size = new System.Drawing.Size(156, 18);
+            this.textFilename.SkinTxt.TabIndex = 0;
+            this.textFilename.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFilename.SkinTxt.WaterText = "";
+            this.textFilename.TabIndex = 13;
+            this.textFilename.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textFilename.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.textFilename.WaterText = "";
+            this.textFilename.WordWrap = true;
+            // 
+            // labelUploadFile
+            // 
+            this.labelUploadFile.AutoSize = true;
+            this.labelUploadFile.Location = new System.Drawing.Point(93, 165);
+            this.labelUploadFile.Name = "labelUploadFile";
+            this.labelUploadFile.Size = new System.Drawing.Size(74, 21);
+            this.labelUploadFile.TabIndex = 12;
+            this.labelUploadFile.Text = "上传文件";
+            // 
+            // buttonChooseFile
+            // 
+            this.buttonChooseFile.BackColor = System.Drawing.Color.Transparent;
+            this.buttonChooseFile.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonChooseFile.DownBack = null;
+            this.buttonChooseFile.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonChooseFile.Location = new System.Drawing.Point(416, 164);
+            this.buttonChooseFile.MouseBack = null;
+            this.buttonChooseFile.Name = "buttonChooseFile";
+            this.buttonChooseFile.NormlBack = null;
+            this.buttonChooseFile.Size = new System.Drawing.Size(49, 29);
+            this.buttonChooseFile.TabIndex = 11;
+            this.buttonChooseFile.Text = "浏览";
+            this.buttonChooseFile.UseVisualStyleBackColor = false;
+            this.buttonChooseFile.Click += new System.EventHandler(this.buttonChooseFile_Click);
+            // 
+            // comboTaskFile
+            // 
+            this.comboTaskFile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTaskFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTaskFile.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTaskFile.FormattingEnabled = true;
+            this.comboTaskFile.Location = new System.Drawing.Point(242, 108);
+            this.comboTaskFile.Name = "comboTaskFile";
+            this.comboTaskFile.Size = new System.Drawing.Size(223, 24);
+            this.comboTaskFile.TabIndex = 10;
+            this.comboTaskFile.WaterText = "";
+            // 
+            // labelTaskFile
+            // 
+            this.labelTaskFile.AutoSize = true;
+            this.labelTaskFile.Location = new System.Drawing.Point(93, 107);
+            this.labelTaskFile.Name = "labelTaskFile";
+            this.labelTaskFile.Size = new System.Drawing.Size(74, 21);
+            this.labelTaskFile.TabIndex = 9;
+            this.labelTaskFile.Text = "任务文件";
+            // 
+            // comboTask
+            // 
+            this.comboTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboTask.FormattingEnabled = true;
+            this.comboTask.Location = new System.Drawing.Point(242, 50);
+            this.comboTask.Name = "comboTask";
+            this.comboTask.Size = new System.Drawing.Size(223, 24);
+            this.comboTask.TabIndex = 8;
+            this.comboTask.WaterText = "";
+            this.comboTask.SelectedIndexChanged += new System.EventHandler(this.comboTask_SelectedIndexChanged);
+            // 
+            // labelTask
+            // 
+            this.labelTask.AutoSize = true;
+            this.labelTask.Location = new System.Drawing.Point(93, 49);
+            this.labelTask.Name = "labelTask";
+            this.labelTask.Size = new System.Drawing.Size(74, 21);
+            this.labelTask.TabIndex = 7;
+            this.labelTask.Text = "所属任务";
+            // 
             // tabPageLog
             // 
             this.tabPageLog.BackColor = System.Drawing.Color.White;
@@ -1022,147 +1166,6 @@
             this.buttonCreateProject.UseVisualStyleBackColor = true;
             this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
             // 
-            // tabPageFile
-            // 
-            this.tabPageFile.BackColor = System.Drawing.Color.White;
-            this.tabPageFile.Controls.Add(this.buttonUpload);
-            this.tabPageFile.Controls.Add(this.textFilename);
-            this.tabPageFile.Controls.Add(this.labelUploadFile);
-            this.tabPageFile.Controls.Add(this.buttonChooseFile);
-            this.tabPageFile.Controls.Add(this.comboTaskFile);
-            this.tabPageFile.Controls.Add(this.labelTaskFile);
-            this.tabPageFile.Controls.Add(this.comboTask);
-            this.tabPageFile.Controls.Add(this.labelTask);
-            this.tabPageFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPageFile.Location = new System.Drawing.Point(0, 36);
-            this.tabPageFile.Name = "tabPageFile";
-            this.tabPageFile.Size = new System.Drawing.Size(594, 370);
-            this.tabPageFile.TabIndex = 6;
-            this.tabPageFile.TabItemImage = null;
-            this.tabPageFile.Text = "文件管理";
-            // 
-            // comboTask
-            // 
-            this.comboTask.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboTask.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTask.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboTask.FormattingEnabled = true;
-            this.comboTask.Location = new System.Drawing.Point(242, 50);
-            this.comboTask.Name = "comboTask";
-            this.comboTask.Size = new System.Drawing.Size(223, 24);
-            this.comboTask.TabIndex = 8;
-            this.comboTask.WaterText = "";
-            // 
-            // labelTask
-            // 
-            this.labelTask.AutoSize = true;
-            this.labelTask.Location = new System.Drawing.Point(93, 49);
-            this.labelTask.Name = "labelTask";
-            this.labelTask.Size = new System.Drawing.Size(74, 21);
-            this.labelTask.TabIndex = 7;
-            this.labelTask.Text = "所属任务";
-            // 
-            // comboTaskFile
-            // 
-            this.comboTaskFile.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboTaskFile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTaskFile.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboTaskFile.FormattingEnabled = true;
-            this.comboTaskFile.Location = new System.Drawing.Point(242, 108);
-            this.comboTaskFile.Name = "comboTaskFile";
-            this.comboTaskFile.Size = new System.Drawing.Size(223, 24);
-            this.comboTaskFile.TabIndex = 10;
-            this.comboTaskFile.WaterText = "";
-            // 
-            // labelTaskFile
-            // 
-            this.labelTaskFile.AutoSize = true;
-            this.labelTaskFile.Location = new System.Drawing.Point(93, 107);
-            this.labelTaskFile.Name = "labelTaskFile";
-            this.labelTaskFile.Size = new System.Drawing.Size(74, 21);
-            this.labelTaskFile.TabIndex = 9;
-            this.labelTaskFile.Text = "任务文件";
-            // 
-            // buttonChooseFile
-            // 
-            this.buttonChooseFile.BackColor = System.Drawing.Color.Transparent;
-            this.buttonChooseFile.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonChooseFile.DownBack = null;
-            this.buttonChooseFile.Font = new System.Drawing.Font("楷体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonChooseFile.Location = new System.Drawing.Point(416, 164);
-            this.buttonChooseFile.MouseBack = null;
-            this.buttonChooseFile.Name = "buttonChooseFile";
-            this.buttonChooseFile.NormlBack = null;
-            this.buttonChooseFile.Size = new System.Drawing.Size(49, 29);
-            this.buttonChooseFile.TabIndex = 11;
-            this.buttonChooseFile.Text = "浏览";
-            this.buttonChooseFile.UseVisualStyleBackColor = false;
-            // 
-            // labelUploadFile
-            // 
-            this.labelUploadFile.AutoSize = true;
-            this.labelUploadFile.Location = new System.Drawing.Point(93, 165);
-            this.labelUploadFile.Name = "labelUploadFile";
-            this.labelUploadFile.Size = new System.Drawing.Size(74, 21);
-            this.labelUploadFile.TabIndex = 12;
-            this.labelUploadFile.Text = "上传文件";
-            // 
-            // textFilename
-            // 
-            this.textFilename.BackColor = System.Drawing.Color.Transparent;
-            this.textFilename.DownBack = null;
-            this.textFilename.Icon = null;
-            this.textFilename.IconIsButton = false;
-            this.textFilename.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.textFilename.IsPasswordChat = '\0';
-            this.textFilename.IsSystemPasswordChar = false;
-            this.textFilename.Lines = new string[0];
-            this.textFilename.Location = new System.Drawing.Point(242, 165);
-            this.textFilename.Margin = new System.Windows.Forms.Padding(0);
-            this.textFilename.MaxLength = 32767;
-            this.textFilename.MinimumSize = new System.Drawing.Size(28, 28);
-            this.textFilename.MouseBack = null;
-            this.textFilename.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.textFilename.Multiline = false;
-            this.textFilename.Name = "textFilename";
-            this.textFilename.NormlBack = null;
-            this.textFilename.Padding = new System.Windows.Forms.Padding(5);
-            this.textFilename.ReadOnly = false;
-            this.textFilename.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textFilename.Size = new System.Drawing.Size(166, 28);
-            // 
-            // 
-            // 
-            this.textFilename.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textFilename.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textFilename.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.textFilename.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.textFilename.SkinTxt.Name = "BaseText";
-            this.textFilename.SkinTxt.Size = new System.Drawing.Size(156, 18);
-            this.textFilename.SkinTxt.TabIndex = 0;
-            this.textFilename.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textFilename.SkinTxt.WaterText = "";
-            this.textFilename.TabIndex = 13;
-            this.textFilename.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textFilename.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textFilename.WaterText = "";
-            this.textFilename.WordWrap = true;
-            // 
-            // buttonUpload
-            // 
-            this.buttonUpload.BackColor = System.Drawing.Color.Transparent;
-            this.buttonUpload.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonUpload.DownBack = null;
-            this.buttonUpload.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonUpload.Location = new System.Drawing.Point(230, 248);
-            this.buttonUpload.MouseBack = null;
-            this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.NormlBack = null;
-            this.buttonUpload.Size = new System.Drawing.Size(102, 34);
-            this.buttonUpload.TabIndex = 14;
-            this.buttonUpload.Text = "上传";
-            this.buttonUpload.UseVisualStyleBackColor = false;
-            // 
             // FormManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1189,6 +1192,8 @@
             this.tabPagePerson.ResumeLayout(false);
             this.tabPageChecker.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridChecker)).EndInit();
+            this.tabPageFile.ResumeLayout(false);
+            this.tabPageFile.PerformLayout();
             this.tabPageLog.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckLog)).EndInit();
             this.tabPageProcess.ResumeLayout(false);
@@ -1197,8 +1202,6 @@
             this.panelProcess.PerformLayout();
             this.groupBoxTask.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTaskProcess)).EndInit();
-            this.tabPageFile.ResumeLayout(false);
-            this.tabPageFile.PerformLayout();
             this.ResumeLayout(false);
 
         }

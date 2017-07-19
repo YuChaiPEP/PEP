@@ -28,6 +28,8 @@ namespace PEP
         private UserInfo user;
         private ProjectInfo pro;
         private TaskInfo task;
+        private string taskFilename;
+
         public FormManage(UserInfo u)
         {
             this.user = u;
@@ -56,6 +58,8 @@ namespace PEP
             this.buttonCheckerSubmit.Enabled = false;
             this.buttonTaskProcessSubmit.Enabled = false;
             this.buttonProjectProcessSubmit.Enabled = false;
+            this.buttonChooseFile.Enabled = false;
+            this.buttonUpload.Enabled = false;
         }
         private void freshManagedProjects()
         {
@@ -98,10 +102,17 @@ namespace PEP
             this.listIncludedTask.Items.Clear();
             this.buttonTaskLeft.Enabled = false;
             this.buttonTaskRight.Enabled = false;
+
+            this.comboTask.Items.Clear();
+            this.comboTaskFile.Items.Clear();
+            this.buttonChooseFile.Enabled = false;
+            this.buttonUpload.Enabled = false;
+
             MySqlDataReader dr = this.pro.getTaskInfo();
             while (dr.Read())
             {
                 this.listIncludedTask.Items.Add(new CCWin.SkinControl.SkinListBoxItem(dr["tname"].ToString()));
+                this.comboTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
             dr = this.task.getAllTask();
@@ -159,6 +170,19 @@ namespace PEP
             dr.Close();
         }
 
+        private void freshFile()
+        {
+            if (this.comboTask.SelectedItem != null)
+            {
+                MySqlDataReader dr = this.pro.getFileInfo(this.comboTask.SelectedItem.ToString());
+                while (dr.Read())
+                {
+                    this.comboTaskFile.Items.Add(dr["filename"].ToString());
+                }
+                dr.Close();
+            }
+        }
+
         private void freshLog()
         {
             this.gridCheckLog.Rows.Clear();
@@ -208,6 +232,7 @@ namespace PEP
                 freshTask();
                 freshPerson();
                 freshChecker();
+                freshFile();
                 freshLog();
                 freshProcess();
                 this.buttonInfoSubmit.Enabled = true;
@@ -216,6 +241,8 @@ namespace PEP
                 this.buttonCheckerSubmit.Enabled = true;
                 this.buttonTaskProcessSubmit.Enabled = true;
                 this.buttonProjectProcessSubmit.Enabled = true;
+                this.buttonChooseFile.Enabled = true;
+                this.buttonUpload.Enabled = true;
             }
         }
 
@@ -351,7 +378,13 @@ namespace PEP
             formCreateProject.ShowDialog();
             if (formCreateProject.DialogResult == DialogResult.OK)
             {
-                freshManagedProjects();
+                this.freshManagedProjects();
+                this.freshInfo();
+                this.freshTask();
+                this.freshPerson();
+                this.freshChecker();
+                this.freshLog();
+                this.freshProcess();
             }
         }
 
@@ -380,6 +413,45 @@ namespace PEP
                 this.freshProcess();
             }
             freshManagedProjects();
+        }
+
+        private void buttonChooseFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.textFilename.Text = openFileDialog.FileName;
+                this.taskFilename = openFileDialog.SafeFileName;
+            }
+        }
+
+        private void buttonUpload_Click(object sender, EventArgs e)
+        {
+            if (this.comboTask.SelectedItem == null)
+            {
+                MessageBox.Show("请选择任务名！");
+                return;
+            }
+            if (this.textFilename.Text.Length == 0)
+            {
+                MessageBox.Show("文件名不能为空！");
+                return;
+            }
+            if (FileManager.uploadTaskFile(this.textFilename.Text, this.taskFilename, this.listProject.SelectedItem.ToString(), this.comboTask.SelectedItem.ToString()))
+            {
+                this.pro.submitFile(this.comboTask.SelectedItem.ToString(), this.taskFilename);
+                this.freshFile();
+                MessageBox.Show("文件上传成功！");
+            }
+            else
+            {
+                MessageBox.Show("文件上传失败！");
+            }
+        }
+
+        private void comboTask_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.freshFile();
         }
     }
 }

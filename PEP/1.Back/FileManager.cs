@@ -12,32 +12,44 @@ namespace PEP
         private static string IP = @"ftp://192.168.158.117/";
         private static string username = "";
         private static string password = "";
+        private static string logFilePath = @"log_file";
+        private static string taskFilePath = @"task_file";
 
         public static bool uploadLogFile(string sourceName, string targetName, string pname, string tname)
         {
             FtpHandler ftp = new FtpHandler(IP, username, password);
-            if (!ftp.exists(@"log_file", pname))
+            if (!ftp.exists(logFilePath, pname))
             {
-                ftp.createDirectory(@"log_file/" + pname);
+                ftp.createDirectory(logFilePath + "/" + pname);
             }
-            if (!ftp.exists(@"log_file/" + pname, tname))
+            if (!ftp.exists(logFilePath + "/" + pname, tname))
             {
-                ftp.createDirectory(@"log_file/" + pname + "/" + tname);
+                ftp.createDirectory(logFilePath + "/" + pname + "/" + tname);
             }
-            targetName = @"log_file/" + pname + "/" + tname + "/" + targetName;
+            targetName = logFilePath + "/" + pname + "/" + tname + "/" + targetName;
             return ftp.upload(targetName, sourceName);
         }
         
         public static bool downloadLogFile(string sourceName, string targetName, string pname, string tname)
         {
             FtpHandler ftp = new FtpHandler(IP, username, password);
-            sourceName = @"log_file/" + pname + "/" + tname + "/" + sourceName;
+            sourceName = logFilePath + "/" + pname + "/" + tname + "/" + sourceName;
             return ftp.download(sourceName, targetName);
         }
 
-        public void uploadTaskFile(string sourceName, string targetName, string pname, string tname)
+        public static bool uploadTaskFile(string sourceName, string targetName, string pname, string tname)
         {
-
+            FtpHandler ftp = new FtpHandler(IP, username, password);
+            if (!ftp.exists(taskFilePath, pname))
+            {
+                ftp.createDirectory(taskFilePath + "/" + pname);
+            }
+            if (!ftp.exists(taskFilePath + "/" + pname, tname))
+            {
+                ftp.createDirectory(taskFilePath + "/" + pname + "/" + tname);
+            }
+            targetName = taskFilePath + "/" + pname + "/" + tname + "/" + targetName;
+            return ftp.upload(targetName, sourceName);
         }
 
         public void downloadTaskFile(string sourceName, string targetName, string pname, string tname)
