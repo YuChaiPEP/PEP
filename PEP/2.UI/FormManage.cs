@@ -317,7 +317,8 @@ namespace PEP
 
         private void buttonTaskSubmit_Click(object sender, EventArgs e)
         {
-            this.pro.modifyTask(this.listIncludedTask);
+            List<string> includedTask = this.listIncludedTask.Items.Cast<string>().ToList();
+            this.pro.modifyTask(includedTask);
             freshChecker();
             freshProcess();
             MessageBox.Show("子任务信息已修改。");
@@ -338,7 +339,8 @@ namespace PEP
 
         private void buttonPersonSubmit_Click(object sender, EventArgs e)
         {
-            this.pro.modifyPerson(this.listIncludedPerson);
+            List<string> includedPerson = this.listIncludedPerson.Items.Cast<string>().ToList();
+            this.pro.modifyPerson(includedPerson);
             freshChecker();
             MessageBox.Show("人员信息已修改。");
         }

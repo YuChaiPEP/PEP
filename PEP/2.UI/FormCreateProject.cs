@@ -114,7 +114,9 @@ namespace PEP
                         MessageBox.Show("参与人员数不能为零！");
                         break;
                     }
-                    pro.createProject(Convert.ToInt32(this.textNumber.Text), this.textPname.Text, this.textTime.Text, user.getUID(), this.listIncludedTask, this.listIncludedPerson);
+                    List<string> includedTask = this.listIncludedTask.Items.Cast<string>().ToList();
+                    List<string> includedPerson = this.listIncludedPerson.Items.Cast<string>().ToList();
+                    pro.createProject(Convert.ToInt32(this.textNumber.Text), this.textPname.Text, this.textTime.Text, user.getUID(), includedTask, includedPerson);
                     MessageBox.Show("项目创建完成。");
                     this.DialogResult = DialogResult.OK;
                     this.Close();

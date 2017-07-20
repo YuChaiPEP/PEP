@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 
 /************************2017/7/14*****************************
  * 
@@ -144,24 +143,24 @@ namespace PEP
                 state = "暂停中";
             this.sql.SQLUpdate("projects", "pname='" + pname+ "',project_state='" + state + "'", "pid=" + this.pid);
         }
-        public void modifyTask(ListBox lb)
+        public void modifyTask(List<string> lb)
         {
             this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
             int i = 0;
-            foreach (object obj in lb.Items)
+            foreach (string tname in lb)
             {
                 TaskInfo task = new TaskInfo();
-                int tid = task.getTaskID(obj.ToString());
+                int tid = task.getTaskID(tname);
                 this.sql.SQLInsertOneEntry("projects2tasks(pid,tid,task_state,ord)", "(" + this.pid + "," + tid + ",'未开始'," + ++i + ")");
             }
-            this.sql.SQLUpdate("projects", "task=" + lb.Items.Count, "pid=" + this.pid);
+            this.sql.SQLUpdate("projects", "task=" + lb.Count, "pid=" + this.pid);
         }
-        public void modifyPerson(ListBox lb)
+        public void modifyPerson(List<string> lb)
         {
             this.sql.SQLDelete("users2projects", "pid=" + this.pid);
-            foreach (object obj in lb.Items)
+            foreach (string uname in lb)
             {
-                UserInfo user = new UserInfo(obj.ToString());
+                UserInfo user = new UserInfo(uname);
                 int uid = user.getUID();
                 this.sql.SQLInsertOneEntry("users2projects(uid,pid)", "(" + uid + "," + this.pid + ")");
             }
@@ -195,21 +194,19 @@ namespace PEP
             this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "'", "pid=" + this.pid + " and tid=" + tid);
         }
 
-        public void createProject(int pid, string pname, string time, int manager_id, ListBox tasks, ListBox persons)
+        public void createProject(int pid, string pname, string time, int manager_id, List<string> tasks, List<string> persons)
         {
-            this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Items.Count + ",0," + manager_id + ",'进行中')");
+            this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Count + ",0," + manager_id + ",'进行中')");
             int ord = 1;
             TaskInfo task = new TaskInfo();
-            foreach (String item in tasks.Items)
+            foreach (string tname in tasks)
             {
-                string tname = item;
                 int tid = task.getTaskID(tname);
                 this.sql.SQLInsertOneEntry("projects2tasks(pid, tid, task_state, ord)", "(" + pid + "," + tid + ",'未开始'," + ord + ")");
                 ++ord;
             }
-            foreach (String item in persons.Items)
+            foreach (string uname in persons)
             {
-                string uname = item;
                 UserInfo user = new UserInfo(uname);
                 int uid = user.getUID();
                 this.sql.SQLInsertOneEntry("users2projects", "(" + uid + "," + pid + ")");
