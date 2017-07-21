@@ -197,7 +197,7 @@ namespace PEP
         public void createProject(string pname, string time, int manager_id, List<string> tasks, List<string> persons)
         {
             this.sql.SQLInsertOneEntry("projects(pname,timestamp,task,process,manager_id,project_state)", "('" + pname + "','" + time + "'," + tasks.Count + ",0," + manager_id + ",'进行中')");
-            MySqlDataReader dr = this.sql.SQLGet("pid", "projects", "pname=" + pname);
+            MySqlDataReader dr = this.sql.SQLGet("pid", "projects", "pname='" + pname+"'");
             int pid = -1;
             if (dr.Read())
                 pid = Convert.ToInt32(dr["pid"]);
