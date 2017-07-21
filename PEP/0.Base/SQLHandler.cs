@@ -84,8 +84,8 @@ namespace PEP
         private String SQLConfigure()
         {
             //数据库配置，若数据库变化，需要修改该配置内容
-            String server = "192.168.158.117";
-            String db = "pep_yy";
+            String server = "172.16.90.73";
+            String db = "pep";
             String uid = "root";
             String pwd = "123456";
             String charset = "utf8";
