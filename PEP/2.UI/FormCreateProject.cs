@@ -116,7 +116,7 @@ namespace PEP
                     }
                     List<string> includedTask = this.listIncludedTask.Items.Cast<string>().ToList();
                     List<string> includedPerson = this.listIncludedPerson.Items.Cast<string>().ToList();
-                    pro.createProject(Convert.ToInt32(this.textNumber.Text), this.textPname.Text, this.textTime.Text, user.getUID(), includedTask, includedPerson);
+                    pro.createProject(this.textPname.Text, this.textTime.Text, user.getUID(), includedTask, includedPerson);
                     MessageBox.Show("项目创建完成。");
                     this.DialogResult = DialogResult.OK;
                     this.Close();

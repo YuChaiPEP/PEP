@@ -79,7 +79,7 @@
             this.tabCreateProject.PageHover = ((System.Drawing.Image)(resources.GetObject("tabCreateProject.PageHover")));
             this.tabCreateProject.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabCreateProject.PageNorml = null;
-            this.tabCreateProject.SelectedIndex = 2;
+            this.tabCreateProject.SelectedIndex = 0;
             this.tabCreateProject.Size = new System.Drawing.Size(514, 375);
             this.tabCreateProject.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCreateProject.TabIndex = 0;
@@ -256,9 +256,9 @@
             this.labelNumber.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNumber.Location = new System.Drawing.Point(112, 28);
             this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(74, 21);
+            this.labelNumber.Size = new System.Drawing.Size(90, 21);
             this.labelNumber.TabIndex = 0;
-            this.labelNumber.Text = "项目编号";
+            this.labelNumber.Text = "项目预编号";
             // 
             // tabPageSetTasks
             // 
