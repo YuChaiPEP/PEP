@@ -194,9 +194,14 @@ namespace PEP
             this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "'", "pid=" + this.pid + " and tid=" + tid);
         }
 
-        public void createProject(int pid, string pname, string time, int manager_id, List<string> tasks, List<string> persons)
+        public void createProject(string pname, string time, int manager_id, List<string> tasks, List<string> persons)
         {
-            this.sql.SQLInsertOneEntry("projects", "(" + pid + ",'" + pname + "','" + time + "'," + tasks.Count + ",0," + manager_id + ",'进行中')");
+            this.sql.SQLInsertOneEntry("projects(pname,timstamp,task,process,manager_id,project_state)", "(" + pname + "','" + time + "'," + tasks.Count + ",0," + manager_id + ",'进行中')");
+            MySqlDataReader dr = this.sql.SQLGet("pid", "projects", "pname=" + pname);
+            int pid = -1;
+            if (dr.Read())
+                pid = Convert.ToInt32(dr["pid"]);
+            dr.Close();
             int ord = 1;
             TaskInfo task = new TaskInfo();
             foreach (string tname in tasks)
