@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CCWin;
+using System.Text.RegularExpressions;
 
 /************************2017/7/19*****************************
  * 
@@ -18,6 +19,7 @@ using CCWin;
  * 注意事项：对不同页面实现了不同的刷新函数
  *           批阅日志后通过dialog返回值判断是否刷新页面
  *           涉及到listBox时，没有使用CSkin提供的UI类，因为当每个item字符串过长时，该类不能实现水平滚动
+ *           手动添加了日历输入日期，若该列发生变化，需要修改CalendarRow和CalendarColumn
  * 
  *************************************************************/
 
@@ -29,6 +31,10 @@ namespace PEP
         private ProjectInfo pro;
         private TaskInfo task;
         private string taskFilename;
+        private DateTimePicker dTimePicker = new DateTimePicker();
+        Rectangle _Rectangle;
+        private int CalendarRow = -1; //标题行不需要使用日历
+        private int CalendarColumn = 2; //第二列需要使用日历
 
         public FormManage(UserInfo u)
         {
@@ -52,6 +58,16 @@ namespace PEP
             c11.Items.Add("进行中");
             c11.Items.Add("已完成");
             this.gridTaskProcess.Columns.Add(c11);
+            this.groupBoxTask.Controls.Add(this.dTimePicker);
+            this.dTimePicker.BringToFront();
+            DataGridViewTextBoxColumn c12 = new DataGridViewTextBoxColumn();
+            c12.HeaderText = "截止日期";
+            this.gridTaskProcess.Columns.Add(c12);
+            this.dTimePicker.Visible = false;
+            this.dTimePicker.TextChanged += new EventHandler(dTimePicker_TextChanged);
+            this.gridTaskProcess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTaskProcess_CellClick);
+            this.gridTaskProcess.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.gridTaskProcess_ColumnWidthChanged);
+            this.gridTaskProcess.Scroll += new System.Windows.Forms.ScrollEventHandler(this.gridTaskProcess_Scroll);
             this.buttonInfoSubmit.Enabled = false;
             this.buttonTaskSubmit.Enabled = false;
             this.buttonPersonSubmit.Enabled = false;
@@ -245,6 +261,7 @@ namespace PEP
             {
                 this.gridTaskProcess.Rows.Add();
                 this.gridTaskProcess.Rows[index].Cells[0].Value = dr["tname"];
+                this.gridTaskProcess.Rows[index].Cells[2].ReadOnly = true;
                 if (dr["task_state"].ToString() != "")
                     this.gridTaskProcess.Rows[index++].Cells[1].Value = dr["task_state"];
                 else
@@ -488,5 +505,44 @@ namespace PEP
         {
             this.freshFile();
         }
+        private bool isDate(String s)
+        {
+            if (s == null)
+                return false;
+            return Regex.IsMatch(s, "^[0-9]+年[0-9]+月[0-9]+日$");
+        }
+        private void gridTaskProcess_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.dTimePicker.Value = System.DateTime.Now;
+            if (e.ColumnIndex == this.CalendarColumn && e.RowIndex != this.CalendarRow) // 需要使用日历功能的列，并且不是标题
+            {
+                String content = (String)this.gridTaskProcess.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (isDate(content))
+                    this.dTimePicker.Value = Convert.ToDateTime(content);
+                _Rectangle = this.gridTaskProcess.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                this.dTimePicker.Size = new Size(_Rectangle.Width, _Rectangle.Height);
+                this.dTimePicker.Location = new Point(_Rectangle.X + 5, _Rectangle.Y);
+                this.dTimePicker.Visible = true;
+            }
+            else
+            {
+                this.dTimePicker.Visible = false;
+            }
+
+        }
+        private void dTimePicker_TextChanged(object sender, EventArgs e)
+        {
+            if (this.gridTaskProcess.CurrentCell.ColumnIndex == this.CalendarColumn && this.gridTaskProcess.CurrentCell.RowIndex != this.CalendarRow)
+                this.gridTaskProcess.CurrentCell.Value = dTimePicker.Text.ToString();
+        }
+        private void gridTaskProcess_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            this.dTimePicker.Visible = false;
+        }
+        private void gridTaskProcess_Scroll(object sender, ScrollEventArgs e)
+        {
+            this.dTimePicker.Visible = false;
+        }
+       
     }
 }
