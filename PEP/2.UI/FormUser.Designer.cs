@@ -55,10 +55,6 @@
             this.tabPageOverview = new CCWin.SkinControl.SkinTabPage();
             this.tabPageTask = new CCWin.SkinControl.SkinTabPage();
             this.gridProjectTask = new CCWin.SkinControl.SkinDataGridView();
-            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
             this.buttonDownload = new CCWin.SkinControl.SkinButton();
             this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
@@ -100,6 +96,11 @@
             this.buttonPwdChange = new CCWin.SkinControl.SkinButton();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
+            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageOverview.SuspendLayout();
@@ -234,7 +235,7 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 1;
             this.tabControl.Size = new System.Drawing.Size(594, 375);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 5;
@@ -288,7 +289,8 @@
             this.c10,
             this.c11,
             this.c12,
-            this.c13});
+            this.c13,
+            this.c14});
             this.gridProjectTask.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridProjectTask.DefaultCellBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -319,26 +321,6 @@
             this.gridProjectTask.TitleBack = null;
             this.gridProjectTask.TitleBackColorBegin = System.Drawing.Color.White;
             this.gridProjectTask.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
-            // 
-            // c10
-            // 
-            this.c10.HeaderText = "任务编号";
-            this.c10.Name = "c10";
-            // 
-            // c11
-            // 
-            this.c11.HeaderText = "任务名称";
-            this.c11.Name = "c11";
-            // 
-            // c12
-            // 
-            this.c12.HeaderText = "任务状态";
-            this.c12.Name = "c12";
-            // 
-            // c13
-            // 
-            this.c13.HeaderText = "负责人";
-            this.c13.Name = "c13";
             // 
             // tabPageFile
             // 
@@ -1057,6 +1039,40 @@
             this.panelWelcome.Size = new System.Drawing.Size(248, 42);
             this.panelWelcome.TabIndex = 1;
             // 
+            // c10
+            // 
+            this.c10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.c10.FillWeight = 62.62939F;
+            this.c10.HeaderText = "编号";
+            this.c10.Name = "c10";
+            this.c10.Width = 66;
+            // 
+            // c11
+            // 
+            this.c11.FillWeight = 129.8821F;
+            this.c11.HeaderText = "任务名称";
+            this.c11.Name = "c11";
+            // 
+            // c12
+            // 
+            this.c12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.c12.FillWeight = 88.83249F;
+            this.c12.HeaderText = "任务状态";
+            this.c12.Name = "c12";
+            this.c12.Width = 98;
+            // 
+            // c13
+            // 
+            this.c13.FillWeight = 129.8821F;
+            this.c13.HeaderText = "预完成时间";
+            this.c13.Name = "c13";
+            // 
+            // c14
+            // 
+            this.c14.FillWeight = 88.77393F;
+            this.c14.HeaderText = "负责人";
+            this.c14.Name = "c14";
+            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1127,10 +1143,6 @@
         private CCWin.SkinControl.SkinButton buttonManage;
         private CCWin.SkinControl.SkinButton buttonStatistics;
         private System.Windows.Forms.Panel panelProject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c13;
         private CCWin.SkinControl.SkinButton buttonPwdChange;
         private CCWin.SkinControl.SkinButton buttonUpload;
         private CCWin.SkinControl.SkinTextBox textFileName;
@@ -1152,5 +1164,10 @@
         private CCWin.SkinControl.SkinComboBox comboTask;
         private System.Windows.Forms.Label labelTask;
         private CCWin.SkinControl.SkinButton buttonDownload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c14;
     }
 }

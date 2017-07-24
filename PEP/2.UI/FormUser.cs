@@ -71,6 +71,8 @@ namespace PEP
         private void freshAttendedProjects()
         {
             this.listProject.Items.Clear();
+            if (this.listProject.SelectedItems.Count == 0)
+                this.pro.clearProject();
             MySqlDataReader dr = this.user.getAttendedActiveProjects();
             while (dr.Read())
             {
@@ -124,6 +126,8 @@ namespace PEP
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["tid"].ToString();
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["tname"].ToString();
                 this.gridProjectTask.Rows[row].Cells[column++].Value = dr["task_state"].ToString();
+                DateTime date = Convert.ToDateTime(dr["deadline"].ToString());
+                this.gridProjectTask.Rows[row].Cells[column++].Value = "" + date.Year + "年" + date.Month + "月" + date.Day + "日";
                 this.gridProjectTask.Rows[row++].Cells[column++].Value = dr["checker"].ToString();
                 this.comboTask.Items.Add(dr["tname"].ToString());
             }
@@ -171,7 +175,8 @@ namespace PEP
                 this.comboLogTask.Items.Add(dr["tname"].ToString());
             }
             dr.Close();
-            this.comboLogTask.SelectedIndex = 0;
+            if (this.comboLogTask.Items.Count != 0)
+                this.comboLogTask.SelectedIndex = 0;
             if (this.listProject.SelectedItems.Count != 0)
             {
                 this.buttonLogSubmit.Enabled = true;
@@ -221,6 +226,10 @@ namespace PEP
                 freshProjectTask();
                 freshLogTask();
                 freshReadLog();
+            }
+            else
+            {
+                this.pro.clearProject();
             }
         }
 
@@ -307,7 +316,13 @@ namespace PEP
         private void buttonManage_Click(object sender, EventArgs e)
         {
             FormManage formManage = new FormManage(this.user);
-            formManage.Show();
+            formManage.ShowDialog();
+            freshAttendedProjects();
+            freshProjectOverview();
+            freshProjectTask();
+            freshFile();
+            freshLogTask();
+            freshReadLog();
         }
 
         private void radioButtonAllLogs_CheckedChanged(object sender, EventArgs e)
