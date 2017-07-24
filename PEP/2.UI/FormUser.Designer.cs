@@ -54,7 +54,13 @@
             this.tabControl = new CCWin.SkinControl.SkinTabControl();
             this.tabPageOverview = new CCWin.SkinControl.SkinTabPage();
             this.tabPageTask = new CCWin.SkinControl.SkinTabPage();
+            this.buttonShowImage = new CCWin.SkinControl.SkinButton();
             this.gridProjectTask = new CCWin.SkinControl.SkinDataGridView();
+            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
             this.buttonDownload = new CCWin.SkinControl.SkinButton();
             this.comboTaskFile = new CCWin.SkinControl.SkinComboBox();
@@ -96,11 +102,6 @@
             this.buttonPwdChange = new CCWin.SkinControl.SkinButton();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectOverview)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageOverview.SuspendLayout();
@@ -257,6 +258,7 @@
             // tabPageTask
             // 
             this.tabPageTask.BackColor = System.Drawing.Color.White;
+            this.tabPageTask.Controls.Add(this.buttonShowImage);
             this.tabPageTask.Controls.Add(this.gridProjectTask);
             this.tabPageTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPageTask.Location = new System.Drawing.Point(0, 36);
@@ -266,6 +268,22 @@
             this.tabPageTask.TabIndex = 1;
             this.tabPageTask.TabItemImage = null;
             this.tabPageTask.Text = "任务信息";
+            // 
+            // buttonShowImage
+            // 
+            this.buttonShowImage.BackColor = System.Drawing.Color.Transparent;
+            this.buttonShowImage.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonShowImage.DownBack = null;
+            this.buttonShowImage.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonShowImage.Location = new System.Drawing.Point(246, 310);
+            this.buttonShowImage.MouseBack = null;
+            this.buttonShowImage.Name = "buttonShowImage";
+            this.buttonShowImage.NormlBack = null;
+            this.buttonShowImage.Size = new System.Drawing.Size(94, 23);
+            this.buttonShowImage.TabIndex = 1;
+            this.buttonShowImage.Text = "显示图片";
+            this.buttonShowImage.UseVisualStyleBackColor = false;
+            this.buttonShowImage.Click += new System.EventHandler(this.buttonShowImage_Click);
             // 
             // gridProjectTask
             // 
@@ -316,11 +334,45 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridProjectTask.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.gridProjectTask.RowTemplate.Height = 23;
-            this.gridProjectTask.Size = new System.Drawing.Size(594, 341);
+            this.gridProjectTask.Size = new System.Drawing.Size(594, 305);
             this.gridProjectTask.TabIndex = 0;
             this.gridProjectTask.TitleBack = null;
             this.gridProjectTask.TitleBackColorBegin = System.Drawing.Color.White;
             this.gridProjectTask.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
+            // 
+            // c10
+            // 
+            this.c10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.c10.FillWeight = 62.62939F;
+            this.c10.HeaderText = "编号";
+            this.c10.Name = "c10";
+            this.c10.Width = 66;
+            // 
+            // c11
+            // 
+            this.c11.FillWeight = 129.8821F;
+            this.c11.HeaderText = "任务名称";
+            this.c11.Name = "c11";
+            // 
+            // c12
+            // 
+            this.c12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.c12.FillWeight = 88.83249F;
+            this.c12.HeaderText = "任务状态";
+            this.c12.Name = "c12";
+            this.c12.Width = 98;
+            // 
+            // c13
+            // 
+            this.c13.FillWeight = 129.8821F;
+            this.c13.HeaderText = "预完成时间";
+            this.c13.Name = "c13";
+            // 
+            // c14
+            // 
+            this.c14.FillWeight = 88.77393F;
+            this.c14.HeaderText = "负责人";
+            this.c14.Name = "c14";
             // 
             // tabPageFile
             // 
@@ -1039,40 +1091,6 @@
             this.panelWelcome.Size = new System.Drawing.Size(248, 42);
             this.panelWelcome.TabIndex = 1;
             // 
-            // c10
-            // 
-            this.c10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.c10.FillWeight = 62.62939F;
-            this.c10.HeaderText = "编号";
-            this.c10.Name = "c10";
-            this.c10.Width = 66;
-            // 
-            // c11
-            // 
-            this.c11.FillWeight = 129.8821F;
-            this.c11.HeaderText = "任务名称";
-            this.c11.Name = "c11";
-            // 
-            // c12
-            // 
-            this.c12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.c12.FillWeight = 88.83249F;
-            this.c12.HeaderText = "任务状态";
-            this.c12.Name = "c12";
-            this.c12.Width = 98;
-            // 
-            // c13
-            // 
-            this.c13.FillWeight = 129.8821F;
-            this.c13.HeaderText = "预完成时间";
-            this.c13.Name = "c13";
-            // 
-            // c14
-            // 
-            this.c14.FillWeight = 88.77393F;
-            this.c14.HeaderText = "负责人";
-            this.c14.Name = "c14";
-            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1169,5 +1187,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn c12;
         private System.Windows.Forms.DataGridViewTextBoxColumn c13;
         private System.Windows.Forms.DataGridViewTextBoxColumn c14;
+        private CCWin.SkinControl.SkinButton buttonShowImage;
     }
 }
