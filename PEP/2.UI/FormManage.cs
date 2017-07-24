@@ -60,6 +60,10 @@ namespace PEP
             this.buttonProjectProcessSubmit.Enabled = false;
             this.buttonChooseFile.Enabled = false;
             this.buttonUpload.Enabled = false;
+            this.buttonTaskLeft.Enabled = false;
+            this.buttonTaskRight.Enabled = false;
+            this.buttonPersonLeft.Enabled = false;
+            this.buttonPersonRight.Enabled = false; 
         }
         private void freshManagedProjects()
         {
