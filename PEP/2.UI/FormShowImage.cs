@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCWin;
 
+/************************2017/7/25*****************************
+ * 
+ * UI.FormShowImage
+ * 功能：按照预完成时间的顺序，绘制任务的流程图
+ * 主要接口：-
+ * 注意事项：任务框的颜色代表任务的不同状态
+ * 
+ *************************************************************/
+
 namespace PEP
 {
     public partial class FormShowImage : CCSkinMain
