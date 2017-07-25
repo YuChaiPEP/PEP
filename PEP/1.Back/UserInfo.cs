@@ -36,6 +36,15 @@ namespace PEP
         {
             this.sql.SQLDisconnect();
         }
+        /*身份切换接口*/
+        private void identifyUser(String u)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "users", "uname='" + u + "'");
+            dr.Read();
+            this.uid = (int)dr["uid"];
+            dr.Close();
+        }
+        /*用户个人接口*/
         public int getUID()
         {
             return this.uid;
@@ -48,13 +57,7 @@ namespace PEP
         {
             return this.sql.SQLQuery("users", "uid="+this.uid +" and is_manager='Y'");
         }
-        private void identifyUser(String u)
-        {
-            MySqlDataReader dr = this.sql.SQLGet("*", "users",  "uname='" + u + "'");
-            dr.Read();
-            this.uid = (int)dr["uid"];
-            dr.Close();
-        }
+        
         public MySqlDataReader getAttendedActiveProjects()
         {
             MySqlDataReader dr = this.sql.SQLGet("projects.*", "projects,users2projects", "users2projects.uid=" + this.uid + " and projects.pid=users2projects.pid and projects.project_state='进行中'");
@@ -63,19 +66,6 @@ namespace PEP
         public MySqlDataReader getManagedLiveProjects()
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "projects", "manager_id=" + this.uid + " and project_state!='已完成'");
-            return dr;
-        }
-        public String searchUser(int uid)
-        {
-            MySqlDataReader dr = this.sql.SQLGet("*", "users", "uid=" + uid);
-            dr.Read();
-            String uname = dr["uname"].ToString();
-            dr.Close();
-            return uname;
-        }
-        public MySqlDataReader getAllUser()
-        {
-            MySqlDataReader dr = this.sql.SQLGet("*", "users", "1=1 order by uid");
             return dr;
         }
         public String getAttendedLiveProjectsCount()
@@ -139,6 +129,20 @@ namespace PEP
                 return 3;//old password is wrong
             this.sql.SQLUpdate("users", "password='" + CryptoHandler.MD5Encrypt(newpwd) + "'", "uid=" + this.uid);
             return 0;//password modify successfully
+        }
+        /*用户通用接口*/
+        public String searchUser(int uid)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "users", "uid=" + uid);
+            dr.Read();
+            String uname = dr["uname"].ToString();
+            dr.Close();
+            return uname;
+        }
+        public MySqlDataReader getAllUser()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "users", "1=1 order by uid");
+            return dr;
         }
     }
 }
