@@ -102,6 +102,12 @@
     <Compile Include="2.UI\FormPwdChange.Designer.cs">
       <DependentUpon>FormPwdChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="2.UI\FormShowImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.UI\FormShowImage.Designer.cs">
+      <DependentUpon>FormShowImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="2.UI\FormStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="2.UI\FormPwdChange.resx">
       <DependentUpon>FormPwdChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.UI\FormShowImage.resx">
+      <DependentUpon>FormShowImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.UI\FormStatistics.resx">
       <DependentUpon>FormStatistics.cs</DependentUpon>

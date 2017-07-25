@@ -34,6 +34,7 @@ namespace PEP
         {
             return "推送时间：" + dr["timestamp"].ToString() + "  推送人：" + this.user.searchUser((int)dr["uid"]) + System.Environment.NewLine + dr["push"].ToString();
         }
+
         public FormUser(String uname)
         {
             this.user = new UserInfo(uname);
@@ -66,6 +67,7 @@ namespace PEP
             this.buttonLogClear.Enabled = false;
             this.buttonDownload.Enabled = false;
             this.buttonUpload.Enabled = false;
+            this.buttonShowImage.Enabled = false;
         }
 
         private void freshAttendedProjects()
@@ -116,6 +118,7 @@ namespace PEP
             this.gridProjectTask.Rows.Clear();
             this.comboTask.Items.Clear();
             this.comboTaskFile.Items.Clear();
+            this.buttonShowImage.Enabled = false;
 
             MySqlDataReader dr = this.pro.getTaskInfo();
             int row = 0;
@@ -137,6 +140,8 @@ namespace PEP
             {
                 this.comboTask.SelectedIndex = 0;
             }
+            if (this.listProject.SelectedItems.Count != 0)
+                this.buttonShowImage.Enabled = true;
         }
 
         private void freshFile()
@@ -397,6 +402,12 @@ namespace PEP
                     MessageBox.Show("文件下载失败！");
                 }
             }
+        }
+
+        private void buttonShowImage_Click(object sender, EventArgs e)
+        {
+            FormShowImage formShowImage = new FormShowImage(this.gridProjectTask);
+            formShowImage.Show();
         }
     }
 }
