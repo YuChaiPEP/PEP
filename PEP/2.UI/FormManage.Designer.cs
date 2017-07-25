@@ -98,7 +98,7 @@
             this.radioAbort = new CCWin.SkinControl.SkinRadioButton();
             this.radioFinish = new CCWin.SkinControl.SkinRadioButton();
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
-            this.gridTaskProcess = new CCWin.SkinControl.SkinDataGridView();
+            this.gridTaskProcess = new System.Windows.Forms.DataGridView();
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTaskProcessSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonCreateProject = new CCWin.SkinControl.SkinButton();
@@ -198,7 +198,7 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 4;
+            this.tabControl.SelectedIndex = 6;
             this.tabControl.Size = new System.Drawing.Size(594, 406);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 4;
@@ -1063,7 +1063,6 @@
             this.gridTaskProcess.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridTaskProcess.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridTaskProcess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridTaskProcess.ColumnFont = null;
             this.gridTaskProcess.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -1076,8 +1075,6 @@
             this.gridTaskProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTaskProcess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c10});
-            this.gridTaskProcess.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gridTaskProcess.DefaultCellBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1088,8 +1085,6 @@
             this.gridTaskProcess.DefaultCellStyle = dataGridViewCellStyle9;
             this.gridTaskProcess.EnableHeadersVisualStyles = false;
             this.gridTaskProcess.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.gridTaskProcess.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.gridTaskProcess.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridTaskProcess.Location = new System.Drawing.Point(6, 28);
             this.gridTaskProcess.Name = "gridTaskProcess";
             this.gridTaskProcess.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1102,9 +1097,6 @@
             this.gridTaskProcess.RowTemplate.Height = 23;
             this.gridTaskProcess.Size = new System.Drawing.Size(570, 206);
             this.gridTaskProcess.TabIndex = 0;
-            this.gridTaskProcess.TitleBack = null;
-            this.gridTaskProcess.TitleBackColorBegin = System.Drawing.Color.White;
-            this.gridTaskProcess.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             // 
             // c10
             // 
@@ -1219,7 +1211,7 @@
         private CCWin.SkinControl.SkinButton buttonCheckerSubmit;
         private CCWin.SkinControl.SkinDataGridView gridCheckLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn c00;
-        private CCWin.SkinControl.SkinDataGridView gridTaskProcess;
+        private System.Windows.Forms.DataGridView gridTaskProcess;
         private System.Windows.Forms.DataGridViewTextBoxColumn c10;
         private CCWin.SkinControl.SkinButton buttonTaskProcessSubmit;
         private CCWin.SkinControl.SkinButton buttonCreateProject;
