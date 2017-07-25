@@ -102,6 +102,7 @@
             this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTaskProcessSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonCreateProject = new CCWin.SkinControl.SkinButton();
+            this.buttonTaskProcessReset = new CCWin.SkinControl.SkinButton();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -1047,6 +1048,7 @@
             // 
             // groupBoxTask
             // 
+            this.groupBoxTask.Controls.Add(this.buttonTaskProcessReset);
             this.groupBoxTask.Controls.Add(this.gridTaskProcess);
             this.groupBoxTask.Controls.Add(this.buttonTaskProcessSubmit);
             this.groupBoxTask.Location = new System.Drawing.Point(6, 0);
@@ -1134,6 +1136,22 @@
             this.buttonCreateProject.Text = "新建项目";
             this.buttonCreateProject.UseVisualStyleBackColor = true;
             this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
+            // 
+            // buttonTaskProcessReset
+            // 
+            this.buttonTaskProcessReset.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTaskProcessReset.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonTaskProcessReset.DownBack = null;
+            this.buttonTaskProcessReset.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskProcessReset.Location = new System.Drawing.Point(418, 240);
+            this.buttonTaskProcessReset.MouseBack = null;
+            this.buttonTaskProcessReset.Name = "buttonTaskProcessReset";
+            this.buttonTaskProcessReset.NormlBack = null;
+            this.buttonTaskProcessReset.Size = new System.Drawing.Size(58, 23);
+            this.buttonTaskProcessReset.TabIndex = 2;
+            this.buttonTaskProcessReset.Text = "重置";
+            this.buttonTaskProcessReset.UseVisualStyleBackColor = true;
+            this.buttonTaskProcessReset.Click += new System.EventHandler(this.buttonTaskProcessReset_Click);
             // 
             // FormManage
             // 
@@ -1239,5 +1257,6 @@
         private System.Windows.Forms.Label labelUploadFile;
         private CCWin.SkinControl.SkinTextBox textFilename;
         private CCWin.SkinControl.SkinButton buttonUpload;
+        private CCWin.SkinControl.SkinButton buttonTaskProcessReset;
     }
 }

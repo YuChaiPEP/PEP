@@ -35,6 +35,7 @@ namespace PEP
         Rectangle _Rectangle;
         private int CalendarRow = -1; //标题行不需要使用日历
         private int CalendarColumn = 2; //第二列需要使用日历
+        private String defaultDDL = "1970年1月23日"; //截止日期的默认值
 
         public FormManage(UserInfo u)
         {
@@ -64,10 +65,10 @@ namespace PEP
             c12.HeaderText = "截止日期";
             this.gridTaskProcess.Columns.Add(c12);
             this.dTimePicker.Visible = false;
-            this.dTimePicker.TextChanged += new EventHandler(dTimePicker_TextChanged);
             this.gridTaskProcess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTaskProcess_CellClick);
             this.gridTaskProcess.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.gridTaskProcess_ColumnWidthChanged);
             this.gridTaskProcess.Scroll += new System.Windows.Forms.ScrollEventHandler(this.gridTaskProcess_Scroll);
+            this.gridTaskProcess.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.gridTaskProcess_CellStateChanged);
             this.buttonInfoSubmit.Enabled = false;
             this.buttonTaskSubmit.Enabled = false;
             this.buttonPersonSubmit.Enabled = false;
@@ -79,7 +80,8 @@ namespace PEP
             this.buttonTaskLeft.Enabled = false;
             this.buttonTaskRight.Enabled = false;
             this.buttonPersonLeft.Enabled = false;
-            this.buttonPersonRight.Enabled = false; 
+            this.buttonPersonRight.Enabled = false;
+            this.buttonTaskProcessReset.Enabled = false;
         }
         private void freshManagedProjects()
         {
@@ -252,6 +254,7 @@ namespace PEP
         {
             this.buttonTaskProcessSubmit.Enabled = false;
             this.buttonProjectProcessSubmit.Enabled = false;
+            this.buttonTaskProcessReset.Enabled = false;
             this.gridTaskProcess.Rows.Clear();
             this.radioFinish.Checked = false;
             this.radioAbort.Checked = false;
@@ -261,17 +264,24 @@ namespace PEP
             {
                 this.gridTaskProcess.Rows.Add();
                 this.gridTaskProcess.Rows[index].Cells[0].Value = dr["tname"];
-                this.gridTaskProcess.Rows[index].Cells[2].ReadOnly = true;
                 if (dr["task_state"].ToString() != "")
-                    this.gridTaskProcess.Rows[index++].Cells[1].Value = dr["task_state"];
+                    this.gridTaskProcess.Rows[index].Cells[1].Value = dr["task_state"];
                 else
-                    this.gridTaskProcess.Rows[index++].Cells[1].Value = null; //null不是空字符串
+                    this.gridTaskProcess.Rows[index].Cells[1].Value = null; //null不是空字符串
+                this.gridTaskProcess.Rows[index].Cells[2].ReadOnly = true;
+                String ddl = "";
+                DateTime d = Convert.ToDateTime(dr["deadline"]);
+                ddl = "" + d.Year + "年" + d.Month + "月" + d.Day + "日";
+                if (ddl == this.defaultDDL)
+                    ddl = "-"; //处理默认值
+                this.gridTaskProcess.Rows[index++].Cells[2].Value = ddl;
             }
             dr.Close();
             if (this.listProject.SelectedItems.Count != 0)
             {
                 this.buttonTaskProcessSubmit.Enabled = true;
                 this.buttonProjectProcessSubmit.Enabled = true;
+                this.buttonTaskProcessReset.Enabled = true;
             }
         }
         private void listProject_SelectedIndexChanged(object sender, EventArgs e)
@@ -417,7 +427,12 @@ namespace PEP
         {
             for (int i = 0; i < this.gridTaskProcess.RowCount; i++)
             {
-                this.pro.modifyProcess(this.gridTaskProcess.Rows[i].Cells[0].Value.ToString(), this.gridTaskProcess.Rows[i].Cells[1].Value.ToString());
+                String ddl = "";
+                if (this.gridTaskProcess.Rows[i].Cells[2].Value == "-")
+                    ddl = this.defaultDDL;
+                else
+                    ddl = (String)this.gridTaskProcess.Rows[i].Cells[2].Value;
+                this.pro.modifyProcess(this.gridTaskProcess.Rows[i].Cells[0].Value.ToString(), this.gridTaskProcess.Rows[i].Cells[1].Value.ToString(), ddl);
             }
             MessageBox.Show("项目进度已更新。");
         }
@@ -513,12 +528,13 @@ namespace PEP
         }
         private void gridTaskProcess_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dTimePicker.Value = System.DateTime.Now;
             if (e.ColumnIndex == this.CalendarColumn && e.RowIndex != this.CalendarRow) // 需要使用日历功能的列，并且不是标题
             {
                 String content = (String)this.gridTaskProcess.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 if (isDate(content))
                     this.dTimePicker.Value = Convert.ToDateTime(content);
+                else
+                    this.dTimePicker.Value = System.DateTime.Now;
                 _Rectangle = this.gridTaskProcess.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
                 this.dTimePicker.Size = new Size(_Rectangle.Width, _Rectangle.Height);
                 this.dTimePicker.Location = new Point(_Rectangle.X + 5, _Rectangle.Y);
@@ -530,11 +546,6 @@ namespace PEP
             }
 
         }
-        private void dTimePicker_TextChanged(object sender, EventArgs e)
-        {
-            if (this.gridTaskProcess.CurrentCell.ColumnIndex == this.CalendarColumn && this.gridTaskProcess.CurrentCell.RowIndex != this.CalendarRow)
-                this.gridTaskProcess.CurrentCell.Value = dTimePicker.Text.ToString();
-        }
         private void gridTaskProcess_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
         {
             this.dTimePicker.Visible = false;
@@ -543,6 +554,15 @@ namespace PEP
         {
             this.dTimePicker.Visible = false;
         }
-       
+        private void gridTaskProcess_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e) //gridView的单元格失去焦点时进行赋值
+        {
+            if (this.gridTaskProcess.CurrentCell != null && this.gridTaskProcess.CurrentCell.ColumnIndex == this.CalendarColumn && this.gridTaskProcess.CurrentCell.RowIndex != this.CalendarRow)
+                this.gridTaskProcess.CurrentCell.Value = dTimePicker.Text.ToString();
+        }
+
+        private void buttonTaskProcessReset_Click(object sender, EventArgs e)
+        {
+            freshProcess();
+        }
     }
 }

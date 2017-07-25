@@ -192,11 +192,16 @@ namespace PEP
             this.sql.SQLUpdate("logs", "checked='" + check + "'", "pid=" + this.pid + " and lid=" + lid);
         }
 
-        public void modifyProcess(String tname, String p)
+        public void modifyProcess(String tname, String p, String date) //输入字符串d为"xxxx年yy月zz日"格式，统一格式在下层就要处理完毕
         {
             TaskInfo task = new TaskInfo();
             int tid = task.getTaskID(tname);
-            this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "'", "pid=" + this.pid + " and tid=" + tid);
+            int y = 0;
+            int m = 0;
+            int d = 0;
+            parseDate(date, ref y, ref m, ref d);
+            String afterdate = "" + y + "-" + m + "-" + d + " 00:00:00";
+            this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "',deadline='"+afterdate+"'", "pid=" + this.pid + " and tid=" + tid);
         }
 
         public void createProject(string pname, string time, int manager_id, List<string> tasks, List<string> persons)
@@ -236,6 +241,15 @@ namespace PEP
             this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
             this.sql.SQLDelete("logs", "pid=" + this.pid);
             this.pid = -1;
+        }
+        private void parseDate(String date, ref int year, ref int month, ref int day) //输入为"xxxx年yy月zz日"，解析xxxx/yy/zz
+        {
+            String [] tmp1 = date.Split('年');
+            year = Convert.ToInt32(tmp1[0]);
+            String[] tmp2 = tmp1[1].Split('月');
+            month = Convert.ToInt32(tmp2[0]);
+            String[] tmp3 = tmp2[1].Split('日');
+            day = Convert.ToInt32(tmp3[0]);
         }
     }
 }
