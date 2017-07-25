@@ -179,6 +179,7 @@
             this.gridProjectOverview.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridProjectOverview.Location = new System.Drawing.Point(0, 0);
             this.gridProjectOverview.Name = "gridProjectOverview";
+            this.gridProjectOverview.ReadOnly = true;
             this.gridProjectOverview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -205,6 +206,7 @@
             this.c00.DefaultCellStyle = dataGridViewCellStyle3;
             this.c00.HeaderText = "项";
             this.c00.Name = "c00";
+            this.c00.ReadOnly = true;
             // 
             // c01
             // 
@@ -212,6 +214,7 @@
             this.c01.DefaultCellStyle = dataGridViewCellStyle4;
             this.c01.HeaderText = "相关信息";
             this.c01.Name = "c01";
+            this.c01.ReadOnly = true;
             // 
             // tabControl
             // 
@@ -325,6 +328,7 @@
             this.gridProjectTask.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.gridProjectTask.Location = new System.Drawing.Point(0, 0);
             this.gridProjectTask.Name = "gridProjectTask";
+            this.gridProjectTask.ReadOnly = true;
             this.gridProjectTask.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gridProjectTask.RowHeadersVisible = false;
             this.gridProjectTask.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -346,6 +350,7 @@
             this.c10.FillWeight = 62.62939F;
             this.c10.HeaderText = "编号";
             this.c10.Name = "c10";
+            this.c10.ReadOnly = true;
             this.c10.Width = 66;
             // 
             // c11
@@ -353,6 +358,7 @@
             this.c11.FillWeight = 129.8821F;
             this.c11.HeaderText = "任务名称";
             this.c11.Name = "c11";
+            this.c11.ReadOnly = true;
             // 
             // c12
             // 
@@ -360,6 +366,7 @@
             this.c12.FillWeight = 88.83249F;
             this.c12.HeaderText = "任务状态";
             this.c12.Name = "c12";
+            this.c12.ReadOnly = true;
             this.c12.Width = 98;
             // 
             // c13
@@ -367,12 +374,14 @@
             this.c13.FillWeight = 129.8821F;
             this.c13.HeaderText = "预完成时间";
             this.c13.Name = "c13";
+            this.c13.ReadOnly = true;
             // 
             // c14
             // 
             this.c14.FillWeight = 88.77393F;
             this.c14.HeaderText = "负责人";
             this.c14.Name = "c14";
+            this.c14.ReadOnly = true;
             // 
             // tabPageFile
             // 

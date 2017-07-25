@@ -74,7 +74,6 @@
             this.tabPageChecker = new CCWin.SkinControl.SkinTabPage();
             this.buttonCheckerSubmit = new CCWin.SkinControl.SkinButton();
             this.gridChecker = new CCWin.SkinControl.SkinDataGridView();
-            this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageFile = new CCWin.SkinControl.SkinTabPage();
             this.buttonUpload = new CCWin.SkinControl.SkinButton();
             this.textFilename = new CCWin.SkinControl.SkinTextBox();
@@ -98,11 +97,12 @@
             this.radioAbort = new CCWin.SkinControl.SkinRadioButton();
             this.radioFinish = new CCWin.SkinControl.SkinRadioButton();
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
+            this.buttonTaskProcessReset = new CCWin.SkinControl.SkinButton();
             this.gridTaskProcess = new System.Windows.Forms.DataGridView();
-            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTaskProcessSubmit = new CCWin.SkinControl.SkinButton();
             this.buttonCreateProject = new CCWin.SkinControl.SkinButton();
-            this.buttonTaskProcessReset = new CCWin.SkinControl.SkinButton();
+            this.c10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c00 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWelcome.SuspendLayout();
             this.panelProject.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -199,7 +199,7 @@
             this.tabControl.PageHover = ((System.Drawing.Image)(resources.GetObject("tabControl.PageHover")));
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
-            this.tabControl.SelectedIndex = 6;
+            this.tabControl.SelectedIndex = 3;
             this.tabControl.Size = new System.Drawing.Size(594, 406);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 4;
@@ -710,11 +710,6 @@
             this.gridChecker.TitleBackColorBegin = System.Drawing.Color.White;
             this.gridChecker.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             // 
-            // c00
-            // 
-            this.c00.HeaderText = "任务名称";
-            this.c00.Name = "c00";
-            // 
             // tabPageFile
             // 
             this.tabPageFile.BackColor = System.Drawing.Color.White;
@@ -1058,6 +1053,22 @@
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "任务进度";
             // 
+            // buttonTaskProcessReset
+            // 
+            this.buttonTaskProcessReset.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTaskProcessReset.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.buttonTaskProcessReset.DownBack = null;
+            this.buttonTaskProcessReset.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTaskProcessReset.Location = new System.Drawing.Point(418, 240);
+            this.buttonTaskProcessReset.MouseBack = null;
+            this.buttonTaskProcessReset.Name = "buttonTaskProcessReset";
+            this.buttonTaskProcessReset.NormlBack = null;
+            this.buttonTaskProcessReset.Size = new System.Drawing.Size(58, 23);
+            this.buttonTaskProcessReset.TabIndex = 2;
+            this.buttonTaskProcessReset.Text = "重置";
+            this.buttonTaskProcessReset.UseVisualStyleBackColor = true;
+            this.buttonTaskProcessReset.Click += new System.EventHandler(this.buttonTaskProcessReset_Click);
+            // 
             // gridTaskProcess
             // 
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
@@ -1100,11 +1111,6 @@
             this.gridTaskProcess.Size = new System.Drawing.Size(570, 206);
             this.gridTaskProcess.TabIndex = 0;
             // 
-            // c10
-            // 
-            this.c10.HeaderText = "任务名称";
-            this.c10.Name = "c10";
-            // 
             // buttonTaskProcessSubmit
             // 
             this.buttonTaskProcessSubmit.BackColor = System.Drawing.Color.Transparent;
@@ -1137,21 +1143,17 @@
             this.buttonCreateProject.UseVisualStyleBackColor = true;
             this.buttonCreateProject.Click += new System.EventHandler(this.buttonCreateProject_Click);
             // 
-            // buttonTaskProcessReset
+            // c10
             // 
-            this.buttonTaskProcessReset.BackColor = System.Drawing.Color.Transparent;
-            this.buttonTaskProcessReset.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.buttonTaskProcessReset.DownBack = null;
-            this.buttonTaskProcessReset.Font = new System.Drawing.Font("楷体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonTaskProcessReset.Location = new System.Drawing.Point(418, 240);
-            this.buttonTaskProcessReset.MouseBack = null;
-            this.buttonTaskProcessReset.Name = "buttonTaskProcessReset";
-            this.buttonTaskProcessReset.NormlBack = null;
-            this.buttonTaskProcessReset.Size = new System.Drawing.Size(58, 23);
-            this.buttonTaskProcessReset.TabIndex = 2;
-            this.buttonTaskProcessReset.Text = "重置";
-            this.buttonTaskProcessReset.UseVisualStyleBackColor = true;
-            this.buttonTaskProcessReset.Click += new System.EventHandler(this.buttonTaskProcessReset_Click);
+            this.c10.HeaderText = "任务名称";
+            this.c10.Name = "c10";
+            this.c10.ReadOnly = true;
+            // 
+            // c00
+            // 
+            this.c00.HeaderText = "任务名称";
+            this.c00.Name = "c00";
+            this.c00.ReadOnly = true;
             // 
             // FormManage
             // 
@@ -1228,9 +1230,7 @@
         private CCWin.SkinControl.SkinDataGridView gridChecker;
         private CCWin.SkinControl.SkinButton buttonCheckerSubmit;
         private CCWin.SkinControl.SkinDataGridView gridCheckLog;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c00;
         private System.Windows.Forms.DataGridView gridTaskProcess;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c10;
         private CCWin.SkinControl.SkinButton buttonTaskProcessSubmit;
         private CCWin.SkinControl.SkinButton buttonCreateProject;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumber;
@@ -1258,5 +1258,7 @@
         private CCWin.SkinControl.SkinTextBox textFilename;
         private CCWin.SkinControl.SkinButton buttonUpload;
         private CCWin.SkinControl.SkinButton buttonTaskProcessReset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c00;
     }
 }

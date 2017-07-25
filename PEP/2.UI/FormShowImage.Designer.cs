@@ -57,6 +57,7 @@
             this.buttonSaveImage.TabIndex = 1;
             this.buttonSaveImage.Text = "保存图片";
             this.buttonSaveImage.UseVisualStyleBackColor = false;
+            this.buttonSaveImage.Click += new System.EventHandler(this.buttonSaveImage_Click);
             // 
             // FormShowImage
             // 
