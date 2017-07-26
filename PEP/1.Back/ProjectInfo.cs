@@ -30,6 +30,7 @@ namespace PEP
         {
             sql.SQLDisconnect();
         }
+        /*项目管理*/
         public void identifyProject(String p)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pname='" + p + "'");
@@ -44,16 +45,7 @@ namespace PEP
         {
             this.pid = -1;
         }
-
-        public String searchProject(int pid)
-        {
-            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pid=" + pid);
-            dr.Read();
-            String uname = dr["pname"].ToString();
-            dr.Close();
-            return uname;
-        }
-
+        /*项目个人接口*/
         public int getPid()
         {
             return this.pid;
@@ -99,7 +91,7 @@ namespace PEP
             this.sql.SQLInsertOneEntry("projects2files(pid,tid,filename)", "(" + this.pid + "," + tid + ",'" + filename + "')");
         }
 
-        public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool flag = true)
+        public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool watch = true)
         {
             MySqlDataReader dr = null;
             if (lid == -1)
@@ -108,7 +100,7 @@ namespace PEP
                 {
                     dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid);
                 }
-                else if (flag)
+                else if (watch)
                 {
                     dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid + " and uid=" + uid);
                 }
@@ -128,15 +120,6 @@ namespace PEP
         {
             int tid = new TaskInfo().getTaskID(tname);
             return this.sql.SQLGet("*", "projects2files", "pid=" + this.pid + " and tid=" + tid);
-        }
-
-        public int getMaxPid()
-        {
-            MySqlDataReader dr = this.sql.SQLGet("max(pid)", "projects", "true");
-            dr.Read();
-            int x = Convert.ToInt32(dr["max(pid)"]);
-            dr.Close();
-            return x;
         }
 
         public void modifyDetail(String pname, int stateNo)
@@ -187,9 +170,14 @@ namespace PEP
             }
         }
 
-        public void modifyLogChecked(int lid, string check)
+        public void modifyLogChecked(int lid, bool check)
         {
-            this.sql.SQLUpdate("logs", "checked='" + check + "'", "pid=" + this.pid + " and lid=" + lid);
+            String state = "";
+            if (check)
+                state = "已批阅";
+            else
+                state = "未批阅";
+            this.sql.SQLUpdate("logs", "checked='" + state + "'", "pid=" + this.pid + " and lid=" + lid);
         }
 
         public void modifyProcess(String tname, String p, String date) //输入字符串d为"xxxx年yy月zz日"格式，统一格式在下层就要处理完毕
@@ -239,8 +227,26 @@ namespace PEP
             this.sql.SQLDelete("projects", "pid="+this.pid);
             this.sql.SQLDelete("users2projects", "pid=" + this.pid);
             this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
+            this.sql.SQLDelete("projects2files", "pid=" + this.pid);
             this.sql.SQLDelete("logs", "pid=" + this.pid);
             this.pid = -1;
+        }
+        /*项目通用接口*/
+        public String searchProject(int pid)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pid=" + pid);
+            dr.Read();
+            String pname = dr["pname"].ToString();
+            dr.Close();
+            return pname;
+        }
+        public int getMaxPid()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("max(pid)", "projects", "true");
+            dr.Read();
+            int x = Convert.ToInt32(dr["max(pid)"]);
+            dr.Close();
+            return x;
         }
         private void parseDate(String date, ref int year, ref int month, ref int day) //输入为"xxxx年yy月zz日"，解析xxxx/yy/zz
         {

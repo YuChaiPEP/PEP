@@ -64,7 +64,7 @@ namespace PEP
 
         private void buttonCheck_Click(object sender, EventArgs e)
         {
-            this.pro.modifyLogChecked(lid, "已批阅");
+            this.pro.modifyLogChecked(lid, true);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

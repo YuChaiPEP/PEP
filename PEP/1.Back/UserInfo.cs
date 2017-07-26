@@ -36,7 +36,7 @@ namespace PEP
         {
             this.sql.SQLDisconnect();
         }
-        /*身份切换接口*/
+        /*身份切换*/
         private void identifyUser(String u)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "users", "uname='" + u + "'");
