@@ -472,6 +472,7 @@ namespace PEP
             {
                 MessageBox.Show("项目已终止。");
                 this.pro.abortProject();
+                FileManager.deleteProjectFiles(this.listProject.SelectedItem.ToString());
                 this.freshManagedProjects();
                 this.freshInfo();
                 this.freshTask();
