@@ -192,10 +192,26 @@ namespace PEP
             this.sql.SQLUpdate("projects2tasks", "task_state='" + p + "',deadline='"+afterdate+"'", "pid=" + this.pid + " and tid=" + tid);
         }
 
+        public void finishProject()
+        {
+            this.sql.SQLUpdate("projects", "project_state='已完成'", "pid=" + this.pid);
+            this.pid = -1;
+        }
+
+        public void abortProject()
+        {
+            this.sql.SQLDelete("projects", "pid="+this.pid);
+            this.sql.SQLDelete("users2projects", "pid=" + this.pid);
+            this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
+            this.sql.SQLDelete("projects2files", "pid=" + this.pid);
+            this.sql.SQLDelete("logs", "pid=" + this.pid);
+            this.pid = -1;
+        }
+        /*项目通用接口*/
         public void createProject(string pname, string time, int manager_id, List<string> tasks, List<string> persons)
         {
             this.sql.SQLInsertOneEntry("projects(pname,timestamp,task,process,manager_id,project_state)", "('" + pname + "','" + time + "'," + tasks.Count + ",0," + manager_id + ",'进行中')");
-            MySqlDataReader dr = this.sql.SQLGet("pid", "projects", "pname='" + pname+"'");
+            MySqlDataReader dr = this.sql.SQLGet("pid", "projects", "pname='" + pname + "'");
             int pid = -1;
             if (dr.Read())
                 pid = Convert.ToInt32(dr["pid"]);
@@ -215,23 +231,6 @@ namespace PEP
                 this.sql.SQLInsertOneEntry("users2projects", "(" + uid + "," + pid + ")");
             }
         }
-
-        public void finishProject()
-        {
-            this.sql.SQLUpdate("projects", "project_state='已完成'", "pid=" + this.pid);
-            this.pid = -1;
-        }
-
-        public void abortProject()
-        {
-            this.sql.SQLDelete("projects", "pid="+this.pid);
-            this.sql.SQLDelete("users2projects", "pid=" + this.pid);
-            this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
-            this.sql.SQLDelete("projects2files", "pid=" + this.pid);
-            this.sql.SQLDelete("logs", "pid=" + this.pid);
-            this.pid = -1;
-        }
-        /*项目通用接口*/
         public String searchProject(int pid)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pid=" + pid);
