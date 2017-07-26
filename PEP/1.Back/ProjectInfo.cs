@@ -30,6 +30,7 @@ namespace PEP
         {
             sql.SQLDisconnect();
         }
+        /*项目管理*/
         public void identifyProject(String p)
         {
             MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pname='" + p + "'");
@@ -44,16 +45,7 @@ namespace PEP
         {
             this.pid = -1;
         }
-
-        public String searchProject(int pid)
-        {
-            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pid=" + pid);
-            dr.Read();
-            String uname = dr["pname"].ToString();
-            dr.Close();
-            return uname;
-        }
-
+        /*项目个人接口*/
         public int getPid()
         {
             return this.pid;
@@ -128,15 +120,6 @@ namespace PEP
         {
             int tid = new TaskInfo().getTaskID(tname);
             return this.sql.SQLGet("*", "projects2files", "pid=" + this.pid + " and tid=" + tid);
-        }
-
-        public int getMaxPid()
-        {
-            MySqlDataReader dr = this.sql.SQLGet("max(pid)", "projects", "true");
-            dr.Read();
-            int x = Convert.ToInt32(dr["max(pid)"]);
-            dr.Close();
-            return x;
         }
 
         public void modifyDetail(String pname, int stateNo)
@@ -239,8 +222,26 @@ namespace PEP
             this.sql.SQLDelete("projects", "pid="+this.pid);
             this.sql.SQLDelete("users2projects", "pid=" + this.pid);
             this.sql.SQLDelete("projects2tasks", "pid=" + this.pid);
+            this.sql.SQLDelete("projects2files", "pid=" + this.pid);
             this.sql.SQLDelete("logs", "pid=" + this.pid);
             this.pid = -1;
+        }
+        /*项目通用接口*/
+        public String searchProject(int pid)
+        {
+            MySqlDataReader dr = this.sql.SQLGet("*", "projects", "pid=" + pid);
+            dr.Read();
+            String pname = dr["pname"].ToString();
+            dr.Close();
+            return pname;
+        }
+        public int getMaxPid()
+        {
+            MySqlDataReader dr = this.sql.SQLGet("max(pid)", "projects", "true");
+            dr.Read();
+            int x = Convert.ToInt32(dr["max(pid)"]);
+            dr.Close();
+            return x;
         }
         private void parseDate(String date, ref int year, ref int month, ref int day) //输入为"xxxx年yy月zz日"，解析xxxx/yy/zz
         {
