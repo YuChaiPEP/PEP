@@ -308,6 +308,10 @@ namespace PEP
             if (this.radioPause.Checked)
                 stateNo = 2;
             this.pro.modifyDetail(this.textPname.Text, stateNo);
+            if (this.listProject.SelectedItem.ToString() != this.textPname.Text)
+            {
+                FileManager.renameProjectDirectory(this.listProject.SelectedItem.ToString(), this.textPname.Text);
+            }
             freshManagedProjects();
             MessageBox.Show("项目基本信息已修改。");
         }

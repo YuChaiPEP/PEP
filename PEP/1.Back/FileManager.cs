@@ -71,5 +71,12 @@ namespace PEP
             ftp.delete(logFilePath + "/" + pname);
             ftp.delete(taskFilePath + "/" + pname);
         }
+
+        public static void renameProjectDirectory(string oldName, string newName)
+        {
+            FtpHandler ftp = new FtpHandler();
+            ftp.rename(logFilePath + "/" + oldName, newName);
+            ftp.rename(taskFilePath + "/" + oldName, newName);
+        }
     }
 }
