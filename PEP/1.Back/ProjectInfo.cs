@@ -170,9 +170,14 @@ namespace PEP
             }
         }
 
-        public void modifyLogChecked(int lid, string check)
+        public void modifyLogChecked(int lid, bool check)
         {
-            this.sql.SQLUpdate("logs", "checked='" + check + "'", "pid=" + this.pid + " and lid=" + lid);
+            String state = "";
+            if (check)
+                state = "已批阅";
+            else
+                state = "未批阅";
+            this.sql.SQLUpdate("logs", "checked='" + state + "'", "pid=" + this.pid + " and lid=" + lid);
         }
 
         public void modifyProcess(String tname, String p, String date) //输入字符串d为"xxxx年yy月zz日"格式，统一格式在下层就要处理完毕

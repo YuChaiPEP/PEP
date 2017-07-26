@@ -200,11 +200,11 @@ namespace PEP
             }
             else if (this.radioButtonMyLogs.Checked)
             {
-                dr = this.pro.getLogInfo(uid: this.user.getUID(), flag: true);
+                dr = this.pro.getLogInfo(uid: this.user.getUID(), watch: true);
             }
             else if (this.radioButtonTeammateLogs.Checked)
             {
-                dr = this.pro.getLogInfo(uid: this.user.getUID(), flag: false);
+                dr = this.pro.getLogInfo(uid: this.user.getUID(), watch: false);
             }
             int rowIdx = 0;
             while (dr.Read())
