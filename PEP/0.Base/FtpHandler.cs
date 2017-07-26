@@ -119,7 +119,7 @@ namespace PEP
             return success;
         }
 
-        /* Delete File */
+        /* Delete File or Directory */
         public void delete(string deleteFile)
         {
             try
@@ -140,7 +140,17 @@ namespace PEP
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch
+            {
+                try
+                {
+                    deleteDirectory(deleteFile);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
             return;
         }
 
@@ -186,6 +196,44 @@ namespace PEP
                 ftpRequest.KeepAlive = true;
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.MakeDirectory;
+                /* Establish Return Communication with the FTP Server */
+                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                /* Resource Cleanup */
+                ftpResponse.Close();
+                ftpRequest = null;
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            return;
+        }
+
+        /* Delete a dirctory on the FTP Server */
+        public void deleteDirectory(string directory)
+        {
+            try
+            {
+                /* Delete children of the directory */
+                string[] children = directoryListSimple(directory);
+                if (children.Length > 0)
+                {
+                    foreach (string child in children)
+                    {
+                        if (child.Length > 0)
+                        {
+                            delete(directory + "/" + child);
+                        }
+                    }
+                }
+
+                /* Create an FTP Request */
+                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + directory);
+                /* Log in to the FTP Server with the User Name and Password Provided */
+                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                /* When in doubt, use these options */
+                ftpRequest.UseBinary = true;
+                ftpRequest.UsePassive = true;
+                ftpRequest.KeepAlive = true;
+                /* Specify the Type of FTP Request */
+                ftpRequest.Method = WebRequestMethods.Ftp.RemoveDirectory;
                 /* Establish Return Communication with the FTP Server */
                 ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
                 /* Resource Cleanup */
