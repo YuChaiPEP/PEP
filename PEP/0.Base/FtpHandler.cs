@@ -154,7 +154,7 @@ namespace PEP
             return;
         }
 
-        /* Rename File */
+        /* Rename File or Directory*/
         public void rename(string currentFileNameAndPath, string newFileName)
         {
             try
