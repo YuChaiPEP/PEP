@@ -9,7 +9,7 @@ using System.Windows.Forms;
  * 
  * Back.FileManager
  * 功能：对项目的任务和日志文件进行管理
- * 主要接口：download, upload, delete
+ * 主要接口：download, upload, delete, rename
  * 注意事项：日志文件和项目文件分别在ftp的log_file和task_file文件夹中
  * 
  *************************************************************/
