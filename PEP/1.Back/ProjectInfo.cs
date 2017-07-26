@@ -91,7 +91,7 @@ namespace PEP
             this.sql.SQLInsertOneEntry("projects2files(pid,tid,filename)", "(" + this.pid + "," + tid + ",'" + filename + "')");
         }
 
-        public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool flag = true)
+        public MySqlDataReader getLogInfo(int lid = -1, int uid = -1, bool watch = true)
         {
             MySqlDataReader dr = null;
             if (lid == -1)
@@ -100,7 +100,7 @@ namespace PEP
                 {
                     dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid);
                 }
-                else if (flag)
+                else if (watch)
                 {
                     dr = this.sql.SQLGet("*", "logs", "pid=" + this.pid + " and uid=" + uid);
                 }
